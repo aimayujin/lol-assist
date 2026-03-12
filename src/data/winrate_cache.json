@@ -4868,5 +4868,90 @@
     "winRate": 50.4,
     "games": null,
     "fetchedAt": "2026-03-12T09:30:12.129Z"
+  },
+  "Ashe_vs_KogMaw_ADC": {
+    "winRate": 48.67,
+    "enemyWinRate": 51.33,
+    "fetchedAt": "2026-03-12T12:50:20.368Z"
+  },
+  "Vayne_vs_KogMaw_ADC": {
+    "winRate": 45.85,
+    "enemyWinRate": 54.15,
+    "fetchedAt": "2026-03-12T12:50:20.423Z"
+  },
+  "Varus_vs_KogMaw_ADC": {
+    "winRate": 48.42,
+    "enemyWinRate": 51.58,
+    "fetchedAt": "2026-03-12T12:50:20.491Z"
+  },
+  "Kalista_vs_KogMaw_ADC": {
+    "winRate": 44.33,
+    "enemyWinRate": 55.67,
+    "fetchedAt": "2026-03-12T12:50:20.498Z"
+  },
+  "Ezreal_vs_KogMaw_ADC": {
+    "winRate": 46.83,
+    "enemyWinRate": 53.17,
+    "fetchedAt": "2026-03-12T12:50:20.503Z"
+  },
+  "Sivir_vs_KogMaw_ADC": {
+    "winRate": 44.09,
+    "enemyWinRate": 55.91,
+    "fetchedAt": "2026-03-12T12:50:20.666Z"
+  },
+  "Corki_vs_KogMaw_ADC": {
+    "winRate": 44.57,
+    "enemyWinRate": 55.43,
+    "fetchedAt": "2026-03-12T12:50:20.675Z"
+  },
+  "Zeri_vs_KogMaw_ADC": {
+    "winRate": 45.12,
+    "enemyWinRate": 54.88,
+    "fetchedAt": "2026-03-12T12:50:20.773Z"
+  },
+  "Smolder_vs_KogMaw_ADC": {
+    "winRate": 49.19,
+    "enemyWinRate": 50.81,
+    "fetchedAt": "2026-03-12T12:50:20.851Z"
+  },
+  "Jinx_vs_KogMaw_ADC": {
+    "winRate": 49.48,
+    "enemyWinRate": 50.52,
+    "fetchedAt": "2026-03-12T12:50:20.857Z"
+  },
+  "Tristana_vs_KogMaw_ADC": {
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-12T12:50:20.893Z"
+  },
+  "Twitch_vs_KogMaw_ADC": {
+    "winRate": 47.78,
+    "enemyWinRate": 52.22,
+    "fetchedAt": "2026-03-12T12:50:20.932Z"
+  },
+  "Nilah_vs_KogMaw_ADC": {
+    "winRate": 51.98,
+    "enemyWinRate": 48.02,
+    "fetchedAt": "2026-03-12T12:50:21.023Z"
+  },
+  "Lucian_vs_KogMaw_ADC": {
+    "winRate": 43.71,
+    "enemyWinRate": 56.29,
+    "fetchedAt": "2026-03-12T12:50:21.061Z"
+  },
+  "Veigar_vs_KogMaw_ADC": {
+    "winRate": 56.86,
+    "enemyWinRate": 43.14,
+    "fetchedAt": "2026-03-12T12:50:21.151Z"
+  },
+  "Aphelios_vs_KogMaw_ADC": {
+    "winRate": 45.09,
+    "enemyWinRate": 54.91,
+    "fetchedAt": "2026-03-12T12:50:21.170Z"
+  },
+  "Senna_vs_KogMaw_ADC": {
+    "winRate": 49.6,
+    "games": null,
+    "fetchedAt": "2026-03-12T12:50:21.614Z"
   }
 }
