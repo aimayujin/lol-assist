@@ -806,5 +806,61 @@
   "Volibear_jungle": {
     "winRate": 48.65,
     "fetchedAt": "2026-03-12T15:55:04.146Z"
+  },
+  "Jayce_top": {
+    "winRate": 49.44,
+    "fetchedAt": "2026-03-12T16:10:20.673Z"
+  },
+  "Sion_top": {
+    "winRate": 50.97,
+    "fetchedAt": "2026-03-12T16:10:20.763Z"
+  },
+  "Yorick_top": {
+    "winRate": 50.36,
+    "fetchedAt": "2026-03-12T16:10:20.798Z"
+  },
+  "Heimerdinger_top": {
+    "winRate": 51.02,
+    "fetchedAt": "2026-03-12T16:10:20.804Z"
+  },
+  "Gwen_top": {
+    "winRate": 48.83,
+    "fetchedAt": "2026-03-12T16:10:20.805Z"
+  },
+  "Kayle_top": {
+    "winRate": 52.64,
+    "fetchedAt": "2026-03-12T16:10:20.807Z"
+  },
+  "Akali_top": {
+    "winRate": 50.21,
+    "fetchedAt": "2026-03-12T16:10:20.817Z"
+  },
+  "Aurora_top": {
+    "winRate": 49.53,
+    "fetchedAt": "2026-03-12T16:10:20.933Z"
+  },
+  "Cassiopeia_top": {
+    "winRate": 50.21,
+    "fetchedAt": "2026-03-12T16:10:20.940Z"
+  },
+  "Anivia_top": {
+    "winRate": 52.37,
+    "fetchedAt": "2026-03-12T16:10:20.953Z"
+  },
+  "TahmKench_top": {
+    "winRate": 49.24,
+    "fetchedAt": "2026-03-12T16:10:20.985Z"
+  },
+  "Sylas_top": {
+    "winRate": 49.36,
+    "fetchedAt": "2026-03-12T16:10:20.995Z"
+  },
+  "Vladimir_top": {
+    "winRate": 50.74,
+    "fetchedAt": "2026-03-12T16:10:21.773Z"
+  },
+  "Varus_top": {
+    "winRate": 48.34,
+    "fetchedAt": "2026-03-12T16:10:21.802Z"
   }
 }
