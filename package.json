@@ -1,0 +1,8 @@
+{
+  "name": "lol-assist",
+  "version": "1.0.0",
+  "description": "League of Legends チーム構成マッチアップ分析アプリ",
+  "scripts": {
+    "start": "npx serve . -p 5174"
+  }
+}

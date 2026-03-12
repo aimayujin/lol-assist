@@ -1,0 +1,535 @@
+/* =====================================================
+   LOL Assist - スタイルシート
+   LOL テイスト: 濃紺背景 × ゴールドアクセント
+   ===================================================== */
+
+/* ---- リセット & 基本 -------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-dark:    #0a0e13;
+  --bg-panel:   #0f1923;
+  --bg-card:    #1a2535;
+  --bg-card2:   #1e2d3e;
+  --gold:       #c89b3c;
+  --gold-light: #f0e6b2;
+  --gold-dark:  #785a28;
+  --blue:       #0ac8b9;
+  --blue-dark:  #005a82;
+  --red:        #c84b31;
+  --red-dark:   #8e2a12;
+  --green:      #1ea656;
+  --green-dark: #0e5c30;
+  --gray:       #8f9bab;
+  --border:     #2a3a4e;
+  --text:       #ccd3dc;
+  --text-dim:   #7f8fa4;
+  --my-color:   #1a4a8a;
+  --en-color:   #6b1a1a;
+  --font:       'Segoe UI', 'Noto Sans JP', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-dark);
+  color: var(--text);
+  font-family: var(--font);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ---- ローディング ---------------------------------- */
+#loading {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--bg-dark);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 16px;
+  font-size: 1.1rem; color: var(--gold);
+}
+.loading-spinner {
+  width: 48px; height: 48px;
+  border: 4px solid var(--border);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---- ヘッダー -------------------------------------- */
+header {
+  background: linear-gradient(135deg, #05080d 0%, #0d1826 100%);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 20px 24px;
+  text-align: center;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+.header-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(200,155,60,0.4);
+}
+.header-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+/* ---- メインコンテンツ ------------------------------ */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 80px;
+}
+
+/* ---- チームビルダー -------------------------------- */
+.team-builder { display: flex; flex-direction: column; gap: 0; }
+
+.team-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 10px 16px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.team-label {
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+.my-label { color: #5b9ad5; }
+.enemy-label { color: #e55; }
+
+.role-labels {
+  display: flex; flex-direction: column; gap: 4px;
+  align-items: center;
+}
+.role-label {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 0.75rem; color: var(--text-dim);
+}
+
+/* ---- ピックグリッド -------------------------------- */
+.picks-grid { display: flex; flex-direction: column; gap: 8px; }
+
+.role-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.role-center {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 2px;
+}
+.role-icon-lg { font-size: 1.4rem; }
+.role-name { font-size: 0.65rem; color: var(--text-dim); font-weight: 700; letter-spacing: 0.05em; }
+
+/* ---- ピックスロット -------------------------------- */
+.pick-slot {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  min-height: 72px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.1s;
+  overflow: hidden;
+  position: relative;
+}
+.pick-slot:hover { border-color: var(--gold-dark); background: var(--bg-card2); }
+.pick-slot:active { transform: scale(0.98); }
+.my-pick { border-left: 3px solid var(--my-color); }
+.enemy-pick { border-right: 3px solid var(--en-color); }
+
+.slot-empty {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  height: 72px; gap: 4px;
+  color: var(--text-dim);
+}
+.slot-plus { font-size: 1.5rem; line-height: 1; opacity: 0.5; }
+.slot-text { font-size: 0.7rem; opacity: 0.7; }
+
+.slot-filled {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px;
+  height: 72px;
+  position: relative;
+}
+.champ-icon {
+  width: 52px; height: 52px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+}
+.champ-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.slot-clear {
+  position: absolute; top: 4px; right: 6px;
+  background: rgba(200,75,50,0.3);
+  border: 1px solid rgba(200,75,50,0.5);
+  color: #ff8070;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.slot-filled:hover .slot-clear { opacity: 1; }
+
+/* ---- 分析ボタン ------------------------------------ */
+.analyze-bar {
+  display: flex; justify-content: center;
+  padding: 20px 0;
+}
+.analyze-btn {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: #000;
+  border: none;
+  padding: 14px 48px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.1s;
+  box-shadow: 0 4px 20px rgba(200,155,60,0.3);
+}
+.analyze-btn:hover { filter: brightness(1.15); transform: translateY(-2px); }
+.analyze-btn:active { transform: translateY(0); }
+
+/* ---- ピッカーオーバーレイ -------------------------- */
+#picker-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(0,0,0,0.8);
+  align-items: center; justify-content: center;
+  padding: 20px;
+}
+#picker-overlay.open { display: flex; }
+
+.picker-modal {
+  background: var(--bg-panel);
+  border: 2px solid var(--gold-dark);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 640px;
+  max-height: 80vh;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+.picker-header {
+  display: flex; align-items: center;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+}
+#picker-title {
+  flex: 1;
+  font-weight: 800;
+  color: var(--gold-light);
+  font-size: 1rem;
+}
+.picker-search-wrap { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+#picker-search {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+}
+#picker-search:focus { border-color: var(--gold-dark); }
+#picker-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+  gap: 8px;
+  align-content: start;
+}
+.picker-item {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 4px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  font-size: 0.68rem;
+  color: var(--text);
+  text-align: center;
+  line-height: 1.2;
+}
+.picker-item:hover { border-color: var(--gold); background: var(--bg-card2); color: var(--gold-light); }
+.picker-item img {
+  width: 48px; height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+#picker-close {
+  background: none; border: none;
+  color: var(--text-dim); font-size: 1.4rem;
+  cursor: pointer; line-height: 1;
+  padding: 4px;
+}
+#picker-close:hover { color: var(--text); }
+
+/* ---- 分析結果 -------------------------------------- */
+.result-section {
+  margin-top: 32px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.result-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--gold-light);
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--gold-dark);
+}
+.lane-cards { display: flex; flex-direction: column; gap: 12px; }
+
+/* ---- レーンカード ---------------------------------- */
+.lane-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.lane-card-header {
+  padding: 12px 16px;
+  background: var(--bg-card2);
+  border-bottom: 1px solid var(--border);
+}
+.matchup-champs {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+}
+.matchup-champ {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.9rem; font-weight: 700;
+}
+.matchup-champ img {
+  width: 44px; height: 44px;
+  border-radius: 6px;
+  border: 2px solid var(--border);
+}
+.my-champ { color: #8bb8e0; }
+.enemy-champ { flex-direction: row-reverse; text-align: right; color: #e08888; }
+.matchup-center { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.role-badge { font-size: 0.7rem; color: var(--text-dim); }
+.result-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+/* 結果カラー */
+.result-advantage    { border-left: 4px solid var(--green); }
+.result-slight-adv   { border-left: 4px solid #7fc; }
+.result-neutral      { border-left: 4px solid var(--gray); }
+.result-slight-dis   { border-left: 4px solid #fa8; }
+.result-disadvantage { border-left: 4px solid var(--red); }
+
+.result-advantage    .result-badge { background: rgba(30,166,86,0.25); color: #6fe8a0; border: 1px solid var(--green); }
+.result-slight-adv   .result-badge { background: rgba(100,220,180,0.2); color: #7fc; border: 1px solid #5bc; }
+.result-neutral      .result-badge { background: rgba(143,155,171,0.2); color: var(--gray); border: 1px solid var(--gray); }
+.result-slight-dis   .result-badge { background: rgba(255,180,100,0.2); color: #fa8; border: 1px solid #fa8; }
+.result-disadvantage .result-badge { background: rgba(200,75,50,0.2); color: #f88; border: 1px solid var(--red); }
+
+.lane-card-body { padding: 14px 16px; }
+.key-points {
+  font-size: 0.88rem;
+  color: var(--gold-light);
+  background: rgba(200,155,60,0.08);
+  border: 1px solid rgba(200,155,60,0.2);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.tips-list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.tips-list li {
+  font-size: 0.85rem;
+  color: var(--text);
+  padding-left: 18px;
+  position: relative;
+}
+.tips-list li::before {
+  content: '▸';
+  position: absolute; left: 0;
+  color: var(--blue);
+}
+
+.fallback-badge {
+  display: inline-block;
+  background: rgba(100,120,160,0.2);
+  border: 1px solid rgba(100,120,160,0.4);
+  color: var(--text-dim);
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-top: 6px;
+}
+
+/* ---- チームシナジー -------------------------------- */
+.team-synergy {
+  background: var(--bg-card);
+  border: 1px solid var(--gold-dark);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+.synergy-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  margin-bottom: 14px;
+}
+.comp-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.comp-box {
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+}
+.my-comp { background: rgba(27,74,138,0.3); border: 1px solid rgba(91,154,213,0.4); }
+.enemy-comp { background: rgba(107,26,26,0.3); border: 1px solid rgba(229,85,85,0.4); }
+.comp-team-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 4px; }
+.my-comp .comp-team-label { color: #5b9ad5; }
+.enemy-comp .comp-team-label { color: #e55; }
+.comp-type { font-size: 0.9rem; font-weight: 700; color: var(--gold-light); }
+.comp-vs { font-size: 1.1rem; font-weight: 900; color: var(--text-dim); text-align: center; }
+.synergy-advice {
+  background: rgba(10,200,185,0.06);
+  border: 1px solid rgba(10,200,185,0.2);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 0.88rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* ---- リセット / フッター --------------------------- */
+.result-footer { display: flex; justify-content: center; }
+.reset-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.reset-btn:hover { border-color: var(--gold-dark); color: var(--gold-light); }
+
+.no-data { color: var(--text-dim); font-style: italic; text-align: center; padding: 20px 0; }
+.error { color: #f88; text-align: center; padding: 40px; font-size: 0.95rem; line-height: 1.8; }
+
+/* ---- レスポンシブ ---------------------------------- */
+@media (max-width: 600px) {
+  .team-header { padding: 8px 10px; }
+  .role-labels { display: none; }
+  .team-header { grid-template-columns: 1fr 1fr; }
+  .role-row { grid-template-columns: 1fr 56px 1fr; gap: 6px; }
+  .role-center { gap: 1px; }
+  .role-icon-lg { font-size: 1.1rem; }
+  .champ-name { font-size: 0.75rem; }
+  .champ-icon { width: 44px; height: 44px; }
+  .slot-filled { padding: 6px 8px; }
+  .header-title { font-size: 1.3rem; }
+  .comp-row { grid-template-columns: 1fr auto 1fr; gap: 6px; }
+  .comp-type { font-size: 0.78rem; }
+  .matchup-champ img { width: 36px; height: 36px; }
+}
+
+/* =====================================================
+   勝率バッジ
+   ===================================================== */
+
+.winrate-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+  min-height: 22px;
+}
+
+/* ローディング中 */
+.wr-loading {
+  font-size: 0.72rem;
+  color: var(--text-muted, #888);
+  animation: wr-blink 1.2s ease-in-out infinite;
+}
+@keyframes wr-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* 勝率数値 */
+.wr-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 2px 8px;
+  border-radius: 12px;
+  line-height: 1.4;
+}
+.wr-good { background: rgba(76, 175, 80, 0.20); color: #81c784; border: 1px solid #4caf5055; }
+.wr-even { background: rgba(255, 193,  7, 0.15); color: #ffd54f; border: 1px solid #ffc10755; }
+.wr-bad  { background: rgba(244,  67, 54, 0.18); color: #e57373; border: 1px solid #f4433655; }
+
+/* N/A */
+.wr-na {
+  font-size: 0.72rem;
+  color: var(--text-muted, #666);
+}
+
+/* 試合数 */
+.wr-games {
+  font-size: 0.70rem;
+  color: var(--text-muted, #888);
+}
+
+/* 対戦相手ラベル */
+.wr-label {
+  font-size: 0.68rem;
+  color: var(--text-muted, #777);
+  white-space: nowrap;
+}
