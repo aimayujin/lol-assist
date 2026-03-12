@@ -467,10 +467,9 @@ async function fetchLaneChampionsFromOpGG(role) {
     }
   }
 
-  // op.gg はティア順に並んでいるので上位40件に絞る（主要ピック）
-  const limited = champions.slice(0, 40);
-  console.log(`[lane-champs] ${role}: ${limited.length}/${champions.length} チャンピオン`);
-  return limited;
+  // op.gg ティアリストに掲載されている全チャンピオンを返す
+  console.log(`[lane-champs] ${role}: ${champions.length} チャンピオン`);
+  return champions;
 }
 
 // op.gg slug → DDragon ID
