@@ -862,5 +862,113 @@
   "Varus_top": {
     "winRate": 48.34,
     "fetchedAt": "2026-03-12T16:10:21.802Z"
+  },
+  "Swain_mid": {
+    "winRate": 48.51,
+    "fetchedAt": "2026-03-12T16:49:09.678Z"
+  },
+  "Xerath_mid": {
+    "winRate": 52.63,
+    "fetchedAt": "2026-03-12T16:49:09.770Z"
+  },
+  "Taliyah_mid": {
+    "winRate": 48.33,
+    "fetchedAt": "2026-03-12T16:49:09.835Z"
+  },
+  "Ziggs_mid": {
+    "winRate": 52.32,
+    "fetchedAt": "2026-03-12T16:49:09.878Z"
+  },
+  "Talon_mid": {
+    "winRate": 49.83,
+    "fetchedAt": "2026-03-12T16:49:09.887Z"
+  },
+  "Naafiri_mid": {
+    "winRate": 50.97,
+    "fetchedAt": "2026-03-12T16:49:09.952Z"
+  },
+  "Akshan_mid": {
+    "winRate": 51.24,
+    "fetchedAt": "2026-03-12T16:49:09.973Z"
+  },
+  "Kayle_mid": {
+    "winRate": 52.64,
+    "fetchedAt": "2026-03-12T16:49:10.044Z"
+  },
+  "KogMaw_mid": {
+    "winRate": 53.43,
+    "fetchedAt": "2026-03-12T16:49:10.068Z"
+  },
+  "Smolder_mid": {
+    "winRate": 51.43,
+    "fetchedAt": "2026-03-12T16:49:10.166Z"
+  },
+  "Jayce_mid": {
+    "winRate": 49.44,
+    "fetchedAt": "2026-03-12T16:49:10.174Z"
+  },
+  "Chogath_mid": {
+    "winRate": 51.03,
+    "fetchedAt": "2026-03-12T16:49:10.180Z"
+  },
+  "Vladimir_mid": {
+    "winRate": 50.74,
+    "fetchedAt": "2026-03-12T16:49:10.214Z"
+  },
+  "Nasus_mid": {
+    "winRate": 51.4,
+    "fetchedAt": "2026-03-12T16:49:10.229Z"
+  },
+  "Pantheon_mid": {
+    "winRate": 48.32,
+    "fetchedAt": "2026-03-12T16:49:10.339Z"
+  },
+  "Malphite_mid": {
+    "winRate": 51.56,
+    "fetchedAt": "2026-03-12T16:49:10.348Z"
+  },
+  "Brand_mid": {
+    "winRate": 51.29,
+    "fetchedAt": "2026-03-12T16:49:10.488Z"
+  },
+  "Aurora_mid": {
+    "winRate": 49.53,
+    "fetchedAt": "2026-03-12T16:49:10.648Z"
+  },
+  "Sion_mid": {
+    "winRate": 50.97,
+    "fetchedAt": "2026-03-12T17:26:16.882Z"
+  },
+  "Brand_bottom": {
+    "winRate": 51.29,
+    "fetchedAt": "2026-03-12T17:26:18.557Z"
+  },
+  "Yasuo_bottom": {
+    "winRate": 49.71,
+    "fetchedAt": "2026-03-12T17:26:20.268Z"
+  },
+  "Swain_bottom": {
+    "winRate": 48.51,
+    "fetchedAt": "2026-03-12T17:26:21.954Z"
+  },
+  "Velkoz_bottom": {
+    "winRate": 50.98,
+    "fetchedAt": "2026-03-12T17:26:23.650Z"
+  },
+  "AurelionSol_bottom": {
+    "winRate": 52.2,
+    "fetchedAt": "2026-03-12T17:26:25.410Z"
+  },
+  "Yunara_bottom": {
+    "winRate": 48.45,
+    "fetchedAt": "2026-03-12T17:26:27.137Z"
+  },
+  "Mel_bottom": {
+    "winRate": 49.26,
+    "fetchedAt": "2026-03-12T17:26:28.793Z"
+  },
+  "Leblanc_support": {
+    "winRate": 50.33,
+    "fetchedAt": "2026-03-12T17:26:30.485Z"
   }
 }
