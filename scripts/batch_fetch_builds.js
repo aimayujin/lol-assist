@@ -63,24 +63,25 @@ function extractBuild(html) {
   result.runes = runeIds;
 
   // アイテム: 最初のコアビルド（item/XXXX.png）
-  // Starter items (1055,1056,1054,1082,2003,2031,3850,3854,3858,3862) をスキップ
   const starterIds = new Set(['1055','1056','1054','1082','2003','2031','3850','3854','3858','3862','3070','1036','1101','1102','1103','2010','3340']);
   const bootIds = new Set(['3006','3009','3020','3047','3111','3117','3158']);
   const itemRe = /item\/(\d{4})\.png/g;
   const coreItems = [];
   const seenItems = new Set();
+  let boots = null;
   while ((m = itemRe.exec(html)) !== null) {
     const id = m[1];
-    if (starterIds.has(id) || bootIds.has(id)) continue;
+    if (starterIds.has(id)) continue;
+    if (bootIds.has(id)) { if (!boots) boots = id; continue; }
     if (seenItems.has(id)) continue;
     seenItems.add(id);
-    // 完成アイテムのみ（IDが1000以上）
     if (parseInt(id) >= 2000) {
       coreItems.push(id);
       if (coreItems.length >= 3) break;
     }
   }
   result.items = coreItems;
+  result.boots = boots;
 
   return result;
 }
@@ -122,7 +123,7 @@ async function main() {
       if (res.status === 200) {
         const build = extractBuild(res.body);
         if (build.runes.length > 0 || build.items.length > 0) {
-          cache[t.key] = { runes: build.runes, items: build.items, fetchedAt: new Date().toISOString() };
+          cache[t.key] = { runes: build.runes, items: build.items, boots: build.boots, fetchedAt: new Date().toISOString() };
           ok++;
           console.log(`[${++done}/${toFetch.length}] ✓ ${t.key}: runes=${build.runes.length} items=${build.items.length}`);
         } else {
