@@ -432,6 +432,8 @@ function opggNameToId(name) {
  * op.gg ティアリストページからチャンピオン名一覧を取得
  * URL: https://www.op.gg/champions?region=global&tier=emerald_plus&position={position}
  */
+const LANE_CHAMPS_PICK_RATE_THRESHOLD = 1.0; // ピック率1%以上のチャンピオンのみキャッシュ
+
 async function fetchLaneChampionsFromOpGG(role) {
   const position = OPGG_POSITION_MAP[role];
   const url = `https://www.op.gg/champions?region=global&tier=emerald_plus&position=${position}`;
@@ -441,38 +443,52 @@ async function fetchLaneChampionsFromOpGG(role) {
 
   const champions = [];
 
-  // パターン1: <a href="/lol/champions/{slug}/build?..."> のリンクパターン
-  const linkRe = /\/lol\/champions\/([a-z][a-z0-9-]*?)\/build/g;
-  const slugSet = new Set();
-  let m;
-  while ((m = linkRe.exec(body)) !== null) {
-    slugSet.add(m[1]);
-  }
-
-  // パターン2: __NEXT_DATA__ JSON から champion 名を抽出
+  // __NEXT_DATA__ JSON から champion 名とピック率を抽出
   const ndMatch = body.match(/<script[^>]+id=["']__NEXT_DATA__["'][^>]*>([\s\S]*?)<\/script>/i);
   if (ndMatch) {
     try {
       const json = JSON.parse(ndMatch[1]);
+
+      // ピック率マップ取得を試みる
+      const pickRates = extractPickRatesFromJson(json);
+      const hasPickRates = Object.keys(pickRates).length > 5;
+
+      // チャンピオン名リスト取得
       const champNames = extractChampionNamesFromJson(json);
-      for (const name of champNames) {
-        champions.push(opggNameToId(name));
+
+      if (hasPickRates) {
+        // ピック率でフィルタリング
+        for (const name of champNames) {
+          const id = opggNameToId(name);
+          const pr = pickRates[name] ?? pickRates[id] ?? pickRates[name.replace(/['\s.]/g, '')] ?? 0;
+          if (pr >= LANE_CHAMPS_PICK_RATE_THRESHOLD) {
+            champions.push(id);
+          }
+        }
+        console.log(`[lane-champs] ${role}: ${champNames.length}体中 ${champions.length}体（PR>=${LANE_CHAMPS_PICK_RATE_THRESHOLD}%）`);
+      } else {
+        // ピック率データなし → 名前リストのみ
+        for (const name of champNames) {
+          champions.push(opggNameToId(name));
+        }
       }
     } catch (e) {
       console.warn('[lane-champs] __NEXT_DATA__ パース失敗:', e.message);
     }
   }
 
-  // パターン1のスラッグからもIDを生成
+  // フォールバック: リンクパターンから抽出
   if (champions.length < 10) {
+    const linkRe = /\/lol\/champions\/([a-z][a-z0-9-]*?)\/build/g;
+    const slugSet = new Set();
+    let m;
+    while ((m = linkRe.exec(body)) !== null) slugSet.add(m[1]);
     for (const slug of slugSet) {
-      // slug: "aurelionsol" → "AurelionSol" 等に変換
       const id = opggSlugToId(slug);
       if (id && !champions.includes(id)) champions.push(id);
     }
   }
 
-  // op.gg ティアリストに掲載されている全チャンピオンを返す
   console.log(`[lane-champs] ${role}: ${champions.length} チャンピオン`);
   return champions;
 }
@@ -702,25 +718,43 @@ async function handleRequest(req, res) {
       return;
     }
 
-    // 全レーンを並列フェッチ
+    // 全レーンを並列フェッチ → 全成功時のみキャッシュ更新（アトミック更新）
     try {
       const roles = ['TOP', 'JG', 'MID', 'ADC', 'SUP'];
       const results = await Promise.allSettled(
         roles.map(role => fetchLaneChampionsFromOpGG(role))
       );
       const data = {};
+      let allSucceeded = true;
       for (let i = 0; i < roles.length; i++) {
-        data[roles[i]] = results[i].status === 'fulfilled' ? results[i].value : [];
+        if (results[i].status === 'fulfilled' && results[i].value.length > 0) {
+          data[roles[i]] = results[i].value;
+        } else {
+          allSucceeded = false;
+          console.warn(`[lane-champs] ${roles[i]} 取得失敗: ${results[i].reason?.message ?? 'empty'}`);
+          // 既存キャッシュがあればそのレーンを維持
+          data[roles[i]] = laneChampsCache.data?.[roles[i]] ?? [];
+        }
       }
-      laneChampsCache = { fetchedAt: new Date().toISOString(), data };
-      saveLaneChampsCache();
-      console.log(`[lane-champs] 全レーン取得完了`);
+      if (allSucceeded) {
+        laneChampsCache = { fetchedAt: new Date().toISOString(), data };
+        saveLaneChampsCache();
+        console.log(`[lane-champs] 全レーン取得完了・キャッシュ更新`);
+      } else {
+        console.log(`[lane-champs] 一部失敗のためキャッシュ未更新（レスポンスには返す）`);
+      }
       res.writeHead(200);
       res.end(JSON.stringify({ data, cached: false }));
     } catch (e) {
       console.error(`[lane-champs] 失敗: ${e.message}`);
-      res.writeHead(200);
-      res.end(JSON.stringify({ data: {}, error: e.message, cached: false }));
+      // キャッシュがあればフォールバック
+      if (laneChampsCache.data) {
+        res.writeHead(200);
+        res.end(JSON.stringify({ data: laneChampsCache.data, cached: true, error: e.message }));
+      } else {
+        res.writeHead(200);
+        res.end(JSON.stringify({ data: {}, error: e.message, cached: false }));
+      }
     }
     return;
   }
@@ -764,4 +798,52 @@ http.createServer((req, res) => {
 }).listen(PORT, () => {
   console.log(`LOL Assist: http://localhost:${PORT}`);
   console.log(`Win rate cache: ${Object.keys(winrateCache).length} 件ロード済み`);
+  // 起動時にキャッシュが古ければ自動更新
+  scheduleAutoRefresh();
 });
+
+// =====================================================
+// 自動キャッシュ更新（サーバーサイド）
+// =====================================================
+const AUTO_REFRESH_INTERVAL = 6 * 60 * 60 * 1000; // 6時間ごと
+
+async function refreshLaneChampsIfStale() {
+  if (isCacheFresh(laneChampsCache)) {
+    console.log('[auto-refresh] レーン別チャンピオンキャッシュは新鮮 → スキップ');
+    return;
+  }
+  console.log('[auto-refresh] レーン別チャンピオンキャッシュが古い → 更新開始');
+  try {
+    const roles = ['TOP', 'JG', 'MID', 'ADC', 'SUP'];
+    const results = await Promise.allSettled(
+      roles.map(role => fetchLaneChampionsFromOpGG(role))
+    );
+    const newData = {};
+    let allOk = true;
+    for (let i = 0; i < roles.length; i++) {
+      if (results[i].status === 'fulfilled' && results[i].value.length > 0) {
+        newData[roles[i]] = results[i].value;
+      } else {
+        allOk = false;
+        console.warn(`[auto-refresh] ${roles[i]} 失敗`);
+      }
+    }
+    if (allOk) {
+      laneChampsCache = { fetchedAt: new Date().toISOString(), data: newData };
+      saveLaneChampsCache();
+      console.log('[auto-refresh] レーン別チャンピオンキャッシュ更新完了');
+      for (const r of roles) console.log(`  ${r}: ${newData[r].length}体`);
+    } else {
+      console.log('[auto-refresh] 一部失敗のためキャッシュ未更新');
+    }
+  } catch (e) {
+    console.error('[auto-refresh] 失敗:', e.message);
+  }
+}
+
+function scheduleAutoRefresh() {
+  // 起動10秒後に初回チェック
+  setTimeout(() => refreshLaneChampsIfStale(), 10000);
+  // 以降6時間ごとにチェック
+  setInterval(() => refreshLaneChampsIfStale(), AUTO_REFRESH_INTERVAL);
+}

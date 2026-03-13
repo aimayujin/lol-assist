@@ -56224,5 +56224,470 @@
     "winRate": 49.7,
     "games": null,
     "fetchedAt": "2026-03-13T16:56:47.268Z"
+  },
+  "Akali_vs_LeeSin_JG": {
+    "winRate": 48,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:58:58.364Z"
+  },
+  "Urgot_vs_LeeSin_JG": {
+    "winRate": 53.5,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:58:58.386Z"
+  },
+  "Illaoi_vs_LeeSin_JG": {
+    "winRate": 51.8,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:58:58.415Z"
+  },
+  "Ahri_vs_LeeSin_JG": {
+    "winRate": 53.4,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:58:58.544Z"
+  },
+  "Irelia_vs_LeeSin_JG": {
+    "winRate": 52.8,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:58:58.894Z"
+  },
+  "Alistar_vs_LeeSin_JG": {
+    "winRate": 50.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:58:58.983Z"
+  },
+  "Aurora_vs_LeeSin_JG": {
+    "winRate": 49.7,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:58:59.033Z"
+  },
+  "Olaf_vs_LeeSin_JG": {
+    "winRate": 52.5,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:58:59.042Z"
+  },
+  "Kassadin_vs_LeeSin_JG": {
+    "winRate": 51,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:58:59.506Z"
+  },
+  "KSante_vs_LeeSin_JG": {
+    "winRate": 47.6,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:58:59.534Z"
+  },
+  "Garen_vs_LeeSin_JG": {
+    "winRate": 52.6,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:58:59.701Z"
+  },
+  "Qiyana_vs_LeeSin_JG": {
+    "winRate": 50.8,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:00.117Z"
+  },
+  "Gwen_vs_LeeSin_JG": {
+    "winRate": 49.7,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:00.171Z"
+  },
+  "Camille_vs_LeeSin_JG": {
+    "winRate": 50.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:00.392Z"
+  },
+  "Katarina_vs_LeeSin_JG": {
+    "winRate": 51.6,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:00.624Z"
+  },
+  "Sion_vs_LeeSin_JG": {
+    "winRate": 51.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:00.732Z"
+  },
+  "Shyvana_vs_LeeSin_JG": {
+    "winRate": 47.83,
+    "enemyWinRate": 52.17,
+    "fetchedAt": "2026-03-13T16:59:00.839Z"
+  },
+  "Skarner_vs_LeeSin_JG": {
+    "winRate": 48.68,
+    "enemyWinRate": 51.32,
+    "fetchedAt": "2026-03-13T16:59:00.877Z"
+  },
+  "Ornn_vs_LeeSin_JG": {
+    "winRate": 53.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:00.897Z"
+  },
+  "Gangplank_vs_LeeSin_JG": {
+    "winRate": 52.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:00.946Z"
+  },
+  "Kled_vs_LeeSin_JG": {
+    "winRate": 50.8,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:00.958Z"
+  },
+  "Sett_vs_LeeSin_JG": {
+    "winRate": 52.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:01.561Z"
+  },
+  "Twitch_vs_LeeSin_JG": {
+    "winRate": 53.6,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:01.590Z"
+  },
+  "Taric_vs_LeeSin_JG": {
+    "winRate": 53.4,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:01.731Z"
+  },
+  "Chogath_vs_LeeSin_JG": {
+    "winRate": 52.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:01.902Z"
+  },
+  "TahmKench_vs_LeeSin_JG": {
+    "winRate": 52.7,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:01.913Z"
+  },
+  "Nilah_vs_LeeSin_JG": {
+    "winRate": 50.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:02.262Z"
+  },
+  "Tryndamere_vs_LeeSin_JG": {
+    "winRate": 53.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:02.566Z"
+  },
+  "Nautilus_vs_LeeSin_JG": {
+    "winRate": 50.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:02.743Z"
+  },
+  "Braum_vs_LeeSin_JG": {
+    "winRate": 52.4,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:02.855Z"
+  },
+  "Vladimir_vs_LeeSin_JG": {
+    "winRate": 51.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:03.227Z"
+  },
+  "Fiora_vs_LeeSin_JG": {
+    "winRate": 50,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:03.250Z"
+  },
+  "Thresh_vs_LeeSin_JG": {
+    "winRate": 52.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:03.413Z"
+  },
+  "Poppy_vs_LeeSin_JG": {
+    "winRate": 51.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:03.427Z"
+  },
+  "Gnar_vs_LeeSin_JG": {
+    "winRate": 50.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:03.626Z"
+  },
+  "Mordekaiser_vs_LeeSin_JG": {
+    "winRate": 51.5,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:03.826Z"
+  },
+  "Yasuo_vs_LeeSin_JG": {
+    "winRate": 51.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:03.948Z"
+  },
+  "Maokai_vs_LeeSin_JG": {
+    "winRate": 51.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:04.140Z"
+  },
+  "Yorick_vs_LeeSin_JG": {
+    "winRate": 52.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:04.210Z"
+  },
+  "Blitzcrank_vs_LeeSin_JG": {
+    "winRate": 52.7,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:04.322Z"
+  },
+  "Yone_vs_LeeSin_JG": {
+    "winRate": 49.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:04.392Z"
+  },
+  "Rumble_vs_LeeSin_JG": {
+    "winRate": 49.5,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:04.418Z"
+  },
+  "Riven_vs_LeeSin_JG": {
+    "winRate": 50.7,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:04.654Z"
+  },
+  "Leblanc_vs_LeeSin_JG": {
+    "winRate": 49.6,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:04.710Z"
+  },
+  "Leona_vs_LeeSin_JG": {
+    "winRate": 51.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:04.919Z"
+  },
+  "Renekton_vs_LeeSin_JG": {
+    "winRate": 51.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:05.419Z"
+  },
+  "Rell_vs_LeeSin_JG": {
+    "winRate": 52.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:59:06.169Z"
+  },
+  "Evelynn_vs_Azir_MID": {
+    "winRate": 55.5,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:10.110Z"
+  },
+  "Ambessa_vs_Azir_MID": {
+    "winRate": 55,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:10.144Z"
+  },
+  "Varus_vs_Azir_MID": {
+    "winRate": 55.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:10.470Z"
+  },
+  "Viego_vs_Azir_MID": {
+    "winRate": 59.5,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:10.663Z"
+  },
+  "Elise_vs_Azir_MID": {
+    "winRate": 61.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:10.788Z"
+  },
+  "Vi_vs_Azir_MID": {
+    "winRate": 57.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:10.832Z"
+  },
+  "Khazix_vs_Azir_MID": {
+    "winRate": 60.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:11.067Z"
+  },
+  "Kaisa_vs_Azir_MID": {
+    "winRate": 58.8,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:11.253Z"
+  },
+  "Kayn_vs_Azir_MID": {
+    "winRate": 55.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:11.818Z"
+  },
+  "Camille_vs_Azir_MID": {
+    "winRate": 60.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:12.329Z"
+  },
+  "Gragas_vs_Azir_MID": {
+    "winRate": 62.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:12.363Z"
+  },
+  "Kennen_vs_Azir_MID": {
+    "winRate": 57.8,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:12.834Z"
+  },
+  "Ivern_vs_Azir_MID": {
+    "winRate": 61.4,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:12.967Z"
+  },
+  "Ezreal_vs_Azir_MID": {
+    "winRate": 57.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:13.494Z"
+  },
+  "Zaahen_vs_Azir_MID": {
+    "winRate": 60.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:13.676Z"
+  },
+  "Janna_vs_Azir_MID": {
+    "winRate": 60.6,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:13.781Z"
+  },
+  "Soraka_vs_Azir_MID": {
+    "winRate": 57.4,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:14.304Z"
+  },
+  "Shaco_vs_Azir_MID": {
+    "winRate": 57.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:14.330Z"
+  },
+  "Zilean_vs_Azir_MID": {
+    "winRate": 62.7,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:14.452Z"
+  },
+  "Jhin_vs_Azir_MID": {
+    "winRate": 59.8,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:14.531Z"
+  },
+  "Sona_vs_Azir_MID": {
+    "winRate": 62.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:14.824Z"
+  },
+  "Teemo_vs_Azir_MID": {
+    "winRate": 59.4,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:14.896Z"
+  },
+  "Tryndamere_vs_Azir_MID": {
+    "winRate": 57.8,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:14.979Z"
+  },
+  "Nami_vs_Azir_MID": {
+    "winRate": 60.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:15.026Z"
+  },
+  "Singed_vs_Azir_MID": {
+    "winRate": 61.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:15.215Z"
+  },
+  "Nidalee_vs_Azir_MID": {
+    "winRate": 58.4,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:15.333Z"
+  },
+  "Nunu_vs_Azir_MID": {
+    "winRate": 62.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:15.486Z"
+  },
+  "Nocturne_vs_Azir_MID": {
+    "winRate": 60.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:15.515Z"
+  },
+  "Neeko_vs_Azir_MID": {
+    "winRate": 56.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:15.726Z"
+  },
+  "Bard_vs_Azir_MID": {
+    "winRate": 61.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:15.767Z"
+  },
+  "Briar_vs_Azir_MID": {
+    "winRate": 60.6,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:16.059Z"
+  },
+  "MasterYi_vs_Azir_MID": {
+    "winRate": 58.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:16.249Z"
+  },
+  "Fiddlesticks_vs_Azir_MID": {
+    "winRate": 59.6,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:16.310Z"
+  },
+  "MissFortune_vs_Azir_MID": {
+    "winRate": 59.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:16.399Z"
+  },
+  "Fiora_vs_Azir_MID": {
+    "winRate": 60.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:16.609Z"
+  },
+  "Nilah_vs_Azir_MID": {
+    "winRate": 65,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:16.732Z"
+  },
+  "Morgana_vs_Azir_MID": {
+    "winRate": 57.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:16.886Z"
+  },
+  "Yuumi_vs_Azir_MID": {
+    "winRate": 55.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:16.923Z"
+  },
+  "Mordekaiser_vs_Azir_MID": {
+    "winRate": 57.5,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:16.939Z"
+  },
+  "Milio_vs_Azir_MID": {
+    "winRate": 58.4,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:17.094Z"
+  },
+  "LeeSin_vs_Azir_MID": {
+    "winRate": 56.7,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:17.105Z"
+  },
+  "Riven_vs_Azir_MID": {
+    "winRate": 52.4,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:17.314Z"
+  },
+  "Lucian_vs_Azir_MID": {
+    "winRate": 57.7,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:17.470Z"
+  },
+  "Renata_vs_Azir_MID": {
+    "winRate": 60,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:17.485Z"
+  },
+  "Rengar_vs_Azir_MID": {
+    "winRate": 59.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:17.753Z"
+  },
+  "Lulu_vs_Azir_MID": {
+    "winRate": 55.8,
+    "games": null,
+    "fetchedAt": "2026-03-13T17:06:19.465Z"
   }
 }
