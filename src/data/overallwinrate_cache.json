@@ -970,5 +970,197 @@
   "Leblanc_support": {
     "winRate": 50.33,
     "fetchedAt": "2026-03-12T17:26:30.485Z"
+  },
+  "Ahri_jungle": {
+    "winRate": 52.33,
+    "fetchedAt": "2026-03-13T15:52:41.328Z"
+  },
+  "Urgot_jungle": {
+    "winRate": 51.95,
+    "fetchedAt": "2026-03-13T15:52:41.466Z"
+  },
+  "Irelia_jungle": {
+    "winRate": 51.21,
+    "fetchedAt": "2026-03-13T15:52:41.495Z"
+  },
+  "Alistar_jungle": {
+    "winRate": 49.67,
+    "fetchedAt": "2026-03-13T15:52:41.505Z"
+  },
+  "Illaoi_jungle": {
+    "winRate": 50.79,
+    "fetchedAt": "2026-03-13T15:52:41.536Z"
+  },
+  "Olaf_jungle": {
+    "winRate": 51.72,
+    "fetchedAt": "2026-03-13T15:52:41.561Z"
+  },
+  "Ornn_jungle": {
+    "winRate": 52.42,
+    "fetchedAt": "2026-03-13T15:52:41.622Z"
+  },
+  "Aurora_jungle": {
+    "winRate": 49.67,
+    "fetchedAt": "2026-03-13T15:52:41.634Z"
+  },
+  "KSante_jungle": {
+    "winRate": 47.52,
+    "fetchedAt": "2026-03-13T15:52:41.669Z"
+  },
+  "Camille_jungle": {
+    "winRate": 51.31,
+    "fetchedAt": "2026-03-13T15:52:41.758Z"
+  },
+  "Katarina_jungle": {
+    "winRate": 51.15,
+    "fetchedAt": "2026-03-13T15:52:41.770Z"
+  },
+  "Garen_jungle": {
+    "winRate": 52.39,
+    "fetchedAt": "2026-03-13T15:52:41.796Z"
+  },
+  "Kassadin_jungle": {
+    "winRate": 50.49,
+    "fetchedAt": "2026-03-13T15:52:41.805Z"
+  },
+  "Qiyana_jungle": {
+    "winRate": 50.59,
+    "fetchedAt": "2026-03-13T15:52:41.914Z"
+  },
+  "Gangplank_jungle": {
+    "winRate": 50.95,
+    "fetchedAt": "2026-03-13T15:52:41.933Z"
+  },
+  "Kled_jungle": {
+    "winRate": 52.16,
+    "fetchedAt": "2026-03-13T15:52:41.992Z"
+  },
+  "Gwen_jungle": {
+    "winRate": 48.84,
+    "fetchedAt": "2026-03-13T15:52:42.055Z"
+  },
+  "Sion_jungle": {
+    "winRate": 50.95,
+    "fetchedAt": "2026-03-13T15:52:42.242Z"
+  },
+  "Thresh_jungle": {
+    "winRate": 51.84,
+    "fetchedAt": "2026-03-13T15:52:42.246Z"
+  },
+  "Sett_jungle": {
+    "winRate": 51.13,
+    "fetchedAt": "2026-03-13T15:52:42.318Z"
+  },
+  "Skarner_jungle": {
+    "winRate": 49.24,
+    "fetchedAt": "2026-03-13T15:52:42.368Z"
+  },
+  "TahmKench_jungle": {
+    "winRate": 49.29,
+    "fetchedAt": "2026-03-13T15:52:42.388Z"
+  },
+  "Taric_jungle": {
+    "winRate": 52.55,
+    "fetchedAt": "2026-03-13T15:52:42.431Z"
+  },
+  "Twitch_jungle": {
+    "winRate": 50.87,
+    "fetchedAt": "2026-03-13T15:52:42.458Z"
+  },
+  "Gnar_jungle": {
+    "winRate": 50.02,
+    "fetchedAt": "2026-03-13T15:52:42.554Z"
+  },
+  "Nilah_jungle": {
+    "winRate": 52.93,
+    "fetchedAt": "2026-03-13T15:52:42.576Z"
+  },
+  "Tryndamere_jungle": {
+    "winRate": 49.82,
+    "fetchedAt": "2026-03-13T15:52:42.577Z"
+  },
+  "Chogath_jungle": {
+    "winRate": 51.22,
+    "fetchedAt": "2026-03-13T15:52:42.591Z"
+  },
+  "Akali_jungle": {
+    "winRate": 50.29,
+    "fetchedAt": "2026-03-13T15:52:42.652Z"
+  },
+  "Braum_jungle": {
+    "winRate": 51.69,
+    "fetchedAt": "2026-03-13T15:52:42.677Z"
+  },
+  "Fiora_jungle": {
+    "winRate": 50.73,
+    "fetchedAt": "2026-03-13T15:52:42.749Z"
+  },
+  "Blitzcrank_jungle": {
+    "winRate": 51.1,
+    "fetchedAt": "2026-03-13T15:52:42.765Z"
+  },
+  "Vladimir_jungle": {
+    "winRate": 50.7,
+    "fetchedAt": "2026-03-13T15:52:42.778Z"
+  },
+  "Nautilus_jungle": {
+    "winRate": 50.04,
+    "fetchedAt": "2026-03-13T15:52:42.780Z"
+  },
+  "Mordekaiser_jungle": {
+    "winRate": 51.17,
+    "fetchedAt": "2026-03-13T15:52:42.885Z"
+  },
+  "Yasuo_jungle": {
+    "winRate": 49.74,
+    "fetchedAt": "2026-03-13T15:52:42.914Z"
+  },
+  "Maokai_jungle": {
+    "winRate": 52.07,
+    "fetchedAt": "2026-03-13T15:52:42.932Z"
+  },
+  "Yorick_jungle": {
+    "winRate": 50.41,
+    "fetchedAt": "2026-03-13T15:52:42.948Z"
+  },
+  "Yone_jungle": {
+    "winRate": 48.69,
+    "fetchedAt": "2026-03-13T15:52:42.961Z"
+  },
+  "Riven_jungle": {
+    "winRate": 50.64,
+    "fetchedAt": "2026-03-13T15:52:43.041Z"
+  },
+  "Leblanc_jungle": {
+    "winRate": 50.22,
+    "fetchedAt": "2026-03-13T15:52:43.132Z"
+  },
+  "Renekton_jungle": {
+    "winRate": 50.15,
+    "fetchedAt": "2026-03-13T15:52:43.145Z"
+  },
+  "Rell_jungle": {
+    "winRate": 50.24,
+    "fetchedAt": "2026-03-13T15:52:43.183Z"
+  },
+  "Rumble_jungle": {
+    "winRate": 49.58,
+    "fetchedAt": "2026-03-13T15:52:43.288Z"
+  },
+  "Poppy_jungle": {
+    "winRate": 50.75,
+    "fetchedAt": "2026-03-13T15:52:43.396Z"
+  },
+  "Leona_jungle": {
+    "winRate": 51.19,
+    "fetchedAt": "2026-03-13T15:52:43.927Z"
+  },
+  "MonkeyKing_top": {
+    "winRate": 50.79,
+    "fetchedAt": "2026-03-13T16:01:06.766Z"
+  },
+  "MonkeyKing_jungle": {
+    "winRate": 50.79,
+    "fetchedAt": "2026-03-13T16:01:06.767Z"
   }
 }

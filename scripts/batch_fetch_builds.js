@@ -11,7 +11,7 @@ const META_PATH = path.join(__dirname, '..', 'src', 'data', 'champion_meta.json'
 const DELAY_MS = 1800;
 
 const OPGG_SLUG_MAP = {
-  MonkeyKing:'wukong', AurelionSol:'aurelionsol', DrMundo:'drmundo',
+  MonkeyKing:'monkeyking', AurelionSol:'aurelionsol', DrMundo:'drmundo',
   JarvanIV:'jarvaniv', KSante:'ksante', TahmKench:'tahmkench',
   TwistedFate:'twistedfate', MissFortune:'missfortune', MasterYi:'masteryi',
   LeeSin:'leesin', XinZhao:'xinzhao', RekSai:'reksai', BelVeth:'belveth',

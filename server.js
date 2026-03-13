@@ -168,7 +168,7 @@ function httpsGetText(url) {
  * ページに「50.28%49.72%」のような隣接した2つの勝率が含まれており、合計が~100%になる
  */
 const OPGG_SLUG_MAP = {
-  'MonkeyKing': 'wukong',   // DDragon ID → op.gg slug
+  'MonkeyKing': 'monkeyking',   // DDragon ID → op.gg slug
   'AurelionSol': 'aurelionsol',
 };
 function champToOpGGSlug(champId) {
