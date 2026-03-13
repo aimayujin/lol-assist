@@ -1155,12 +1155,44 @@
     "winRate": 51.19,
     "fetchedAt": "2026-03-13T15:52:43.927Z"
   },
-  "MonkeyKing_top": {
-    "winRate": 50.79,
-    "fetchedAt": "2026-03-13T16:01:06.766Z"
+  "Leona_top": {
+    "winRate": 51.19,
+    "fetchedAt": "2026-03-13T16:55:24.965Z"
   },
-  "MonkeyKing_jungle": {
-    "winRate": 50.79,
-    "fetchedAt": "2026-03-13T16:01:06.767Z"
+  "Graves_bottom": {
+    "winRate": 50.86,
+    "fetchedAt": "2026-03-13T16:56:41.287Z"
+  },
+  "Azir_bottom": {
+    "winRate": 43.47,
+    "fetchedAt": "2026-03-13T16:56:41.291Z"
+  },
+  "Quinn_bottom": {
+    "winRate": 51.83,
+    "fetchedAt": "2026-03-13T16:56:41.300Z"
+  },
+  "Akshan_bottom": {
+    "winRate": 51.31,
+    "fetchedAt": "2026-03-13T16:56:41.362Z"
+  },
+  "Jayce_bottom": {
+    "winRate": 49.39,
+    "fetchedAt": "2026-03-13T16:56:41.398Z"
+  },
+  "TwistedFate_bottom": {
+    "winRate": 51.3,
+    "fetchedAt": "2026-03-13T16:56:41.450Z"
+  },
+  "Teemo_bottom": {
+    "winRate": 51.5,
+    "fetchedAt": "2026-03-13T16:56:41.453Z"
+  },
+  "Kayle_bottom": {
+    "winRate": 52.7,
+    "fetchedAt": "2026-03-13T16:56:41.461Z"
+  },
+  "Kindred_bottom": {
+    "winRate": 50.22,
+    "fetchedAt": "2026-03-13T16:56:42.145Z"
   }
 }

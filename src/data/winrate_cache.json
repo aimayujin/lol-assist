@@ -56154,5 +56154,75 @@
     "winRate": 53.32,
     "enemyWinRate": 46.68,
     "fetchedAt": "2026-03-12T21:48:34.659Z"
+  },
+  "Leona_vs_Darius_TOP": {
+    "winRate": 52.8,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:55:25.899Z"
+  },
+  "Ashe_vs_Quinn_ADC": {
+    "winRate": 50.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:45.281Z"
+  },
+  "Varus_vs_Quinn_ADC": {
+    "winRate": 49.6,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:45.339Z"
+  },
+  "Azir_vs_Quinn_ADC": {
+    "winRate": 39.4,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:45.443Z"
+  },
+  "Vayne_vs_Quinn_ADC": {
+    "winRate": 52.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:45.639Z"
+  },
+  "Ezreal_vs_Quinn_ADC": {
+    "winRate": 49.1,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:45.904Z"
+  },
+  "Akshan_vs_Quinn_ADC": {
+    "winRate": 58,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:45.940Z"
+  },
+  "Kalista_vs_Quinn_ADC": {
+    "winRate": 47.8,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:46.199Z"
+  },
+  "Kindred_vs_Quinn_ADC": {
+    "winRate": 50.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:46.434Z"
+  },
+  "Graves_vs_Quinn_ADC": {
+    "winRate": 50.5,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:46.490Z"
+  },
+  "Kaisa_vs_Quinn_ADC": {
+    "winRate": 49.9,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:46.634Z"
+  },
+  "Velkoz_vs_Quinn_ADC": {
+    "winRate": 51.3,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:46.690Z"
+  },
+  "Aphelios_vs_Quinn_ADC": {
+    "winRate": 48.2,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:46.717Z"
+  },
+  "Caitlyn_vs_Quinn_ADC": {
+    "winRate": 49.7,
+    "games": null,
+    "fetchedAt": "2026-03-13T16:56:47.268Z"
   }
 }
