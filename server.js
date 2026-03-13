@@ -140,17 +140,22 @@ const LANE_MAP = {
  */
 function httpsGetText(url) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, {
+    const urlObj = new URL(url);
+    const req = https.get({
+      hostname: urlObj.hostname,
+      path: urlObj.pathname + urlObj.search,
       headers: {
         'User-Agent':      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0.0.0 Safari/537.36',
         'Accept':          'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.9',
-        'Referer':         'https://lolalytics.com/',
+        'Referer':         'https://op.gg/',
       },
     }, (res) => {
-      // リダイレクト追従
+      // リダイレクト追従（相対パス対応）
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        resolve(httpsGetText(res.headers.location));
+        const loc = res.headers.location;
+        const fullUrl = loc.startsWith('http') ? loc : `https://${urlObj.hostname}${loc}`;
+        resolve(httpsGetText(fullUrl));
         return;
       }
       let raw = '';
