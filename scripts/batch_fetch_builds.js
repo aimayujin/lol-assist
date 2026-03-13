@@ -50,12 +50,13 @@ function httpsGet(url) {
 function extractBuild(html) {
   const result = { runes: [], items: [] };
 
-  // ルーン: perk/XXXX.png からIDを抽出（最初の6つ = keystone + 3 primary + 2 secondary）
-  const runeRe = /perk\/(\d+)\.png/g;
+  // ルーン: opacity-100クラスを持つ選択済みperkのみ抽出
+  // <img ... class="... opacity-100" src="...perk/XXXX.png"> パターン
+  const runeRe = /<img[^>]*class="[^"]*opacity-100[^"]*"[^>]*perk\/(\d+)\.png|<img[^>]*perk\/(\d+)\.png[^>]*class="[^"]*opacity-100[^"]*"/g;
   const runeIds = [];
   let m;
   while ((m = runeRe.exec(html)) !== null) {
-    const id = m[1];
+    const id = m[1] || m[2];
     if (!runeIds.includes(id)) runeIds.push(id);
     if (runeIds.length >= 6) break;
   }
@@ -85,8 +86,11 @@ function extractBuild(html) {
 }
 
 async function main() {
+  const forceAll = process.argv.includes('--force');
   let cache = {};
-  try { cache = JSON.parse(fs.readFileSync(CACHE_PATH, 'utf-8')); } catch {}
+  if (!forceAll) {
+    try { cache = JSON.parse(fs.readFileSync(CACHE_PATH, 'utf-8')); } catch {}
+  }
 
   const meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8'));
 
@@ -99,10 +103,10 @@ async function main() {
     }
   }
 
-  console.log(`=== ビルド情報一括取得 ===`);
+  console.log(`=== ビルド情報一括取得 ${forceAll ? '(全件強制再取得)' : ''} ===`);
   console.log(`全タスク数: ${tasks.length}`);
 
-  const toFetch = tasks.filter(t => !cache[t.key] || !cache[t.key].runes || cache[t.key].runes.length === 0);
+  const toFetch = forceAll ? tasks : tasks.filter(t => !cache[t.key] || !cache[t.key].runes || cache[t.key].runes.length === 0);
   console.log(`キャッシュ済み: ${tasks.length - toFetch.length}`);
   console.log(`取得対象: ${toFetch.length}`);
 
