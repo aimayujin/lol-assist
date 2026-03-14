@@ -906,7 +906,7 @@ async function refreshWinratesIfStale() {
         try {
           const wr = await fetchOverallWinrateFromOpGG(champ, lane);
           if (wr) {
-            overallWrCache[key] = { winRate: wr, fetchedAt: new Date().toISOString() };
+            overallWrCache[key] = wr;  // fetchOverallWinrateFromOpGG は { winRate, fetchedAt } を返す
             updated++;
           } else { failed++; }
         } catch { failed++; }
