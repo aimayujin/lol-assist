@@ -56874,5 +56874,120 @@
     "winRate": 52.21,
     "enemyWinRate": 47.79,
     "fetchedAt": "2026-03-14T02:52:05.430Z"
+  },
+  "Heimerdinger_vs_Thresh_SUP": {
+    "winRate": 50.7,
+    "games": null,
+    "fetchedAt": "2026-03-14T03:06:49.201Z"
+  },
+  "Sion_vs_Thresh_SUP": {
+    "winRate": 51,
+    "games": null,
+    "fetchedAt": "2026-03-14T03:06:49.223Z"
+  },
+  "Varus_vs_Thresh_SUP": {
+    "winRate": 48.5,
+    "games": null,
+    "fetchedAt": "2026-03-14T03:06:49.244Z"
+  },
+  "Amumu_vs_Thresh_SUP": {
+    "winRate": 52.4,
+    "games": null,
+    "fetchedAt": "2026-03-14T03:06:49.270Z"
+  },
+  "Ashe_vs_Thresh_SUP": {
+    "winRate": 50.8,
+    "games": null,
+    "fetchedAt": "2026-03-14T03:06:49.307Z"
+  },
+  "Hwei_vs_Thresh_SUP": {
+    "winRate": 51.9,
+    "games": null,
+    "fetchedAt": "2026-03-14T03:06:49.763Z"
+  },
+  "Malphite_vs_Thresh_SUP": {
+    "winRate": 51.1,
+    "games": null,
+    "fetchedAt": "2026-03-14T03:06:49.798Z"
+  },
+  "Malzahar_vs_Thresh_SUP": {
+    "winRate": 52,
+    "games": null,
+    "fetchedAt": "2026-03-14T03:06:49.841Z"
+  },
+  "Veigar_vs_Thresh_SUP": {
+    "winRate": 53.3,
+    "games": null,
+    "fetchedAt": "2026-03-14T03:06:49.860Z"
+  },
+  "Sett_vs_Thresh_SUP": {
+    "winRate": 51.3,
+    "games": null,
+    "fetchedAt": "2026-03-14T03:06:50.008Z"
+  },
+  "MonkeyKing_vs_Darius_TOP": {
+    "winRate": 48.74,
+    "enemyWinRate": 51.26,
+    "fetchedAt": "2026-03-14T03:09:38.468Z"
+  },
+  "MonkeyKing_vs_Jax_TOP": {
+    "winRate": 49.13,
+    "enemyWinRate": 50.87,
+    "fetchedAt": "2026-03-14T03:09:48.633Z"
+  },
+  "MonkeyKing_vs_Aatrox_TOP": {
+    "winRate": 44.12,
+    "enemyWinRate": 55.88,
+    "fetchedAt": "2026-03-14T03:09:55.207Z"
+  },
+  "MonkeyKing_vs_Gwen_TOP": {
+    "winRate": 47.88,
+    "enemyWinRate": 52.12,
+    "fetchedAt": "2026-03-14T03:09:58.993Z"
+  },
+  "MonkeyKing_vs_Malphite_TOP": {
+    "winRate": 55.45,
+    "enemyWinRate": 44.55,
+    "fetchedAt": "2026-03-14T03:10:00.768Z"
+  },
+  "MonkeyKing_vs_Ambessa_TOP": {
+    "winRate": 56.07,
+    "enemyWinRate": 43.93,
+    "fetchedAt": "2026-03-14T03:10:04.577Z"
+  },
+  "MonkeyKing_vs_Teemo_TOP": {
+    "winRate": 45.92,
+    "enemyWinRate": 54.08,
+    "fetchedAt": "2026-03-14T03:10:16.282Z"
+  },
+  "MonkeyKing_vs_Jayce_TOP": {
+    "winRate": 48.07,
+    "enemyWinRate": 51.93,
+    "fetchedAt": "2026-03-14T03:10:21.181Z"
+  },
+  "MonkeyKing_vs_Volibear_TOP": {
+    "winRate": 50.13,
+    "enemyWinRate": 49.87,
+    "fetchedAt": "2026-03-14T03:10:27.167Z"
+  },
+  "MonkeyKing_vs_Nasus_TOP": {
+    "winRate": 45.53,
+    "enemyWinRate": 54.47,
+    "fetchedAt": "2026-03-14T03:10:42.870Z"
+  },
+  "MonkeyKing_vs_DrMundo_TOP": {
+    "winRate": 43.76,
+    "enemyWinRate": 56.24,
+    "fetchedAt": "2026-03-14T03:10:44.554Z"
+  },
+  "MonkeyKing_vs_Pantheon_TOP": {
+    "winRate": 54.55,
+    "enemyWinRate": 45.45,
+    "fetchedAt": "2026-03-14T03:11:09.532Z"
+  },
+  "MonkeyKing_vs_Gragas_TOP": {
+    "winRate": 54.84,
+    "enemyWinRate": 45.16,
+    "fetchedAt": "2026-03-14T03:11:11.161Z"
   }
 }
