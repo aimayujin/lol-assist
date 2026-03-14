@@ -56689,5 +56689,190 @@
     "winRate": 55.8,
     "games": null,
     "fetchedAt": "2026-03-13T17:06:19.465Z"
+  },
+  "Skarner_vs_Vi_JG": {
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-14T02:46:05.210Z"
+  },
+  "Shyvana_vs_Vi_JG": {
+    "winRate": 48.81,
+    "enemyWinRate": 51.19,
+    "fetchedAt": "2026-03-14T02:46:05.237Z"
+  },
+  "Olaf_vs_Vi_JG": {
+    "winRate": 53,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:05.558Z"
+  },
+  "MonkeyKing_vs_Vi_JG": {
+    "winRate": 49.69,
+    "enemyWinRate": 50.31,
+    "fetchedAt": "2026-03-14T02:46:05.738Z"
+  },
+  "Sett_vs_Vi_JG": {
+    "winRate": 53.8,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:05.772Z"
+  },
+  "Chogath_vs_Vi_JG": {
+    "winRate": 52.8,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:05.791Z"
+  },
+  "Camille_vs_Vi_JG": {
+    "winRate": 50.9,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:05.817Z"
+  },
+  "Twitch_vs_Vi_JG": {
+    "winRate": 52.6,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:06.171Z"
+  },
+  "Gwen_vs_Vi_JG": {
+    "winRate": 50,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:06.212Z"
+  },
+  "Maokai_vs_Vi_JG": {
+    "winRate": 53.7,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:06.254Z"
+  },
+  "Poppy_vs_Vi_JG": {
+    "winRate": 54,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:06.272Z"
+  },
+  "Nautilus_vs_Vi_JG": {
+    "winRate": 51.9,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:06.298Z"
+  },
+  "Mordekaiser_vs_Vi_JG": {
+    "winRate": 54.8,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:06.404Z"
+  },
+  "Rumble_vs_Vi_JG": {
+    "winRate": 53.3,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:06.716Z"
+  },
+  "Leblanc_vs_Vi_JG": {
+    "winRate": 53.4,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:46:06.785Z"
+  },
+  "Annie_vs_Thresh_SUP": {
+    "winRate": 53.7,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:02.048Z"
+  },
+  "Annie_vs_Leona_SUP": {
+    "winRate": 53.7,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:04.593Z"
+  },
+  "Annie_vs_Nautilus_SUP": {
+    "winRate": 54.2,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:07.170Z"
+  },
+  "Annie_vs_Lulu_SUP": {
+    "winRate": 53.7,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:09.722Z"
+  },
+  "Annie_vs_Blitzcrank_SUP": {
+    "winRate": 52.8,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:12.293Z"
+  },
+  "Annie_vs_Morgana_SUP": {
+    "winRate": 53,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:14.762Z"
+  },
+  "Annie_vs_Pyke_SUP": {
+    "winRate": 54.4,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:18.127Z"
+  },
+  "Annie_vs_Nami_SUP": {
+    "winRate": 50.5,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:20.711Z"
+  },
+  "Annie_vs_Janna_SUP": {
+    "winRate": 49.9,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:31.109Z"
+  },
+  "Annie_vs_Soraka_SUP": {
+    "winRate": 51.8,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:33.816Z"
+  },
+  "Annie_vs_Senna_SUP": {
+    "winRate": 51.3,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:36.357Z"
+  },
+  "Annie_vs_Braum_SUP": {
+    "winRate": 53,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:39.442Z"
+  },
+  "Annie_vs_Rell_SUP": {
+    "winRate": 51.7,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:42.017Z"
+  },
+  "Annie_vs_Alistar_SUP": {
+    "winRate": 51.3,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:44.711Z"
+  },
+  "Annie_vs_Karma_SUP": {
+    "winRate": 53.1,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:47.256Z"
+  },
+  "Annie_vs_Rakan_SUP": {
+    "winRate": 57.4,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:49.855Z"
+  },
+  "Annie_vs_Milio_SUP": {
+    "winRate": 52.3,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:52.445Z"
+  },
+  "Annie_vs_Yuumi_SUP": {
+    "winRate": 53.1,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:54.967Z"
+  },
+  "Annie_vs_Xerath_SUP": {
+    "winRate": 48.84,
+    "enemyWinRate": 51.16,
+    "fetchedAt": "2026-03-14T02:51:57.209Z"
+  },
+  "Annie_vs_Zyra_SUP": {
+    "winRate": 50.4,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:51:59.686Z"
+  },
+  "Annie_vs_Bard_SUP": {
+    "winRate": 51.9,
+    "games": null,
+    "fetchedAt": "2026-03-14T02:52:03.124Z"
+  },
+  "Annie_vs_Lux_SUP": {
+    "winRate": 52.21,
+    "enemyWinRate": 47.79,
+    "fetchedAt": "2026-03-14T02:52:05.430Z"
   }
 }

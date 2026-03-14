@@ -28,8 +28,8 @@
     "fetchedAt": "2026-03-12T08:42:42.710Z"
   },
   "Annie_mid": {
-    "winRate": 52.39,
-    "fetchedAt": "2026-03-12T08:42:42.702Z"
+    "winRate": 52.45,
+    "fetchedAt": "2026-03-14T02:50:10.761Z"
   },
   "Galio_mid": {
     "winRate": 49.52,
@@ -1474,5 +1474,57 @@
   "Rengar_mid": {
     "winRate": 49.21,
     "fetchedAt": "2026-03-13T17:06:10.225Z"
+  },
+  "Viego_top": {
+    "winRate": 49.53,
+    "fetchedAt": "2026-03-14T02:44:16.569Z"
+  },
+  "Akshan_top": {
+    "winRate": 51.31,
+    "fetchedAt": "2026-03-14T02:44:16.623Z"
+  },
+  "Swain_top": {
+    "winRate": 48.64,
+    "fetchedAt": "2026-03-14T02:44:16.634Z"
+  },
+  "Udyr_top": {
+    "winRate": 51.25,
+    "fetchedAt": "2026-03-14T02:44:16.643Z"
+  },
+  "Shyvana_top": {
+    "winRate": 48.95,
+    "fetchedAt": "2026-03-14T02:44:16.657Z"
+  },
+  "MonkeyKing_top": {
+    "winRate": 50.78,
+    "fetchedAt": "2026-03-14T02:44:16.695Z"
+  },
+  "Briar_top": {
+    "winRate": 52.4,
+    "fetchedAt": "2026-03-14T02:44:16.810Z"
+  },
+  "Trundle_top": {
+    "winRate": 48.91,
+    "fetchedAt": "2026-03-14T02:44:16.849Z"
+  },
+  "Skarner_top": {
+    "winRate": 49.36,
+    "fetchedAt": "2026-03-14T02:44:16.878Z"
+  },
+  "Ryze_top": {
+    "winRate": 47.49,
+    "fetchedAt": "2026-03-14T02:44:16.885Z"
+  },
+  "Lissandra_top": {
+    "winRate": 50.7,
+    "fetchedAt": "2026-03-14T02:44:16.924Z"
+  },
+  "Lillia_top": {
+    "winRate": 50.23,
+    "fetchedAt": "2026-03-14T02:44:16.941Z"
+  },
+  "MonkeyKing_jungle": {
+    "winRate": 50.78,
+    "fetchedAt": "2026-03-14T02:46:03.651Z"
   }
 }
