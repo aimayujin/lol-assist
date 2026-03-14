@@ -841,9 +841,100 @@ async function refreshLaneChampsIfStale() {
   }
 }
 
+// =====================================================
+// 勝率キャッシュ自動更新（サーバーサイド）
+// =====================================================
+const WINRATE_REFRESH_INTERVAL = 24 * 60 * 60 * 1000; // 24時間ごと
+const WINRATE_FETCH_DELAY = 2000; // リクエスト間隔（ms）— レート制限対策
+let winrateRefreshRunning = false;
+
+/** 24時間以上古いエントリを持つマッチアップを再取得 */
+async function refreshWinratesIfStale() {
+  if (winrateRefreshRunning) {
+    console.log('[winrate-refresh] 既に実行中 → スキップ');
+    return;
+  }
+  // レーンチャンピオン一覧がなければスキップ
+  if (!laneChampsCache?.data) {
+    console.log('[winrate-refresh] レーンチャンピオンデータなし → スキップ');
+    return;
+  }
+
+  winrateRefreshRunning = true;
+  console.log('[winrate-refresh] 勝率キャッシュ更新開始');
+
+  const roles = Object.keys(laneChampsCache.data);
+  const ROLE_TO_LANE = { TOP:'top', JG:'jungle', MID:'mid', ADC:'bottom', SUP:'support' };
+  let updated = 0, skipped = 0, failed = 0;
+
+  try {
+    // 1. 全体勝率の更新
+    for (const role of roles) {
+      const lane = ROLE_TO_LANE[role];
+      const champs = laneChampsCache.data[role] || [];
+      for (const champ of champs) {
+        const key = `${champ}_${lane}`;
+        if (isCacheFresh(overallWrCache[key])) { skipped++; continue; }
+        try {
+          const wr = await fetchOverallWinrateFromOpGG(champ, lane);
+          if (wr) {
+            overallWrCache[key] = { winRate: wr, fetchedAt: new Date().toISOString() };
+            updated++;
+          } else { failed++; }
+        } catch { failed++; }
+        await new Promise(r => setTimeout(r, WINRATE_FETCH_DELAY));
+      }
+    }
+    saveOverallWrCache();
+    console.log(`[winrate-refresh] 全体勝率: 更新${updated}, スキップ${skipped}, 失敗${failed}`);
+
+    // 2. VSマッチアップ勝率の更新
+    updated = 0; skipped = 0; failed = 0;
+    for (const role of roles) {
+      const champs = laneChampsCache.data[role] || [];
+      for (const champ of champs) {
+        for (const vs of champs) {
+          if (champ === vs) continue;
+          const key = `${champ}_vs_${vs}_${role}`;
+          if (winrateCache[key] && winrateCache[key].winRate != null && isCacheFresh(winrateCache[key])) {
+            skipped++;
+            continue;
+          }
+          try {
+            const result = await fetchMatchupFromOpGG(champ, vs);
+            if (result && result.winRate != null) {
+              winrateCache[key] = result;
+              updated++;
+            } else { failed++; }
+          } catch { failed++; }
+          // 定期保存（100件ごと）
+          if ((updated + failed) % 100 === 0 && updated > 0) {
+            saveCache();
+          }
+          await new Promise(r => setTimeout(r, WINRATE_FETCH_DELAY));
+        }
+      }
+    }
+    saveCache();
+    console.log(`[winrate-refresh] VS勝率: 更新${updated}, スキップ${skipped}, 失敗${failed}`);
+    console.log('[winrate-refresh] 勝率キャッシュ更新完了');
+  } catch (e) {
+    console.error('[winrate-refresh] エラー:', e.message);
+    // エラーが起きても途中まで保存
+    saveCache();
+    saveOverallWrCache();
+  } finally {
+    winrateRefreshRunning = false;
+  }
+}
+
 function scheduleAutoRefresh() {
-  // 起動10秒後に初回チェック
+  // 起動10秒後にレーンチャンピオン更新
   setTimeout(() => refreshLaneChampsIfStale(), 10000);
-  // 以降6時間ごとにチェック
+  // 起動60秒後に勝率更新（レーンチャンピオン更新後に実行）
+  setTimeout(() => refreshWinratesIfStale(), 60000);
+  // レーンチャンピオン: 6時間ごと
   setInterval(() => refreshLaneChampsIfStale(), AUTO_REFRESH_INTERVAL);
+  // 勝率: 24時間ごと
+  setInterval(() => refreshWinratesIfStale(), WINRATE_REFRESH_INTERVAL);
 }
