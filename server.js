@@ -848,30 +848,58 @@ const WINRATE_REFRESH_INTERVAL = 24 * 60 * 60 * 1000; // 24時間ごと
 const WINRATE_FETCH_DELAY = 2000; // リクエスト間隔（ms）— レート制限対策
 let winrateRefreshRunning = false;
 
+/** champion_meta.json からロール別のチャンピオン一覧を構築 */
+function getRoleChampionsFromMeta() {
+  try {
+    const metaPath = path.join(ROOT, 'src/data/champion_meta.json');
+    const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+    const roleMap = { TOP:[], JG:[], MID:[], ADC:[], SUP:[] };
+    for (const [name, data] of Object.entries(meta)) {
+      for (const role of data.roles || []) {
+        if (roleMap[role]) roleMap[role].push(name);
+      }
+    }
+    return roleMap;
+  } catch (e) {
+    console.warn('[winrate-refresh] champion_meta.json 読み込み失敗:', e.message);
+    return null;
+  }
+}
+
 /** 24時間以上古いエントリを持つマッチアップを再取得 */
 async function refreshWinratesIfStale() {
   if (winrateRefreshRunning) {
     console.log('[winrate-refresh] 既に実行中 → スキップ');
     return;
   }
-  // レーンチャンピオン一覧がなければスキップ
-  if (!laneChampsCache?.data) {
-    console.log('[winrate-refresh] レーンチャンピオンデータなし → スキップ');
+
+  // champion_meta.json からロール別チャンピオンを取得（主要ピックのみに絞る）
+  const roleChamps = getRoleChampionsFromMeta();
+  if (!roleChamps) {
+    console.log('[winrate-refresh] チャンピオンメタデータなし → スキップ');
     return;
   }
 
   winrateRefreshRunning = true;
-  console.log('[winrate-refresh] 勝率キャッシュ更新開始');
-
-  const roles = Object.keys(laneChampsCache.data);
+  const roles = Object.keys(roleChamps);
   const ROLE_TO_LANE = { TOP:'top', JG:'jungle', MID:'mid', ADC:'bottom', SUP:'support' };
+
+  // 件数見積もり
+  let totalOverall = 0, totalVs = 0;
+  for (const role of roles) {
+    const n = roleChamps[role].length;
+    totalOverall += n;
+    totalVs += n * (n - 1);
+  }
+  console.log(`[winrate-refresh] 勝率キャッシュ更新開始 (全体${totalOverall}件 + VS${totalVs}件, 推定${Math.ceil((totalOverall + totalVs) * WINRATE_FETCH_DELAY / 3600000)}時間)`);
+
   let updated = 0, skipped = 0, failed = 0;
 
   try {
     // 1. 全体勝率の更新
     for (const role of roles) {
       const lane = ROLE_TO_LANE[role];
-      const champs = laneChampsCache.data[role] || [];
+      const champs = roleChamps[role];
       for (const champ of champs) {
         const key = `${champ}_${lane}`;
         if (isCacheFresh(overallWrCache[key])) { skipped++; continue; }
@@ -891,7 +919,8 @@ async function refreshWinratesIfStale() {
     // 2. VSマッチアップ勝率の更新
     updated = 0; skipped = 0; failed = 0;
     for (const role of roles) {
-      const champs = laneChampsCache.data[role] || [];
+      const champs = roleChamps[role];
+      console.log(`[winrate-refresh] ${role} (${champs.length}体) VS勝率更新中...`);
       for (const champ of champs) {
         for (const vs of champs) {
           if (champ === vs) continue;
@@ -910,6 +939,7 @@ async function refreshWinratesIfStale() {
           // 定期保存（100件ごと）
           if ((updated + failed) % 100 === 0 && updated > 0) {
             saveCache();
+            console.log(`[winrate-refresh]   ...${updated}件更新済み`);
           }
           await new Promise(r => setTimeout(r, WINRATE_FETCH_DELAY));
         }
