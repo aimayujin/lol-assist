@@ -698,6 +698,21 @@ async function handleRequest(req, res) {
       res.writeHead(200);
       res.end(JSON.stringify({ data, cached: false }));
     } catch (e) {
+      // フォールバック: champion_meta.json からロール別チャンピオン一覧を生成
+      try {
+        const metaPath = path.join(ROOT, 'src/data/champion_meta.json');
+        const meta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
+        const fallback = {};
+        for (const [champId, info] of Object.entries(meta)) {
+          if (info.roles && info.roles.includes(role)) fallback[champId] = 5.0;
+        }
+        if (Object.keys(fallback).length > 0) {
+          console.log(`[tierlist] ${role} LoLalytics失敗 → champion_meta.json から ${Object.keys(fallback).length} 件フォールバック`);
+          res.writeHead(200);
+          res.end(JSON.stringify({ data: fallback, cached: false, fallback: true }));
+          return;
+        }
+      } catch {}
       console.error(`[tierlist] ${role} 失敗: ${e.message}`);
       res.writeHead(200);
       res.end(JSON.stringify({ data: {}, error: e.message, cached: false }));
