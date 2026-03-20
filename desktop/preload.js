@@ -31,4 +31,23 @@ contextBridge.exposeInMainWorld('lcuBridge', {
     ipcRenderer.on('gameflow-phase', handler);
     return () => ipcRenderer.removeListener('gameflow-phase', handler);
   },
+
+  // ランク情報取得
+  getTeamRanks: (session) => ipcRenderer.invoke('get-team-ranks', session),
+
+  // 戦績取得
+  getTeamMatchHistory: (session, count) => ipcRenderer.invoke('get-team-match-history', session, count),
+
+  // データ自動更新
+  checkUpdates: () => ipcRenderer.invoke('check-updates'),
+  onDataUpdated: (callback) => {
+    const handler = (_event, data) => callback(data);
+    ipcRenderer.on('data-updated', handler);
+    return () => ipcRenderer.removeListener('data-updated', handler);
+  },
+  onUpdateCheckDone: (callback) => {
+    const handler = (_event, data) => callback(data);
+    ipcRenderer.on('update-check-done', handler);
+    return () => ipcRenderer.removeListener('update-check-done', handler);
+  },
 });

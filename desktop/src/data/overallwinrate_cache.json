@@ -1,971 +1,971 @@
 {
   "Akali_mid": {
-    "winRate": 50.44,
-    "fetchedAt": "2026-03-20T15:53:16.979Z"
+    "winRate": 50.26,
+    "fetchedAt": "2026-03-15T13:38:08.748Z"
   },
   "Azir_mid": {
-    "winRate": 46.16,
-    "fetchedAt": "2026-03-20T15:55:05.209Z"
+    "winRate": 43.42,
+    "fetchedAt": "2026-03-15T13:40:01.681Z"
   },
   "Ekko_mid": {
-    "winRate": 51.22,
-    "fetchedAt": "2026-03-20T15:54:43.199Z"
+    "winRate": 50.84,
+    "fetchedAt": "2026-03-15T13:39:38.400Z"
   },
   "Ahri_mid": {
-    "winRate": 51.1,
-    "fetchedAt": "2026-03-20T15:53:13.937Z"
+    "winRate": 52.32,
+    "fetchedAt": "2026-03-15T13:38:06.635Z"
   },
   "Anivia_mid": {
-    "winRate": 52.51,
-    "fetchedAt": "2026-03-20T15:55:07.327Z"
+    "winRate": 52.24,
+    "fetchedAt": "2026-03-15T13:40:03.875Z"
   },
   "Orianna_mid": {
-    "winRate": 48.56,
-    "fetchedAt": "2026-03-20T15:53:45.850Z"
+    "winRate": 47.66,
+    "fetchedAt": "2026-03-15T13:38:38.016Z"
   },
   "Cassiopeia_mid": {
-    "winRate": 50.02,
-    "fetchedAt": "2026-03-20T15:55:11.729Z"
+    "winRate": 50.22,
+    "fetchedAt": "2026-03-15T13:40:08.385Z"
   },
   "Annie_mid": {
-    "winRate": 52.34,
-    "fetchedAt": "2026-03-20T15:53:19.128Z"
+    "winRate": 52.43,
+    "fetchedAt": "2026-03-15T13:38:10.951Z"
   },
   "Galio_mid": {
-    "winRate": 49.54,
-    "fetchedAt": "2026-03-20T15:54:52.010Z"
+    "winRate": 49.6,
+    "fetchedAt": "2026-03-15T13:39:47.091Z"
   },
   "Kassadin_mid": {
-    "winRate": 49.64,
-    "fetchedAt": "2026-03-20T15:54:41.053Z"
+    "winRate": 50.51,
+    "fetchedAt": "2026-03-15T13:39:36.191Z"
   },
   "Qiyana_mid": {
-    "winRate": 50.61,
-    "fetchedAt": "2026-03-20T15:53:50.217Z"
+    "winRate": 50.51,
+    "fetchedAt": "2026-03-15T13:38:42.397Z"
   },
   "Syndra_mid": {
-    "winRate": 49.22,
-    "fetchedAt": "2026-03-20T15:53:54.574Z"
+    "winRate": 49.77,
+    "fetchedAt": "2026-03-15T13:38:46.667Z"
   },
   "Sylas_mid": {
-    "winRate": 50.34,
-    "fetchedAt": "2026-03-20T15:54:38.255Z"
+    "winRate": 49.37,
+    "fetchedAt": "2026-03-15T13:39:34.038Z"
   },
   "Zed_mid": {
-    "winRate": 49.93,
-    "fetchedAt": "2026-03-20T15:54:14.202Z"
+    "winRate": 50.4,
+    "fetchedAt": "2026-03-15T13:39:07.597Z"
   },
   "TwistedFate_mid": {
-    "winRate": 51.37,
-    "fetchedAt": "2026-03-20T15:53:59.008Z"
+    "winRate": 51.28,
+    "fetchedAt": "2026-03-15T13:38:51.493Z"
   },
   "Hwei_mid": {
-    "winRate": 51.25,
-    "fetchedAt": "2026-03-20T15:55:22.831Z"
+    "winRate": 50.49,
+    "fetchedAt": "2026-03-15T13:40:20.007Z"
   },
   "Fizz_mid": {
-    "winRate": 51.36,
-    "fetchedAt": "2026-03-20T15:53:25.788Z"
+    "winRate": 51.62,
+    "fetchedAt": "2026-03-15T13:38:18.289Z"
   },
   "Veigar_mid": {
-    "winRate": 51.41,
-    "fetchedAt": "2026-03-20T15:54:01.170Z"
+    "winRate": 52.22,
+    "fetchedAt": "2026-03-15T13:38:53.785Z"
   },
   "Malzahar_mid": {
-    "winRate": 50.81,
-    "fetchedAt": "2026-03-20T15:54:56.495Z"
+    "winRate": 51.32,
+    "fetchedAt": "2026-03-15T13:39:51.914Z"
   },
   "Mel_mid": {
-    "winRate": 48.34,
-    "fetchedAt": "2026-03-20T15:54:25.006Z"
+    "winRate": 49.21,
+    "fetchedAt": "2026-03-15T13:39:19.245Z"
   },
   "Yasuo_mid": {
-    "winRate": 49.93,
-    "fetchedAt": "2026-03-20T15:54:09.880Z"
+    "winRate": 49.83,
+    "fetchedAt": "2026-03-15T13:39:02.982Z"
   },
   "Katarina_mid": {
-    "winRate": 50.85,
-    "fetchedAt": "2026-03-20T15:53:34.539Z"
+    "winRate": 51.24,
+    "fetchedAt": "2026-03-15T13:38:27.042Z"
   },
   "Yone_mid": {
-    "winRate": 49.97,
-    "fetchedAt": "2026-03-20T15:54:12.038Z"
+    "winRate": 48.74,
+    "fetchedAt": "2026-03-15T13:39:05.407Z"
   },
   "Viktor_mid": {
-    "winRate": 50.77,
-    "fetchedAt": "2026-03-20T15:54:03.443Z"
+    "winRate": 51.19,
+    "fetchedAt": "2026-03-15T13:38:55.910Z"
   },
   "Lux_mid": {
-    "winRate": 50.27,
-    "fetchedAt": "2026-03-20T15:53:39.384Z"
+    "winRate": 49.82,
+    "fetchedAt": "2026-03-15T13:38:31.400Z"
   },
   "Lissandra_mid": {
-    "winRate": 52.18,
-    "fetchedAt": "2026-03-20T15:54:54.328Z"
+    "winRate": 50.78,
+    "fetchedAt": "2026-03-15T13:39:49.281Z"
   },
   "Corki_mid": {
-    "winRate": 48.91,
-    "fetchedAt": "2026-03-20T15:54:47.629Z"
+    "winRate": 49.19,
+    "fetchedAt": "2026-03-15T13:39:42.761Z"
   },
   "Ryze_mid": {
-    "winRate": 47.48,
-    "fetchedAt": "2026-03-20T15:55:03.003Z"
+    "winRate": 47.56,
+    "fetchedAt": "2026-03-15T13:39:59.478Z"
   },
   "Irelia_mid": {
-    "winRate": 50.7,
-    "fetchedAt": "2026-03-20T15:53:27.983Z"
+    "winRate": 51.11,
+    "fetchedAt": "2026-03-15T13:38:20.432Z"
   },
   "Vex_mid": {
-    "winRate": 51.98,
-    "fetchedAt": "2026-03-20T15:55:38.230Z"
+    "winRate": 52.39,
+    "fetchedAt": "2026-03-15T13:40:34.561Z"
   },
   "Diana_mid": {
-    "winRate": 51.07,
-    "fetchedAt": "2026-03-20T15:53:23.664Z"
+    "winRate": 50.29,
+    "fetchedAt": "2026-03-15T13:38:15.390Z"
   },
   "AurelionSol_mid": {
-    "winRate": 51.99,
-    "fetchedAt": "2026-03-20T15:55:13.953Z"
+    "winRate": 52.24,
+    "fetchedAt": "2026-03-15T13:40:10.592Z"
   },
   "Neeko_mid": {
-    "winRate": 49.95,
-    "fetchedAt": "2026-03-20T15:55:42.608Z"
+    "winRate": 49.22,
+    "fetchedAt": "2026-03-15T13:40:39.958Z"
   },
   "Leblanc_mid": {
     "winRate": 50.26,
     "fetchedAt": "2026-03-14T03:37:28.002Z"
   },
   "Zoe_mid": {
-    "winRate": 51.79,
-    "fetchedAt": "2026-03-20T15:54:20.685Z"
+    "winRate": 51.38,
+    "fetchedAt": "2026-03-15T13:39:14.640Z"
   },
   "Aatrox_top": {
-    "winRate": 50.15,
-    "fetchedAt": "2026-03-20T15:48:16.666Z"
+    "winRate": 50.24,
+    "fetchedAt": "2026-03-15T13:33:07.275Z"
   },
   "Ambessa_top": {
-    "winRate": 49.38,
-    "fetchedAt": "2026-03-20T15:50:34.770Z"
+    "winRate": 49.48,
+    "fetchedAt": "2026-03-15T13:35:24.904Z"
   },
   "KSante_top": {
-    "winRate": 46.9,
-    "fetchedAt": "2026-03-20T15:50:30.327Z"
+    "winRate": 47.52,
+    "fetchedAt": "2026-03-15T13:35:20.521Z"
   },
   "Urgot_top": {
-    "winRate": 52.09,
-    "fetchedAt": "2026-03-20T15:49:03.760Z"
+    "winRate": 51.84,
+    "fetchedAt": "2026-03-15T13:33:56.374Z"
   },
   "Garen_top": {
-    "winRate": 52.08,
-    "fetchedAt": "2026-03-20T15:48:27.472Z"
+    "winRate": 52.35,
+    "fetchedAt": "2026-03-15T13:33:19.699Z"
   },
   "Illaoi_top": {
-    "winRate": 51.71,
-    "fetchedAt": "2026-03-20T15:49:37.351Z"
+    "winRate": 50.74,
+    "fetchedAt": "2026-03-15T13:34:26.988Z"
   },
   "Camille_top": {
-    "winRate": 51.02,
-    "fetchedAt": "2026-03-20T15:48:21.001Z"
+    "winRate": 51.4,
+    "fetchedAt": "2026-03-15T13:33:12.177Z"
   },
   "Kled_top": {
-    "winRate": 52.27,
-    "fetchedAt": "2026-03-20T15:48:36.195Z"
+    "winRate": 51.74,
+    "fetchedAt": "2026-03-15T13:33:28.387Z"
   },
   "Jax_top": {
-    "winRate": 50.37,
-    "fetchedAt": "2026-03-20T15:48:31.795Z"
+    "winRate": 50.19,
+    "fetchedAt": "2026-03-15T13:33:23.977Z"
   },
   "Irelia_top": {
-    "winRate": 50.7,
-    "fetchedAt": "2026-03-20T15:48:29.587Z"
+    "winRate": 51.11,
+    "fetchedAt": "2026-03-15T13:33:21.859Z"
   },
   "Sett_top": {
-    "winRate": 51.44,
-    "fetchedAt": "2026-03-20T15:49:55.393Z"
+    "winRate": 51.15,
+    "fetchedAt": "2026-03-15T13:34:44.578Z"
   },
   "Singed_top": {
-    "winRate": 53.46,
-    "fetchedAt": "2026-03-20T15:49:48.313Z"
+    "winRate": 53.11,
+    "fetchedAt": "2026-03-15T13:34:37.812Z"
   },
   "Darius_top": {
-    "winRate": 50.18,
-    "fetchedAt": "2026-03-20T15:48:23.150Z"
+    "winRate": 50.28,
+    "fetchedAt": "2026-03-15T13:33:14.289Z"
   },
   "Teemo_top": {
-    "winRate": 51.08,
-    "fetchedAt": "2026-03-20T15:48:57.219Z"
+    "winRate": 51.68,
+    "fetchedAt": "2026-03-15T13:33:49.806Z"
   },
   "Chogath_top": {
-    "winRate": 51.19,
-    "fetchedAt": "2026-03-20T15:49:30.731Z"
+    "winRate": 51.07,
+    "fetchedAt": "2026-03-15T13:34:20.436Z"
   },
   "Gnar_top": {
-    "winRate": 50.99,
-    "fetchedAt": "2026-03-20T15:50:03.999Z"
+    "winRate": 50.03,
+    "fetchedAt": "2026-03-15T13:34:53.313Z"
   },
   "Tryndamere_top": {
-    "winRate": 50.74,
-    "fetchedAt": "2026-03-20T15:49:01.614Z"
+    "winRate": 49.92,
+    "fetchedAt": "2026-03-15T13:33:54.207Z"
   },
   "Kennen_top": {
-    "winRate": 50.82,
-    "fetchedAt": "2026-03-20T15:50:06.154Z"
+    "winRate": 51.28,
+    "fetchedAt": "2026-03-15T13:34:55.531Z"
   },
   "Pantheon_top": {
-    "winRate": 48.69,
-    "fetchedAt": "2026-03-20T15:48:43.392Z"
+    "winRate": 48.41,
+    "fetchedAt": "2026-03-15T13:33:34.991Z"
   },
   "Nasus_top": {
-    "winRate": 50.71,
-    "fetchedAt": "2026-03-20T15:49:28.427Z"
+    "winRate": 51.34,
+    "fetchedAt": "2026-03-15T13:34:18.219Z"
   },
   "Poppy_top": {
-    "winRate": 50.6,
-    "fetchedAt": "2026-03-20T15:50:01.853Z"
+    "winRate": 50.85,
+    "fetchedAt": "2026-03-15T13:34:51.183Z"
   },
   "Malphite_top": {
-    "winRate": 51.37,
-    "fetchedAt": "2026-03-20T15:48:39.093Z"
+    "winRate": 51.57,
+    "fetchedAt": "2026-03-15T13:33:30.599Z"
   },
   "Mordekaiser_top": {
-    "winRate": 50.73,
-    "fetchedAt": "2026-03-20T15:49:53.269Z"
+    "winRate": 51.1,
+    "fetchedAt": "2026-03-15T13:34:42.382Z"
   },
   "Volibear_top": {
-    "winRate": 50,
-    "fetchedAt": "2026-03-20T15:49:10.822Z"
+    "winRate": 48.98,
+    "fetchedAt": "2026-03-15T13:34:02.922Z"
   },
   "Fiora_top": {
-    "winRate": 50.44,
-    "fetchedAt": "2026-03-20T15:48:25.292Z"
+    "winRate": 50.54,
+    "fetchedAt": "2026-03-15T13:33:16.490Z"
   },
   "Rumble_top": {
-    "winRate": 49.99,
-    "fetchedAt": "2026-03-20T15:49:43.932Z"
+    "winRate": 49.55,
+    "fetchedAt": "2026-03-15T13:34:33.436Z"
   },
   "Olaf_top": {
-    "winRate": 52.44,
-    "fetchedAt": "2026-03-20T15:48:41.252Z"
+    "winRate": 51.72,
+    "fetchedAt": "2026-03-15T13:33:32.822Z"
   },
   "Renekton_top": {
-    "winRate": 49.94,
-    "fetchedAt": "2026-03-20T15:48:47.703Z"
+    "winRate": 50.05,
+    "fetchedAt": "2026-03-15T13:33:40.105Z"
   },
   "Riven_top": {
-    "winRate": 50.44,
-    "fetchedAt": "2026-03-20T15:48:50.663Z"
+    "winRate": 50.71,
+    "fetchedAt": "2026-03-15T13:33:42.526Z"
   },
   "Yasuo_top": {
-    "winRate": 49.93,
-    "fetchedAt": "2026-03-20T15:49:15.267Z"
+    "winRate": 49.83,
+    "fetchedAt": "2026-03-15T13:34:07.408Z"
   },
   "Gragas_top": {
-    "winRate": 50.1,
-    "fetchedAt": "2026-03-20T15:49:39.613Z"
+    "winRate": 49.97,
+    "fetchedAt": "2026-03-15T13:34:29.151Z"
   },
   "Yone_top": {
-    "winRate": 49.97,
-    "fetchedAt": "2026-03-20T15:49:19.068Z"
+    "winRate": 48.74,
+    "fetchedAt": "2026-03-15T13:34:09.576Z"
   },
   "Maokai_top": {
-    "winRate": 52.5,
-    "fetchedAt": "2026-03-20T15:50:43.474Z"
+    "winRate": 51.96,
+    "fetchedAt": "2026-03-15T13:35:34.778Z"
   },
   "Warwick_top": {
-    "winRate": 50.89,
-    "fetchedAt": "2026-03-20T15:49:13.024Z"
+    "winRate": 51.35,
+    "fetchedAt": "2026-03-15T13:34:05.236Z"
   },
   "DrMundo_top": {
-    "winRate": 52.44,
-    "fetchedAt": "2026-03-20T15:49:35.202Z"
+    "winRate": 50.28,
+    "fetchedAt": "2026-03-15T13:34:24.803Z"
   },
   "Ashe_bottom": {
-    "winRate": 52.23,
-    "fetchedAt": "2026-03-20T15:55:44.892Z"
+    "winRate": 51.88,
+    "fetchedAt": "2026-03-15T13:40:42.162Z"
   },
   "Varus_bottom": {
-    "winRate": 48.71,
-    "fetchedAt": "2026-03-20T15:56:36.452Z"
+    "winRate": 48.16,
+    "fetchedAt": "2026-03-15T13:41:34.540Z"
   },
   "Aphelios_bottom": {
-    "winRate": 48.66,
-    "fetchedAt": "2026-03-20T15:56:43.505Z"
+    "winRate": 49.27,
+    "fetchedAt": "2026-03-15T13:41:42.193Z"
   },
   "Vayne_bottom": {
-    "winRate": 51.78,
-    "fetchedAt": "2026-03-20T15:56:21.441Z"
+    "winRate": 51.32,
+    "fetchedAt": "2026-03-15T13:41:19.356Z"
   },
   "Caitlyn_bottom": {
-    "winRate": 50.08,
-    "fetchedAt": "2026-03-20T15:55:49.471Z"
+    "winRate": 50.37,
+    "fetchedAt": "2026-03-15T13:40:46.664Z"
   },
   "Ezreal_bottom": {
-    "winRate": 48.59,
-    "fetchedAt": "2026-03-20T15:55:56.074Z"
+    "winRate": 48.66,
+    "fetchedAt": "2026-03-15T13:40:54.514Z"
   },
   "KogMaw_bottom": {
-    "winRate": 52.84,
-    "fetchedAt": "2026-03-20T15:56:41.312Z"
+    "winRate": 53.49,
+    "fetchedAt": "2026-03-15T13:41:38.964Z"
   },
   "Corki_bottom": {
-    "winRate": 48.91,
-    "fetchedAt": "2026-03-20T15:56:38.659Z"
+    "winRate": 49.19,
+    "fetchedAt": "2026-03-15T13:41:36.784Z"
   },
   "Kalista_bottom": {
-    "winRate": 46.18,
-    "fetchedAt": "2026-03-20T15:56:03.051Z"
+    "winRate": 47.15,
+    "fetchedAt": "2026-03-15T13:41:01.100Z"
   },
   "Samira_bottom": {
-    "winRate": 51.84,
-    "fetchedAt": "2026-03-20T15:56:09.570Z"
+    "winRate": 51.95,
+    "fetchedAt": "2026-03-15T13:41:08.389Z"
   },
   "Sivir_bottom": {
-    "winRate": 50.5,
-    "fetchedAt": "2026-03-20T15:56:14.834Z"
+    "winRate": 50.58,
+    "fetchedAt": "2026-03-15T13:41:12.747Z"
   },
   "Jinx_bottom": {
-    "winRate": 51.83,
-    "fetchedAt": "2026-03-20T15:55:58.183Z"
+    "winRate": 51.92,
+    "fetchedAt": "2026-03-15T13:40:56.639Z"
   },
   "Smolder_bottom": {
-    "winRate": 50.9,
-    "fetchedAt": "2026-03-20T15:56:54.540Z"
+    "winRate": 51.46,
+    "fetchedAt": "2026-03-15T13:41:53.389Z"
   },
   "Zeri_bottom": {
-    "winRate": 50.11,
-    "fetchedAt": "2026-03-20T15:56:45.699Z"
+    "winRate": 50.22,
+    "fetchedAt": "2026-03-15T13:41:44.433Z"
   },
   "Draven_bottom": {
-    "winRate": 50.46,
-    "fetchedAt": "2026-03-20T15:55:51.606Z"
+    "winRate": 50.81,
+    "fetchedAt": "2026-03-15T13:40:48.846Z"
   },
   "Tristana_bottom": {
-    "winRate": 51,
-    "fetchedAt": "2026-03-20T15:56:17.120Z"
+    "winRate": 50.69,
+    "fetchedAt": "2026-03-15T13:41:14.988Z"
   },
   "MissFortune_bottom": {
-    "winRate": 51.04,
-    "fetchedAt": "2026-03-20T15:56:07.402Z"
+    "winRate": 51.78,
+    "fetchedAt": "2026-03-15T13:41:06.216Z"
   },
   "Twitch_bottom": {
-    "winRate": 51.01,
-    "fetchedAt": "2026-03-20T15:56:19.257Z"
+    "winRate": 50.93,
+    "fetchedAt": "2026-03-15T13:41:17.206Z"
   },
   "Lucian_bottom": {
     "winRate": 49.73,
-    "fetchedAt": "2026-03-20T15:56:05.226Z"
+    "fetchedAt": "2026-03-15T13:41:03.316Z"
   },
   "Kaisa_bottom": {
-    "winRate": 49.27,
-    "fetchedAt": "2026-03-20T15:56:00.881Z"
+    "winRate": 49.29,
+    "fetchedAt": "2026-03-15T13:40:58.841Z"
   },
   "Nilah_bottom": {
-    "winRate": 54.42,
-    "fetchedAt": "2026-03-20T15:56:47.927Z"
+    "winRate": 53.18,
+    "fetchedAt": "2026-03-15T13:41:46.683Z"
   },
   "Senna_bottom": {
-    "winRate": 50.52,
-    "fetchedAt": "2026-03-20T15:56:11.689Z"
+    "winRate": 50.67,
+    "fetchedAt": "2026-03-15T13:41:10.540Z"
   },
   "Veigar_bottom": {
-    "winRate": 51.41,
-    "fetchedAt": "2026-03-20T15:56:23.596Z"
+    "winRate": 52.22,
+    "fetchedAt": "2026-03-15T13:41:21.606Z"
   },
   "Xayah_bottom": {
-    "winRate": 52.38,
-    "fetchedAt": "2026-03-20T15:56:25.736Z"
+    "winRate": 51.87,
+    "fetchedAt": "2026-03-15T13:41:23.773Z"
   },
   "Jhin_bottom": {
-    "winRate": 50.26,
-    "fetchedAt": "2026-03-20T15:56:34.302Z"
+    "winRate": 50.54,
+    "fetchedAt": "2026-03-15T13:41:32.404Z"
   },
   "Seraphine_mid": {
-    "winRate": 51.26,
-    "fetchedAt": "2026-03-20T15:53:52.373Z"
+    "winRate": 51.57,
+    "fetchedAt": "2026-03-15T13:38:44.506Z"
   },
   "Amumu_jungle": {
-    "winRate": 51.22,
-    "fetchedAt": "2026-03-20T15:50:47.814Z"
+    "winRate": 51.38,
+    "fetchedAt": "2026-03-15T13:35:39.125Z"
   },
   "Viego_jungle": {
-    "winRate": 49.6,
-    "fetchedAt": "2026-03-20T15:52:50.087Z"
+    "winRate": 49.48,
+    "fetchedAt": "2026-03-15T13:37:42.861Z"
   },
   "Evelynn_jungle": {
-    "winRate": 52.62,
-    "fetchedAt": "2026-03-20T15:52:32.531Z"
+    "winRate": 51.56,
+    "fetchedAt": "2026-03-15T13:37:24.561Z"
   },
   "Vi_jungle": {
-    "winRate": 49.77,
-    "fetchedAt": "2026-03-20T15:51:46.825Z"
+    "winRate": 50.24,
+    "fetchedAt": "2026-03-15T13:36:40.524Z"
   },
   "Elise_jungle": {
-    "winRate": 51.72,
-    "fetchedAt": "2026-03-20T15:52:43.532Z"
+    "winRate": 51.19,
+    "fetchedAt": "2026-03-15T13:37:35.515Z"
   },
   "Khazix_jungle": {
-    "winRate": 49.21,
-    "fetchedAt": "2026-03-20T15:51:09.775Z"
+    "winRate": 49.26,
+    "fetchedAt": "2026-03-15T13:36:03.024Z"
   },
   "Ivern_jungle": {
-    "winRate": 52.08,
-    "fetchedAt": "2026-03-20T15:52:45.730Z"
+    "winRate": 52.78,
+    "fetchedAt": "2026-03-15T13:37:38.201Z"
   },
   "Kindred_jungle": {
-    "winRate": 51.28,
-    "fetchedAt": "2026-03-20T15:51:11.973Z"
+    "winRate": 50.35,
+    "fetchedAt": "2026-03-15T13:36:05.224Z"
   },
   "Kayn_jungle": {
-    "winRate": 50.41,
-    "fetchedAt": "2026-03-20T15:52:34.813Z"
+    "winRate": 50.93,
+    "fetchedAt": "2026-03-15T13:37:26.734Z"
   },
   "Zac_jungle": {
-    "winRate": 51.26,
-    "fetchedAt": "2026-03-20T15:51:56.245Z"
+    "winRate": 50.42,
+    "fetchedAt": "2026-03-15T13:36:49.508Z"
   },
   "JarvanIV_jungle": {
-    "winRate": 50.86,
-    "fetchedAt": "2026-03-20T15:51:05.366Z"
+    "winRate": 50.69,
+    "fetchedAt": "2026-03-15T13:35:58.559Z"
   },
   "Graves_jungle": {
-    "winRate": 51.28,
-    "fetchedAt": "2026-03-20T15:51:00.925Z"
+    "winRate": 50.9,
+    "fetchedAt": "2026-03-15T13:35:53.516Z"
   },
   "XinZhao_jungle": {
-    "winRate": 51.22,
-    "fetchedAt": "2026-03-20T15:51:54.040Z"
+    "winRate": 51.52,
+    "fetchedAt": "2026-03-15T13:36:47.313Z"
   },
   "Sejuani_jungle": {
-    "winRate": 50.51,
-    "fetchedAt": "2026-03-20T15:51:31.572Z"
+    "winRate": 50.99,
+    "fetchedAt": "2026-03-15T13:36:25.262Z"
   },
   "Shaco_jungle": {
-    "winRate": 51.18,
-    "fetchedAt": "2026-03-20T15:51:33.719Z"
+    "winRate": 50.79,
+    "fetchedAt": "2026-03-15T13:36:27.394Z"
   },
   "Diana_jungle": {
-    "winRate": 51.07,
-    "fetchedAt": "2026-03-20T15:50:56.544Z"
+    "winRate": 50.29,
+    "fetchedAt": "2026-03-15T13:35:49.184Z"
   },
   "Trundle_jungle": {
-    "winRate": 48.84,
-    "fetchedAt": "2026-03-20T15:51:42.418Z"
+    "winRate": 48.97,
+    "fetchedAt": "2026-03-15T13:36:36.117Z"
   },
   "Nidalee_jungle": {
-    "winRate": 51.25,
-    "fetchedAt": "2026-03-20T15:51:20.626Z"
+    "winRate": 50.23,
+    "fetchedAt": "2026-03-15T13:36:14.076Z"
   },
   "Nocturne_jungle": {
-    "winRate": 51.69,
-    "fetchedAt": "2026-03-20T15:51:22.744Z"
+    "winRate": 51.93,
+    "fetchedAt": "2026-03-15T13:36:16.566Z"
   },
   "Briar_jungle": {
-    "winRate": 51.96,
-    "fetchedAt": "2026-03-20T15:52:57.195Z"
+    "winRate": 52.3,
+    "fetchedAt": "2026-03-15T13:37:49.537Z"
   },
   "Fiddlesticks_jungle": {
-    "winRate": 51.57,
-    "fetchedAt": "2026-03-20T15:52:36.970Z"
+    "winRate": 52.36,
+    "fetchedAt": "2026-03-15T13:37:28.916Z"
   },
   "MasterYi_jungle": {
-    "winRate": 51.53,
-    "fetchedAt": "2026-03-20T15:51:16.298Z"
+    "winRate": 51.46,
+    "fetchedAt": "2026-03-15T13:36:09.564Z"
   },
   "Nunu_jungle": {
-    "winRate": 52.78,
-    "fetchedAt": "2026-03-20T15:51:24.893Z"
+    "winRate": 52.4,
+    "fetchedAt": "2026-03-15T13:36:18.799Z"
   },
   "Hecarim_jungle": {
-    "winRate": 50.47,
-    "fetchedAt": "2026-03-20T15:51:03.185Z"
+    "winRate": 50.05,
+    "fetchedAt": "2026-03-15T13:35:56.182Z"
   },
   "RekSai_jungle": {
-    "winRate": 52.72,
-    "fetchedAt": "2026-03-20T15:52:23.692Z"
+    "winRate": 52.6,
+    "fetchedAt": "2026-03-15T13:37:15.713Z"
   },
   "Udyr_jungle": {
-    "winRate": 51.36,
-    "fetchedAt": "2026-03-20T15:52:39.108Z"
+    "winRate": 51.2,
+    "fetchedAt": "2026-03-15T13:37:31.129Z"
   },
   "Rammus_jungle": {
-    "winRate": 53.08,
-    "fetchedAt": "2026-03-20T15:53:03.712Z"
+    "winRate": 52.5,
+    "fetchedAt": "2026-03-15T13:37:57.060Z"
   },
   "Warwick_jungle": {
-    "winRate": 50.89,
-    "fetchedAt": "2026-03-20T15:51:51.853Z"
+    "winRate": 51.35,
+    "fetchedAt": "2026-03-15T13:36:45.012Z"
   },
   "Ekko_jungle": {
-    "winRate": 51.22,
-    "fetchedAt": "2026-03-20T15:52:28.030Z"
+    "winRate": 50.84,
+    "fetchedAt": "2026-03-15T13:37:20.121Z"
   },
   "LeeSin_jungle": {
-    "winRate": 50.89,
-    "fetchedAt": "2026-03-20T15:51:14.130Z"
+    "winRate": 50.42,
+    "fetchedAt": "2026-03-15T13:36:07.386Z"
   },
   "Sylas_jungle": {
-    "winRate": 50.34,
-    "fetchedAt": "2026-03-20T15:52:25.833Z"
+    "winRate": 49.37,
+    "fetchedAt": "2026-03-15T13:37:17.954Z"
   },
   "Lillia_jungle": {
-    "winRate": 50.97,
-    "fetchedAt": "2026-03-20T15:52:47.954Z"
+    "winRate": 50.23,
+    "fetchedAt": "2026-03-15T13:37:40.628Z"
   },
   "Taliyah_jungle": {
-    "winRate": 47.63,
-    "fetchedAt": "2026-03-20T15:52:41.360Z"
+    "winRate": 48.39,
+    "fetchedAt": "2026-03-15T13:37:33.310Z"
   },
   "Shyvana_jungle": {
     "winRate": 48.95,
     "fetchedAt": "2026-03-14T03:35:45.200Z"
   },
   "Vayne_top": {
-    "winRate": 51.78,
-    "fetchedAt": "2026-03-20T15:49:06.481Z"
+    "winRate": 51.32,
+    "fetchedAt": "2026-03-15T13:33:58.555Z"
   },
   "Shen_top": {
-    "winRate": 52.14,
-    "fetchedAt": "2026-03-20T15:48:52.824Z"
+    "winRate": 52.42,
+    "fetchedAt": "2026-03-15T13:33:44.735Z"
   },
   "Velkoz_mid": {
-    "winRate": 50.62,
-    "fetchedAt": "2026-03-20T15:54:58.661Z"
+    "winRate": 51.23,
+    "fetchedAt": "2026-03-15T13:39:54.122Z"
   },
   "Gangplank_top": {
-    "winRate": 51.27,
-    "fetchedAt": "2026-03-20T15:49:32.994Z"
+    "winRate": 50.96,
+    "fetchedAt": "2026-03-15T13:34:22.648Z"
   },
   "Zilean_support": {
-    "winRate": 52.38,
-    "fetchedAt": "2026-03-20T15:58:17.136Z"
+    "winRate": 52.02,
+    "fetchedAt": "2026-03-15T13:43:10.591Z"
   },
   "Thresh_support": {
-    "winRate": 51.41,
-    "fetchedAt": "2026-03-20T15:58:07.961Z"
+    "winRate": 51.8,
+    "fetchedAt": "2026-03-15T13:43:01.173Z"
   },
   "Janna_support": {
-    "winRate": 51.86,
-    "fetchedAt": "2026-03-20T15:57:17.733Z"
+    "winRate": 52.26,
+    "fetchedAt": "2026-03-15T13:42:15.734Z"
   },
   "Senna_support": {
-    "winRate": 50.52,
-    "fetchedAt": "2026-03-20T15:57:48.353Z"
+    "winRate": 50.67,
+    "fetchedAt": "2026-03-15T13:42:45.947Z"
   },
   "Alistar_support": {
-    "winRate": 50.32,
-    "fetchedAt": "2026-03-20T15:56:59.272Z"
+    "winRate": 49.72,
+    "fetchedAt": "2026-03-15T13:41:57.734Z"
   },
   "Zyra_support": {
-    "winRate": 50.25,
-    "fetchedAt": "2026-03-20T15:58:22.200Z"
+    "winRate": 51.26,
+    "fetchedAt": "2026-03-15T13:43:14.975Z"
   },
   "Soraka_support": {
-    "winRate": 51.34,
-    "fetchedAt": "2026-03-20T15:58:01.257Z"
+    "winRate": 51.66,
+    "fetchedAt": "2026-03-15T13:42:54.668Z"
   },
   "Sona_support": {
-    "winRate": 51.79,
-    "fetchedAt": "2026-03-20T15:57:58.907Z"
+    "winRate": 52.23,
+    "fetchedAt": "2026-03-15T13:42:52.500Z"
   },
   "Nami_support": {
-    "winRate": 51.86,
-    "fetchedAt": "2026-03-20T15:57:34.873Z"
+    "winRate": 52.3,
+    "fetchedAt": "2026-03-15T13:42:31.906Z"
   },
   "Taric_support": {
-    "winRate": 51.78,
-    "fetchedAt": "2026-03-20T15:58:05.739Z"
+    "winRate": 52.58,
+    "fetchedAt": "2026-03-15T13:42:59.047Z"
   },
   "Brand_support": {
-    "winRate": 50.1,
-    "fetchedAt": "2026-03-20T15:57:13.398Z"
+    "winRate": 51.44,
+    "fetchedAt": "2026-03-15T13:42:11.250Z"
   },
   "Pyke_support": {
-    "winRate": 49.48,
-    "fetchedAt": "2026-03-20T15:57:41.495Z"
+    "winRate": 50.77,
+    "fetchedAt": "2026-03-15T13:42:38.578Z"
   },
   "Bard_support": {
-    "winRate": 51.55,
-    "fetchedAt": "2026-03-20T15:57:08.279Z"
+    "winRate": 51.07,
+    "fetchedAt": "2026-03-15T13:42:06.692Z"
   },
   "Karma_support": {
-    "winRate": 51.01,
-    "fetchedAt": "2026-03-20T15:57:20.840Z"
+    "winRate": 50.34,
+    "fetchedAt": "2026-03-15T13:42:17.893Z"
   },
   "Milio_support": {
-    "winRate": 51.78,
-    "fetchedAt": "2026-03-20T15:58:57.012Z"
+    "winRate": 51.64,
+    "fetchedAt": "2026-03-15T13:43:49.619Z"
   },
   "Nautilus_support": {
-    "winRate": 50.02,
-    "fetchedAt": "2026-03-20T15:57:37.026Z"
+    "winRate": 50.08,
+    "fetchedAt": "2026-03-15T13:42:34.109Z"
   },
   "Seraphine_support": {
-    "winRate": 51.26,
-    "fetchedAt": "2026-03-20T15:57:54.528Z"
+    "winRate": 51.57,
+    "fetchedAt": "2026-03-15T13:42:48.151Z"
   },
   "Morgana_support": {
-    "winRate": 49.21,
-    "fetchedAt": "2026-03-20T15:57:32.186Z"
+    "winRate": 50.69,
+    "fetchedAt": "2026-03-15T13:42:29.751Z"
   },
   "Yuumi_support": {
-    "winRate": 47.91,
-    "fetchedAt": "2026-03-20T15:58:14.903Z"
+    "winRate": 47.98,
+    "fetchedAt": "2026-03-15T13:43:08.394Z"
   },
   "Rakan_support": {
-    "winRate": 50.73,
-    "fetchedAt": "2026-03-20T15:57:43.735Z"
+    "winRate": 51,
+    "fetchedAt": "2026-03-15T13:42:40.697Z"
   },
   "Lulu_support": {
-    "winRate": 50.59,
-    "fetchedAt": "2026-03-20T15:57:25.258Z"
+    "winRate": 50.33,
+    "fetchedAt": "2026-03-15T13:42:22.263Z"
   },
   "Leona_support": {
-    "winRate": 51.95,
-    "fetchedAt": "2026-03-20T15:57:23.075Z"
+    "winRate": 51.22,
+    "fetchedAt": "2026-03-15T13:42:20.057Z"
   },
   "Rell_support": {
-    "winRate": 51.2,
-    "fetchedAt": "2026-03-20T15:59:08.200Z"
+    "winRate": 50.16,
+    "fetchedAt": "2026-03-15T13:44:03.044Z"
   },
   "Xerath_support": {
-    "winRate": 51.76,
-    "fetchedAt": "2026-03-20T15:58:12.808Z"
+    "winRate": 52.35,
+    "fetchedAt": "2026-03-15T13:43:05.472Z"
   },
   "Maokai_support": {
-    "winRate": 52.5,
-    "fetchedAt": "2026-03-20T15:59:03.731Z"
+    "winRate": 51.96,
+    "fetchedAt": "2026-03-15T13:43:57.626Z"
   },
   "Lux_support": {
-    "winRate": 50.27,
-    "fetchedAt": "2026-03-20T15:57:27.771Z"
+    "winRate": 49.82,
+    "fetchedAt": "2026-03-15T13:42:24.438Z"
   },
   "Renata_support": {
     "winRate": 50.31,
     "fetchedAt": "2026-03-14T03:48:54.950Z"
   },
   "Galio_support": {
-    "winRate": 49.54,
-    "fetchedAt": "2026-03-20T15:58:41.121Z"
+    "winRate": 49.6,
+    "fetchedAt": "2026-03-15T13:43:30.853Z"
   },
   "Blitzcrank_support": {
-    "winRate": 50.77,
-    "fetchedAt": "2026-03-20T15:57:11.160Z"
+    "winRate": 51.06,
+    "fetchedAt": "2026-03-15T13:42:08.891Z"
   },
   "Poppy_support": {
-    "winRate": 50.6,
-    "fetchedAt": "2026-03-20T15:58:36.810Z"
+    "winRate": 50.85,
+    "fetchedAt": "2026-03-15T13:43:26.385Z"
   },
   "Ziggs_bottom": {
-    "winRate": 51.11,
-    "fetchedAt": "2026-03-20T15:56:30.036Z"
+    "winRate": 52.2,
+    "fetchedAt": "2026-03-15T13:41:28.126Z"
   },
   "Zac_top": {
-    "winRate": 51.26,
-    "fetchedAt": "2026-03-20T15:49:23.387Z"
+    "winRate": 50.42,
+    "fetchedAt": "2026-03-15T13:34:13.899Z"
   },
   "Ornn_top": {
-    "winRate": 52.33,
-    "fetchedAt": "2026-03-20T15:49:50.491Z"
+    "winRate": 52.47,
+    "fetchedAt": "2026-03-15T13:34:40.113Z"
   },
   "Zaahen_top": {
-    "winRate": 50.27,
-    "fetchedAt": "2026-03-20T15:50:36.877Z"
+    "winRate": 51.7,
+    "fetchedAt": "2026-03-15T13:35:27.052Z"
   },
   "Belveth_jungle": {
-    "winRate": 51.19,
-    "fetchedAt": "2026-03-20T15:53:06.765Z"
+    "winRate": 52.06,
+    "fetchedAt": "2026-03-15T13:37:59.266Z"
   },
   "Quinn_top": {
-    "winRate": 52.19,
-    "fetchedAt": "2026-03-20T15:48:45.556Z"
+    "winRate": 51.81,
+    "fetchedAt": "2026-03-15T13:33:37.996Z"
   },
   "Zaahen_jungle": {
-    "winRate": 50.27,
-    "fetchedAt": "2026-03-20T15:53:01.507Z"
+    "winRate": 51.7,
+    "fetchedAt": "2026-03-15T13:37:54.839Z"
   },
   "TahmKench_support": {
-    "winRate": 49.57,
-    "fetchedAt": "2026-03-20T15:58:03.461Z"
+    "winRate": 50.61,
+    "fetchedAt": "2026-03-15T13:42:56.846Z"
   },
   "Elise_support": {
-    "winRate": 51.72,
-    "fetchedAt": "2026-03-20T15:58:54.807Z"
+    "winRate": 51.19,
+    "fetchedAt": "2026-03-15T13:43:46.514Z"
   },
   "Shaco_support": {
-    "winRate": 51.18,
-    "fetchedAt": "2026-03-20T15:57:56.654Z"
+    "winRate": 50.79,
+    "fetchedAt": "2026-03-15T13:42:50.340Z"
   },
   "Braum_support": {
-    "winRate": 51.67,
-    "fetchedAt": "2026-03-20T15:57:15.504Z"
+    "winRate": 51.59,
+    "fetchedAt": "2026-03-15T13:42:13.439Z"
   },
   "Neeko_support": {
-    "winRate": 49.95,
-    "fetchedAt": "2026-03-20T15:59:11.182Z"
+    "winRate": 49.22,
+    "fetchedAt": "2026-03-15T13:44:05.230Z"
   },
   "Velkoz_support": {
-    "winRate": 50.62,
-    "fetchedAt": "2026-03-20T15:58:45.474Z"
+    "winRate": 51.23,
+    "fetchedAt": "2026-03-15T13:43:39.890Z"
   },
   "Fiddlesticks_support": {
-    "winRate": 51.57,
-    "fetchedAt": "2026-03-20T15:58:38.951Z"
+    "winRate": 52.36,
+    "fetchedAt": "2026-03-15T13:43:28.673Z"
   },
   "Mel_support": {
-    "winRate": 48.34,
-    "fetchedAt": "2026-03-20T15:58:24.312Z"
+    "winRate": 49.21,
+    "fetchedAt": "2026-03-15T13:43:17.182Z"
   },
   "Swain_support": {
-    "winRate": 48.19,
-    "fetchedAt": "2026-03-20T15:58:52.621Z"
+    "winRate": 48.58,
+    "fetchedAt": "2026-03-15T13:43:44.183Z"
   },
   "Zoe_support": {
-    "winRate": 51.79,
-    "fetchedAt": "2026-03-20T15:58:19.987Z"
+    "winRate": 51.38,
+    "fetchedAt": "2026-03-15T13:43:12.811Z"
   },
   "Pantheon_support": {
-    "winRate": 48.69,
-    "fetchedAt": "2026-03-20T15:57:39.177Z"
+    "winRate": 48.41,
+    "fetchedAt": "2026-03-15T13:42:36.253Z"
   },
   "Anivia_support": {
-    "winRate": 52.51,
-    "fetchedAt": "2026-03-20T15:58:47.644Z"
+    "winRate": 52.24,
+    "fetchedAt": "2026-03-15T13:43:42.035Z"
   },
   "Karthus_jungle": {
-    "winRate": 50.11,
-    "fetchedAt": "2026-03-20T15:53:08.955Z"
+    "winRate": 49.72,
+    "fetchedAt": "2026-03-15T13:38:01.431Z"
   },
   "Rengar_jungle": {
-    "winRate": 48.56,
-    "fetchedAt": "2026-03-20T15:51:29.276Z"
+    "winRate": 49.1,
+    "fetchedAt": "2026-03-15T13:36:23.070Z"
   },
   "Zyra_jungle": {
-    "winRate": 50.25,
-    "fetchedAt": "2026-03-20T15:52:01.292Z"
+    "winRate": 51.26,
+    "fetchedAt": "2026-03-15T13:36:54.655Z"
   },
   "Aatrox_jungle": {
-    "winRate": 50.15,
-    "fetchedAt": "2026-03-20T15:50:45.640Z"
+    "winRate": 50.24,
+    "fetchedAt": "2026-03-15T13:35:36.978Z"
   },
   "Shen_jungle": {
-    "winRate": 52.14,
-    "fetchedAt": "2026-03-20T15:51:35.832Z"
+    "winRate": 52.42,
+    "fetchedAt": "2026-03-15T13:36:29.526Z"
   },
   "Darius_jungle": {
-    "winRate": 50.18,
-    "fetchedAt": "2026-03-20T15:50:54.343Z"
+    "winRate": 50.28,
+    "fetchedAt": "2026-03-15T13:35:46.907Z"
   },
   "Ambessa_jungle": {
-    "winRate": 49.38,
-    "fetchedAt": "2026-03-20T15:52:59.333Z"
+    "winRate": 49.48,
+    "fetchedAt": "2026-03-15T13:37:52.677Z"
   },
   "Zed_jungle": {
-    "winRate": 49.93,
-    "fetchedAt": "2026-03-20T15:51:59.162Z"
+    "winRate": 50.4,
+    "fetchedAt": "2026-03-15T13:36:51.712Z"
   },
   "Jax_jungle": {
-    "winRate": 50.37,
-    "fetchedAt": "2026-03-20T15:51:07.614Z"
+    "winRate": 50.19,
+    "fetchedAt": "2026-03-15T13:36:00.831Z"
   },
   "Talon_jungle": {
-    "winRate": 49.62,
-    "fetchedAt": "2026-03-20T15:51:38.017Z"
+    "winRate": 49.72,
+    "fetchedAt": "2026-03-15T13:36:31.723Z"
   },
   "Teemo_jungle": {
-    "winRate": 51.08,
-    "fetchedAt": "2026-03-20T15:51:40.174Z"
+    "winRate": 51.68,
+    "fetchedAt": "2026-03-15T13:36:33.863Z"
   },
   "Naafiri_jungle": {
-    "winRate": 51.4,
-    "fetchedAt": "2026-03-20T15:52:55.018Z"
+    "winRate": 51.07,
+    "fetchedAt": "2026-03-15T13:37:47.196Z"
   },
   "DrMundo_jungle": {
-    "winRate": 52.44,
-    "fetchedAt": "2026-03-20T15:52:10.565Z"
+    "winRate": 50.28,
+    "fetchedAt": "2026-03-15T13:37:01.214Z"
   },
   "Pantheon_jungle": {
     "winRate": 48.45,
     "fetchedAt": "2026-03-14T03:33:55.577Z"
   },
   "Brand_jungle": {
-    "winRate": 50.1,
-    "fetchedAt": "2026-03-20T15:50:50.051Z"
+    "winRate": 51.44,
+    "fetchedAt": "2026-03-15T13:35:41.416Z"
   },
   "Gragas_jungle": {
-    "winRate": 50.1,
-    "fetchedAt": "2026-03-20T15:52:12.756Z"
+    "winRate": 49.97,
+    "fetchedAt": "2026-03-15T13:37:03.708Z"
   },
   "Fizz_jungle": {
-    "winRate": 51.36,
-    "fetchedAt": "2026-03-20T15:50:58.762Z"
+    "winRate": 51.62,
+    "fetchedAt": "2026-03-15T13:35:51.381Z"
   },
   "Nasus_jungle": {
-    "winRate": 50.71,
-    "fetchedAt": "2026-03-20T15:52:03.575Z"
+    "winRate": 51.34,
+    "fetchedAt": "2026-03-15T13:36:56.787Z"
   },
   "Volibear_jungle": {
-    "winRate": 50,
-    "fetchedAt": "2026-03-20T15:51:48.969Z"
+    "winRate": 48.98,
+    "fetchedAt": "2026-03-15T13:36:42.691Z"
   },
   "Jayce_top": {
-    "winRate": 49.36,
-    "fetchedAt": "2026-03-20T15:48:34.004Z"
+    "winRate": 49.28,
+    "fetchedAt": "2026-03-15T13:33:26.156Z"
   },
   "Sion_top": {
-    "winRate": 50.67,
-    "fetchedAt": "2026-03-20T15:49:25.563Z"
+    "winRate": 50.91,
+    "fetchedAt": "2026-03-15T13:34:16.047Z"
   },
   "Yorick_top": {
-    "winRate": 50.6,
-    "fetchedAt": "2026-03-20T15:49:21.171Z"
+    "winRate": 50.43,
+    "fetchedAt": "2026-03-15T13:34:11.726Z"
   },
   "Heimerdinger_top": {
-    "winRate": 51.04,
-    "fetchedAt": "2026-03-20T15:50:41.249Z"
+    "winRate": 50.83,
+    "fetchedAt": "2026-03-15T13:35:32.606Z"
   },
   "Gwen_top": {
-    "winRate": 48.89,
-    "fetchedAt": "2026-03-20T15:50:28.184Z"
+    "winRate": 49,
+    "fetchedAt": "2026-03-15T13:35:18.348Z"
   },
   "Kayle_top": {
-    "winRate": 53.67,
-    "fetchedAt": "2026-03-20T15:49:46.091Z"
+    "winRate": 52.59,
+    "fetchedAt": "2026-03-15T13:34:35.656Z"
   },
   "Akali_top": {
-    "winRate": 50.44,
-    "fetchedAt": "2026-03-20T15:48:18.811Z"
+    "winRate": 50.26,
+    "fetchedAt": "2026-03-15T13:33:10.025Z"
   },
   "Aurora_top": {
-    "winRate": 49.45,
-    "fetchedAt": "2026-03-20T15:50:39.054Z"
+    "winRate": 49.71,
+    "fetchedAt": "2026-03-15T13:35:30.364Z"
   },
   "Cassiopeia_top": {
-    "winRate": 50.02,
-    "fetchedAt": "2026-03-20T15:50:19.347Z"
+    "winRate": 50.22,
+    "fetchedAt": "2026-03-15T13:35:09.543Z"
   },
   "Anivia_top": {
-    "winRate": 52.51,
-    "fetchedAt": "2026-03-20T15:50:14.931Z"
+    "winRate": 52.24,
+    "fetchedAt": "2026-03-15T13:35:05.114Z"
   },
   "TahmKench_top": {
-    "winRate": 49.57,
-    "fetchedAt": "2026-03-20T15:48:55.035Z"
+    "winRate": 50.61,
+    "fetchedAt": "2026-03-15T13:33:47.697Z"
   },
   "Sylas_top": {
-    "winRate": 50.34,
-    "fetchedAt": "2026-03-20T15:49:57.524Z"
+    "winRate": 49.37,
+    "fetchedAt": "2026-03-15T13:34:46.776Z"
   },
   "Vladimir_top": {
-    "winRate": 50.67,
-    "fetchedAt": "2026-03-20T15:49:08.657Z"
+    "winRate": 50.55,
+    "fetchedAt": "2026-03-15T13:34:00.740Z"
   },
   "Varus_top": {
-    "winRate": 48.71,
-    "fetchedAt": "2026-03-20T15:49:59.682Z"
+    "winRate": 48.16,
+    "fetchedAt": "2026-03-15T13:34:48.942Z"
   },
   "Swain_mid": {
-    "winRate": 48.19,
-    "fetchedAt": "2026-03-20T15:55:09.489Z"
+    "winRate": 48.58,
+    "fetchedAt": "2026-03-15T13:40:06.066Z"
   },
   "Xerath_mid": {
-    "winRate": 51.76,
-    "fetchedAt": "2026-03-20T15:54:07.742Z"
+    "winRate": 52.35,
+    "fetchedAt": "2026-03-15T13:39:00.750Z"
   },
   "Taliyah_mid": {
-    "winRate": 47.63,
-    "fetchedAt": "2026-03-20T15:55:00.835Z"
+    "winRate": 48.39,
+    "fetchedAt": "2026-03-15T13:39:57.199Z"
   },
   "Ziggs_mid": {
-    "winRate": 51.11,
-    "fetchedAt": "2026-03-20T15:54:16.346Z"
+    "winRate": 52.2,
+    "fetchedAt": "2026-03-15T13:39:09.821Z"
   },
   "Talon_mid": {
-    "winRate": 49.62,
-    "fetchedAt": "2026-03-20T15:53:56.876Z"
+    "winRate": 49.72,
+    "fetchedAt": "2026-03-15T13:38:48.855Z"
   },
   "Naafiri_mid": {
-    "winRate": 51.4,
-    "fetchedAt": "2026-03-20T15:55:20.670Z"
+    "winRate": 51.07,
+    "fetchedAt": "2026-03-15T13:40:17.786Z"
   },
   "Akshan_mid": {
-    "winRate": 50.93,
-    "fetchedAt": "2026-03-20T15:55:16.283Z"
+    "winRate": 51.17,
+    "fetchedAt": "2026-03-15T13:40:12.758Z"
   },
   "Kayle_mid": {
-    "winRate": 53.67,
-    "fetchedAt": "2026-03-20T15:54:33.863Z"
+    "winRate": 52.59,
+    "fetchedAt": "2026-03-15T13:39:28.902Z"
   },
   "KogMaw_mid": {
-    "winRate": 52.84,
-    "fetchedAt": "2026-03-20T15:54:49.859Z"
+    "winRate": 53.49,
+    "fetchedAt": "2026-03-15T13:39:44.923Z"
   },
   "Smolder_mid": {
-    "winRate": 50.9,
-    "fetchedAt": "2026-03-20T15:55:25.001Z"
+    "winRate": 51.46,
+    "fetchedAt": "2026-03-15T13:40:22.170Z"
   },
   "Jayce_mid": {
-    "winRate": 49.36,
-    "fetchedAt": "2026-03-20T15:53:30.176Z"
+    "winRate": 49.28,
+    "fetchedAt": "2026-03-15T13:38:22.563Z"
   },
   "Chogath_mid": {
-    "winRate": 51.19,
-    "fetchedAt": "2026-03-20T15:54:29.466Z"
+    "winRate": 51.07,
+    "fetchedAt": "2026-03-15T13:39:24.570Z"
   },
   "Vladimir_mid": {
-    "winRate": 50.67,
-    "fetchedAt": "2026-03-20T15:54:05.618Z"
+    "winRate": 50.55,
+    "fetchedAt": "2026-03-15T13:38:58.593Z"
   },
   "Nasus_mid": {
-    "winRate": 50.71,
-    "fetchedAt": "2026-03-20T15:54:27.185Z"
+    "winRate": 51.34,
+    "fetchedAt": "2026-03-15T13:39:22.363Z"
   },
   "Pantheon_mid": {
-    "winRate": 48.69,
-    "fetchedAt": "2026-03-20T15:53:48.017Z"
+    "winRate": 48.41,
+    "fetchedAt": "2026-03-15T13:38:40.209Z"
   },
   "Malphite_mid": {
-    "winRate": 51.37,
-    "fetchedAt": "2026-03-20T15:53:41.522Z"
+    "winRate": 51.57,
+    "fetchedAt": "2026-03-15T13:38:33.511Z"
   },
   "Brand_mid": {
-    "winRate": 50.1,
-    "fetchedAt": "2026-03-20T15:53:21.288Z"
+    "winRate": 51.44,
+    "fetchedAt": "2026-03-15T13:38:13.144Z"
   },
   "Aurora_mid": {
-    "winRate": 49.45,
-    "fetchedAt": "2026-03-20T15:55:29.261Z"
+    "winRate": 49.71,
+    "fetchedAt": "2026-03-15T13:40:26.533Z"
   },
   "Sion_mid": {
     "winRate": 50.93,
     "fetchedAt": "2026-03-14T03:37:50.506Z"
   },
   "Brand_bottom": {
-    "winRate": 50.1,
-    "fetchedAt": "2026-03-20T15:55:47.102Z"
+    "winRate": 51.44,
+    "fetchedAt": "2026-03-15T13:40:44.487Z"
   },
   "Yasuo_bottom": {
-    "winRate": 49.93,
-    "fetchedAt": "2026-03-20T15:56:27.892Z"
+    "winRate": 49.83,
+    "fetchedAt": "2026-03-15T13:41:25.914Z"
   },
   "Swain_bottom": {
-    "winRate": 48.19,
-    "fetchedAt": "2026-03-20T15:56:52.362Z"
+    "winRate": 48.58,
+    "fetchedAt": "2026-03-15T13:41:51.077Z"
   },
   "Velkoz_bottom": {
-    "winRate": 50.62,
-    "fetchedAt": "2026-03-20T15:56:50.175Z"
+    "winRate": 51.23,
+    "fetchedAt": "2026-03-15T13:41:48.906Z"
   },
   "AurelionSol_bottom": {
     "winRate": 52.23,
     "fetchedAt": "2026-03-14T03:42:17.267Z"
   },
   "Yunara_bottom": {
-    "winRate": 48.46,
-    "fetchedAt": "2026-03-20T15:56:57.095Z"
+    "winRate": 48.53,
+    "fetchedAt": "2026-03-15T13:41:55.547Z"
   },
   "Mel_bottom": {
-    "winRate": 48.34,
-    "fetchedAt": "2026-03-20T15:56:32.147Z"
+    "winRate": 49.21,
+    "fetchedAt": "2026-03-15T13:41:30.270Z"
   },
   "Leblanc_support": {
     "winRate": 50.26,
@@ -992,8 +992,8 @@
     "fetchedAt": "2026-03-13T15:52:41.536Z"
   },
   "Olaf_jungle": {
-    "winRate": 52.44,
-    "fetchedAt": "2026-03-20T15:51:27.056Z"
+    "winRate": 51.72,
+    "fetchedAt": "2026-03-15T13:36:20.911Z"
   },
   "Ornn_jungle": {
     "winRate": 52.42,
@@ -1008,8 +1008,8 @@
     "fetchedAt": "2026-03-13T15:52:41.669Z"
   },
   "Camille_jungle": {
-    "winRate": 51.02,
-    "fetchedAt": "2026-03-20T15:50:52.221Z"
+    "winRate": 51.4,
+    "fetchedAt": "2026-03-15T13:35:43.989Z"
   },
   "Katarina_jungle": {
     "winRate": 51.15,
@@ -1036,8 +1036,8 @@
     "fetchedAt": "2026-03-13T15:52:41.992Z"
   },
   "Gwen_jungle": {
-    "winRate": 48.89,
-    "fetchedAt": "2026-03-20T15:52:52.886Z"
+    "winRate": 49,
+    "fetchedAt": "2026-03-15T13:37:45.029Z"
   },
   "Sion_jungle": {
     "winRate": 50.95,
@@ -1048,8 +1048,8 @@
     "fetchedAt": "2026-03-13T15:52:42.246Z"
   },
   "Sett_jungle": {
-    "winRate": 51.44,
-    "fetchedAt": "2026-03-20T15:52:21.496Z"
+    "winRate": 51.15,
+    "fetchedAt": "2026-03-15T13:37:12.495Z"
   },
   "Skarner_jungle": {
     "winRate": 49.24,
@@ -1064,8 +1064,8 @@
     "fetchedAt": "2026-03-13T15:52:42.431Z"
   },
   "Twitch_jungle": {
-    "winRate": 51.01,
-    "fetchedAt": "2026-03-20T15:51:44.624Z"
+    "winRate": 50.93,
+    "fetchedAt": "2026-03-15T13:36:38.321Z"
   },
   "Gnar_jungle": {
     "winRate": 50.02,
@@ -1080,8 +1080,8 @@
     "fetchedAt": "2026-03-13T15:52:42.577Z"
   },
   "Chogath_jungle": {
-    "winRate": 51.19,
-    "fetchedAt": "2026-03-20T15:52:08.421Z"
+    "winRate": 51.07,
+    "fetchedAt": "2026-03-15T13:36:59.050Z"
   },
   "Akali_jungle": {
     "winRate": 50.29,
@@ -1104,20 +1104,20 @@
     "fetchedAt": "2026-03-13T15:52:42.778Z"
   },
   "Nautilus_jungle": {
-    "winRate": 50.02,
-    "fetchedAt": "2026-03-20T15:51:18.452Z"
+    "winRate": 50.08,
+    "fetchedAt": "2026-03-15T13:36:11.757Z"
   },
   "Mordekaiser_jungle": {
-    "winRate": 50.73,
-    "fetchedAt": "2026-03-20T15:52:19.347Z"
+    "winRate": 51.1,
+    "fetchedAt": "2026-03-15T13:37:10.209Z"
   },
   "Yasuo_jungle": {
     "winRate": 49.74,
     "fetchedAt": "2026-03-13T15:52:42.914Z"
   },
   "Maokai_jungle": {
-    "winRate": 52.5,
-    "fetchedAt": "2026-03-20T15:53:11.094Z"
+    "winRate": 51.96,
+    "fetchedAt": "2026-03-15T13:38:03.571Z"
   },
   "Yorick_jungle": {
     "winRate": 50.41,
@@ -1144,12 +1144,12 @@
     "fetchedAt": "2026-03-13T15:52:43.183Z"
   },
   "Rumble_jungle": {
-    "winRate": 49.99,
-    "fetchedAt": "2026-03-20T15:52:17.100Z"
+    "winRate": 49.55,
+    "fetchedAt": "2026-03-15T13:37:08.060Z"
   },
   "Poppy_jungle": {
-    "winRate": 50.6,
-    "fetchedAt": "2026-03-20T15:52:30.197Z"
+    "winRate": 50.85,
+    "fetchedAt": "2026-03-15T13:37:22.287Z"
   },
   "Leona_jungle": {
     "winRate": 51.19,
@@ -1196,28 +1196,28 @@
     "fetchedAt": "2026-03-13T16:56:42.145Z"
   },
   "Amumu_support": {
-    "winRate": 51.22,
-    "fetchedAt": "2026-03-20T15:57:01.824Z"
+    "winRate": 51.38,
+    "fetchedAt": "2026-03-15T13:42:00.138Z"
   },
   "Orianna_support": {
     "winRate": 47.82,
     "fetchedAt": "2026-03-13T16:59:34.332Z"
   },
   "Varus_support": {
-    "winRate": 48.71,
-    "fetchedAt": "2026-03-20T15:58:34.652Z"
+    "winRate": 48.16,
+    "fetchedAt": "2026-03-15T13:43:24.152Z"
   },
   "Ashe_support": {
-    "winRate": 52.23,
-    "fetchedAt": "2026-03-20T15:57:06.119Z"
+    "winRate": 51.88,
+    "fetchedAt": "2026-03-15T13:42:04.489Z"
   },
   "Ornn_support": {
     "winRate": 52.42,
     "fetchedAt": "2026-03-13T16:59:34.490Z"
   },
   "Sion_support": {
-    "winRate": 50.67,
-    "fetchedAt": "2026-03-20T15:58:26.468Z"
+    "winRate": 50.91,
+    "fetchedAt": "2026-03-15T13:43:19.377Z"
   },
   "Shen_support": {
     "winRate": 52.43,
@@ -1244,56 +1244,56 @@
     "fetchedAt": "2026-03-13T16:59:34.734Z"
   },
   "Annie_support": {
-    "winRate": 52.34,
-    "fetchedAt": "2026-03-20T15:57:03.952Z"
+    "winRate": 52.43,
+    "fetchedAt": "2026-03-15T13:42:02.353Z"
   },
   "Nunu_support": {
     "winRate": 52.46,
     "fetchedAt": "2026-03-13T16:59:34.791Z"
   },
   "Hwei_support": {
-    "winRate": 51.25,
-    "fetchedAt": "2026-03-20T15:58:59.153Z"
+    "winRate": 50.49,
+    "fetchedAt": "2026-03-15T13:43:52.664Z"
   },
   "Heimerdinger_support": {
-    "winRate": 51.04,
-    "fetchedAt": "2026-03-20T15:59:01.345Z"
+    "winRate": 50.83,
+    "fetchedAt": "2026-03-15T13:43:54.853Z"
   },
   "Veigar_support": {
-    "winRate": 51.41,
-    "fetchedAt": "2026-03-20T15:58:10.624Z"
+    "winRate": 52.22,
+    "fetchedAt": "2026-03-15T13:43:03.330Z"
   },
   "Malphite_support": {
-    "winRate": 51.37,
-    "fetchedAt": "2026-03-20T15:57:29.937Z"
+    "winRate": 51.57,
+    "fetchedAt": "2026-03-15T13:42:26.733Z"
   },
   "Malzahar_support": {
-    "winRate": 50.81,
-    "fetchedAt": "2026-03-20T15:58:43.333Z"
+    "winRate": 51.32,
+    "fetchedAt": "2026-03-15T13:43:33.023Z"
   },
   "Rammus_support": {
     "winRate": 52.52,
     "fetchedAt": "2026-03-13T16:59:36.014Z"
   },
   "Sett_support": {
-    "winRate": 51.44,
-    "fetchedAt": "2026-03-20T15:58:28.649Z"
+    "winRate": 51.15,
+    "fetchedAt": "2026-03-15T13:43:21.554Z"
   },
   "Vi_mid": {
     "winRate": 50.14,
     "fetchedAt": "2026-03-13T17:06:07.341Z"
   },
   "Ambessa_mid": {
-    "winRate": 49.38,
-    "fetchedAt": "2026-03-20T15:55:27.154Z"
+    "winRate": 49.48,
+    "fetchedAt": "2026-03-15T13:40:24.334Z"
   },
   "Evelynn_mid": {
     "winRate": 51.76,
     "fetchedAt": "2026-03-13T17:06:07.413Z"
   },
   "Viego_mid": {
-    "winRate": 49.6,
-    "fetchedAt": "2026-03-20T15:55:18.467Z"
+    "winRate": 49.48,
+    "fetchedAt": "2026-03-15T13:40:15.191Z"
   },
   "Ivern_mid": {
     "winRate": 52.76,
@@ -1316,8 +1316,8 @@
     "fetchedAt": "2026-03-13T17:06:07.581Z"
   },
   "Karthus_mid": {
-    "winRate": 50.11,
-    "fetchedAt": "2026-03-20T15:55:35.800Z"
+    "winRate": 49.72,
+    "fetchedAt": "2026-03-15T13:40:32.323Z"
   },
   "Camille_mid": {
     "winRate": 51.31,
@@ -1328,16 +1328,16 @@
     "fetchedAt": "2026-03-13T17:06:07.649Z"
   },
   "Gragas_mid": {
-    "winRate": 50.1,
-    "fetchedAt": "2026-03-20T15:54:31.586Z"
+    "winRate": 49.97,
+    "fetchedAt": "2026-03-15T13:39:26.797Z"
   },
   "Kennen_mid": {
-    "winRate": 50.82,
-    "fetchedAt": "2026-03-20T15:54:45.463Z"
+    "winRate": 51.28,
+    "fetchedAt": "2026-03-15T13:39:40.594Z"
   },
   "Zyra_mid": {
-    "winRate": 50.25,
-    "fetchedAt": "2026-03-20T15:54:22.848Z"
+    "winRate": 51.26,
+    "fetchedAt": "2026-03-15T13:39:16.885Z"
   },
   "Kayn_mid": {
     "winRate": 50.89,
@@ -1400,12 +1400,12 @@
     "fetchedAt": "2026-03-13T17:06:08.655Z"
   },
   "Zilean_mid": {
-    "winRate": 52.38,
-    "fetchedAt": "2026-03-20T15:54:18.526Z"
+    "winRate": 52.02,
+    "fetchedAt": "2026-03-15T13:39:12.038Z"
   },
   "Karma_mid": {
-    "winRate": 51.01,
-    "fetchedAt": "2026-03-20T15:53:32.380Z"
+    "winRate": 50.34,
+    "fetchedAt": "2026-03-15T13:38:24.759Z"
   },
   "Fiora_mid": {
     "winRate": 50.73,
@@ -1420,8 +1420,8 @@
     "fetchedAt": "2026-03-13T17:06:08.828Z"
   },
   "Heimerdinger_mid": {
-    "winRate": 51.04,
-    "fetchedAt": "2026-03-20T15:55:31.393Z"
+    "winRate": 50.83,
+    "fetchedAt": "2026-03-15T13:40:29.013Z"
   },
   "MissFortune_mid": {
     "winRate": 51.87,
@@ -1432,12 +1432,12 @@
     "fetchedAt": "2026-03-13T17:06:08.941Z"
   },
   "Mordekaiser_mid": {
-    "winRate": 50.73,
-    "fetchedAt": "2026-03-20T15:54:36.073Z"
+    "winRate": 51.1,
+    "fetchedAt": "2026-03-15T13:39:31.853Z"
   },
   "Morgana_mid": {
-    "winRate": 49.21,
-    "fetchedAt": "2026-03-20T15:53:43.666Z"
+    "winRate": 50.69,
+    "fetchedAt": "2026-03-15T13:38:35.706Z"
   },
   "Milio_mid": {
     "winRate": 51.7,
@@ -1453,7 +1453,7 @@
   },
   "Lucian_mid": {
     "winRate": 49.73,
-    "fetchedAt": "2026-03-20T15:53:37.216Z"
+    "fetchedAt": "2026-03-15T13:38:29.222Z"
   },
   "Lulu_mid": {
     "winRate": 50.29,
@@ -1476,56 +1476,56 @@
     "fetchedAt": "2026-03-13T17:06:10.225Z"
   },
   "Viego_top": {
-    "winRate": 49.6,
-    "fetchedAt": "2026-03-20T15:50:25.948Z"
+    "winRate": 49.48,
+    "fetchedAt": "2026-03-15T13:35:16.110Z"
   },
   "Akshan_top": {
-    "winRate": 50.93,
-    "fetchedAt": "2026-03-20T15:50:21.546Z"
+    "winRate": 51.17,
+    "fetchedAt": "2026-03-15T13:35:11.705Z"
   },
   "Swain_top": {
-    "winRate": 48.19,
-    "fetchedAt": "2026-03-20T15:50:17.139Z"
+    "winRate": 48.58,
+    "fetchedAt": "2026-03-15T13:35:07.299Z"
   },
   "Udyr_top": {
-    "winRate": 51.36,
-    "fetchedAt": "2026-03-20T15:50:08.347Z"
+    "winRate": 51.2,
+    "fetchedAt": "2026-03-15T13:34:57.799Z"
   },
   "Shyvana_top": {
     "winRate": 48.95,
     "fetchedAt": "2026-03-14T02:44:16.657Z"
   },
   "MonkeyKing_top": {
-    "winRate": 50.27,
-    "fetchedAt": "2026-03-20T15:49:41.771Z"
+    "winRate": 50.87,
+    "fetchedAt": "2026-03-15T13:34:31.310Z"
   },
   "Briar_top": {
-    "winRate": 51.96,
-    "fetchedAt": "2026-03-20T15:50:32.555Z"
+    "winRate": 52.3,
+    "fetchedAt": "2026-03-15T13:35:22.733Z"
   },
   "Trundle_top": {
-    "winRate": 48.84,
-    "fetchedAt": "2026-03-20T15:48:59.415Z"
+    "winRate": 48.97,
+    "fetchedAt": "2026-03-15T13:33:52.045Z"
   },
   "Skarner_top": {
     "winRate": 49.36,
     "fetchedAt": "2026-03-14T02:44:16.878Z"
   },
   "Ryze_top": {
-    "winRate": 47.48,
-    "fetchedAt": "2026-03-20T15:50:12.773Z"
+    "winRate": 47.56,
+    "fetchedAt": "2026-03-15T13:35:02.966Z"
   },
   "Lissandra_top": {
-    "winRate": 52.18,
-    "fetchedAt": "2026-03-20T15:50:10.528Z"
+    "winRate": 50.78,
+    "fetchedAt": "2026-03-15T13:35:00.819Z"
   },
   "Lillia_top": {
-    "winRate": 50.97,
-    "fetchedAt": "2026-03-20T15:50:23.719Z"
+    "winRate": 50.23,
+    "fetchedAt": "2026-03-15T13:35:13.973Z"
   },
   "MonkeyKing_jungle": {
-    "winRate": 50.27,
-    "fetchedAt": "2026-03-20T15:52:14.919Z"
+    "winRate": 50.87,
+    "fetchedAt": "2026-03-15T13:37:05.900Z"
   },
   "Ahri_top": {
     "winRate": 52.36,
@@ -3440,11 +3440,11 @@
     "fetchedAt": "2026-03-14T03:53:24.681Z"
   },
   "LeBlanc_mid": {
-    "winRate": 50.94,
-    "fetchedAt": "2026-03-20T15:55:40.423Z"
+    "winRate": 50.36,
+    "fetchedAt": "2026-03-15T13:40:37.018Z"
   },
   "LeBlanc_support": {
-    "winRate": 50.94,
-    "fetchedAt": "2026-03-20T15:59:05.897Z"
+    "winRate": 50.36,
+    "fetchedAt": "2026-03-15T13:43:59.804Z"
   }
 }

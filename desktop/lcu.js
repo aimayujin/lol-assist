@@ -203,7 +203,34 @@ class LcuClient extends EventEmitter {
       theirTeam: (session.bans?.theirTeamBans || []).filter(id => id > 0),
     };
 
-    return { myTeam, enemyTeam, bans, localCellId };
+    // 自分のロールを検出
+    let myRole = null;
+    for (const player of session.myTeam) {
+      if (player.cellId === localCellId) {
+        myRole = POS_TO_ROLE[player.assignedPosition] || null;
+        break;
+      }
+    }
+
+    // プレイヤー情報（summonerId + ロール）を保持
+    const myTeamPlayers = {};
+    const enemyTeamPlayers = {};
+    let myIdx2 = 0;
+    for (const player of session.myTeam) {
+      let r = POS_TO_ROLE[player.assignedPosition] || null;
+      if (!r) { if (myIdx2 < ROLE_ORDER.length) r = ROLE_ORDER[myIdx2]; else continue; }
+      myIdx2++;
+      myTeamPlayers[r] = { summonerId: player.summonerId, puuid: player.puuid };
+    }
+    let enemyIdx2 = 0;
+    for (const player of (session.theirTeam || [])) {
+      let r = POS_TO_ROLE[player.assignedPosition] || null;
+      if (!r) { if (enemyIdx2 < ROLE_ORDER.length) r = ROLE_ORDER[enemyIdx2]; else continue; }
+      enemyIdx2++;
+      enemyTeamPlayers[r] = { summonerId: player.summonerId, puuid: player.puuid };
+    }
+
+    return { myTeam, enemyTeam, bans, localCellId, myRole, myTeamPlayers, enemyTeamPlayers };
   }
 
   // ── 手動でセッション取得 ──
@@ -217,6 +244,111 @@ class LcuClient extends EventEmitter {
       if (res.status === 200) return this._parseSession(res.json());
     } catch {}
     return null;
+  }
+
+  // ── ランク情報取得 ──
+  async getRankedStats(puuid) {
+    if (!this.connected || !puuid) return null;
+    try {
+      const res = await createHttp1Request({
+        method: 'GET',
+        url: `/lol-ranked/v1/ranked-stats/${puuid}`,
+      }, this.credentials);
+      if (res.status === 200) {
+        const data = res.json();
+        // ソロ/デュオキューのランクを返す
+        const solo = data.queues?.find(q => q.queueType === 'RANKED_SOLO_5x5') || data.queueMap?.RANKED_SOLO_5x5;
+        if (solo) {
+          return {
+            tier: solo.tier || solo.tierHumanReadable || '',
+            division: solo.division || solo.rank || '',
+            lp: solo.leaguePoints ?? solo.lp ?? 0,
+            wins: solo.wins ?? 0,
+            losses: solo.losses ?? 0,
+          };
+        }
+      }
+    } catch (err) {
+      console.warn('[LCU] ランク取得失敗:', err.message);
+    }
+    return null;
+  }
+
+  // ── チーム全員のランク取得 ──
+  async getTeamRanks(session) {
+    if (!this.connected || !session) return { myTeam: {}, enemyTeam: {} };
+    const result = { myTeam: {}, enemyTeam: {} };
+
+    const fetchRank = async (players, target) => {
+      await Promise.allSettled(Object.entries(players).map(async ([role, p]) => {
+        if (!p.puuid) return;
+        const rank = await this.getRankedStats(p.puuid);
+        if (rank) target[role] = rank;
+      }));
+    };
+
+    await Promise.all([
+      fetchRank(session.myTeamPlayers || {}, result.myTeam),
+      fetchRank(session.enemyTeamPlayers || {}, result.enemyTeam),
+    ]);
+    return result;
+  }
+
+  // ── 戦績取得 ──
+  async getMatchHistory(puuid, count = 20) {
+    if (!this.connected || !puuid) return null;
+    try {
+      const res = await createHttp1Request({
+        method: 'GET',
+        url: `/lol-match-history/v1/products/lol/${puuid}/matches?begIndex=0&endIndex=${count - 1}`,
+      }, this.credentials);
+      if (res.status === 200) {
+        const data = res.json();
+        const games = data.games?.games || data.games || [];
+        return games.map(g => {
+          const p = g.participants?.[0] || {};
+          const stats = p.stats || {};
+          return {
+            gameId: g.gameId,
+            championId: p.championId || g.championId,
+            win: stats.win ?? g.win ?? false,
+            kills: stats.kills ?? 0,
+            deaths: stats.deaths ?? 0,
+            assists: stats.assists ?? 0,
+            cs: (stats.totalMinionsKilled ?? 0) + (stats.neutralMinionsKilled ?? 0),
+            duration: g.gameDuration ?? 0,
+            queueId: g.queueId ?? 0,
+            timestamp: g.gameCreation ?? g.gameCreationDate ?? 0,
+            visionScore: stats.visionScore ?? 0,
+            goldEarned: stats.goldEarned ?? 0,
+            damageDealt: stats.totalDamageDealtToChampions ?? 0,
+          };
+        });
+      }
+    } catch (err) {
+      console.warn('[LCU] 戦績取得失敗:', err.message);
+    }
+    return null;
+  }
+
+  // ── チーム全員の戦績取得 ──
+  async getTeamMatchHistory(session, count = 10) {
+    if (!this.connected || !session) return { myTeam: {}, enemyTeam: {} };
+    const result = { myTeam: {}, enemyTeam: {} };
+
+    const fetchHistory = async (players, target) => {
+      await Promise.allSettled(Object.entries(players).map(async ([role, p]) => {
+        if (!p.puuid) return;
+        const history = await this.getMatchHistory(p.puuid, count);
+        if (history) target[role] = history;
+      }));
+    };
+
+    await Promise.all([
+      fetchHistory(session.myTeamPlayers || {}, result.myTeam),
+      fetchHistory(session.enemyTeamPlayers || {}, result.enemyTeam),
+    ]);
+    return result;
   }
 }
 
