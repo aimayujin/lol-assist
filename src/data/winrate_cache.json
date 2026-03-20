@@ -460,9 +460,9 @@
     "fetchedAt": "2026-03-15T18:08:00.979Z"
   },
   "Camille_vs_Warwick_JG": {
-    "winRate": 46.26,
-    "enemyWinRate": 53.74,
-    "fetchedAt": "2026-03-15T16:40:43.092Z"
+    "winRate": 40.91,
+    "enemyWinRate": 59.09,
+    "fetchedAt": "2026-03-20T19:14:26.227Z"
   },
   "Elise_vs_Warwick_JG": {
     "winRate": 53.27,
@@ -475,9 +475,9 @@
     "fetchedAt": "2026-03-15T19:49:11.177Z"
   },
   "Amumu_vs_Warwick_JG": {
-    "winRate": 54.13,
-    "enemyWinRate": 45.87,
-    "fetchedAt": "2026-03-15T16:35:49.057Z"
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-20T19:09:07.979Z"
   },
   "Gragas_vs_Warwick_JG": {
     "winRate": 45.86,
@@ -870,9 +870,9 @@
     "fetchedAt": "2026-03-15T21:59:44.879Z"
   },
   "Ambessa_vs_Singed_TOP": {
-    "winRate": 44.05,
-    "enemyWinRate": 55.95,
-    "fetchedAt": "2026-03-15T16:21:22.219Z"
+    "winRate": 45.45,
+    "enemyWinRate": 54.55,
+    "fetchedAt": "2026-03-20T18:53:37.299Z"
   },
   "Urgot_vs_Singed_TOP": {
     "winRate": 51.08,
@@ -935,9 +935,9 @@
     "fetchedAt": "2026-03-20T18:16:44.473Z"
   },
   "Zaahen_vs_Singed_TOP": {
-    "winRate": 46.93,
-    "enemyWinRate": 53.07,
-    "fetchedAt": "2026-03-10T10:28:32.056Z"
+    "winRate": 42.79,
+    "enemyWinRate": 57.21,
+    "fetchedAt": "2026-03-20T18:56:09.706Z"
   },
   "Sion_vs_Singed_TOP": {
     "winRate": 48.73,
@@ -1420,9 +1420,9 @@
     "fetchedAt": "2026-03-15T23:35:57.721Z"
   },
   "Heimerdinger_vs_Urgot_TOP": {
-    "winRate": 55.5,
-    "enemyWinRate": 44.5,
-    "fetchedAt": "2026-03-15T16:28:00.401Z"
+    "winRate": 37.14,
+    "enemyWinRate": 62.86,
+    "fetchedAt": "2026-03-20T19:00:38.881Z"
   },
   "Varus_vs_Urgot_TOP": {
     "winRate": 48.7,
@@ -1465,9 +1465,9 @@
     "fetchedAt": "2026-03-20T16:04:36.348Z"
   },
   "Ambessa_vs_Garen_TOP": {
-    "winRate": 46.41,
-    "enemyWinRate": 53.59,
-    "fetchedAt": "2026-03-15T16:20:03.869Z"
+    "winRate": 49.18,
+    "enemyWinRate": 50.82,
+    "fetchedAt": "2026-03-20T18:52:04.281Z"
   },
   "Irelia_vs_Garen_TOP": {
     "winRate": 49.03,
@@ -1635,9 +1635,9 @@
     "fetchedAt": "2026-03-20T16:12:33.365Z"
   },
   "Ambessa_vs_Irelia_TOP": {
-    "winRate": 43.6,
-    "enemyWinRate": 56.4,
-    "fetchedAt": "2026-03-15T16:20:06.131Z"
+    "winRate": 45.39,
+    "enemyWinRate": 54.61,
+    "fetchedAt": "2026-03-20T18:52:06.462Z"
   },
   "Illaoi_vs_Irelia_TOP": {
     "winRate": 57.34,
@@ -1995,9 +1995,9 @@
     "fetchedAt": "2026-03-20T16:59:35.404Z"
   },
   "Heimerdinger_vs_KSante_TOP": {
-    "winRate": 49.81,
-    "enemyWinRate": 50.19,
-    "fetchedAt": "2026-03-15T16:29:27.597Z"
+    "winRate": 63.41,
+    "enemyWinRate": 36.59,
+    "fetchedAt": "2026-03-20T19:02:07.510Z"
   },
   "Swain_vs_KSante_TOP": {
     "winRate": 51.4,
@@ -2195,9 +2195,9 @@
     "fetchedAt": "2026-03-11T10:36:17.362Z"
   },
   "Ambessa_vs_Aatrox_TOP": {
-    "winRate": 50,
-    "enemyWinRate": 50,
-    "fetchedAt": "2026-03-15T16:19:52.246Z"
+    "winRate": 50.08,
+    "enemyWinRate": 49.92,
+    "fetchedAt": "2026-03-20T18:51:52.256Z"
   },
   "Kennen_vs_Camille_TOP": {
     "winRate": 53.16,
@@ -2360,9 +2360,9 @@
     "fetchedAt": "2026-03-15T15:30:52.893Z"
   },
   "Ambessa_vs_KSante_TOP": {
-    "winRate": 55.08,
-    "enemyWinRate": 44.92,
-    "fetchedAt": "2026-03-15T16:22:06.743Z"
+    "winRate": 48.82,
+    "enemyWinRate": 51.18,
+    "fetchedAt": "2026-03-20T18:54:22.797Z"
   },
   "Quinn_vs_Aatrox_TOP": {
     "winRate": 60.76,
@@ -2440,9 +2440,9 @@
     "fetchedAt": "2026-03-11T11:30:13.745Z"
   },
   "Amumu_vs_Evelynn_JG": {
-    "winRate": 48.17,
-    "enemyWinRate": 51.83,
-    "fetchedAt": "2026-03-15T16:36:30.672Z"
+    "winRate": 40.35,
+    "enemyWinRate": 59.65,
+    "fetchedAt": "2026-03-20T19:09:46.282Z"
   },
   "Udyr_vs_Evelynn_JG": {
     "winRate": 52.16,
@@ -2600,19 +2600,19 @@
     "fetchedAt": "2026-03-11T11:30:29.575Z"
   },
   "Amumu_vs_Viego_JG": {
-    "winRate": 54.65,
-    "enemyWinRate": 45.35,
-    "fetchedAt": "2026-03-15T16:36:49.431Z"
+    "winRate": 54.51,
+    "enemyWinRate": 45.49,
+    "fetchedAt": "2026-03-20T19:10:05.966Z"
   },
   "Amumu_vs_Graves_JG": {
-    "winRate": 50.87,
-    "enemyWinRate": 49.13,
-    "fetchedAt": "2026-03-15T16:34:55.238Z"
+    "winRate": 48.65,
+    "enemyWinRate": 51.35,
+    "fetchedAt": "2026-03-20T19:08:12.576Z"
   },
   "Amumu_vs_JarvanIV_JG": {
-    "winRate": 48.3,
-    "enemyWinRate": 51.7,
-    "fetchedAt": "2026-03-15T16:35:00.474Z"
+    "winRate": 45.61,
+    "enemyWinRate": 54.39,
+    "fetchedAt": "2026-03-20T19:08:17.090Z"
   },
   "Illaoi_vs_KSante_TOP": {
     "winRate": 59.26,
@@ -2870,29 +2870,29 @@
     "fetchedAt": "2026-03-15T23:13:22.765Z"
   },
   "Amumu_vs_Zac_JG": {
-    "winRate": 47.84,
-    "enemyWinRate": 52.16,
-    "fetchedAt": "2026-03-15T16:35:54.770Z"
+    "winRate": 61.19,
+    "enemyWinRate": 38.81,
+    "fetchedAt": "2026-03-20T19:09:12.968Z"
   },
   "Amumu_vs_Hecarim_JG": {
-    "winRate": 52.23,
-    "enemyWinRate": 47.77,
-    "fetchedAt": "2026-03-15T16:34:57.514Z"
+    "winRate": 51.75,
+    "enemyWinRate": 48.25,
+    "fetchedAt": "2026-03-20T19:08:14.913Z"
   },
   "Amumu_vs_Ivern_JG": {
-    "winRate": 43.48,
-    "enemyWinRate": 56.52,
-    "fetchedAt": "2026-03-15T16:36:44.138Z"
+    "winRate": 41.38,
+    "enemyWinRate": 58.62,
+    "fetchedAt": "2026-03-20T19:10:01.345Z"
   },
   "Amumu_vs_Kayn_JG": {
-    "winRate": 49.4,
-    "enemyWinRate": 50.6,
-    "fetchedAt": "2026-03-15T16:36:32.980Z"
+    "winRate": 50.3,
+    "enemyWinRate": 49.7,
+    "fetchedAt": "2026-03-20T19:09:48.482Z"
   },
   "Camille_vs_MonkeyKing_JG": {
-    "winRate": 45.3,
-    "enemyWinRate": 54.7,
-    "fetchedAt": "2026-03-15T16:41:03.598Z"
+    "winRate": 51.43,
+    "enemyWinRate": 48.57,
+    "fetchedAt": "2026-03-20T19:14:46.759Z"
   },
   "Ivern_vs_MonkeyKing_JG": {
     "winRate": 51.79,
@@ -2910,9 +2910,9 @@
     "fetchedAt": "2026-03-15T18:08:23.596Z"
   },
   "Amumu_vs_MonkeyKing_JG": {
-    "winRate": 52.19,
-    "enemyWinRate": 47.81,
-    "fetchedAt": "2026-03-15T16:36:11.328Z"
+    "winRate": 57.38,
+    "enemyWinRate": 42.62,
+    "fetchedAt": "2026-03-20T19:09:28.523Z"
   },
   "Karthus_vs_MonkeyKing_JG": {
     "winRate": 49.09,
@@ -2990,19 +2990,19 @@
     "fetchedAt": "2026-03-11T15:58:36.212Z"
   },
   "Amumu_vs_Vi_JG": {
-    "winRate": 49.36,
-    "enemyWinRate": 50.64,
-    "fetchedAt": "2026-03-15T16:35:44.515Z"
+    "winRate": 41.03,
+    "enemyWinRate": 58.97,
+    "fetchedAt": "2026-03-20T19:09:03.541Z"
   },
   "Amumu_vs_Sejuani_JG": {
-    "winRate": 51.8,
-    "enemyWinRate": 48.2,
-    "fetchedAt": "2026-03-15T16:35:27.928Z"
+    "winRate": 58.49,
+    "enemyWinRate": 41.51,
+    "fetchedAt": "2026-03-20T19:08:47.309Z"
   },
   "Amumu_vs_Fiddlesticks_JG": {
-    "winRate": 49.4,
-    "enemyWinRate": 50.6,
-    "fetchedAt": "2026-03-15T16:36:35.193Z"
+    "winRate": 46.15,
+    "enemyWinRate": 53.85,
+    "fetchedAt": "2026-03-20T19:09:51.617Z"
   },
   "Gragas_vs_Rumble_TOP": {
     "winRate": 54.43,
@@ -3080,9 +3080,9 @@
     "fetchedAt": "2026-03-11T16:08:19.201Z"
   },
   "Heimerdinger_vs_Rumble_TOP": {
-    "winRate": 50.57,
-    "enemyWinRate": 49.43,
-    "fetchedAt": "2026-03-15T16:28:39.601Z"
+    "winRate": 52.94,
+    "enemyWinRate": 47.06,
+    "fetchedAt": "2026-03-20T19:01:18.060Z"
   },
   "Gwen_vs_Rumble_TOP": {
     "winRate": 48.31,
@@ -3305,9 +3305,9 @@
     "fetchedAt": "2026-03-20T18:46:58.410Z"
   },
   "Ambessa_vs_Fiora_TOP": {
-    "winRate": 51.09,
-    "enemyWinRate": 48.91,
-    "fetchedAt": "2026-03-15T16:20:01.716Z"
+    "winRate": 47.77,
+    "enemyWinRate": 52.23,
+    "fetchedAt": "2026-03-20T18:52:01.557Z"
   },
   "Urgot_vs_Fiora_TOP": {
     "winRate": 60.95,
@@ -3500,9 +3500,9 @@
     "fetchedAt": "2026-03-20T17:55:15.684Z"
   },
   "Ambessa_vs_Chogath_TOP": {
-    "winRate": 48.81,
-    "enemyWinRate": 51.19,
-    "fetchedAt": "2026-03-15T16:21:04.130Z"
+    "winRate": 53.13,
+    "enemyWinRate": 46.88,
+    "fetchedAt": "2026-03-20T18:53:19.526Z"
   },
   "Quinn_vs_Chogath_TOP": {
     "winRate": 41.94,
@@ -3545,9 +3545,9 @@
     "fetchedAt": "2026-03-20T16:05:38.912Z"
   },
   "Zaahen_vs_Chogath_TOP": {
-    "winRate": 52.7,
-    "games": null,
-    "fetchedAt": "2026-03-11T16:17:55.689Z"
+    "winRate": 46.72,
+    "enemyWinRate": 53.28,
+    "fetchedAt": "2026-03-20T18:55:50.447Z"
   },
   "Sett_vs_Chogath_TOP": {
     "winRate": 53.51,
@@ -3590,14 +3590,14 @@
     "fetchedAt": "2026-03-20T17:34:15.580Z"
   },
   "Amumu_vs_Kindred_JG": {
-    "winRate": 50.45,
-    "enemyWinRate": 49.55,
-    "fetchedAt": "2026-03-15T16:35:07.882Z"
+    "winRate": 43.75,
+    "enemyWinRate": 56.25,
+    "fetchedAt": "2026-03-20T19:08:24.546Z"
   },
   "Amumu_vs_XinZhao_JG": {
-    "winRate": 47.95,
-    "enemyWinRate": 52.05,
-    "fetchedAt": "2026-03-15T16:35:52.560Z"
+    "winRate": 47.83,
+    "enemyWinRate": 52.17,
+    "fetchedAt": "2026-03-20T19:09:10.750Z"
   },
   "Teemo_vs_Darius_TOP": {
     "winRate": 55.38,
@@ -3985,9 +3985,9 @@
     "fetchedAt": "2026-03-20T16:15:58.578Z"
   },
   "Ambessa_vs_Yone_TOP": {
-    "winRate": 49.86,
-    "enemyWinRate": 50.14,
-    "fetchedAt": "2026-03-15T16:20:52.770Z"
+    "winRate": 55.05,
+    "enemyWinRate": 44.95,
+    "fetchedAt": "2026-03-20T18:53:08.619Z"
   },
   "Aatrox_vs_Yone_TOP": {
     "winRate": 50.8,
@@ -6865,254 +6865,254 @@
     "fetchedAt": "2026-03-20T18:01:54.162Z"
   },
   "Zaahen_vs_Garen_TOP": {
-    "winRate": 51.1,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:31:45.575Z"
+    "winRate": 44.44,
+    "enemyWinRate": 55.56,
+    "fetchedAt": "2026-03-20T18:54:48.270Z"
   },
   "Zaahen_vs_Ornn_TOP": {
-    "winRate": 52.6,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:31:47.556Z"
+    "winRate": 45.34,
+    "enemyWinRate": 54.66,
+    "fetchedAt": "2026-03-20T18:56:12.834Z"
   },
   "Zaahen_vs_Malphite_TOP": {
-    "winRate": 57.1,
-    "enemyWinRate": 42.9,
-    "fetchedAt": "2026-03-15T16:22:42.617Z"
+    "winRate": 50.28,
+    "enemyWinRate": 49.72,
+    "fetchedAt": "2026-03-20T18:55:00.120Z"
   },
   "Zaahen_vs_Shen_TOP": {
-    "winRate": 48.93,
-    "enemyWinRate": 51.07,
-    "fetchedAt": "2026-03-15T16:22:56.416Z"
+    "winRate": 46.42,
+    "enemyWinRate": 53.58,
+    "fetchedAt": "2026-03-20T18:55:13.700Z"
   },
   "Zaahen_vs_Kayle_TOP": {
-    "winRate": 49.7,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:31:53.271Z"
+    "winRate": 45.78,
+    "enemyWinRate": 54.22,
+    "fetchedAt": "2026-03-20T18:56:07.455Z"
   },
   "Zaahen_vs_Mordekaiser_TOP": {
-    "winRate": 54.6,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:31:55.255Z"
+    "winRate": 51.01,
+    "enemyWinRate": 48.99,
+    "fetchedAt": "2026-03-20T18:56:14.987Z"
   },
   "Zaahen_vs_Sett_TOP": {
-    "winRate": 54.7,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:31:57.299Z"
+    "winRate": 51.54,
+    "enemyWinRate": 48.46,
+    "fetchedAt": "2026-03-20T18:56:17.220Z"
   },
   "Zaahen_vs_Irelia_TOP": {
-    "winRate": 52.6,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:31:59.540Z"
+    "winRate": 49.43,
+    "enemyWinRate": 50.57,
+    "fetchedAt": "2026-03-20T18:54:50.777Z"
   },
   "Zaahen_vs_Nasus_TOP": {
-    "winRate": 45.97,
-    "enemyWinRate": 54.03,
-    "fetchedAt": "2026-03-15T16:23:29.677Z"
+    "winRate": 50.26,
+    "enemyWinRate": 49.74,
+    "fetchedAt": "2026-03-20T18:55:48.025Z"
   },
   "Zaahen_vs_Aatrox_TOP": {
-    "winRate": 51.99,
-    "enemyWinRate": 48.01,
-    "fetchedAt": "2026-03-15T16:22:20.085Z"
+    "winRate": 50.27,
+    "enemyWinRate": 49.73,
+    "fetchedAt": "2026-03-20T18:54:36.268Z"
   },
   "Zaahen_vs_Gangplank_TOP": {
-    "winRate": 52.2,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:04.953Z"
+    "winRate": 48.25,
+    "enemyWinRate": 51.75,
+    "fetchedAt": "2026-03-20T18:55:53.069Z"
   },
   "Zaahen_vs_Sion_TOP": {
-    "winRate": 52.6,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:06.973Z"
+    "winRate": 53.45,
+    "enemyWinRate": 46.55,
+    "fetchedAt": "2026-03-20T18:55:45.798Z"
   },
   "Zaahen_vs_Urgot_TOP": {
-    "winRate": 52.2,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:09.166Z"
+    "winRate": 47.56,
+    "enemyWinRate": 52.44,
+    "fetchedAt": "2026-03-20T18:55:25.016Z"
   },
   "Zaahen_vs_Jax_TOP": {
-    "winRate": 49.34,
-    "enemyWinRate": 50.66,
-    "fetchedAt": "2026-03-15T16:22:36.132Z"
+    "winRate": 47.7,
+    "enemyWinRate": 52.3,
+    "fetchedAt": "2026-03-20T18:54:52.964Z"
   },
   "Zaahen_vs_Darius_TOP": {
-    "winRate": 49,
-    "enemyWinRate": 51,
-    "fetchedAt": "2026-03-15T16:22:27.293Z"
+    "winRate": 52.69,
+    "enemyWinRate": 47.31,
+    "fetchedAt": "2026-03-20T18:54:43.070Z"
   },
   "Zaahen_vs_Camille_TOP": {
-    "winRate": 49.5,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:15.557Z"
+    "winRate": 49.6,
+    "enemyWinRate": 50.4,
+    "fetchedAt": "2026-03-20T18:54:40.786Z"
   },
   "Zaahen_vs_Renekton_TOP": {
-    "winRate": 53.5,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:17.973Z"
+    "winRate": 46.7,
+    "enemyWinRate": 53.3,
+    "fetchedAt": "2026-03-20T18:55:09.214Z"
   },
   "Zaahen_vs_Kled_TOP": {
-    "winRate": 53,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:20.083Z"
+    "winRate": 41.61,
+    "enemyWinRate": 58.39,
+    "fetchedAt": "2026-03-20T18:54:57.708Z"
   },
   "Zaahen_vs_Yone_TOP": {
-    "winRate": 55.2,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:23.972Z"
+    "winRate": 51.35,
+    "enemyWinRate": 48.65,
+    "fetchedAt": "2026-03-20T18:55:38.515Z"
   },
   "Zaahen_vs_Teemo_TOP": {
-    "winRate": 47.68,
-    "enemyWinRate": 52.32,
-    "fetchedAt": "2026-03-15T16:23:00.820Z"
+    "winRate": 47.9,
+    "enemyWinRate": 52.1,
+    "fetchedAt": "2026-03-20T18:55:18.290Z"
   },
   "Zaahen_vs_Fiora_TOP": {
-    "winRate": 50.6,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:28.852Z"
+    "winRate": 46.54,
+    "enemyWinRate": 53.46,
+    "fetchedAt": "2026-03-20T18:54:45.307Z"
   },
   "Zaahen_vs_DrMundo_TOP": {
-    "winRate": 50.07,
-    "enemyWinRate": 49.93,
-    "fetchedAt": "2026-03-15T16:23:36.219Z"
+    "winRate": 51.78,
+    "enemyWinRate": 48.22,
+    "fetchedAt": "2026-03-20T18:55:55.294Z"
   },
   "Zaahen_vs_Vayne_TOP": {
-    "winRate": 51.2,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:32.547Z"
+    "winRate": 43.33,
+    "enemyWinRate": 56.67,
+    "fetchedAt": "2026-03-20T18:55:27.335Z"
   },
   "Zaahen_vs_Olaf_TOP": {
-    "winRate": 51.5,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:35.193Z"
+    "winRate": 51.53,
+    "enemyWinRate": 48.47,
+    "fetchedAt": "2026-03-20T18:55:02.675Z"
   },
   "Zaahen_vs_Kennen_TOP": {
-    "winRate": 50.9,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:38.244Z"
+    "winRate": 55.36,
+    "enemyWinRate": 44.64,
+    "fetchedAt": "2026-03-20T18:56:31.197Z"
   },
   "Zaahen_vs_Riven_TOP": {
-    "winRate": 50.4,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:41.194Z"
+    "winRate": 54.84,
+    "enemyWinRate": 45.16,
+    "fetchedAt": "2026-03-20T18:55:11.478Z"
   },
   "Zaahen_vs_Yorick_TOP": {
-    "winRate": 51.4,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:44.024Z"
+    "winRate": 44.44,
+    "enemyWinRate": 55.56,
+    "fetchedAt": "2026-03-20T18:55:40.787Z"
   },
   "Zaahen_vs_Anivia_TOP": {
-    "winRate": 54.1,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:47.235Z"
+    "winRate": 60.47,
+    "enemyWinRate": 39.53,
+    "fetchedAt": "2026-03-20T18:56:40.761Z"
   },
   "Zaahen_vs_Gnar_TOP": {
-    "winRate": 51.7,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:49.663Z"
+    "winRate": 44.92,
+    "enemyWinRate": 55.08,
+    "fetchedAt": "2026-03-20T18:56:28.951Z"
   },
   "Zaahen_vs_Ambessa_TOP": {
-    "winRate": 54.2,
-    "enemyWinRate": 45.8,
-    "fetchedAt": "2026-03-15T16:24:37.788Z"
+    "winRate": 49.8,
+    "enemyWinRate": 50.2,
+    "fetchedAt": "2026-03-20T18:57:07.908Z"
   },
   "Zaahen_vs_Pantheon_TOP": {
-    "winRate": 54.1,
-    "enemyWinRate": 45.9,
-    "fetchedAt": "2026-03-15T16:22:46.909Z"
+    "winRate": 44.2,
+    "enemyWinRate": 55.8,
+    "fetchedAt": "2026-03-20T18:55:04.835Z"
   },
   "Zaahen_vs_Akali_TOP": {
-    "winRate": 55,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:56.598Z"
+    "winRate": 47.44,
+    "enemyWinRate": 52.56,
+    "fetchedAt": "2026-03-20T18:54:38.538Z"
   },
   "Zaahen_vs_Illaoi_TOP": {
-    "winRate": 49.1,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:32:58.614Z"
+    "winRate": 46.85,
+    "enemyWinRate": 53.15,
+    "fetchedAt": "2026-03-20T18:55:57.518Z"
   },
   "Zaahen_vs_Jayce_TOP": {
-    "winRate": 49.39,
-    "enemyWinRate": 50.61,
-    "fetchedAt": "2026-03-15T16:22:38.358Z"
+    "winRate": 50.8,
+    "enemyWinRate": 49.2,
+    "fetchedAt": "2026-03-20T18:54:55.264Z"
   },
   "Zaahen_vs_Warwick_TOP": {
-    "winRate": 51.14,
-    "enemyWinRate": 48.86,
-    "fetchedAt": "2026-03-15T16:23:16.239Z"
+    "winRate": 50.68,
+    "enemyWinRate": 49.32,
+    "fetchedAt": "2026-03-20T18:55:34.066Z"
   },
   "Zaahen_vs_Quinn_TOP": {
-    "winRate": 53.1,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:04.262Z"
+    "winRate": 41.3,
+    "enemyWinRate": 58.7,
+    "fetchedAt": "2026-03-20T18:55:07.033Z"
   },
   "Zaahen_vs_Poppy_TOP": {
-    "winRate": 52.3,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:06.253Z"
+    "winRate": 50.98,
+    "enemyWinRate": 49.02,
+    "fetchedAt": "2026-03-20T18:56:24.991Z"
   },
   "Zaahen_vs_Yasuo_TOP": {
-    "winRate": 55.6,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:08.393Z"
+    "winRate": 50.71,
+    "enemyWinRate": 49.29,
+    "fetchedAt": "2026-03-20T18:55:36.309Z"
   },
   "Zaahen_vs_Varus_TOP": {
-    "winRate": 57.1,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:10.418Z"
+    "winRate": 45.26,
+    "enemyWinRate": 54.74,
+    "fetchedAt": "2026-03-20T18:56:22.581Z"
   },
   "Zaahen_vs_Rumble_TOP": {
-    "winRate": 51.2,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:12.663Z"
+    "winRate": 53.37,
+    "enemyWinRate": 46.63,
+    "fetchedAt": "2026-03-20T18:56:05.225Z"
   },
   "Zaahen_vs_Gragas_TOP": {
-    "winRate": 51.84,
-    "enemyWinRate": 48.16,
-    "fetchedAt": "2026-03-15T16:23:40.548Z"
+    "winRate": 46.43,
+    "enemyWinRate": 53.57,
+    "fetchedAt": "2026-03-20T18:56:00.682Z"
   },
   "Zaahen_vs_Tryndamere_TOP": {
-    "winRate": 59.5,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:17.531Z"
+    "winRate": 50.75,
+    "enemyWinRate": 49.25,
+    "fetchedAt": "2026-03-20T18:55:22.794Z"
   },
   "Zaahen_vs_Heimerdinger_TOP": {
-    "winRate": 50.5,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:19.759Z"
+    "winRate": 48.98,
+    "enemyWinRate": 51.02,
+    "fetchedAt": "2026-03-20T18:57:12.305Z"
   },
   "Zaahen_vs_Volibear_TOP": {
-    "winRate": 54.4,
-    "enemyWinRate": 45.6,
-    "fetchedAt": "2026-03-15T16:23:14.027Z"
+    "winRate": 47.08,
+    "enemyWinRate": 52.92,
+    "fetchedAt": "2026-03-20T18:55:31.896Z"
   },
   "Zaahen_vs_Cassiopeia_TOP": {
-    "winRate": 52.7,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:23.530Z"
+    "winRate": 41.94,
+    "enemyWinRate": 58.06,
+    "fetchedAt": "2026-03-20T18:56:52.479Z"
   },
   "Zaahen_vs_Gwen_TOP": {
-    "winRate": 59.4,
-    "enemyWinRate": 40.6,
-    "fetchedAt": "2026-03-15T16:24:31.087Z"
+    "winRate": 53.23,
+    "enemyWinRate": 46.77,
+    "fetchedAt": "2026-03-20T18:57:01.510Z"
   },
   "Zaahen_vs_Vladimir_TOP": {
-    "winRate": 52,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:27.493Z"
+    "winRate": 36.46,
+    "enemyWinRate": 63.54,
+    "fetchedAt": "2026-03-20T18:55:29.679Z"
   },
   "Zaahen_vs_Sylas_TOP": {
-    "winRate": 52.6,
-    "enemyWinRate": 47.4,
-    "fetchedAt": "2026-03-15T16:23:59.773Z"
+    "winRate": 41.38,
+    "enemyWinRate": 58.62,
+    "fetchedAt": "2026-03-20T18:56:20.328Z"
   },
   "Zaahen_vs_TahmKench_TOP": {
-    "winRate": 57.6,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:31.131Z"
+    "winRate": 50.85,
+    "enemyWinRate": 49.15,
+    "fetchedAt": "2026-03-20T18:55:16.095Z"
   },
   "Zaahen_vs_Aurora_TOP": {
-    "winRate": 54.9,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:33.706Z"
+    "winRate": 42.62,
+    "enemyWinRate": 57.38,
+    "fetchedAt": "2026-03-20T18:57:10.104Z"
   },
   "Zaahen_vs_Zac_TOP": {
     "winRate": 54.62,
@@ -7120,9 +7120,9 @@
     "fetchedAt": "2026-03-15T16:23:25.239Z"
   },
   "Zaahen_vs_KSante_TOP": {
-    "winRate": 56.3,
-    "games": null,
-    "fetchedAt": "2026-03-12T14:33:37.417Z"
+    "winRate": 56.81,
+    "enemyWinRate": 43.19,
+    "fetchedAt": "2026-03-20T18:57:03.613Z"
   },
   "Irelia_vs_Ornn_TOP": {
     "winRate": 48.36,
@@ -12465,229 +12465,229 @@
     "fetchedAt": "2026-03-20T18:14:21.960Z"
   },
   "Ambessa_vs_Ornn_TOP": {
-    "winRate": 50.03,
-    "enemyWinRate": 49.97,
-    "fetchedAt": "2026-03-15T16:21:24.449Z"
+    "winRate": 49.66,
+    "enemyWinRate": 50.34,
+    "fetchedAt": "2026-03-20T18:53:39.445Z"
   },
   "Ambessa_vs_Malphite_TOP": {
-    "winRate": 48.41,
-    "enemyWinRate": 51.59,
-    "fetchedAt": "2026-03-15T16:20:15.212Z"
+    "winRate": 51.15,
+    "enemyWinRate": 48.85,
+    "fetchedAt": "2026-03-20T18:52:16.680Z"
   },
   "Ambessa_vs_Shen_TOP": {
-    "winRate": 49.39,
-    "enemyWinRate": 50.61,
-    "fetchedAt": "2026-03-15T16:20:28.550Z"
+    "winRate": 49.23,
+    "enemyWinRate": 50.77,
+    "fetchedAt": "2026-03-20T18:52:30.468Z"
   },
   "Ambessa_vs_Kayle_TOP": {
-    "winRate": 49.17,
-    "enemyWinRate": 50.83,
-    "fetchedAt": "2026-03-15T16:21:20.036Z"
+    "winRate": 46.01,
+    "enemyWinRate": 53.99,
+    "fetchedAt": "2026-03-20T18:53:35.064Z"
   },
   "Ambessa_vs_Mordekaiser_TOP": {
-    "winRate": 51.23,
-    "enemyWinRate": 48.77,
-    "fetchedAt": "2026-03-15T16:21:26.630Z"
+    "winRate": 52.96,
+    "enemyWinRate": 47.04,
+    "fetchedAt": "2026-03-20T18:53:41.738Z"
   },
   "Ambessa_vs_Sett_TOP": {
-    "winRate": 46.82,
-    "enemyWinRate": 53.18,
-    "fetchedAt": "2026-03-15T16:21:28.819Z"
+    "winRate": 44.04,
+    "enemyWinRate": 55.96,
+    "fetchedAt": "2026-03-20T18:53:43.967Z"
   },
   "Ambessa_vs_Zaahen_TOP": {
-    "winRate": 49.46,
-    "enemyWinRate": 50.54,
-    "fetchedAt": "2026-03-15T16:22:11.177Z"
+    "winRate": 50.2,
+    "enemyWinRate": 49.8,
+    "fetchedAt": "2026-03-20T18:54:27.353Z"
   },
   "Ambessa_vs_Nasus_TOP": {
-    "winRate": 50.23,
-    "enemyWinRate": 49.77,
-    "fetchedAt": "2026-03-15T16:21:01.967Z"
-  },
-  "Ambessa_vs_Gangplank_TOP": {
-    "winRate": 45.84,
-    "enemyWinRate": 54.16,
-    "fetchedAt": "2026-03-15T16:21:06.508Z"
-  },
-  "Ambessa_vs_Sion_TOP": {
-    "winRate": 50.83,
-    "enemyWinRate": 49.17,
-    "fetchedAt": "2026-03-15T16:20:59.597Z"
-  },
-  "Ambessa_vs_Urgot_TOP": {
-    "winRate": 47.11,
-    "enemyWinRate": 52.89,
-    "fetchedAt": "2026-03-15T16:20:39.495Z"
-  },
-  "Ambessa_vs_Jax_TOP": {
-    "winRate": 50.77,
-    "enemyWinRate": 49.23,
-    "fetchedAt": "2026-03-15T16:20:08.295Z"
-  },
-  "Ambessa_vs_Darius_TOP": {
-    "winRate": 50.4,
-    "enemyWinRate": 49.6,
-    "fetchedAt": "2026-03-15T16:19:59.415Z"
-  },
-  "Ambessa_vs_Camille_TOP": {
-    "winRate": 45.95,
-    "enemyWinRate": 54.05,
-    "fetchedAt": "2026-03-15T16:19:56.834Z"
-  },
-  "Ambessa_vs_Renekton_TOP": {
-    "winRate": 47.66,
-    "enemyWinRate": 52.34,
-    "fetchedAt": "2026-03-15T16:20:24.196Z"
-  },
-  "Ambessa_vs_Kled_TOP": {
-    "winRate": 48.57,
-    "enemyWinRate": 51.43,
-    "fetchedAt": "2026-03-15T16:20:13.082Z"
-  },
-  "Ambessa_vs_Teemo_TOP": {
-    "winRate": 47.62,
-    "enemyWinRate": 52.38,
-    "fetchedAt": "2026-03-15T16:20:32.934Z"
-  },
-  "Ambessa_vs_DrMundo_TOP": {
-    "winRate": 53.36,
-    "enemyWinRate": 46.64,
-    "fetchedAt": "2026-03-15T16:21:08.871Z"
-  },
-  "Ambessa_vs_Vayne_TOP": {
-    "winRate": 49.88,
-    "enemyWinRate": 50.12,
-    "fetchedAt": "2026-03-15T16:20:41.676Z"
-  },
-  "Ambessa_vs_Olaf_TOP": {
-    "winRate": 44.84,
-    "enemyWinRate": 55.16,
-    "fetchedAt": "2026-03-15T16:20:17.570Z"
-  },
-  "Ambessa_vs_Kennen_TOP": {
-    "winRate": 45.77,
-    "enemyWinRate": 54.23,
-    "fetchedAt": "2026-03-15T16:21:40.535Z"
-  },
-  "Ambessa_vs_Riven_TOP": {
-    "winRate": 47.34,
-    "enemyWinRate": 52.66,
-    "fetchedAt": "2026-03-15T16:20:26.430Z"
-  },
-  "Ambessa_vs_Yorick_TOP": {
-    "winRate": 46.84,
-    "enemyWinRate": 53.16,
-    "fetchedAt": "2026-03-15T16:20:54.932Z"
-  },
-  "Ambessa_vs_Anivia_TOP": {
-    "winRate": 49.49,
-    "enemyWinRate": 50.51,
-    "fetchedAt": "2026-03-15T16:21:50.044Z"
-  },
-  "Ambessa_vs_Gnar_TOP": {
-    "winRate": 49.35,
-    "enemyWinRate": 50.65,
-    "fetchedAt": "2026-03-15T16:21:38.287Z"
-  },
-  "Ambessa_vs_Pantheon_TOP": {
-    "winRate": 45.6,
-    "enemyWinRate": 54.4,
-    "fetchedAt": "2026-03-15T16:20:19.779Z"
-  },
-  "Ambessa_vs_Akali_TOP": {
-    "winRate": 48.86,
-    "enemyWinRate": 51.14,
-    "fetchedAt": "2026-03-15T16:19:54.468Z"
-  },
-  "Ambessa_vs_Illaoi_TOP": {
-    "winRate": 45.61,
-    "enemyWinRate": 54.39,
-    "fetchedAt": "2026-03-15T16:21:11.149Z"
-  },
-  "Ambessa_vs_Jayce_TOP": {
-    "winRate": 51.86,
-    "enemyWinRate": 48.14,
-    "fetchedAt": "2026-03-15T16:20:10.847Z"
-  },
-  "Ambessa_vs_Warwick_TOP": {
-    "winRate": 46.4,
-    "enemyWinRate": 53.6,
-    "fetchedAt": "2026-03-15T16:20:48.374Z"
-  },
-  "Ambessa_vs_Quinn_TOP": {
-    "winRate": 47.75,
-    "enemyWinRate": 52.25,
-    "fetchedAt": "2026-03-15T16:20:22.032Z"
-  },
-  "Ambessa_vs_Poppy_TOP": {
-    "winRate": 50,
-    "enemyWinRate": 50,
-    "fetchedAt": "2026-03-15T16:21:35.802Z"
-  },
-  "Ambessa_vs_Yasuo_TOP": {
-    "winRate": 50.54,
-    "enemyWinRate": 49.46,
-    "fetchedAt": "2026-03-15T16:20:50.582Z"
-  },
-  "Ambessa_vs_Varus_TOP": {
-    "winRate": 47.4,
-    "enemyWinRate": 52.6,
-    "fetchedAt": "2026-03-15T16:21:33.480Z"
-  },
-  "Ambessa_vs_Rumble_TOP": {
-    "winRate": 51.96,
-    "enemyWinRate": 48.04,
-    "fetchedAt": "2026-03-15T16:21:17.874Z"
-  },
-  "Ambessa_vs_Gragas_TOP": {
-    "winRate": 51.35,
-    "enemyWinRate": 48.65,
-    "fetchedAt": "2026-03-15T16:21:13.476Z"
-  },
-  "Ambessa_vs_Tryndamere_TOP": {
-    "winRate": 48.48,
-    "enemyWinRate": 51.52,
-    "fetchedAt": "2026-03-15T16:20:37.359Z"
-  },
-  "Ambessa_vs_Heimerdinger_TOP": {
-    "winRate": 47,
-    "enemyWinRate": 53,
-    "fetchedAt": "2026-03-15T16:22:15.656Z"
-  },
-  "Ambessa_vs_Volibear_TOP": {
-    "winRate": 51.26,
-    "enemyWinRate": 48.74,
-    "fetchedAt": "2026-03-15T16:20:46.160Z"
-  },
-  "Ambessa_vs_Cassiopeia_TOP": {
-    "winRate": 45.32,
-    "enemyWinRate": 54.68,
-    "fetchedAt": "2026-03-15T16:21:55.312Z"
-  },
-  "Ambessa_vs_Gwen_TOP": {
-    "winRate": 52.86,
-    "enemyWinRate": 47.14,
-    "fetchedAt": "2026-03-15T16:22:04.442Z"
-  },
-  "Ambessa_vs_Vladimir_TOP": {
     "winRate": 48.28,
     "enemyWinRate": 51.72,
-    "fetchedAt": "2026-03-15T16:20:43.928Z"
+    "fetchedAt": "2026-03-20T18:53:17.402Z"
   },
-  "Ambessa_vs_Sylas_TOP": {
-    "winRate": 56.33,
-    "enemyWinRate": 43.67,
-    "fetchedAt": "2026-03-15T16:21:31.319Z"
+  "Ambessa_vs_Gangplank_TOP": {
+    "winRate": 45.85,
+    "enemyWinRate": 54.15,
+    "fetchedAt": "2026-03-20T18:53:21.710Z"
   },
-  "Ambessa_vs_TahmKench_TOP": {
-    "winRate": 51.44,
-    "enemyWinRate": 48.56,
-    "fetchedAt": "2026-03-15T16:20:30.804Z"
+  "Ambessa_vs_Sion_TOP": {
+    "winRate": 52.48,
+    "enemyWinRate": 47.52,
+    "fetchedAt": "2026-03-20T18:53:15.159Z"
   },
-  "Ambessa_vs_Aurora_TOP": {
+  "Ambessa_vs_Urgot_TOP": {
+    "winRate": 48.44,
+    "enemyWinRate": 51.56,
+    "fetchedAt": "2026-03-20T18:52:55.290Z"
+  },
+  "Ambessa_vs_Jax_TOP": {
+    "winRate": 47.28,
+    "enemyWinRate": 52.72,
+    "fetchedAt": "2026-03-20T18:52:09.472Z"
+  },
+  "Ambessa_vs_Darius_TOP": {
+    "winRate": 46.89,
+    "enemyWinRate": 53.11,
+    "fetchedAt": "2026-03-20T18:51:59.106Z"
+  },
+  "Ambessa_vs_Camille_TOP": {
+    "winRate": 43.91,
+    "enemyWinRate": 56.09,
+    "fetchedAt": "2026-03-20T18:51:56.869Z"
+  },
+  "Ambessa_vs_Renekton_TOP": {
+    "winRate": 47.61,
+    "enemyWinRate": 52.39,
+    "fetchedAt": "2026-03-20T18:52:25.740Z"
+  },
+  "Ambessa_vs_Kled_TOP": {
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-20T18:52:14.460Z"
+  },
+  "Ambessa_vs_Teemo_TOP": {
+    "winRate": 44.85,
+    "enemyWinRate": 55.15,
+    "fetchedAt": "2026-03-20T18:52:35.274Z"
+  },
+  "Ambessa_vs_DrMundo_TOP": {
+    "winRate": 52.26,
+    "enemyWinRate": 47.74,
+    "fetchedAt": "2026-03-20T18:53:23.962Z"
+  },
+  "Ambessa_vs_Vayne_TOP": {
+    "winRate": 51.96,
+    "enemyWinRate": 48.04,
+    "fetchedAt": "2026-03-20T18:52:57.506Z"
+  },
+  "Ambessa_vs_Olaf_TOP": {
+    "winRate": 50.24,
+    "enemyWinRate": 49.76,
+    "fetchedAt": "2026-03-20T18:52:18.826Z"
+  },
+  "Ambessa_vs_Kennen_TOP": {
+    "winRate": 50.75,
+    "enemyWinRate": 49.25,
+    "fetchedAt": "2026-03-20T18:53:56.987Z"
+  },
+  "Ambessa_vs_Riven_TOP": {
+    "winRate": 43.06,
+    "enemyWinRate": 56.94,
+    "fetchedAt": "2026-03-20T18:52:28.310Z"
+  },
+  "Ambessa_vs_Yorick_TOP": {
+    "winRate": 43.81,
+    "enemyWinRate": 56.19,
+    "fetchedAt": "2026-03-20T18:53:10.744Z"
+  },
+  "Ambessa_vs_Anivia_TOP": {
+    "winRate": 47.22,
+    "enemyWinRate": 52.78,
+    "fetchedAt": "2026-03-20T18:54:05.870Z"
+  },
+  "Ambessa_vs_Gnar_TOP": {
     "winRate": 51.86,
     "enemyWinRate": 48.14,
-    "fetchedAt": "2026-03-15T16:22:13.428Z"
+    "fetchedAt": "2026-03-20T18:53:54.771Z"
+  },
+  "Ambessa_vs_Pantheon_TOP": {
+    "winRate": 45.88,
+    "enemyWinRate": 54.12,
+    "fetchedAt": "2026-03-20T18:52:21.271Z"
+  },
+  "Ambessa_vs_Akali_TOP": {
+    "winRate": 52.56,
+    "enemyWinRate": 47.44,
+    "fetchedAt": "2026-03-20T18:51:54.651Z"
+  },
+  "Ambessa_vs_Illaoi_TOP": {
+    "winRate": 47.7,
+    "enemyWinRate": 52.3,
+    "fetchedAt": "2026-03-20T18:53:26.249Z"
+  },
+  "Ambessa_vs_Jayce_TOP": {
+    "winRate": 48.58,
+    "enemyWinRate": 51.42,
+    "fetchedAt": "2026-03-20T18:52:12.240Z"
+  },
+  "Ambessa_vs_Warwick_TOP": {
+    "winRate": 42.86,
+    "enemyWinRate": 57.14,
+    "fetchedAt": "2026-03-20T18:53:04.089Z"
+  },
+  "Ambessa_vs_Quinn_TOP": {
+    "winRate": 45.9,
+    "enemyWinRate": 54.1,
+    "fetchedAt": "2026-03-20T18:52:23.497Z"
+  },
+  "Ambessa_vs_Poppy_TOP": {
+    "winRate": 45.86,
+    "enemyWinRate": 54.14,
+    "fetchedAt": "2026-03-20T18:53:51.814Z"
+  },
+  "Ambessa_vs_Yasuo_TOP": {
+    "winRate": 48.95,
+    "enemyWinRate": 51.05,
+    "fetchedAt": "2026-03-20T18:53:06.359Z"
+  },
+  "Ambessa_vs_Varus_TOP": {
+    "winRate": 44.83,
+    "enemyWinRate": 55.17,
+    "fetchedAt": "2026-03-20T18:53:48.802Z"
+  },
+  "Ambessa_vs_Rumble_TOP": {
+    "winRate": 53.98,
+    "enemyWinRate": 46.02,
+    "fetchedAt": "2026-03-20T18:53:32.831Z"
+  },
+  "Ambessa_vs_Gragas_TOP": {
+    "winRate": 47.94,
+    "enemyWinRate": 52.06,
+    "fetchedAt": "2026-03-20T18:53:28.475Z"
+  },
+  "Ambessa_vs_Tryndamere_TOP": {
+    "winRate": 44.17,
+    "enemyWinRate": 55.83,
+    "fetchedAt": "2026-03-20T18:52:39.830Z"
+  },
+  "Ambessa_vs_Heimerdinger_TOP": {
+    "winRate": 45.71,
+    "enemyWinRate": 54.29,
+    "fetchedAt": "2026-03-20T18:54:31.911Z"
+  },
+  "Ambessa_vs_Volibear_TOP": {
+    "winRate": 46.28,
+    "enemyWinRate": 53.72,
+    "fetchedAt": "2026-03-20T18:53:01.906Z"
+  },
+  "Ambessa_vs_Cassiopeia_TOP": {
+    "winRate": 58.14,
+    "enemyWinRate": 41.86,
+    "fetchedAt": "2026-03-20T18:54:10.868Z"
+  },
+  "Ambessa_vs_Gwen_TOP": {
+    "winRate": 50.72,
+    "enemyWinRate": 49.28,
+    "fetchedAt": "2026-03-20T18:54:20.575Z"
+  },
+  "Ambessa_vs_Vladimir_TOP": {
+    "winRate": 49.09,
+    "enemyWinRate": 50.91,
+    "fetchedAt": "2026-03-20T18:52:59.749Z"
+  },
+  "Ambessa_vs_Sylas_TOP": {
+    "winRate": 60.27,
+    "enemyWinRate": 39.73,
+    "fetchedAt": "2026-03-20T18:53:46.172Z"
+  },
+  "Ambessa_vs_TahmKench_TOP": {
+    "winRate": 57.43,
+    "enemyWinRate": 42.57,
+    "fetchedAt": "2026-03-20T18:52:32.630Z"
+  },
+  "Ambessa_vs_Aurora_TOP": {
+    "winRate": 58.82,
+    "enemyWinRate": 41.18,
+    "fetchedAt": "2026-03-20T18:54:29.710Z"
   },
   "Ambessa_vs_Zac_TOP": {
     "winRate": 46.38,
@@ -15540,254 +15540,254 @@
     "fetchedAt": "2026-03-15T14:35:29.214Z"
   },
   "Heimerdinger_vs_Garen_TOP": {
-    "winRate": 44.24,
-    "enemyWinRate": 55.76,
-    "fetchedAt": "2026-03-15T16:27:23.635Z"
+    "winRate": 44.64,
+    "enemyWinRate": 55.36,
+    "fetchedAt": "2026-03-20T19:00:02.188Z"
   },
   "Heimerdinger_vs_Ornn_TOP": {
-    "winRate": 48.06,
-    "enemyWinRate": 51.94,
-    "fetchedAt": "2026-03-15T16:28:46.586Z"
+    "winRate": 47.06,
+    "enemyWinRate": 52.94,
+    "fetchedAt": "2026-03-20T19:01:24.810Z"
   },
   "Heimerdinger_vs_Malphite_TOP": {
-    "winRate": 47.93,
-    "enemyWinRate": 52.07,
-    "fetchedAt": "2026-03-15T16:27:34.736Z"
+    "winRate": 47.83,
+    "enemyWinRate": 52.17,
+    "fetchedAt": "2026-03-20T19:00:13.423Z"
   },
   "Heimerdinger_vs_Shen_TOP": {
-    "winRate": 51.94,
-    "enemyWinRate": 48.06,
-    "fetchedAt": "2026-03-15T16:27:49.273Z"
+    "winRate": 52.31,
+    "enemyWinRate": 47.69,
+    "fetchedAt": "2026-03-20T19:00:26.954Z"
   },
   "Heimerdinger_vs_Kayle_TOP": {
-    "winRate": 45.8,
-    "enemyWinRate": 54.2,
-    "fetchedAt": "2026-03-15T16:28:41.818Z"
+    "winRate": 51.02,
+    "enemyWinRate": 48.98,
+    "fetchedAt": "2026-03-20T19:01:20.284Z"
   },
   "Heimerdinger_vs_Singed_TOP": {
-    "winRate": 48.2,
-    "enemyWinRate": 51.8,
-    "fetchedAt": "2026-03-15T16:28:44.467Z"
+    "winRate": 54.35,
+    "enemyWinRate": 45.65,
+    "fetchedAt": "2026-03-20T19:01:22.564Z"
   },
   "Heimerdinger_vs_Mordekaiser_TOP": {
-    "winRate": 56.04,
-    "enemyWinRate": 43.96,
-    "fetchedAt": "2026-03-15T16:28:48.828Z"
+    "winRate": 48.19,
+    "enemyWinRate": 51.81,
+    "fetchedAt": "2026-03-20T19:01:27.064Z"
   },
   "Heimerdinger_vs_Sett_TOP": {
-    "winRate": 46.41,
-    "enemyWinRate": 53.59,
-    "fetchedAt": "2026-03-15T16:28:51.108Z"
-  },
-  "Heimerdinger_vs_Zaahen_TOP": {
-    "winRate": 52.8,
-    "enemyWinRate": 47.2,
-    "fetchedAt": "2026-03-15T16:29:34.303Z"
-  },
-  "Heimerdinger_vs_Irelia_TOP": {
-    "winRate": 50.49,
-    "enemyWinRate": 49.51,
-    "fetchedAt": "2026-03-15T16:27:25.852Z"
-  },
-  "Heimerdinger_vs_Nasus_TOP": {
-    "winRate": 51.52,
-    "enemyWinRate": 48.48,
-    "fetchedAt": "2026-03-15T16:28:23.094Z"
-  },
-  "Heimerdinger_vs_Aatrox_TOP": {
-    "winRate": 56.16,
-    "enemyWinRate": 43.84,
-    "fetchedAt": "2026-03-15T16:27:12.491Z"
-  },
-  "Heimerdinger_vs_Gangplank_TOP": {
-    "winRate": 44.27,
-    "enemyWinRate": 55.73,
-    "fetchedAt": "2026-03-15T16:28:28.574Z"
-  },
-  "Heimerdinger_vs_Sion_TOP": {
-    "winRate": 43.55,
-    "enemyWinRate": 56.45,
-    "fetchedAt": "2026-03-15T16:28:20.975Z"
-  },
-  "Heimerdinger_vs_Jax_TOP": {
-    "winRate": 50.79,
-    "enemyWinRate": 49.21,
-    "fetchedAt": "2026-03-15T16:27:28.004Z"
-  },
-  "Heimerdinger_vs_Darius_TOP": {
-    "winRate": 53.15,
-    "enemyWinRate": 46.85,
-    "fetchedAt": "2026-03-15T16:27:19.251Z"
-  },
-  "Heimerdinger_vs_Camille_TOP": {
-    "winRate": 52.81,
-    "enemyWinRate": 47.19,
-    "fetchedAt": "2026-03-15T16:27:16.974Z"
-  },
-  "Heimerdinger_vs_Renekton_TOP": {
-    "winRate": 48.5,
-    "enemyWinRate": 51.5,
-    "fetchedAt": "2026-03-15T16:27:43.991Z"
-  },
-  "Heimerdinger_vs_Kled_TOP": {
-    "winRate": 49.59,
-    "enemyWinRate": 50.41,
-    "fetchedAt": "2026-03-15T16:27:32.406Z"
-  },
-  "Heimerdinger_vs_Yone_TOP": {
-    "winRate": 42.23,
-    "enemyWinRate": 57.77,
-    "fetchedAt": "2026-03-15T16:28:14.015Z"
-  },
-  "Heimerdinger_vs_Teemo_TOP": {
-    "winRate": 50.94,
-    "enemyWinRate": 49.06,
-    "fetchedAt": "2026-03-15T16:27:53.704Z"
-  },
-  "Heimerdinger_vs_Fiora_TOP": {
-    "winRate": 48.98,
-    "enemyWinRate": 51.02,
-    "fetchedAt": "2026-03-15T16:27:21.465Z"
-  },
-  "Heimerdinger_vs_DrMundo_TOP": {
-    "winRate": 48.61,
-    "enemyWinRate": 51.39,
-    "fetchedAt": "2026-03-15T16:28:30.795Z"
-  },
-  "Heimerdinger_vs_Vayne_TOP": {
-    "winRate": 48.68,
-    "enemyWinRate": 51.32,
-    "fetchedAt": "2026-03-15T16:28:02.682Z"
-  },
-  "Heimerdinger_vs_Olaf_TOP": {
-    "winRate": 51.43,
-    "enemyWinRate": 48.57,
-    "fetchedAt": "2026-03-15T16:27:36.953Z"
-  },
-  "Heimerdinger_vs_Kennen_TOP": {
-    "winRate": 50.52,
-    "enemyWinRate": 49.48,
-    "fetchedAt": "2026-03-15T16:29:02.856Z"
-  },
-  "Heimerdinger_vs_Riven_TOP": {
-    "winRate": 52.09,
-    "enemyWinRate": 47.91,
-    "fetchedAt": "2026-03-15T16:27:47.025Z"
-  },
-  "Heimerdinger_vs_Chogath_TOP": {
-    "winRate": 44.86,
-    "enemyWinRate": 55.14,
-    "fetchedAt": "2026-03-15T16:28:26.391Z"
-  },
-  "Heimerdinger_vs_Yorick_TOP": {
-    "winRate": 48.78,
-    "enemyWinRate": 51.22,
-    "fetchedAt": "2026-03-15T16:28:16.204Z"
-  },
-  "Heimerdinger_vs_Anivia_TOP": {
-    "winRate": 56.14,
-    "enemyWinRate": 43.86,
-    "fetchedAt": "2026-03-15T16:29:11.788Z"
-  },
-  "Heimerdinger_vs_Gnar_TOP": {
-    "winRate": 49.28,
-    "enemyWinRate": 50.72,
-    "fetchedAt": "2026-03-15T16:29:00.602Z"
-  },
-  "Heimerdinger_vs_Ambessa_TOP": {
-    "winRate": 53,
-    "enemyWinRate": 47,
-    "fetchedAt": "2026-03-15T16:29:32.063Z"
-  },
-  "Heimerdinger_vs_Pantheon_TOP": {
-    "winRate": 57.01,
-    "enemyWinRate": 42.99,
-    "fetchedAt": "2026-03-15T16:27:39.206Z"
-  },
-  "Heimerdinger_vs_Akali_TOP": {
-    "winRate": 48.06,
-    "enemyWinRate": 51.94,
-    "fetchedAt": "2026-03-15T16:27:14.765Z"
-  },
-  "Heimerdinger_vs_Illaoi_TOP": {
-    "winRate": 56.44,
-    "enemyWinRate": 43.56,
-    "fetchedAt": "2026-03-15T16:28:32.953Z"
-  },
-  "Heimerdinger_vs_Jayce_TOP": {
-    "winRate": 47.47,
-    "enemyWinRate": 52.53,
-    "fetchedAt": "2026-03-15T16:27:30.234Z"
-  },
-  "Heimerdinger_vs_Warwick_TOP": {
-    "winRate": 60,
-    "enemyWinRate": 40,
-    "fetchedAt": "2026-03-15T16:28:09.582Z"
-  },
-  "Heimerdinger_vs_Quinn_TOP": {
-    "winRate": 46.48,
-    "enemyWinRate": 53.52,
-    "fetchedAt": "2026-03-15T16:27:41.443Z"
-  },
-  "Heimerdinger_vs_Poppy_TOP": {
-    "winRate": 56.34,
-    "enemyWinRate": 43.66,
-    "fetchedAt": "2026-03-15T16:28:58.381Z"
-  },
-  "Heimerdinger_vs_Yasuo_TOP": {
-    "winRate": 40.18,
-    "enemyWinRate": 59.82,
-    "fetchedAt": "2026-03-15T16:28:11.814Z"
-  },
-  "Heimerdinger_vs_Varus_TOP": {
-    "winRate": 56.92,
-    "enemyWinRate": 43.08,
-    "fetchedAt": "2026-03-15T16:28:56.163Z"
-  },
-  "Heimerdinger_vs_Gragas_TOP": {
-    "winRate": 55.48,
-    "enemyWinRate": 44.52,
-    "fetchedAt": "2026-03-15T16:28:35.168Z"
-  },
-  "Heimerdinger_vs_Tryndamere_TOP": {
-    "winRate": 53.38,
-    "enemyWinRate": 46.62,
-    "fetchedAt": "2026-03-15T16:27:58.162Z"
-  },
-  "Heimerdinger_vs_Volibear_TOP": {
-    "winRate": 60.11,
-    "enemyWinRate": 39.89,
-    "fetchedAt": "2026-03-15T16:28:07.372Z"
-  },
-  "Heimerdinger_vs_Cassiopeia_TOP": {
-    "winRate": 32.5,
-    "enemyWinRate": 67.5,
-    "fetchedAt": "2026-03-15T16:29:16.175Z"
-  },
-  "Heimerdinger_vs_Gwen_TOP": {
-    "winRate": 53.85,
-    "enemyWinRate": 46.15,
-    "fetchedAt": "2026-03-15T16:29:25.138Z"
-  },
-  "Heimerdinger_vs_Vladimir_TOP": {
-    "winRate": 45.59,
-    "enemyWinRate": 54.41,
-    "fetchedAt": "2026-03-15T16:28:05.138Z"
-  },
-  "Heimerdinger_vs_Sylas_TOP": {
-    "winRate": 57.41,
-    "enemyWinRate": 42.59,
-    "fetchedAt": "2026-03-15T16:28:53.924Z"
-  },
-  "Heimerdinger_vs_TahmKench_TOP": {
     "winRate": 62.96,
     "enemyWinRate": 37.04,
-    "fetchedAt": "2026-03-15T16:27:51.484Z"
+    "fetchedAt": "2026-03-20T19:01:29.334Z"
+  },
+  "Heimerdinger_vs_Zaahen_TOP": {
+    "winRate": 51.02,
+    "enemyWinRate": 48.98,
+    "fetchedAt": "2026-03-20T19:02:14.166Z"
+  },
+  "Heimerdinger_vs_Irelia_TOP": {
+    "winRate": 55.95,
+    "enemyWinRate": 44.05,
+    "fetchedAt": "2026-03-20T19:00:04.433Z"
+  },
+  "Heimerdinger_vs_Nasus_TOP": {
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-20T19:01:02.307Z"
+  },
+  "Heimerdinger_vs_Aatrox_TOP": {
+    "winRate": 63.74,
+    "enemyWinRate": 36.26,
+    "fetchedAt": "2026-03-20T18:59:49.968Z"
+  },
+  "Heimerdinger_vs_Gangplank_TOP": {
+    "winRate": 48.08,
+    "enemyWinRate": 51.92,
+    "fetchedAt": "2026-03-20T19:01:06.799Z"
+  },
+  "Heimerdinger_vs_Sion_TOP": {
+    "winRate": 46.94,
+    "enemyWinRate": 53.06,
+    "fetchedAt": "2026-03-20T19:01:00.031Z"
+  },
+  "Heimerdinger_vs_Jax_TOP": {
+    "winRate": 59.38,
+    "enemyWinRate": 40.63,
+    "fetchedAt": "2026-03-20T19:00:06.689Z"
+  },
+  "Heimerdinger_vs_Darius_TOP": {
+    "winRate": 40.74,
+    "enemyWinRate": 59.26,
+    "fetchedAt": "2026-03-20T18:59:56.661Z"
+  },
+  "Heimerdinger_vs_Camille_TOP": {
+    "winRate": 40.74,
+    "enemyWinRate": 59.26,
+    "fetchedAt": "2026-03-20T18:59:54.418Z"
+  },
+  "Heimerdinger_vs_Renekton_TOP": {
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-20T19:00:22.364Z"
+  },
+  "Heimerdinger_vs_Kled_TOP": {
+    "winRate": 47.06,
+    "enemyWinRate": 52.94,
+    "fetchedAt": "2026-03-20T19:00:11.085Z"
+  },
+  "Heimerdinger_vs_Yone_TOP": {
+    "winRate": 47.83,
+    "enemyWinRate": 52.17,
+    "fetchedAt": "2026-03-20T19:00:53.303Z"
+  },
+  "Heimerdinger_vs_Teemo_TOP": {
+    "winRate": 52.5,
+    "enemyWinRate": 47.5,
+    "fetchedAt": "2026-03-20T19:00:32.112Z"
+  },
+  "Heimerdinger_vs_Fiora_TOP": {
+    "winRate": 68.75,
+    "enemyWinRate": 31.25,
+    "fetchedAt": "2026-03-20T18:59:59.938Z"
+  },
+  "Heimerdinger_vs_DrMundo_TOP": {
+    "winRate": 40,
+    "enemyWinRate": 60,
+    "fetchedAt": "2026-03-20T19:01:09.146Z"
+  },
+  "Heimerdinger_vs_Vayne_TOP": {
+    "winRate": 57.58,
+    "enemyWinRate": 42.42,
+    "fetchedAt": "2026-03-20T19:00:41.145Z"
+  },
+  "Heimerdinger_vs_Olaf_TOP": {
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-20T19:00:15.654Z"
+  },
+  "Heimerdinger_vs_Kennen_TOP": {
+    "winRate": 47.06,
+    "enemyWinRate": 52.94,
+    "fetchedAt": "2026-03-20T19:01:40.492Z"
+  },
+  "Heimerdinger_vs_Riven_TOP": {
+    "winRate": 48.39,
+    "enemyWinRate": 51.61,
+    "fetchedAt": "2026-03-20T19:00:24.653Z"
+  },
+  "Heimerdinger_vs_Chogath_TOP": {
+    "winRate": 44.44,
+    "enemyWinRate": 55.56,
+    "fetchedAt": "2026-03-20T19:01:04.553Z"
+  },
+  "Heimerdinger_vs_Yorick_TOP": {
+    "winRate": 54.84,
+    "enemyWinRate": 45.16,
+    "fetchedAt": "2026-03-20T19:00:55.575Z"
+  },
+  "Heimerdinger_vs_Anivia_TOP": {
+    "winRate": 31.25,
+    "enemyWinRate": 68.75,
+    "fetchedAt": "2026-03-20T19:01:50.425Z"
+  },
+  "Heimerdinger_vs_Gnar_TOP": {
+    "winRate": 45.9,
+    "enemyWinRate": 54.1,
+    "fetchedAt": "2026-03-20T19:01:38.270Z"
+  },
+  "Heimerdinger_vs_Ambessa_TOP": {
+    "winRate": 54.29,
+    "enemyWinRate": 45.71,
+    "fetchedAt": "2026-03-20T19:02:11.958Z"
+  },
+  "Heimerdinger_vs_Pantheon_TOP": {
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-20T19:00:17.904Z"
+  },
+  "Heimerdinger_vs_Akali_TOP": {
+    "winRate": 45.45,
+    "enemyWinRate": 54.55,
+    "fetchedAt": "2026-03-20T18:59:52.208Z"
+  },
+  "Heimerdinger_vs_Illaoi_TOP": {
+    "winRate": 52,
+    "enemyWinRate": 48,
+    "fetchedAt": "2026-03-20T19:01:11.375Z"
+  },
+  "Heimerdinger_vs_Jayce_TOP": {
+    "winRate": 38,
+    "enemyWinRate": 62,
+    "fetchedAt": "2026-03-20T19:00:08.823Z"
+  },
+  "Heimerdinger_vs_Warwick_TOP": {
+    "winRate": 36.84,
+    "enemyWinRate": 63.16,
+    "fetchedAt": "2026-03-20T19:00:48.790Z"
+  },
+  "Heimerdinger_vs_Quinn_TOP": {
+    "winRate": 56.25,
+    "enemyWinRate": 43.75,
+    "fetchedAt": "2026-03-20T19:00:20.117Z"
+  },
+  "Heimerdinger_vs_Poppy_TOP": {
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-20T19:01:36.005Z"
+  },
+  "Heimerdinger_vs_Yasuo_TOP": {
+    "winRate": 33.33,
+    "enemyWinRate": 66.67,
+    "fetchedAt": "2026-03-20T19:00:51.067Z"
+  },
+  "Heimerdinger_vs_Varus_TOP": {
+    "winRate": 66.67,
+    "enemyWinRate": 33.33,
+    "fetchedAt": "2026-03-20T19:01:33.786Z"
+  },
+  "Heimerdinger_vs_Gragas_TOP": {
+    "winRate": 46.43,
+    "enemyWinRate": 53.57,
+    "fetchedAt": "2026-03-20T19:01:13.666Z"
+  },
+  "Heimerdinger_vs_Tryndamere_TOP": {
+    "winRate": 53.33,
+    "enemyWinRate": 46.67,
+    "fetchedAt": "2026-03-20T19:00:36.656Z"
+  },
+  "Heimerdinger_vs_Volibear_TOP": {
+    "winRate": 56,
+    "enemyWinRate": 44,
+    "fetchedAt": "2026-03-20T19:00:45.858Z"
+  },
+  "Heimerdinger_vs_Cassiopeia_TOP": {
+    "winRate": 46.15,
+    "enemyWinRate": 53.85,
+    "fetchedAt": "2026-03-20T19:01:54.885Z"
+  },
+  "Heimerdinger_vs_Gwen_TOP": {
+    "winRate": 61.54,
+    "enemyWinRate": 38.46,
+    "fetchedAt": "2026-03-20T19:02:05.295Z"
+  },
+  "Heimerdinger_vs_Vladimir_TOP": {
+    "winRate": 35.29,
+    "enemyWinRate": 64.71,
+    "fetchedAt": "2026-03-20T19:00:43.370Z"
+  },
+  "Heimerdinger_vs_Sylas_TOP": {
+    "winRate": 33.33,
+    "enemyWinRate": 66.67,
+    "fetchedAt": "2026-03-20T19:01:31.576Z"
+  },
+  "Heimerdinger_vs_TahmKench_TOP": {
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-20T19:00:29.376Z"
   },
   "Heimerdinger_vs_Aurora_TOP": {
-    "winRate": 50.59,
-    "enemyWinRate": 49.41,
-    "fetchedAt": "2026-03-15T16:29:36.575Z"
+    "winRate": 53.33,
+    "enemyWinRate": 46.67,
+    "fetchedAt": "2026-03-20T19:02:16.379Z"
   },
   "Heimerdinger_vs_Zac_TOP": {
     "winRate": 58.97,
@@ -17330,9 +17330,9 @@
     "fetchedAt": "2026-03-12T15:49:04.864Z"
   },
   "Aurora_vs_Malphite_TOP": {
-    "winRate": 51.08,
-    "enemyWinRate": 48.92,
-    "fetchedAt": "2026-03-15T16:25:08.819Z"
+    "winRate": 51.52,
+    "enemyWinRate": 48.48,
+    "fetchedAt": "2026-03-20T18:57:40.947Z"
   },
   "Aurora_vs_Shen_TOP": {
     "winRate": 49.6,
@@ -17340,9 +17340,9 @@
     "fetchedAt": "2026-03-12T15:49:09.957Z"
   },
   "Aurora_vs_Kayle_TOP": {
-    "winRate": 45.79,
-    "enemyWinRate": 54.21,
-    "fetchedAt": "2026-03-15T16:26:14.873Z"
+    "winRate": 53.13,
+    "enemyWinRate": 46.88,
+    "fetchedAt": "2026-03-20T18:58:48.334Z"
   },
   "Aurora_vs_Singed_TOP": {
     "winRate": 46.5,
@@ -17365,14 +17365,14 @@
     "fetchedAt": "2026-03-12T15:49:20.487Z"
   },
   "Aurora_vs_Irelia_TOP": {
-    "winRate": 48.82,
-    "enemyWinRate": 51.18,
-    "fetchedAt": "2026-03-15T16:25:00.087Z"
+    "winRate": 50.34,
+    "enemyWinRate": 49.66,
+    "fetchedAt": "2026-03-20T18:57:32.113Z"
   },
   "Aurora_vs_Nasus_TOP": {
-    "winRate": 46,
-    "enemyWinRate": 54,
-    "fetchedAt": "2026-03-15T16:25:56.132Z"
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-20T18:58:30.607Z"
   },
   "Aurora_vs_Aatrox_TOP": {
     "winRate": 52.9,
@@ -17385,9 +17385,9 @@
     "fetchedAt": "2026-03-12T15:49:28.661Z"
   },
   "Aurora_vs_Sion_TOP": {
-    "winRate": 55.6,
-    "enemyWinRate": 44.4,
-    "fetchedAt": "2026-03-15T16:25:53.941Z"
+    "winRate": 46,
+    "enemyWinRate": 54,
+    "fetchedAt": "2026-03-20T18:58:28.378Z"
   },
   "Aurora_vs_Urgot_TOP": {
     "winRate": 51.9,
@@ -17420,9 +17420,9 @@
     "fetchedAt": "2026-03-12T15:49:45.271Z"
   },
   "Aurora_vs_Yone_TOP": {
-    "winRate": 51.93,
-    "enemyWinRate": 48.07,
-    "fetchedAt": "2026-03-15T16:25:47.271Z"
+    "winRate": 54.31,
+    "enemyWinRate": 45.69,
+    "fetchedAt": "2026-03-20T18:58:21.743Z"
   },
   "Aurora_vs_Teemo_TOP": {
     "winRate": 48,
@@ -17460,9 +17460,9 @@
     "fetchedAt": "2026-03-12T15:50:05.259Z"
   },
   "Aurora_vs_Chogath_TOP": {
-    "winRate": 48.13,
-    "enemyWinRate": 51.87,
-    "fetchedAt": "2026-03-15T16:25:59.341Z"
+    "winRate": 58.06,
+    "enemyWinRate": 41.94,
+    "fetchedAt": "2026-03-20T18:58:32.758Z"
   },
   "Aurora_vs_Yorick_TOP": {
     "winRate": 53.6,
@@ -17470,9 +17470,9 @@
     "fetchedAt": "2026-03-12T15:50:09.379Z"
   },
   "Aurora_vs_Anivia_TOP": {
-    "winRate": 49.74,
-    "enemyWinRate": 50.26,
-    "fetchedAt": "2026-03-15T16:26:43.701Z"
+    "winRate": 48.33,
+    "enemyWinRate": 51.67,
+    "fetchedAt": "2026-03-20T18:59:19.957Z"
   },
   "Aurora_vs_Gnar_TOP": {
     "winRate": 52.7,
@@ -17485,14 +17485,14 @@
     "fetchedAt": "2026-03-12T15:50:17.166Z"
   },
   "Aurora_vs_Pantheon_TOP": {
-    "winRate": 48.21,
-    "enemyWinRate": 51.79,
-    "fetchedAt": "2026-03-15T16:25:13.292Z"
+    "winRate": 35.9,
+    "enemyWinRate": 64.1,
+    "fetchedAt": "2026-03-20T18:57:45.935Z"
   },
   "Aurora_vs_Akali_TOP": {
-    "winRate": 46.93,
-    "enemyWinRate": 53.07,
-    "fetchedAt": "2026-03-15T16:24:48.972Z"
+    "winRate": 49.23,
+    "enemyWinRate": 50.77,
+    "fetchedAt": "2026-03-20T18:57:19.573Z"
   },
   "Aurora_vs_Illaoi_TOP": {
     "winRate": 50.8,
@@ -17500,9 +17500,9 @@
     "fetchedAt": "2026-03-12T15:50:23.210Z"
   },
   "Aurora_vs_Jayce_TOP": {
-    "winRate": 50.19,
-    "enemyWinRate": 49.81,
-    "fetchedAt": "2026-03-15T16:25:04.434Z"
+    "winRate": 46.77,
+    "enemyWinRate": 53.23,
+    "fetchedAt": "2026-03-20T18:57:36.518Z"
   },
   "Aurora_vs_Warwick_TOP": {
     "winRate": 45.4,
@@ -17520,9 +17520,9 @@
     "fetchedAt": "2026-03-12T15:50:31.096Z"
   },
   "Aurora_vs_Yasuo_TOP": {
-    "winRate": 50.74,
-    "enemyWinRate": 49.26,
-    "fetchedAt": "2026-03-15T16:25:45.005Z"
+    "winRate": 46.88,
+    "enemyWinRate": 53.12,
+    "fetchedAt": "2026-03-20T18:58:19.349Z"
   },
   "Aurora_vs_Varus_TOP": {
     "winRate": 53.3,
@@ -17550,9 +17550,9 @@
     "fetchedAt": "2026-03-12T15:50:44.714Z"
   },
   "Aurora_vs_Cassiopeia_TOP": {
-    "winRate": 44.14,
-    "enemyWinRate": 55.86,
-    "fetchedAt": "2026-03-15T16:26:48.142Z"
+    "winRate": 38.67,
+    "enemyWinRate": 61.33,
+    "fetchedAt": "2026-03-20T18:59:24.801Z"
   },
   "Aurora_vs_Gwen_TOP": {
     "winRate": 50.6,
@@ -17560,14 +17560,14 @@
     "fetchedAt": "2026-03-12T15:50:48.754Z"
   },
   "Aurora_vs_Vladimir_TOP": {
-    "winRate": 52.46,
-    "enemyWinRate": 47.54,
-    "fetchedAt": "2026-03-15T16:25:38.389Z"
+    "winRate": 50.82,
+    "enemyWinRate": 49.18,
+    "fetchedAt": "2026-03-20T18:58:12.782Z"
   },
   "Aurora_vs_Sylas_TOP": {
-    "winRate": 52.6,
-    "enemyWinRate": 47.4,
-    "fetchedAt": "2026-03-15T16:26:25.839Z"
+    "winRate": 51.66,
+    "enemyWinRate": 48.34,
+    "fetchedAt": "2026-03-20T18:59:01.286Z"
   },
   "Aurora_vs_TahmKench_TOP": {
     "winRate": 47.6,
@@ -18035,9 +18035,9 @@
     "fetchedAt": "2026-03-20T18:47:35.788Z"
   },
   "KSante_vs_Heimerdinger_TOP": {
-    "winRate": 50.19,
-    "enemyWinRate": 49.81,
-    "fetchedAt": "2026-03-15T16:17:21.444Z"
+    "winRate": 36.59,
+    "enemyWinRate": 63.41,
+    "fetchedAt": "2026-03-20T18:49:17.230Z"
   },
   "KSante_vs_Volibear_TOP": {
     "winRate": 53.26,
@@ -24832,109 +24832,109 @@
     "fetchedAt": "2026-03-12T18:08:46.026Z"
   },
   "Amumu_vs_Briar_JG": {
-    "winRate": 50.33,
-    "enemyWinRate": 49.67,
-    "fetchedAt": "2026-03-15T16:36:56.489Z"
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-20T19:10:12.761Z"
   },
   "Amumu_vs_Nocturne_JG": {
-    "winRate": 50.55,
-    "enemyWinRate": 49.45,
-    "fetchedAt": "2026-03-15T16:35:19.047Z"
+    "winRate": 52.38,
+    "enemyWinRate": 47.62,
+    "fetchedAt": "2026-03-20T19:08:37.226Z"
   },
   "Amumu_vs_Zaahen_JG": {
-    "winRate": 45.77,
-    "enemyWinRate": 54.23,
-    "fetchedAt": "2026-03-15T16:37:00.932Z"
+    "winRate": 47.67,
+    "enemyWinRate": 52.33,
+    "fetchedAt": "2026-03-20T19:10:17.491Z"
   },
   "Amumu_vs_Shen_JG": {
-    "winRate": 47.98,
-    "enemyWinRate": 52.02,
-    "fetchedAt": "2026-03-15T16:35:32.346Z"
+    "winRate": 55.38,
+    "enemyWinRate": 44.62,
+    "fetchedAt": "2026-03-20T19:08:51.837Z"
   },
   "Amumu_vs_LeeSin_JG": {
-    "winRate": 51.32,
-    "enemyWinRate": 48.68,
-    "fetchedAt": "2026-03-15T16:35:10.147Z"
+    "winRate": 47.03,
+    "enemyWinRate": 52.97,
+    "fetchedAt": "2026-03-20T19:08:26.856Z"
   },
   "Amumu_vs_MasterYi_JG": {
-    "winRate": 48.84,
-    "enemyWinRate": 51.16,
-    "fetchedAt": "2026-03-15T16:35:12.392Z"
+    "winRate": 60.98,
+    "enemyWinRate": 39.02,
+    "fetchedAt": "2026-03-20T19:08:29.007Z"
   },
   "Amumu_vs_Nunu_JG": {
-    "winRate": 52.59,
-    "enemyWinRate": 47.41,
-    "fetchedAt": "2026-03-15T16:35:21.239Z"
+    "winRate": 55.17,
+    "enemyWinRate": 44.83,
+    "fetchedAt": "2026-03-20T19:08:39.483Z"
   },
   "Amumu_vs_RekSai_JG": {
-    "winRate": 45.86,
-    "enemyWinRate": 54.14,
-    "fetchedAt": "2026-03-15T16:36:20.413Z"
+    "winRate": 38,
+    "enemyWinRate": 62,
+    "fetchedAt": "2026-03-20T19:09:37.328Z"
   },
   "Amumu_vs_DrMundo_JG": {
-    "winRate": 47.15,
-    "enemyWinRate": 52.85,
-    "fetchedAt": "2026-03-15T16:36:06.345Z"
+    "winRate": 39.5,
+    "enemyWinRate": 60.5,
+    "fetchedAt": "2026-03-20T19:09:24.062Z"
   },
   "Amumu_vs_Naafiri_JG": {
-    "winRate": 47.92,
-    "enemyWinRate": 52.08,
-    "fetchedAt": "2026-03-15T16:36:54.229Z"
+    "winRate": 48.78,
+    "enemyWinRate": 51.22,
+    "fetchedAt": "2026-03-20T19:10:10.535Z"
   },
   "Amumu_vs_Shaco_JG": {
-    "winRate": 47.6,
-    "enemyWinRate": 52.4,
-    "fetchedAt": "2026-03-15T16:35:30.185Z"
+    "winRate": 53.75,
+    "enemyWinRate": 46.25,
+    "fetchedAt": "2026-03-20T19:08:49.579Z"
   },
   "Amumu_vs_Rammus_JG": {
-    "winRate": 49.4,
-    "enemyWinRate": 50.6,
-    "fetchedAt": "2026-03-15T16:37:03.148Z"
+    "winRate": 46.81,
+    "enemyWinRate": 53.19,
+    "fetchedAt": "2026-03-20T19:10:19.727Z"
   },
   "Amumu_vs_Ekko_JG": {
-    "winRate": 50.92,
-    "enemyWinRate": 49.08,
-    "fetchedAt": "2026-03-15T16:36:25.156Z"
+    "winRate": 38.39,
+    "enemyWinRate": 61.61,
+    "fetchedAt": "2026-03-20T19:09:41.842Z"
   },
   "Amumu_vs_Nasus_JG": {
-    "winRate": 47.42,
-    "enemyWinRate": 52.58,
-    "fetchedAt": "2026-03-15T16:36:02.037Z"
+    "winRate": 30.43,
+    "enemyWinRate": 69.57,
+    "fetchedAt": "2026-03-20T19:09:19.624Z"
   },
   "Amumu_vs_Belveth_JG": {
-    "winRate": 50.59,
-    "enemyWinRate": 49.41,
-    "fetchedAt": "2026-03-15T16:37:05.851Z"
+    "winRate": 48.39,
+    "enemyWinRate": 51.61,
+    "fetchedAt": "2026-03-20T19:10:21.888Z"
   },
   "Amumu_vs_Diana_JG": {
-    "winRate": 47.78,
-    "enemyWinRate": 52.22,
-    "fetchedAt": "2026-03-15T16:34:50.020Z"
+    "winRate": 51.69,
+    "enemyWinRate": 48.31,
+    "fetchedAt": "2026-03-20T19:08:07.478Z"
   },
   "Amumu_vs_Elise_JG": {
-    "winRate": 53.13,
-    "enemyWinRate": 46.88,
-    "fetchedAt": "2026-03-15T16:36:41.902Z"
+    "winRate": 61.4,
+    "enemyWinRate": 38.6,
+    "fetchedAt": "2026-03-20T19:09:58.920Z"
   },
   "Amumu_vs_Khazix_JG": {
-    "winRate": 54.52,
-    "enemyWinRate": 45.48,
-    "fetchedAt": "2026-03-15T16:35:05.637Z"
+    "winRate": 52.82,
+    "enemyWinRate": 47.18,
+    "fetchedAt": "2026-03-20T19:08:22.189Z"
   },
   "Amumu_vs_Sylas_JG": {
-    "winRate": 53.21,
-    "enemyWinRate": 46.79,
-    "fetchedAt": "2026-03-15T16:36:22.878Z"
+    "winRate": 51.41,
+    "enemyWinRate": 48.59,
+    "fetchedAt": "2026-03-20T19:09:39.585Z"
   },
   "Amumu_vs_Zyra_JG": {
-    "winRate": 57.14,
-    "enemyWinRate": 42.86,
-    "fetchedAt": "2026-03-15T16:35:59.182Z"
+    "winRate": 32.14,
+    "enemyWinRate": 67.86,
+    "fetchedAt": "2026-03-20T19:09:17.405Z"
   },
   "Amumu_vs_Lillia_JG": {
-    "winRate": 47.35,
-    "enemyWinRate": 52.65,
-    "fetchedAt": "2026-03-15T16:36:46.417Z"
+    "winRate": 46.34,
+    "enemyWinRate": 53.66,
+    "fetchedAt": "2026-03-20T19:10:03.563Z"
   },
   "Amumu_vs_Jax_JG": {
     "winRate": 52.86,
@@ -24942,64 +24942,64 @@
     "fetchedAt": "2026-03-15T16:35:03.450Z"
   },
   "Amumu_vs_Talon_JG": {
-    "winRate": 51.96,
-    "enemyWinRate": 48.04,
-    "fetchedAt": "2026-03-15T16:35:34.628Z"
+    "winRate": 51.82,
+    "enemyWinRate": 48.18,
+    "fetchedAt": "2026-03-20T19:08:54.061Z"
   },
   "Amumu_vs_Darius_JG": {
-    "winRate": 48.19,
-    "enemyWinRate": 51.81,
-    "fetchedAt": "2026-03-15T16:34:47.822Z"
+    "winRate": 56.25,
+    "enemyWinRate": 43.75,
+    "fetchedAt": "2026-03-20T19:08:05.313Z"
   },
   "Amumu_vs_Volibear_JG": {
-    "winRate": 46.64,
-    "enemyWinRate": 53.36,
-    "fetchedAt": "2026-03-15T16:35:46.791Z"
+    "winRate": 48.28,
+    "enemyWinRate": 51.72,
+    "fetchedAt": "2026-03-20T19:09:05.772Z"
   },
   "Amumu_vs_Udyr_JG": {
-    "winRate": 51.39,
-    "enemyWinRate": 48.61,
-    "fetchedAt": "2026-03-15T16:36:37.418Z"
+    "winRate": 57.14,
+    "enemyWinRate": 42.86,
+    "fetchedAt": "2026-03-20T19:09:53.875Z"
   },
   "Amumu_vs_Rengar_JG": {
-    "winRate": 50.63,
-    "enemyWinRate": 49.37,
-    "fetchedAt": "2026-03-15T16:35:25.777Z"
+    "winRate": 55.67,
+    "enemyWinRate": 44.33,
+    "fetchedAt": "2026-03-20T19:08:43.957Z"
   },
   "Amumu_vs_Nidalee_JG": {
-    "winRate": 51.06,
-    "enemyWinRate": 48.94,
-    "fetchedAt": "2026-03-15T16:35:16.752Z"
+    "winRate": 52.38,
+    "enemyWinRate": 47.62,
+    "fetchedAt": "2026-03-20T19:08:34.153Z"
   },
   "Amumu_vs_Fizz_JG": {
-    "winRate": 40.18,
-    "enemyWinRate": 59.82,
-    "fetchedAt": "2026-03-15T16:34:52.281Z"
+    "winRate": 54.84,
+    "enemyWinRate": 45.16,
+    "fetchedAt": "2026-03-20T19:08:10.254Z"
   },
   "Amumu_vs_Aatrox_JG": {
-    "winRate": 47.43,
-    "enemyWinRate": 52.57,
-    "fetchedAt": "2026-03-15T16:34:41.128Z"
+    "winRate": 40,
+    "enemyWinRate": 60,
+    "fetchedAt": "2026-03-20T19:07:55.980Z"
   },
   "Amumu_vs_Teemo_JG": {
-    "winRate": 55.56,
-    "enemyWinRate": 44.44,
-    "fetchedAt": "2026-03-15T16:35:37.143Z"
+    "winRate": 57.14,
+    "enemyWinRate": 42.86,
+    "fetchedAt": "2026-03-20T19:08:56.398Z"
   },
   "Amumu_vs_Trundle_JG": {
-    "winRate": 49.04,
-    "enemyWinRate": 50.96,
-    "fetchedAt": "2026-03-15T16:35:39.396Z"
+    "winRate": 41.67,
+    "enemyWinRate": 58.33,
+    "fetchedAt": "2026-03-20T19:08:58.836Z"
   },
   "Amumu_vs_Karthus_JG": {
-    "winRate": 51.24,
-    "enemyWinRate": 48.76,
-    "fetchedAt": "2026-03-15T16:37:08.139Z"
+    "winRate": 51.22,
+    "enemyWinRate": 48.78,
+    "fetchedAt": "2026-03-20T19:10:24.502Z"
   },
   "Amumu_vs_Zed_JG": {
-    "winRate": 47.24,
-    "enemyWinRate": 52.76,
-    "fetchedAt": "2026-03-15T16:35:56.965Z"
+    "winRate": 56.82,
+    "enemyWinRate": 43.18,
+    "fetchedAt": "2026-03-20T19:09:15.193Z"
   },
   "Amumu_vs_Brand_JG": {
     "winRate": 45.63,
@@ -25007,14 +25007,14 @@
     "fetchedAt": "2026-03-15T16:34:43.341Z"
   },
   "Amumu_vs_Ambessa_JG": {
-    "winRate": 52.2,
-    "enemyWinRate": 47.8,
-    "fetchedAt": "2026-03-15T16:36:58.705Z"
+    "winRate": 58.23,
+    "enemyWinRate": 41.77,
+    "fetchedAt": "2026-03-20T19:10:15.231Z"
   },
   "Amumu_vs_Taliyah_JG": {
-    "winRate": 39.78,
-    "enemyWinRate": 60.22,
-    "fetchedAt": "2026-03-15T16:36:39.567Z"
+    "winRate": 41.18,
+    "enemyWinRate": 58.82,
+    "fetchedAt": "2026-03-20T19:09:56.087Z"
   },
   "Amumu_vs_Gragas_JG": {
     "winRate": 50,
@@ -27155,9 +27155,9 @@
     "fetchedAt": "2026-03-15T16:44:20.969Z"
   },
   "Darius_vs_Shen_JG": {
-    "winRate": 48.48,
-    "enemyWinRate": 51.52,
-    "fetchedAt": "2026-03-15T16:42:49.397Z"
+    "winRate": 50.53,
+    "enemyWinRate": 49.47,
+    "fetchedAt": "2026-03-20T19:16:49.982Z"
   },
   "Darius_vs_LeeSin_JG": {
     "winRate": 50.8,
@@ -27168,9 +27168,9 @@
     "fetchedAt": "2026-03-12T18:26:49.265Z"
   },
   "Darius_vs_MasterYi_JG": {
-    "winRate": 48.22,
-    "enemyWinRate": 51.78,
-    "fetchedAt": "2026-03-15T16:42:29.209Z"
+    "winRate": 51.61,
+    "enemyWinRate": 48.39,
+    "fetchedAt": "2026-03-20T19:16:29.785Z"
   },
   "Darius_vs_Nunu_JG": {
     "winRate": 49.4,
@@ -27181,9 +27181,9 @@
     "fetchedAt": "2026-03-12T18:26:55.070Z"
   },
   "Darius_vs_DrMundo_JG": {
-    "winRate": 46.68,
-    "enemyWinRate": 53.32,
-    "fetchedAt": "2026-03-15T16:43:20.870Z"
+    "winRate": 44.63,
+    "enemyWinRate": 55.37,
+    "fetchedAt": "2026-03-20T19:17:22.426Z"
   },
   "Darius_vs_Kayn_JG": {
     "winRate": 51.3,
@@ -27214,9 +27214,9 @@
     "fetchedAt": "2026-03-12T18:27:12.448Z"
   },
   "Darius_vs_Nasus_JG": {
-    "winRate": 48.93,
-    "enemyWinRate": 51.07,
-    "fetchedAt": "2026-03-15T16:43:16.444Z"
+    "winRate": 52.76,
+    "enemyWinRate": 47.24,
+    "fetchedAt": "2026-03-20T19:17:17.531Z"
   },
   "Darius_vs_Vi_JG": {
     "winRate": 51,
@@ -27247,9 +27247,9 @@
     "fetchedAt": "2026-03-12T18:27:29.391Z"
   },
   "Darius_vs_Sylas_JG": {
-    "winRate": 56.64,
-    "enemyWinRate": 43.36,
-    "fetchedAt": "2026-03-15T16:43:36.614Z"
+    "winRate": 63.49,
+    "enemyWinRate": 36.51,
+    "fetchedAt": "2026-03-20T19:17:39.620Z"
   },
   "Darius_vs_Zyra_JG": {
     "winRate": 49.1,
@@ -27260,23 +27260,23 @@
     "fetchedAt": "2026-03-12T18:27:35.540Z"
   },
   "Darius_vs_Warwick_JG": {
-    "winRate": 50.98,
-    "enemyWinRate": 49.02,
-    "fetchedAt": "2026-03-15T16:43:05.303Z"
+    "winRate": 53.61,
+    "enemyWinRate": 46.39,
+    "fetchedAt": "2026-03-20T19:17:06.389Z"
   },
   "Darius_vs_MonkeyKing_JG": {
-    "winRate": 46.83,
-    "enemyWinRate": 53.17,
-    "fetchedAt": "2026-03-15T16:43:25.230Z"
+    "winRate": 47.83,
+    "enemyWinRate": 52.17,
+    "fetchedAt": "2026-03-20T19:17:26.903Z"
   },
   "Darius_vs_Lillia_JG": {
     "winRate": 50.6,
     "fetchedAt": "2026-03-12T18:27:41.159Z"
   },
   "Darius_vs_Jax_JG": {
-    "winRate": 49.18,
-    "enemyWinRate": 50.82,
-    "fetchedAt": "2026-03-15T16:42:20.113Z"
+    "winRate": 49.32,
+    "enemyWinRate": 50.68,
+    "fetchedAt": "2026-03-20T19:16:20.920Z"
   },
   "Darius_vs_Talon_JG": {
     "winRate": 50.1,
@@ -27288,18 +27288,18 @@
     "fetchedAt": "2026-03-15T16:43:09.761Z"
   },
   "Darius_vs_Volibear_JG": {
-    "winRate": 52.23,
-    "enemyWinRate": 47.77,
-    "fetchedAt": "2026-03-15T16:43:02.580Z"
+    "winRate": 50.86,
+    "enemyWinRate": 49.14,
+    "fetchedAt": "2026-03-20T19:17:04.228Z"
   },
   "Darius_vs_Sejuani_JG": {
     "winRate": 50.8,
     "fetchedAt": "2026-03-12T18:27:50.643Z"
   },
   "Darius_vs_Udyr_JG": {
-    "winRate": 53.32,
-    "enemyWinRate": 46.68,
-    "fetchedAt": "2026-03-15T16:43:56.027Z"
+    "winRate": 42.37,
+    "enemyWinRate": 57.63,
+    "fetchedAt": "2026-03-20T19:17:53.483Z"
   },
   "Darius_vs_Rengar_JG": {
     "winRate": 52,
@@ -27318,19 +27318,19 @@
     "fetchedAt": "2026-03-12T18:28:01.258Z"
   },
   "Darius_vs_Aatrox_JG": {
-    "winRate": 49.12,
-    "enemyWinRate": 50.88,
-    "fetchedAt": "2026-03-15T16:42:00.190Z"
+    "winRate": 50.5,
+    "enemyWinRate": 49.5,
+    "fetchedAt": "2026-03-20T19:15:59.904Z"
   },
   "Darius_vs_Teemo_JG": {
-    "winRate": 47.27,
-    "enemyWinRate": 52.73,
-    "fetchedAt": "2026-03-15T16:42:53.792Z"
+    "winRate": 44.44,
+    "enemyWinRate": 55.56,
+    "fetchedAt": "2026-03-20T19:16:54.855Z"
   },
   "Darius_vs_Trundle_JG": {
-    "winRate": 52.53,
-    "enemyWinRate": 47.47,
-    "fetchedAt": "2026-03-15T16:42:55.937Z"
+    "winRate": 48.28,
+    "enemyWinRate": 51.72,
+    "fetchedAt": "2026-03-20T19:16:57.502Z"
   },
   "Darius_vs_Karthus_JG": {
     "winRate": 52.3,
@@ -27354,9 +27354,9 @@
     "fetchedAt": "2026-03-12T18:28:17.534Z"
   },
   "Darius_vs_Gragas_JG": {
-    "winRate": 51.3,
-    "enemyWinRate": 48.7,
-    "fetchedAt": "2026-03-15T16:43:23.076Z"
+    "winRate": 49.03,
+    "enemyWinRate": 50.97,
+    "fetchedAt": "2026-03-20T19:17:24.649Z"
   },
   "Darius_vs_Pantheon_JG": {
     "winRate": 46.23,
@@ -29113,14 +29113,14 @@
     "fetchedAt": "2026-03-12T18:40:10.824Z"
   },
   "Aatrox_vs_Zaahen_JG": {
-    "winRate": 47.46,
-    "enemyWinRate": 52.54,
-    "fetchedAt": "2026-03-15T16:34:29.188Z"
+    "winRate": 49.73,
+    "enemyWinRate": 50.27,
+    "fetchedAt": "2026-03-20T19:07:44.880Z"
   },
   "Aatrox_vs_Shen_JG": {
-    "winRate": 50.45,
-    "enemyWinRate": 49.55,
-    "fetchedAt": "2026-03-15T16:33:02.358Z"
+    "winRate": 51.09,
+    "enemyWinRate": 48.91,
+    "fetchedAt": "2026-03-20T19:06:11.451Z"
   },
   "Aatrox_vs_LeeSin_JG": {
     "winRate": 51.3,
@@ -29131,9 +29131,9 @@
     "fetchedAt": "2026-03-12T18:40:18.926Z"
   },
   "Aatrox_vs_MasterYi_JG": {
-    "winRate": 51.3,
-    "enemyWinRate": 48.7,
-    "fetchedAt": "2026-03-15T16:32:42.419Z"
+    "winRate": 50,
+    "enemyWinRate": 50,
+    "fetchedAt": "2026-03-20T19:05:50.849Z"
   },
   "Aatrox_vs_Nunu_JG": {
     "winRate": 49.2,
@@ -29149,9 +29149,9 @@
     "fetchedAt": "2026-03-12T18:40:27.721Z"
   },
   "Aatrox_vs_DrMundo_JG": {
-    "winRate": 56.54,
-    "enemyWinRate": 43.46,
-    "fetchedAt": "2026-03-15T16:33:34.004Z"
+    "winRate": 60.65,
+    "enemyWinRate": 39.35,
+    "fetchedAt": "2026-03-20T19:06:44.158Z"
   },
   "Aatrox_vs_Kayn_JG": {
     "winRate": 51.6,
@@ -29186,9 +29186,9 @@
     "fetchedAt": "2026-03-12T18:40:48.912Z"
   },
   "Aatrox_vs_Nasus_JG": {
-    "winRate": 51.61,
-    "enemyWinRate": 48.39,
-    "fetchedAt": "2026-03-15T16:33:28.890Z"
+    "winRate": 53.99,
+    "enemyWinRate": 46.01,
+    "fetchedAt": "2026-03-20T19:06:39.871Z"
   },
   "Aatrox_vs_Vi_JG": {
     "winRate": 52.6,
@@ -29219,9 +29219,9 @@
     "fetchedAt": "2026-03-12T18:41:05.867Z"
   },
   "Aatrox_vs_Sylas_JG": {
-    "winRate": 52.7,
-    "enemyWinRate": 47.3,
-    "fetchedAt": "2026-03-15T16:33:50.409Z"
+    "winRate": 50.51,
+    "enemyWinRate": 49.49,
+    "fetchedAt": "2026-03-20T19:07:01.746Z"
   },
   "Aatrox_vs_Zyra_JG": {
     "winRate": 51.7,
@@ -29232,23 +29232,23 @@
     "fetchedAt": "2026-03-12T18:41:11.768Z"
   },
   "Aatrox_vs_Warwick_JG": {
-    "winRate": 47.85,
-    "enemyWinRate": 52.15,
-    "fetchedAt": "2026-03-15T16:33:17.838Z"
+    "winRate": 42.03,
+    "enemyWinRate": 57.97,
+    "fetchedAt": "2026-03-20T19:06:28.621Z"
   },
   "Aatrox_vs_MonkeyKing_JG": {
-    "winRate": 48.16,
-    "enemyWinRate": 51.84,
-    "fetchedAt": "2026-03-15T16:33:38.421Z"
+    "winRate": 49.58,
+    "enemyWinRate": 50.42,
+    "fetchedAt": "2026-03-20T19:06:49.027Z"
   },
   "Aatrox_vs_Lillia_JG": {
     "winRate": 52.2,
     "fetchedAt": "2026-03-12T18:41:17.288Z"
   },
   "Aatrox_vs_Jax_JG": {
-    "winRate": 50.61,
-    "enemyWinRate": 49.39,
-    "fetchedAt": "2026-03-15T16:32:33.057Z"
+    "winRate": 47.44,
+    "enemyWinRate": 52.56,
+    "fetchedAt": "2026-03-20T19:05:34.685Z"
   },
   "Aatrox_vs_Talon_JG": {
     "winRate": 49.9,
@@ -29260,23 +29260,23 @@
     "fetchedAt": "2026-03-15T16:33:22.299Z"
   },
   "Aatrox_vs_Darius_JG": {
-    "winRate": 50.88,
-    "enemyWinRate": 49.12,
-    "fetchedAt": "2026-03-15T16:32:19.849Z"
+    "winRate": 49.5,
+    "enemyWinRate": 50.5,
+    "fetchedAt": "2026-03-20T19:05:00.891Z"
   },
   "Aatrox_vs_Volibear_JG": {
-    "winRate": 54.15,
-    "enemyWinRate": 45.85,
-    "fetchedAt": "2026-03-15T16:33:15.596Z"
+    "winRate": 49.68,
+    "enemyWinRate": 50.32,
+    "fetchedAt": "2026-03-20T19:06:26.370Z"
   },
   "Aatrox_vs_Sejuani_JG": {
     "winRate": 51.8,
     "fetchedAt": "2026-03-12T18:41:29.482Z"
   },
   "Aatrox_vs_Udyr_JG": {
-    "winRate": 46.17,
-    "enemyWinRate": 53.83,
-    "fetchedAt": "2026-03-15T16:34:06.407Z"
+    "winRate": 48.53,
+    "enemyWinRate": 51.47,
+    "fetchedAt": "2026-03-20T19:07:17.389Z"
   },
   "Aatrox_vs_Rengar_JG": {
     "winRate": 53.3,
@@ -29295,14 +29295,14 @@
     "fetchedAt": "2026-03-12T18:41:45.226Z"
   },
   "Aatrox_vs_Teemo_JG": {
-    "winRate": 50.09,
-    "enemyWinRate": 49.91,
-    "fetchedAt": "2026-03-15T16:33:06.774Z"
+    "winRate": 47.47,
+    "enemyWinRate": 52.53,
+    "fetchedAt": "2026-03-20T19:06:15.993Z"
   },
   "Aatrox_vs_Trundle_JG": {
-    "winRate": 54.56,
-    "enemyWinRate": 45.44,
-    "fetchedAt": "2026-03-15T16:33:08.957Z"
+    "winRate": 56.03,
+    "enemyWinRate": 43.97,
+    "fetchedAt": "2026-03-20T19:06:18.231Z"
   },
   "Aatrox_vs_Karthus_JG": {
     "winRate": 51.4,
@@ -29317,18 +29317,18 @@
     "fetchedAt": "2026-03-12T18:41:56.321Z"
   },
   "Aatrox_vs_Ambessa_JG": {
-    "winRate": 50,
-    "enemyWinRate": 50,
-    "fetchedAt": "2026-03-15T16:34:26.986Z"
+    "winRate": 49.92,
+    "enemyWinRate": 50.08,
+    "fetchedAt": "2026-03-20T19:07:42.664Z"
   },
   "Aatrox_vs_Taliyah_JG": {
     "winRate": 51.6,
     "fetchedAt": "2026-03-12T18:42:00.150Z"
   },
   "Aatrox_vs_Gragas_JG": {
-    "winRate": 49.3,
-    "enemyWinRate": 50.7,
-    "fetchedAt": "2026-03-15T16:33:36.217Z"
+    "winRate": 49.77,
+    "enemyWinRate": 50.23,
+    "fetchedAt": "2026-03-20T19:06:46.535Z"
   },
   "Aatrox_vs_Pantheon_JG": {
     "winRate": 46.36,
@@ -30297,8 +30297,9 @@
     "fetchedAt": "2026-03-12T18:49:36.310Z"
   },
   "Brand_vs_Shen_JG": {
-    "winRate": 51.9,
-    "fetchedAt": "2026-03-12T18:49:38.318Z"
+    "winRate": 57.14,
+    "enemyWinRate": 42.86,
+    "fetchedAt": "2026-03-20T19:11:32.200Z"
   },
   "Brand_vs_LeeSin_JG": {
     "winRate": 54.9,
@@ -30317,9 +30318,9 @@
     "fetchedAt": "2026-03-12T18:49:47.426Z"
   },
   "Brand_vs_Fiddlesticks_JG": {
-    "winRate": 60.47,
-    "enemyWinRate": 39.53,
-    "fetchedAt": "2026-03-15T16:39:03.434Z"
+    "winRate": 44,
+    "enemyWinRate": 56,
+    "fetchedAt": "2026-03-20T19:12:33.328Z"
   },
   "Brand_vs_RekSai_JG": {
     "winRate": 47.1,
@@ -30346,9 +30347,9 @@
     "fetchedAt": "2026-03-12T18:50:02.665Z"
   },
   "Brand_vs_Shaco_JG": {
-    "winRate": 48.25,
-    "enemyWinRate": 51.75,
-    "fetchedAt": "2026-03-15T16:38:01.401Z"
+    "winRate": 50.85,
+    "enemyWinRate": 49.15,
+    "fetchedAt": "2026-03-20T19:11:30.006Z"
   },
   "Brand_vs_Rammus_JG": {
     "winRate": 49.7,
@@ -30383,9 +30384,9 @@
     "fetchedAt": "2026-03-12T18:50:22.651Z"
   },
   "Brand_vs_Elise_JG": {
-    "winRate": 58.97,
-    "enemyWinRate": 41.03,
-    "fetchedAt": "2026-03-15T16:39:10.063Z"
+    "winRate": 38.64,
+    "enemyWinRate": 61.36,
+    "fetchedAt": "2026-03-20T19:12:40.788Z"
   },
   "Brand_vs_Amumu_JG": {
     "winRate": 56.5,
@@ -30396,13 +30397,14 @@
     "fetchedAt": "2026-03-12T18:50:28.999Z"
   },
   "Brand_vs_Sylas_JG": {
-    "winRate": 55.1,
-    "fetchedAt": "2026-03-12T18:50:31.125Z"
+    "winRate": 54.84,
+    "enemyWinRate": 45.16,
+    "fetchedAt": "2026-03-20T19:12:22.276Z"
   },
   "Brand_vs_Zyra_JG": {
-    "winRate": 43.82,
-    "enemyWinRate": 56.18,
-    "fetchedAt": "2026-03-15T16:38:28.157Z"
+    "winRate": 58.42,
+    "enemyWinRate": 41.58,
+    "fetchedAt": "2026-03-20T19:11:59.480Z"
   },
   "Brand_vs_Hecarim_JG": {
     "winRate": 55.7,
@@ -57509,9 +57511,9 @@
     "fetchedAt": "2026-03-15T16:24:26.668Z"
   },
   "Zaahen_vs_Maokai_TOP": {
-    "winRate": 55.73,
-    "enemyWinRate": 44.27,
-    "fetchedAt": "2026-03-15T16:24:44.629Z"
+    "winRate": 47.83,
+    "enemyWinRate": 52.17,
+    "fetchedAt": "2026-03-20T18:57:14.509Z"
   },
   "Zaahen_vs_MasterYi_TOP": {
     "winRate": 48.45,
@@ -57589,14 +57591,14 @@
     "fetchedAt": "2026-03-14T04:52:07.177Z"
   },
   "Zaahen_vs_Trundle_TOP": {
-    "winRate": 50.42,
-    "enemyWinRate": 49.58,
-    "fetchedAt": "2026-03-15T16:23:02.971Z"
+    "winRate": 58.59,
+    "enemyWinRate": 41.41,
+    "fetchedAt": "2026-03-20T18:55:20.537Z"
   },
   "Zaahen_vs_Udyr_TOP": {
-    "winRate": 53.71,
-    "enemyWinRate": 46.29,
-    "fetchedAt": "2026-03-15T16:24:11.062Z"
+    "winRate": 54,
+    "enemyWinRate": 46,
+    "fetchedAt": "2026-03-20T18:56:33.416Z"
   },
   "Zaahen_vs_Vi_TOP": {
     "winRate": 52.72,
@@ -57609,9 +57611,9 @@
     "fetchedAt": "2026-03-15T16:24:28.901Z"
   },
   "Zaahen_vs_MonkeyKing_TOP": {
-    "winRate": 53.59,
-    "enemyWinRate": 46.41,
-    "fetchedAt": "2026-03-15T16:23:43.414Z"
+    "winRate": 49.12,
+    "enemyWinRate": 50.88,
+    "fetchedAt": "2026-03-20T18:56:02.948Z"
   },
   "Zaahen_vs_XinZhao_TOP": {
     "winRate": 53.84,
@@ -59864,79 +59866,79 @@
     "fetchedAt": "2026-03-20T18:48:53.963Z"
   },
   "KSante_vs_Maokai_TOP": {
-    "winRate": 50.87,
-    "enemyWinRate": 49.13,
-    "fetchedAt": "2026-03-15T16:17:23.668Z"
+    "winRate": 48.72,
+    "enemyWinRate": 51.28,
+    "fetchedAt": "2026-03-20T18:49:19.437Z"
   },
   "Briar_vs_Aatrox_TOP": {
-    "winRate": 48.64,
-    "enemyWinRate": 51.36,
-    "fetchedAt": "2026-03-15T16:17:25.933Z"
+    "winRate": 47.3,
+    "enemyWinRate": 52.7,
+    "fetchedAt": "2026-03-20T18:49:21.733Z"
   },
   "Briar_vs_Darius_TOP": {
-    "winRate": 49.44,
-    "enemyWinRate": 50.56,
-    "fetchedAt": "2026-03-15T16:17:32.524Z"
+    "winRate": 56.1,
+    "enemyWinRate": 43.9,
+    "fetchedAt": "2026-03-20T18:49:28.694Z"
   },
   "Briar_vs_Jax_TOP": {
-    "winRate": 49.22,
-    "enemyWinRate": 50.78,
-    "fetchedAt": "2026-03-15T16:17:42.201Z"
+    "winRate": 46,
+    "enemyWinRate": 54,
+    "fetchedAt": "2026-03-20T18:49:37.695Z"
   },
   "Briar_vs_Jayce_TOP": {
-    "winRate": 52.76,
-    "enemyWinRate": 47.24,
-    "fetchedAt": "2026-03-15T16:17:44.444Z"
+    "winRate": 58.49,
+    "enemyWinRate": 41.51,
+    "fetchedAt": "2026-03-20T18:49:40.033Z"
   },
   "Briar_vs_Malphite_TOP": {
-    "winRate": 54.78,
-    "enemyWinRate": 45.22,
-    "fetchedAt": "2026-03-15T16:17:49.047Z"
+    "winRate": 58.75,
+    "enemyWinRate": 41.25,
+    "fetchedAt": "2026-03-20T18:49:44.402Z"
   },
   "Briar_vs_Pantheon_TOP": {
-    "winRate": 50.98,
-    "enemyWinRate": 49.02,
-    "fetchedAt": "2026-03-15T16:17:53.682Z"
+    "winRate": 58.73,
+    "enemyWinRate": 41.27,
+    "fetchedAt": "2026-03-20T18:49:48.876Z"
   },
   "Briar_vs_Shen_TOP": {
-    "winRate": 47.86,
-    "enemyWinRate": 52.14,
-    "fetchedAt": "2026-03-15T16:18:02.784Z"
+    "winRate": 50.63,
+    "enemyWinRate": 49.38,
+    "fetchedAt": "2026-03-20T18:49:57.682Z"
   },
   "Briar_vs_Teemo_TOP": {
-    "winRate": 49.56,
-    "enemyWinRate": 50.44,
-    "fetchedAt": "2026-03-15T16:18:08.097Z"
+    "winRate": 59.09,
+    "enemyWinRate": 40.91,
+    "fetchedAt": "2026-03-20T18:50:02.355Z"
   },
   "Briar_vs_Trundle_TOP": {
-    "winRate": 51.11,
-    "enemyWinRate": 48.89,
-    "fetchedAt": "2026-03-15T16:18:10.275Z"
+    "winRate": 58.06,
+    "enemyWinRate": 41.94,
+    "fetchedAt": "2026-03-20T18:50:04.543Z"
   },
   "Briar_vs_Volibear_TOP": {
-    "winRate": 49.72,
-    "enemyWinRate": 50.28,
-    "fetchedAt": "2026-03-15T16:18:21.469Z"
+    "winRate": 50.69,
+    "enemyWinRate": 49.31,
+    "fetchedAt": "2026-03-20T18:50:15.716Z"
   },
   "Briar_vs_Warwick_TOP": {
-    "winRate": 52.08,
-    "enemyWinRate": 47.92,
-    "fetchedAt": "2026-03-15T16:18:23.728Z"
+    "winRate": 52.6,
+    "enemyWinRate": 47.4,
+    "fetchedAt": "2026-03-20T18:50:17.954Z"
   },
   "Briar_vs_Zac_TOP": {
-    "winRate": 49.84,
-    "enemyWinRate": 50.16,
-    "fetchedAt": "2026-03-15T16:18:32.709Z"
+    "winRate": 47.68,
+    "enemyWinRate": 52.32,
+    "fetchedAt": "2026-03-20T18:50:27.536Z"
   },
   "Briar_vs_Nasus_TOP": {
-    "winRate": 44.35,
-    "enemyWinRate": 55.65,
-    "fetchedAt": "2026-03-15T16:18:37.083Z"
+    "winRate": 42.25,
+    "enemyWinRate": 57.75,
+    "fetchedAt": "2026-03-20T18:50:31.999Z"
   },
   "Briar_vs_DrMundo_TOP": {
-    "winRate": 50.04,
-    "enemyWinRate": 49.96,
-    "fetchedAt": "2026-03-15T16:18:44.768Z"
+    "winRate": 48.95,
+    "enemyWinRate": 51.05,
+    "fetchedAt": "2026-03-20T18:50:38.651Z"
   },
   "Briar_vs_Gragas_TOP": {
     "winRate": 57.69,
@@ -59944,44 +59946,44 @@
     "fetchedAt": "2026-03-15T16:18:49.207Z"
   },
   "Briar_vs_MonkeyKing_TOP": {
-    "winRate": 49.11,
-    "enemyWinRate": 50.89,
-    "fetchedAt": "2026-03-15T16:18:51.431Z"
+    "winRate": 49.06,
+    "enemyWinRate": 50.94,
+    "fetchedAt": "2026-03-20T18:50:45.812Z"
   },
   "Briar_vs_Sylas_TOP": {
-    "winRate": 54.75,
-    "enemyWinRate": 45.25,
-    "fetchedAt": "2026-03-15T16:19:07.436Z"
+    "winRate": 50.19,
+    "enemyWinRate": 49.81,
+    "fetchedAt": "2026-03-20T18:51:02.326Z"
   },
   "Briar_vs_Udyr_TOP": {
-    "winRate": 51.24,
-    "enemyWinRate": 48.76,
-    "fetchedAt": "2026-03-15T16:19:18.466Z"
+    "winRate": 53.7,
+    "enemyWinRate": 46.3,
+    "fetchedAt": "2026-03-20T18:51:14.284Z"
   },
   "Briar_vs_Lillia_TOP": {
-    "winRate": 53.41,
-    "enemyWinRate": 46.59,
-    "fetchedAt": "2026-03-15T16:19:31.474Z"
+    "winRate": 52.05,
+    "enemyWinRate": 47.95,
+    "fetchedAt": "2026-03-20T18:51:31.222Z"
   },
   "Briar_vs_Viego_TOP": {
-    "winRate": 50.86,
-    "enemyWinRate": 49.14,
-    "fetchedAt": "2026-03-15T16:19:33.615Z"
+    "winRate": 51.76,
+    "enemyWinRate": 48.24,
+    "fetchedAt": "2026-03-20T18:51:33.438Z"
   },
   "Briar_vs_Gwen_TOP": {
-    "winRate": 53.63,
-    "enemyWinRate": 46.37,
-    "fetchedAt": "2026-03-15T16:19:35.884Z"
+    "winRate": 49.3,
+    "enemyWinRate": 50.7,
+    "fetchedAt": "2026-03-20T18:51:35.645Z"
   },
   "Briar_vs_Ambessa_TOP": {
-    "winRate": 55.53,
-    "enemyWinRate": 44.47,
-    "fetchedAt": "2026-03-15T16:19:40.426Z"
+    "winRate": 52.45,
+    "enemyWinRate": 47.55,
+    "fetchedAt": "2026-03-20T18:51:40.980Z"
   },
   "Briar_vs_Zaahen_TOP": {
-    "winRate": 50.05,
-    "enemyWinRate": 49.95,
-    "fetchedAt": "2026-03-15T16:19:42.776Z"
+    "winRate": 47.09,
+    "enemyWinRate": 52.91,
+    "fetchedAt": "2026-03-20T18:51:43.231Z"
   },
   "Briar_vs_Maokai_TOP": {
     "winRate": 46.52,
@@ -59989,84 +59991,84 @@
     "fetchedAt": "2026-03-15T16:19:49.983Z"
   },
   "Ambessa_vs_Trundle_TOP": {
-    "winRate": 53.89,
-    "enemyWinRate": 46.11,
-    "fetchedAt": "2026-03-15T16:20:35.135Z"
+    "winRate": 47.42,
+    "enemyWinRate": 52.58,
+    "fetchedAt": "2026-03-20T18:52:37.605Z"
   },
   "Ambessa_vs_MonkeyKing_TOP": {
-    "winRate": 47.33,
-    "enemyWinRate": 52.67,
-    "fetchedAt": "2026-03-15T16:21:15.671Z"
+    "winRate": 53.33,
+    "enemyWinRate": 46.67,
+    "fetchedAt": "2026-03-20T18:53:30.698Z"
   },
   "Ambessa_vs_Udyr_TOP": {
-    "winRate": 52.94,
-    "enemyWinRate": 47.06,
-    "fetchedAt": "2026-03-15T16:21:42.689Z"
+    "winRate": 41.27,
+    "enemyWinRate": 58.73,
+    "fetchedAt": "2026-03-20T18:53:59.209Z"
   },
   "Ambessa_vs_Ryze_TOP": {
-    "winRate": 49.15,
-    "enemyWinRate": 50.85,
-    "fetchedAt": "2026-03-15T16:21:47.830Z"
+    "winRate": 44.16,
+    "enemyWinRate": 55.84,
+    "fetchedAt": "2026-03-20T18:54:03.669Z"
   },
   "Ambessa_vs_Swain_TOP": {
-    "winRate": 52.53,
-    "enemyWinRate": 47.47,
-    "fetchedAt": "2026-03-15T16:21:52.285Z"
+    "winRate": 41.38,
+    "enemyWinRate": 58.62,
+    "fetchedAt": "2026-03-20T18:54:08.294Z"
   },
   "Ambessa_vs_Maokai_TOP": {
-    "winRate": 54.91,
-    "enemyWinRate": 45.09,
-    "fetchedAt": "2026-03-15T16:22:17.867Z"
+    "winRate": 62.22,
+    "enemyWinRate": 37.78,
+    "fetchedAt": "2026-03-20T18:54:34.046Z"
   },
   "Aurora_vs_Lissandra_TOP": {
-    "winRate": 48.68,
-    "enemyWinRate": 51.32,
-    "fetchedAt": "2026-03-15T16:26:39.188Z"
+    "winRate": 49.56,
+    "enemyWinRate": 50.44,
+    "fetchedAt": "2026-03-20T18:59:15.426Z"
   },
   "Aurora_vs_Ryze_TOP": {
-    "winRate": 51.25,
-    "enemyWinRate": 48.75,
-    "fetchedAt": "2026-03-15T16:26:41.465Z"
+    "winRate": 44.34,
+    "enemyWinRate": 55.66,
+    "fetchedAt": "2026-03-20T18:59:17.670Z"
   },
   "Aurora_vs_Swain_TOP": {
-    "winRate": 52.38,
-    "enemyWinRate": 47.62,
-    "fetchedAt": "2026-03-15T16:26:45.943Z"
+    "winRate": 46.81,
+    "enemyWinRate": 53.19,
+    "fetchedAt": "2026-03-20T18:59:22.353Z"
   },
   "Aurora_vs_Akshan_TOP": {
-    "winRate": 49.71,
-    "enemyWinRate": 50.29,
-    "fetchedAt": "2026-03-15T16:26:50.438Z"
+    "winRate": 46.2,
+    "enemyWinRate": 53.8,
+    "fetchedAt": "2026-03-20T18:59:27.030Z"
   },
   "Heimerdinger_vs_Trundle_TOP": {
-    "winRate": 59.09,
-    "enemyWinRate": 40.91,
-    "fetchedAt": "2026-03-15T16:27:55.958Z"
+    "winRate": 60,
+    "enemyWinRate": 40,
+    "fetchedAt": "2026-03-20T19:00:34.442Z"
   },
   "Heimerdinger_vs_MonkeyKing_TOP": {
-    "winRate": 53.49,
-    "enemyWinRate": 46.51,
-    "fetchedAt": "2026-03-15T16:28:37.380Z"
+    "winRate": 70,
+    "enemyWinRate": 30,
+    "fetchedAt": "2026-03-20T19:01:15.881Z"
   },
   "Heimerdinger_vs_Udyr_TOP": {
-    "winRate": 49.09,
-    "enemyWinRate": 50.91,
-    "fetchedAt": "2026-03-15T16:29:05.080Z"
+    "winRate": 43.75,
+    "enemyWinRate": 56.25,
+    "fetchedAt": "2026-03-20T19:01:42.700Z"
   },
   "Heimerdinger_vs_Ryze_TOP": {
-    "winRate": 48.46,
-    "enemyWinRate": 51.54,
-    "fetchedAt": "2026-03-15T16:29:09.549Z"
+    "winRate": 73.91,
+    "enemyWinRate": 26.09,
+    "fetchedAt": "2026-03-20T19:01:48.225Z"
   },
   "Heimerdinger_vs_Swain_TOP": {
-    "winRate": 46.67,
-    "enemyWinRate": 53.33,
-    "fetchedAt": "2026-03-15T16:29:13.977Z"
+    "winRate": 42.86,
+    "enemyWinRate": 57.14,
+    "fetchedAt": "2026-03-20T19:01:52.610Z"
   },
   "Heimerdinger_vs_Maokai_TOP": {
-    "winRate": 50,
-    "enemyWinRate": 50,
-    "fetchedAt": "2026-03-15T16:29:38.819Z"
+    "winRate": 57.14,
+    "enemyWinRate": 42.86,
+    "fetchedAt": "2026-03-20T19:02:18.611Z"
   },
   "Shyvana_vs_Amumu_JG": {
     "winRate": 52.6,
@@ -60159,9 +60161,9 @@
     "fetchedAt": "2026-03-15T14:38:27.117Z"
   },
   "Maokai_vs_Anivia_TOP": {
-    "winRate": 62.03,
-    "enemyWinRate": 37.97,
-    "fetchedAt": "2026-03-15T14:38:27.149Z"
+    "winRate": 63.16,
+    "enemyWinRate": 36.84,
+    "fetchedAt": "2026-03-20T19:04:22.171Z"
   },
   "Lillia_vs_Anivia_TOP": {
     "winRate": 47.8,
@@ -60184,9 +60186,9 @@
     "fetchedAt": "2026-03-15T14:41:33.444Z"
   },
   "Camille_vs_Zaahen_JG": {
-    "winRate": 49.57,
-    "enemyWinRate": 50.43,
-    "fetchedAt": "2026-03-15T14:41:33.462Z"
+    "winRate": 50.4,
+    "enemyWinRate": 49.6,
+    "fetchedAt": "2026-03-20T19:15:34.499Z"
   },
   "Olaf_vs_Zaahen_JG": {
     "winRate": 51.38,
@@ -60254,74 +60256,74 @@
     "fetchedAt": "2026-03-15T14:41:35.803Z"
   },
   "Maokai_vs_Pantheon_TOP": {
-    "winRate": 50.94,
-    "enemyWinRate": 49.06,
-    "fetchedAt": "2026-03-15T16:30:09.191Z"
+    "winRate": 55.26,
+    "enemyWinRate": 44.74,
+    "fetchedAt": "2026-03-20T19:02:47.890Z"
   },
   "Maokai_vs_TahmKench_TOP": {
-    "winRate": 51.93,
-    "enemyWinRate": 48.07,
-    "fetchedAt": "2026-03-15T16:30:22.187Z"
+    "winRate": 52.17,
+    "enemyWinRate": 47.83,
+    "fetchedAt": "2026-03-20T19:03:00.402Z"
   },
   "Maokai_vs_Poppy_TOP": {
-    "winRate": 54.07,
-    "enemyWinRate": 45.93,
-    "fetchedAt": "2026-03-15T16:31:28.794Z"
+    "winRate": 55.32,
+    "enemyWinRate": 44.68,
+    "fetchedAt": "2026-03-20T19:04:07.002Z"
   },
   "Maokai_vs_Swain_TOP": {
-    "winRate": 52.22,
-    "enemyWinRate": 47.78,
-    "fetchedAt": "2026-03-15T16:31:43.400Z"
+    "winRate": 45.57,
+    "enemyWinRate": 54.43,
+    "fetchedAt": "2026-03-20T19:04:24.285Z"
   },
   "Aatrox_vs_Camille_JG": {
-    "winRate": 48.18,
-    "enemyWinRate": 51.82,
-    "fetchedAt": "2026-03-15T16:32:17.356Z"
+    "winRate": 49.22,
+    "enemyWinRate": 50.78,
+    "fetchedAt": "2026-03-20T19:04:58.749Z"
   },
   "Aatrox_vs_Olaf_JG": {
-    "winRate": 48.83,
-    "enemyWinRate": 51.17,
-    "fetchedAt": "2026-03-15T16:32:53.369Z"
-  },
-  "Aatrox_vs_Chogath_JG": {
-    "winRate": 49.26,
-    "enemyWinRate": 50.74,
-    "fetchedAt": "2026-03-15T16:33:31.791Z"
-  },
-  "Aatrox_vs_Rumble_JG": {
     "winRate": 50.56,
     "enemyWinRate": 49.44,
-    "fetchedAt": "2026-03-15T16:33:40.572Z"
+    "fetchedAt": "2026-03-20T19:06:02.580Z"
+  },
+  "Aatrox_vs_Chogath_JG": {
+    "winRate": 48.06,
+    "enemyWinRate": 51.94,
+    "fetchedAt": "2026-03-20T19:06:41.999Z"
+  },
+  "Aatrox_vs_Rumble_JG": {
+    "winRate": 51.61,
+    "enemyWinRate": 48.39,
+    "fetchedAt": "2026-03-20T19:06:51.236Z"
   },
   "Aatrox_vs_Mordekaiser_JG": {
-    "winRate": 49.63,
-    "enemyWinRate": 50.37,
-    "fetchedAt": "2026-03-15T16:33:42.975Z"
+    "winRate": 46.91,
+    "enemyWinRate": 53.09,
+    "fetchedAt": "2026-03-20T19:06:53.430Z"
   },
   "Aatrox_vs_Sett_JG": {
-    "winRate": 51.72,
-    "enemyWinRate": 48.28,
-    "fetchedAt": "2026-03-15T16:33:45.513Z"
+    "winRate": 50.17,
+    "enemyWinRate": 49.83,
+    "fetchedAt": "2026-03-20T19:06:55.566Z"
   },
   "Aatrox_vs_Poppy_JG": {
-    "winRate": 48.12,
-    "enemyWinRate": 51.88,
-    "fetchedAt": "2026-03-15T16:33:54.787Z"
+    "winRate": 47.02,
+    "enemyWinRate": 52.98,
+    "fetchedAt": "2026-03-20T19:07:07.531Z"
   },
   "Aatrox_vs_Gwen_JG": {
-    "winRate": 49.75,
-    "enemyWinRate": 50.25,
-    "fetchedAt": "2026-03-15T16:34:20.064Z"
+    "winRate": 51.21,
+    "enemyWinRate": 48.79,
+    "fetchedAt": "2026-03-20T19:07:35.905Z"
   },
   "Aatrox_vs_Maokai_JG": {
-    "winRate": 53.65,
-    "enemyWinRate": 46.35,
-    "fetchedAt": "2026-03-15T16:34:38.746Z"
+    "winRate": 60.38,
+    "enemyWinRate": 39.62,
+    "fetchedAt": "2026-03-20T19:07:53.786Z"
   },
   "Amumu_vs_Gwen_JG": {
-    "winRate": 55.47,
-    "enemyWinRate": 44.53,
-    "fetchedAt": "2026-03-15T16:36:52.025Z"
+    "winRate": 63.33,
+    "enemyWinRate": 36.67,
+    "fetchedAt": "2026-03-20T19:10:08.311Z"
   },
   "Amumu_vs_Maokai_JG": {
     "winRate": 54.02,
@@ -60329,14 +60331,14 @@
     "fetchedAt": "2026-03-15T16:37:10.258Z"
   },
   "Brand_vs_Nautilus_JG": {
-    "winRate": 51.36,
-    "enemyWinRate": 48.64,
-    "fetchedAt": "2026-03-15T16:37:44.591Z"
+    "winRate": 55.03,
+    "enemyWinRate": 44.97,
+    "fetchedAt": "2026-03-20T19:11:14.435Z"
   },
   "Brand_vs_Poppy_JG": {
-    "winRate": 43.33,
-    "enemyWinRate": 56.67,
-    "fetchedAt": "2026-03-15T16:38:56.894Z"
+    "winRate": 48.15,
+    "enemyWinRate": 51.85,
+    "fetchedAt": "2026-03-20T19:12:26.710Z"
   },
   "Karma_vs_Velkoz_MID": {
     "winRate": 51.23,
@@ -60419,54 +60421,54 @@
     "fetchedAt": "2026-03-15T16:39:03.076Z"
   },
   "Brand_vs_Maokai_JG": {
-    "winRate": 49.45,
-    "enemyWinRate": 50.55,
-    "fetchedAt": "2026-03-15T16:39:36.473Z"
+    "winRate": 48.44,
+    "enemyWinRate": 51.56,
+    "fetchedAt": "2026-03-20T19:13:10.771Z"
   },
   "Camille_vs_Aatrox_JG": {
-    "winRate": 51.82,
-    "enemyWinRate": 48.18,
-    "fetchedAt": "2026-03-15T16:39:38.724Z"
+    "winRate": 50.78,
+    "enemyWinRate": 49.22,
+    "fetchedAt": "2026-03-20T19:13:13.726Z"
   },
   "Camille_vs_Darius_JG": {
-    "winRate": 50.81,
-    "enemyWinRate": 49.19,
-    "fetchedAt": "2026-03-15T16:39:43.306Z"
+    "winRate": 47.21,
+    "enemyWinRate": 52.79,
+    "fetchedAt": "2026-03-20T19:13:20.521Z"
   },
   "Camille_vs_Jax_JG": {
-    "winRate": 49.47,
-    "enemyWinRate": 50.53,
-    "fetchedAt": "2026-03-15T16:39:57.513Z"
+    "winRate": 45.61,
+    "enemyWinRate": 54.39,
+    "fetchedAt": "2026-03-20T19:13:36.666Z"
   },
   "Camille_vs_MasterYi_JG": {
-    "winRate": 58.04,
-    "enemyWinRate": 41.96,
-    "fetchedAt": "2026-03-15T16:40:06.420Z"
+    "winRate": 58.82,
+    "enemyWinRate": 41.18,
+    "fetchedAt": "2026-03-20T19:13:46.157Z"
   },
   "Camille_vs_Olaf_JG": {
-    "winRate": 50.35,
-    "enemyWinRate": 49.65,
-    "fetchedAt": "2026-03-15T16:40:18.090Z"
+    "winRate": 52.76,
+    "enemyWinRate": 47.24,
+    "fetchedAt": "2026-03-20T19:13:59.613Z"
   },
   "Camille_vs_Shen_JG": {
-    "winRate": 48.2,
-    "enemyWinRate": 51.8,
-    "fetchedAt": "2026-03-15T16:40:27.118Z"
+    "winRate": 46.26,
+    "enemyWinRate": 53.74,
+    "fetchedAt": "2026-03-20T19:14:08.626Z"
   },
   "Camille_vs_Teemo_JG": {
-    "winRate": 49.22,
-    "enemyWinRate": 50.78,
-    "fetchedAt": "2026-03-15T16:40:31.582Z"
+    "winRate": 44.23,
+    "enemyWinRate": 55.77,
+    "fetchedAt": "2026-03-20T19:14:13.641Z"
   },
   "Camille_vs_Trundle_JG": {
-    "winRate": 49.37,
-    "enemyWinRate": 50.63,
-    "fetchedAt": "2026-03-15T16:40:33.771Z"
+    "winRate": 46.88,
+    "enemyWinRate": 53.13,
+    "fetchedAt": "2026-03-20T19:14:15.843Z"
   },
   "Camille_vs_Volibear_JG": {
-    "winRate": 47.14,
-    "enemyWinRate": 52.86,
-    "fetchedAt": "2026-03-15T16:40:40.888Z"
+    "winRate": 48.75,
+    "enemyWinRate": 51.25,
+    "fetchedAt": "2026-03-20T19:14:22.953Z"
   },
   "Camille_vs_Zac_JG": {
     "winRate": 48.51,
@@ -60474,49 +60476,49 @@
     "fetchedAt": "2026-03-15T16:40:47.493Z"
   },
   "Camille_vs_Nasus_JG": {
-    "winRate": 51.96,
-    "enemyWinRate": 48.04,
-    "fetchedAt": "2026-03-15T16:40:54.828Z"
+    "winRate": 54.72,
+    "enemyWinRate": 45.28,
+    "fetchedAt": "2026-03-20T19:14:37.867Z"
   },
   "Camille_vs_Chogath_JG": {
-    "winRate": 47.62,
-    "enemyWinRate": 52.38,
-    "fetchedAt": "2026-03-15T16:40:57.045Z"
+    "winRate": 50.56,
+    "enemyWinRate": 49.44,
+    "fetchedAt": "2026-03-20T19:14:40.102Z"
   },
   "Camille_vs_DrMundo_JG": {
-    "winRate": 51.41,
-    "enemyWinRate": 48.59,
-    "fetchedAt": "2026-03-15T16:40:59.228Z"
+    "winRate": 52.38,
+    "enemyWinRate": 47.62,
+    "fetchedAt": "2026-03-20T19:14:42.350Z"
   },
   "Camille_vs_Gragas_JG": {
-    "winRate": 51.19,
-    "enemyWinRate": 48.81,
-    "fetchedAt": "2026-03-15T16:41:01.430Z"
+    "winRate": 47.87,
+    "enemyWinRate": 52.13,
+    "fetchedAt": "2026-03-20T19:14:44.568Z"
   },
   "Camille_vs_Rumble_JG": {
-    "winRate": 46.63,
-    "enemyWinRate": 53.37,
-    "fetchedAt": "2026-03-15T16:41:05.856Z"
+    "winRate": 41.03,
+    "enemyWinRate": 58.97,
+    "fetchedAt": "2026-03-20T19:14:49.033Z"
   },
   "Camille_vs_Mordekaiser_JG": {
-    "winRate": 47.94,
-    "enemyWinRate": 52.06,
-    "fetchedAt": "2026-03-15T16:41:08.113Z"
+    "winRate": 45.92,
+    "enemyWinRate": 54.08,
+    "fetchedAt": "2026-03-20T19:14:51.142Z"
   },
   "Camille_vs_Sett_JG": {
-    "winRate": 48.35,
-    "enemyWinRate": 51.65,
-    "fetchedAt": "2026-03-15T16:41:10.367Z"
+    "winRate": 50.39,
+    "enemyWinRate": 49.61,
+    "fetchedAt": "2026-03-20T19:14:53.279Z"
   },
   "Camille_vs_Sylas_JG": {
-    "winRate": 52.32,
-    "enemyWinRate": 47.68,
-    "fetchedAt": "2026-03-15T16:41:14.816Z"
+    "winRate": 47.37,
+    "enemyWinRate": 52.63,
+    "fetchedAt": "2026-03-20T19:14:57.715Z"
   },
   "Camille_vs_Poppy_JG": {
-    "winRate": 48.92,
-    "enemyWinRate": 51.08,
-    "fetchedAt": "2026-03-15T16:41:20.316Z"
+    "winRate": 57.3,
+    "enemyWinRate": 42.7,
+    "fetchedAt": "2026-03-20T19:15:02.196Z"
   },
   "MonkeyKing_vs_Elise_JG": {
     "winRate": 52.56,
@@ -60599,59 +60601,59 @@
     "fetchedAt": "2026-03-15T16:41:27.032Z"
   },
   "Camille_vs_Udyr_JG": {
-    "winRate": 51.61,
-    "enemyWinRate": 48.39,
-    "fetchedAt": "2026-03-15T16:41:29.779Z"
+    "winRate": 43.9,
+    "enemyWinRate": 56.1,
+    "fetchedAt": "2026-03-20T19:15:11.050Z"
   },
   "Camille_vs_Gwen_JG": {
-    "winRate": 51.65,
-    "enemyWinRate": 48.35,
-    "fetchedAt": "2026-03-15T16:41:41.261Z"
+    "winRate": 50.81,
+    "enemyWinRate": 49.19,
+    "fetchedAt": "2026-03-20T19:15:24.864Z"
   },
   "Camille_vs_Ambessa_JG": {
-    "winRate": 54.05,
-    "enemyWinRate": 45.95,
-    "fetchedAt": "2026-03-15T16:41:47.963Z"
+    "winRate": 56.09,
+    "enemyWinRate": 43.91,
+    "fetchedAt": "2026-03-20T19:15:32.323Z"
   },
   "Camille_vs_Maokai_JG": {
-    "winRate": 47.59,
-    "enemyWinRate": 52.41,
-    "fetchedAt": "2026-03-15T16:41:57.879Z"
+    "winRate": 63.64,
+    "enemyWinRate": 36.36,
+    "fetchedAt": "2026-03-20T19:15:57.594Z"
   },
   "Darius_vs_Camille_JG": {
-    "winRate": 49.19,
-    "enemyWinRate": 50.81,
-    "fetchedAt": "2026-03-15T16:42:06.891Z"
+    "winRate": 52.79,
+    "enemyWinRate": 47.21,
+    "fetchedAt": "2026-03-20T19:16:06.632Z"
   },
   "Darius_vs_Olaf_JG": {
-    "winRate": 50.93,
-    "enemyWinRate": 49.07,
-    "fetchedAt": "2026-03-15T16:42:40.318Z"
+    "winRate": 44.48,
+    "enemyWinRate": 55.52,
+    "fetchedAt": "2026-03-20T19:16:40.938Z"
   },
   "Darius_vs_Chogath_JG": {
-    "winRate": 49.57,
-    "enemyWinRate": 50.43,
-    "fetchedAt": "2026-03-15T16:43:18.601Z"
+    "winRate": 44.59,
+    "enemyWinRate": 55.41,
+    "fetchedAt": "2026-03-20T19:17:20.172Z"
   },
   "Darius_vs_Rumble_JG": {
-    "winRate": 48.41,
-    "enemyWinRate": 51.59,
-    "fetchedAt": "2026-03-15T16:43:27.586Z"
+    "winRate": 45.92,
+    "enemyWinRate": 54.08,
+    "fetchedAt": "2026-03-20T19:17:29.908Z"
   },
   "Darius_vs_Mordekaiser_JG": {
-    "winRate": 50.79,
-    "enemyWinRate": 49.21,
-    "fetchedAt": "2026-03-15T16:43:30.142Z"
+    "winRate": 51.49,
+    "enemyWinRate": 48.51,
+    "fetchedAt": "2026-03-20T19:17:32.206Z"
   },
   "Darius_vs_Sett_JG": {
-    "winRate": 48.89,
-    "enemyWinRate": 51.11,
-    "fetchedAt": "2026-03-15T16:43:32.260Z"
+    "winRate": 48.48,
+    "enemyWinRate": 51.52,
+    "fetchedAt": "2026-03-20T19:17:34.450Z"
   },
   "Darius_vs_Poppy_JG": {
-    "winRate": 52.68,
-    "enemyWinRate": 47.32,
-    "fetchedAt": "2026-03-15T16:43:40.979Z"
+    "winRate": 46,
+    "enemyWinRate": 54,
+    "fetchedAt": "2026-03-20T19:17:44.687Z"
   },
   "Darius_vs_Gwen_JG": {
     "winRate": 53.78,
@@ -66227,5 +66229,35 @@
     "winRate": 53.33,
     "enemyWinRate": 46.67,
     "fetchedAt": "2026-03-20T18:40:29.693Z"
+  },
+  "Briar_vs_Olaf_TOP": {
+    "winRate": 46.67,
+    "enemyWinRate": 53.33,
+    "fetchedAt": "2026-03-20T18:49:46.633Z"
+  },
+  "Zaahen_vs_Ryze_TOP": {
+    "winRate": 47.54,
+    "enemyWinRate": 52.46,
+    "fetchedAt": "2026-03-20T18:56:38.588Z"
+  },
+  "Zaahen_vs_Swain_TOP": {
+    "winRate": 53.85,
+    "enemyWinRate": 46.15,
+    "fetchedAt": "2026-03-20T18:56:50.357Z"
+  },
+  "Maokai_vs_Shen_TOP": {
+    "winRate": 47.83,
+    "enemyWinRate": 52.17,
+    "fetchedAt": "2026-03-20T19:02:58.070Z"
+  },
+  "Maokai_vs_Sylas_TOP": {
+    "winRate": 67.86,
+    "enemyWinRate": 32.14,
+    "fetchedAt": "2026-03-20T19:04:02.207Z"
+  },
+  "Amumu_vs_Olaf_JG": {
+    "winRate": 36,
+    "enemyWinRate": 64,
+    "fetchedAt": "2026-03-20T19:08:41.719Z"
   }
 }
