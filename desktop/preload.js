@@ -50,4 +50,13 @@ contextBridge.exposeInMainWorld('lcuBridge', {
     ipcRenderer.on('update-check-done', handler);
     return () => ipcRenderer.removeListener('update-check-done', handler);
   },
+
+  // アプリ更新通知
+  getAppVersion: () => ipcRenderer.invoke('get-app-version'),
+  onAppUpdateAvailable: (callback) => {
+    const handler = (_event, data) => callback(data);
+    ipcRenderer.on('app-update-available', handler);
+    return () => ipcRenderer.removeListener('app-update-available', handler);
+  },
+  openExternal: (url) => ipcRenderer.invoke('open-external', url),
 });

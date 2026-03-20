@@ -199,12 +199,59 @@ ipcMain.handle('check-updates', async () => {
   return { ok: true };
 });
 
+// ── アプリ自動更新チェック ──
+const CURRENT_VERSION = require('./package.json').version;
+const GITHUB_REPO = 'aimayujin/lol-assist';
+
+async function checkForAppUpdate() {
+  try {
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
+    const data = await fetchUrl(url);
+    const release = JSON.parse(data.toString());
+    const latestTag = (release.tag_name || '').replace(/^v/, '');
+    if (latestTag && latestTag !== CURRENT_VERSION && compareVersions(latestTag, CURRENT_VERSION) > 0) {
+      console.log(`[Update] 新しいバージョンがあります: v${latestTag} (現在: v${CURRENT_VERSION})`);
+      const asset = release.assets?.find(a => a.name.endsWith('.exe'));
+      sendToRenderer('app-update-available', {
+        currentVersion: CURRENT_VERSION,
+        latestVersion: latestTag,
+        downloadUrl: asset?.browser_download_url || release.html_url,
+        releaseUrl: release.html_url,
+        releaseNotes: release.body || '',
+      });
+    } else {
+      console.log(`[Update] アプリは最新です (v${CURRENT_VERSION})`);
+    }
+  } catch (err) {
+    console.warn('[Update] アプリ更新チェック失敗:', err.message);
+  }
+}
+
+function compareVersions(a, b) {
+  const pa = a.split('.').map(Number);
+  const pb = b.split('.').map(Number);
+  for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+    const na = pa[i] || 0, nb = pb[i] || 0;
+    if (na > nb) return 1;
+    if (na < nb) return -1;
+  }
+  return 0;
+}
+
+ipcMain.handle('get-app-version', () => CURRENT_VERSION);
+ipcMain.handle('open-external', (_, url) => {
+  const { shell } = require('electron');
+  return shell.openExternal(url);
+});
+
 // ── App Lifecycle ──
 app.whenReady().then(() => {
   createWindow();
   startLcu();
   // 起動時にバックグラウンドでデータ更新チェック
   setTimeout(() => checkForUpdates(), 3000);
+  // アプリ更新チェック（起動5秒後）
+  setTimeout(() => checkForAppUpdate(), 5000);
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
