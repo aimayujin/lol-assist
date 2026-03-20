@@ -1,0 +1,58 @@
+{
+  "name": "lolpick-desktop",
+  "version": "1.0.0",
+  "description": "lolpick.jp デスクトップ版 - LCU API連携でチャンプセレクト自動検出",
+  "main": "main.js",
+  "author": "lolpick.jp",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:dir": "electron-builder --dir"
+  },
+  "dependencies": {
+    "league-connect": "^5.5.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "jp.lolpick.desktop",
+    "productName": "lolpick.jp",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "lcu.js",
+      "index.html",
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.png",
+      "signAndEditExecutable": false,
+      "signDlls": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerHeaderIcon": "assets/icon.png",
+      "shortcutName": "lolpick.jp",
+      "artifactName": "lolpick-setup-${version}.${ext}"
+    }
+  }
+}
