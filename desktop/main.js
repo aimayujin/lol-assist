@@ -25,8 +25,14 @@ function createWindow() {
     },
   });
 
-  // 同ディレクトリの index.html を読み込み
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  // ホットアップデート版があればそちらを優先ロード
+  const hotHtmlPath = path.join(app.getPath('userData'), 'hot-update', 'index.html');
+  if (fs.existsSync(hotHtmlPath)) {
+    console.log('[Boot] ホットアップデート版 index.html をロード');
+    mainWindow.loadFile(hotHtmlPath);
+  } else {
+    mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  }
 
   // DevTools (--dev フラグで開く)
   if (process.argv.includes('--dev')) {
@@ -170,8 +176,51 @@ async function checkForUpdates() {
     }
   }
 
-  // 注意: index.html はデスクトップ専用コードを含むため自動更新しない
-  // index.html の更新はインストーラー再配布で対応
+  // index.html のホットアップデート
+  try {
+    const versionUrl = `${SITE_BASE}/version.json`;
+    const versionData = JSON.parse((await fetchUrl(versionUrl)).toString());
+    const remoteVer = versionData.version;
+    const minMain = versionData.minMainVersion || '0.0.0';
+
+    if (remoteVer && compareVersions(remoteVer, CURRENT_VERSION) > 0) {
+      // メインプロセス更新が必要な場合はインストーラー案内
+      if (compareVersions(minMain, CURRENT_VERSION) > 0) {
+        console.log(`[Update] メインプロセス更新が必要 (min: v${minMain})`);
+        sendToRenderer('app-update-available', {
+          currentVersion: CURRENT_VERSION,
+          latestVersion: remoteVer,
+          downloadUrl: `https://github.com/${GITHUB_REPO}/releases/latest`,
+          releaseUrl: `https://github.com/${GITHUB_REPO}/releases/latest`,
+          requiresInstaller: true,
+        });
+      } else {
+        // index.html だけ更新すればOK
+        console.log(`[Update] index.html ホットアップデート v${remoteVer} ...`);
+        const htmlData = await fetchUrl(`${SITE_BASE}/index.html`);
+        const hotDir = path.join(app.getPath('userData'), 'hot-update');
+        if (!fs.existsSync(hotDir)) fs.mkdirSync(hotDir, { recursive: true });
+
+        // 現在のローカルindex.htmlと比較
+        const hotHtmlPath = path.join(hotDir, 'index.html');
+        let needsHtmlUpdate = true;
+        if (fs.existsSync(hotHtmlPath)) {
+          const localHtml = fs.readFileSync(hotHtmlPath);
+          needsHtmlUpdate = !htmlData.equals(localHtml);
+        }
+
+        if (needsHtmlUpdate) {
+          fs.writeFileSync(hotHtmlPath, htmlData);
+          fs.writeFileSync(path.join(hotDir, 'version.json'), JSON.stringify({ version: remoteVer }));
+          console.log(`[Update] index.html 更新完了 → v${remoteVer}`);
+          sendToRenderer('app-hot-updated', { version: remoteVer });
+          updated++;
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('[Update] index.html ホットアップデート失敗:', err.message);
+  }
 
   if (updated > 0) {
     console.log(`[Update] ${updated} ファイル更新完了`);
@@ -199,33 +248,9 @@ ipcMain.handle('check-updates', async () => {
   return { ok: true };
 });
 
-// ── アプリ自動更新チェック ──
+// ── バージョン管理 ──
 const CURRENT_VERSION = require('./package.json').version;
 const GITHUB_REPO = 'aimayujin/lol-assist';
-
-async function checkForAppUpdate() {
-  try {
-    const url = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
-    const data = await fetchUrl(url);
-    const release = JSON.parse(data.toString());
-    const latestTag = (release.tag_name || '').replace(/^v/, '');
-    if (latestTag && latestTag !== CURRENT_VERSION && compareVersions(latestTag, CURRENT_VERSION) > 0) {
-      console.log(`[Update] 新しいバージョンがあります: v${latestTag} (現在: v${CURRENT_VERSION})`);
-      const asset = release.assets?.find(a => a.name.endsWith('.exe'));
-      sendToRenderer('app-update-available', {
-        currentVersion: CURRENT_VERSION,
-        latestVersion: latestTag,
-        downloadUrl: asset?.browser_download_url || release.html_url,
-        releaseUrl: release.html_url,
-        releaseNotes: release.body || '',
-      });
-    } else {
-      console.log(`[Update] アプリは最新です (v${CURRENT_VERSION})`);
-    }
-  } catch (err) {
-    console.warn('[Update] アプリ更新チェック失敗:', err.message);
-  }
-}
 
 function compareVersions(a, b) {
   const pa = a.split('.').map(Number);
@@ -248,10 +273,8 @@ ipcMain.handle('open-external', (_, url) => {
 app.whenReady().then(() => {
   createWindow();
   startLcu();
-  // 起動時にバックグラウンドでデータ更新チェック
+  // 起動時にバックグラウンドでデータ＆アプリ更新チェック
   setTimeout(() => checkForUpdates(), 3000);
-  // アプリ更新チェック（起動5秒後）
-  setTimeout(() => checkForAppUpdate(), 5000);
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();

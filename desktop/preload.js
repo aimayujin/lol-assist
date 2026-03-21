@@ -53,6 +53,11 @@ contextBridge.exposeInMainWorld('lcuBridge', {
 
   // アプリ更新通知
   getAppVersion: () => ipcRenderer.invoke('get-app-version'),
+  onAppHotUpdated: (callback) => {
+    const handler = (_event, data) => callback(data);
+    ipcRenderer.on('app-hot-updated', handler);
+    return () => ipcRenderer.removeListener('app-hot-updated', handler);
+  },
   onAppUpdateAvailable: (callback) => {
     const handler = (_event, data) => callback(data);
     ipcRenderer.on('app-update-available', handler);
