@@ -1,12 +1,18 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, Tray, Menu, nativeImage } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
 const { LcuClient } = require('./lcu');
 
+// 多重起動防止
+const gotLock = app.requestSingleInstanceLock();
+if (!gotLock) { app.quit(); }
+
 let mainWindow = null;
+let tray = null;
 let lcuClient = null;
 let gPendingReload = false;
+let gStartMinimized = process.argv.includes('--minimized');
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -18,6 +24,7 @@ function createWindow() {
     icon: path.join(__dirname, 'assets', 'icon.png'),
     autoHideMenuBar: true,
     backgroundColor: '#0a0e14',
+    show: !gStartMinimized,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
@@ -39,12 +46,87 @@ function createWindow() {
     mainWindow.webContents.openDevTools();
   }
 
+  // ウィンドウを閉じてもトレイに残す
+  mainWindow.on('close', (e) => {
+    if (tray && !app.isQuitting) {
+      e.preventDefault();
+      mainWindow.hide();
+    }
+  });
+
   mainWindow.on('closed', () => { mainWindow = null; });
+}
+
+function showWindow() {
+  if (!mainWindow) {
+    gStartMinimized = false;
+    createWindow();
+  } else {
+    mainWindow.show();
+    mainWindow.focus();
+  }
 }
 
 function sendToRenderer(channel, data) {
   if (mainWindow && !mainWindow.isDestroyed()) {
     mainWindow.webContents.send(channel, data);
+  }
+}
+
+// ── トレイアイコン ──
+function createTray() {
+  const iconPath = path.join(__dirname, 'assets', 'icon.png');
+  let trayIcon;
+  try {
+    trayIcon = nativeImage.createFromPath(iconPath).resize({ width: 16, height: 16 });
+  } catch {
+    trayIcon = nativeImage.createEmpty();
+  }
+  tray = new Tray(trayIcon);
+  tray.setToolTip('lolpick.jp');
+  updateTrayMenu('LoL未検出');
+
+  tray.on('double-click', () => showWindow());
+}
+
+function updateTrayMenu(status) {
+  if (!tray) return;
+  const menu = Menu.buildFromTemplate([
+    { label: `lolpick.jp v${CURRENT_VERSION}`, enabled: false },
+    { label: status, enabled: false },
+    { type: 'separator' },
+    { label: 'ウィンドウを表示', click: () => showWindow() },
+    { label: 'Windows起動時に自動起動', type: 'checkbox', checked: getAutoLaunch(), click: (item) => setAutoLaunch(item.checked) },
+    { type: 'separator' },
+    { label: '終了', click: () => { app.isQuitting = true; app.quit(); } },
+  ]);
+  tray.setContextMenu(menu);
+}
+
+// ── Windows 自動起動（レジストリ） ──
+function getAutoLaunch() {
+  try {
+    const { execSync } = require('child_process');
+    const result = execSync('reg query "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v "lolpick.jp"', { encoding: 'utf8', timeout: 3000 });
+    return result.includes('lolpick.jp');
+  } catch {
+    return false;
+  }
+}
+
+function setAutoLaunch(enable) {
+  const { execSync } = require('child_process');
+  try {
+    if (enable) {
+      const exePath = process.execPath;
+      execSync(`reg add "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v "lolpick.jp" /t REG_SZ /d "\\"${exePath}\\" --minimized" /f`, { timeout: 3000 });
+      console.log('[AutoLaunch] 自動起動を有効化');
+    } else {
+      execSync('reg delete "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v "lolpick.jp" /f', { timeout: 3000 });
+      console.log('[AutoLaunch] 自動起動を無効化');
+    }
+  } catch (err) {
+    console.error('[AutoLaunch] エラー:', err.message);
   }
 }
 
@@ -55,16 +137,27 @@ function startLcu() {
   lcuClient.on('lcu-connected', () => {
     console.log('[Main] LCU 接続完了');
     sendToRenderer('lcu-status', { connected: true });
+    updateTrayMenu('LoLクライアント接続中');
+    // LoL検出時にトレイから自動でウィンドウ表示
+    if (!mainWindow || !mainWindow.isVisible()) {
+      showWindow();
+    }
   });
 
   lcuClient.on('lcu-disconnected', () => {
     console.log('[Main] LCU 切断');
     sendToRenderer('lcu-status', { connected: false });
+    updateTrayMenu('LoL未検出');
   });
 
   lcuClient.on('champ-select-start', (session) => {
     console.log('[Main] チャンプセレクト開始');
     sendToRenderer('champ-select-update', session);
+    // チャンプセレクト開始時にウィンドウを前面に
+    if (mainWindow) {
+      if (!mainWindow.isVisible()) mainWindow.show();
+      mainWindow.focus();
+    }
   });
 
   lcuClient.on('champ-select-update', (session) => {
@@ -82,7 +175,7 @@ function startLcu() {
         if (mainWindow && !mainWindow.isDestroyed()) {
           mainWindow.webContents.reloadIgnoringCache();
         }
-      }, 2000); // チャンプセレクト終了の処理が完了してから
+      }, 2000);
     }
   });
 
@@ -113,6 +206,15 @@ ipcMain.handle('get-team-match-history', async (_, session, count) => {
   return lcuClient.getTeamMatchHistory(session, count || 10);
 });
 
+// デバッグ用
+ipcMain.handle('lcu-debug', () => {
+  return lcuClient?.getDebugInfo() ?? { error: 'lcuClient not initialized' };
+});
+
+ipcMain.handle('lcu-test-api', async (_, endpoint) => {
+  return lcuClient?.testApiCall(endpoint) ?? { error: 'lcuClient not initialized' };
+});
+
 // ── データ自動アップデート ──
 const SITE_BASE = 'https://lolpick.jp';
 const DATA_FILES = [
@@ -130,7 +232,7 @@ function fetchUrl(url) {
     const get = (u) => {
       https.get(u, { headers: { 'User-Agent': 'lolpick-desktop/1.0' } }, (res) => {
         if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-          get(res.headers.location); // リダイレクト対応
+          get(res.headers.location);
           return;
         }
         if (res.statusCode !== 200) { reject(new Error(`HTTP ${res.statusCode}`)); res.resume(); return; }
@@ -156,7 +258,6 @@ async function checkForUpdates() {
       const remoteData = await fetchUrl(url);
       const localPath = path.join(__dirname, file);
 
-      // ローカルファイルと比較して変更があれば更新
       let needsUpdate = true;
       if (fs.existsSync(localPath)) {
         const localData = fs.readFileSync(localPath);
@@ -164,7 +265,6 @@ async function checkForUpdates() {
       }
 
       if (needsUpdate) {
-        // 親ディレクトリがなければ作成
         const dir = path.dirname(localPath);
         if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
         fs.writeFileSync(localPath, remoteData);
@@ -184,7 +284,6 @@ async function checkForUpdates() {
     const minMain = versionData.minMainVersion || '0.0.0';
 
     if (remoteVer && compareVersions(remoteVer, CURRENT_VERSION) > 0) {
-      // メインプロセス更新が必要な場合はインストーラー案内
       if (compareVersions(minMain, CURRENT_VERSION) > 0) {
         console.log(`[Update] メインプロセス更新が必要 (min: v${minMain})`);
         sendToRenderer('app-update-available', {
@@ -195,13 +294,11 @@ async function checkForUpdates() {
           requiresInstaller: true,
         });
       } else {
-        // index.html だけ更新すればOK
         console.log(`[Update] index.html ホットアップデート v${remoteVer} ...`);
         const htmlData = await fetchUrl(`${SITE_BASE}/index.html`);
         const hotDir = path.join(app.getPath('userData'), 'hot-update');
         if (!fs.existsSync(hotDir)) fs.mkdirSync(hotDir, { recursive: true });
 
-        // 現在のローカルindex.htmlと比較
         const hotHtmlPath = path.join(hotDir, 'index.html');
         let needsHtmlUpdate = true;
         if (fs.existsSync(hotHtmlPath)) {
@@ -224,7 +321,6 @@ async function checkForUpdates() {
 
   if (updated > 0) {
     console.log(`[Update] ${updated} ファイル更新完了`);
-    // チャンプセレクト中でなければ自動リロード
     const inChampSelect = lcuClient?.inChampSelect ?? false;
     if (!inChampSelect) {
       console.log('[Update] 自動リロード実行');
@@ -232,7 +328,6 @@ async function checkForUpdates() {
         mainWindow.webContents.reloadIgnoringCache();
       }
     } else {
-      // チャンプセレクト中は通知のみ（終了後にリロード）
       console.log('[Update] チャンプセレクト中のため通知のみ');
       sendToRenderer('data-updated', { count: updated });
       gPendingReload = true;
@@ -271,6 +366,7 @@ ipcMain.handle('open-external', (_, url) => {
 
 // ── App Lifecycle ──
 app.whenReady().then(() => {
+  createTray();
   createWindow();
   startLcu();
   // 起動時にバックグラウンドでデータ＆アプリ更新チェック
@@ -281,7 +377,20 @@ app.whenReady().then(() => {
   });
 });
 
+// 多重起動時: 既存ウィンドウを前面に
+app.on('second-instance', () => {
+  showWindow();
+});
+
 app.on('window-all-closed', () => {
+  // トレイがあれば終了しない（バックグラウンド常駐）
+  if (!tray) {
+    if (lcuClient) lcuClient.stop();
+    if (process.platform !== 'darwin') app.quit();
+  }
+});
+
+app.on('before-quit', () => {
+  app.isQuitting = true;
   if (lcuClient) lcuClient.stop();
-  if (process.platform !== 'darwin') app.quit();
 });

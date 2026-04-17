@@ -1,5 +1,7 @@
 const { EventEmitter } = require('events');
-const { authenticate, createHttp1Request, createWebSocketConnection, LeagueClient } = require('league-connect');
+const { exec } = require('child_process');
+const https = require('https');
+const WebSocket = require('ws');
 
 // LCU の assignedPosition → アプリの ROLES マッピング
 const POS_TO_ROLE = {
@@ -10,16 +12,21 @@ const POS_TO_ROLE = {
   utility: 'SUP',
 };
 
+// SSL自己署名証明書を無視するHTTPSエージェント
+const agent = new https.Agent({ rejectUnauthorized: false });
+
 class LcuClient extends EventEmitter {
   constructor() {
     super();
-    this.credentials = null;
+    this.port = null;
+    this.password = null;
+    this.authHeader = null;
     this.ws = null;
-    this.leagueClient = null;
     this.connected = false;
     this.inChampSelect = false;
     this.lastSessionJson = '';
     this.pollTimer = null;
+    this.detectTimer = null;
   }
 
   isConnected() {
@@ -27,114 +34,142 @@ class LcuClient extends EventEmitter {
   }
 
   async start() {
-    this._tryConnect();
+    this._detectLoop();
   }
 
   stop() {
-    if (this.pollTimer) clearInterval(this.pollTimer);
-    if (this.ws) { try { this.ws.close(); } catch {} }
-    if (this.leagueClient) this.leagueClient.stop();
+    if (this.pollTimer) { clearInterval(this.pollTimer); this.pollTimer = null; }
+    if (this.detectTimer) { clearInterval(this.detectTimer); this.detectTimer = null; }
+    if (this.ws) { try { this.ws.close(); } catch {} this.ws = null; }
     this.connected = false;
   }
 
-  // ── 接続試行 ──
-  async _tryConnect() {
+  // ── プロセスからポート・トークンを取得 ──
+  _detectLoop() {
     console.log('[LCU] クライアント検出を待機中...');
-    try {
-      this.credentials = await authenticate({
-        awaitConnection: true,   // クライアントが起動するまで待つ
-        pollInterval: 3000,
-      });
-      console.log(`[LCU] 接続成功 port=${this.credentials.port}`);
-      this.connected = true;
-      this.emit('lcu-connected');
-
-      // クライアントの再起動/終了を監視
-      this.leagueClient = new LeagueClient(this.credentials);
-      this.leagueClient.on('connect', (newCreds) => {
-        console.log('[LCU] クライアント再接続');
-        this.credentials = newCreds;
-        this.connected = true;
-        this.emit('lcu-connected');
-        this._startWatching();
-      });
-      this.leagueClient.on('disconnect', () => {
-        console.log('[LCU] クライアント切断');
-        this.connected = false;
-        this.inChampSelect = false;
-        this.emit('lcu-disconnected');
-        if (this.pollTimer) { clearInterval(this.pollTimer); this.pollTimer = null; }
-      });
-      this.leagueClient.start();
-
-      await this._startWatching();
-    } catch (err) {
-      console.error('[LCU] 接続エラー:', err.message);
-      // リトライ
-      setTimeout(() => this._tryConnect(), 5000);
-    }
-  }
-
-  // ── WebSocket or Polling で監視 ──
-  async _startWatching() {
-    // WebSocket 接続を試みる
-    try {
-      this.ws = await createWebSocketConnection({
-        authenticationOptions: { awaitConnection: false },
-        ...this.credentials && { port: this.credentials.port, password: this.credentials.password },
-      });
-
-      // gameflow フェーズ監視
-      this.ws.subscribe('/lol-gameflow/v1/gameflow-phase', (data) => {
-        this.emit('gameflow-phase', data);
-        if (data === 'ChampSelect') {
-          this.inChampSelect = true;
-        } else if (this.inChampSelect) {
+    const check = async () => {
+      if (this.connected) return;
+      try {
+        const creds = await this._findCredentials();
+        if (creds) {
+          this.port = creds.port;
+          this.password = creds.password;
+          this.authHeader = 'Basic ' + Buffer.from(`riot:${creds.password}`).toString('base64');
+          console.log(`[LCU] 接続成功 port=${creds.port}`);
+          this.connected = true;
+          this.emit('lcu-connected');
+          this._startWatching();
+        }
+      } catch (err) {
+        console.warn('[LCU] 検出エラー:', err.message);
+      }
+    };
+    check();
+    this.detectTimer = setInterval(async () => {
+      if (this.connected) {
+        // 接続中: プロセスがまだ生きているか確認
+        const alive = await this._isProcessAlive();
+        if (!alive) {
+          console.log('[LCU] クライアント切断');
+          this.connected = false;
+          this.port = null;
+          this.password = null;
+          this.authHeader = null;
           this.inChampSelect = false;
           this.lastSessionJson = '';
-          this.emit('champ-select-end');
+          if (this.pollTimer) { clearInterval(this.pollTimer); this.pollTimer = null; }
+          if (this.ws) { try { this.ws.close(); } catch {} this.ws = null; }
+          this.emit('lcu-disconnected');
         }
-      });
-
-      // チャンプセレクト セッション監視
-      this.ws.subscribe('/lol-champ-select/v1/session', (data, event) => {
-        if (event.eventType === 'Delete') {
-          if (this.inChampSelect) {
-            this.inChampSelect = false;
-            this.lastSessionJson = '';
-            this.emit('champ-select-end');
-          }
-          return;
-        }
-        this._handleSession(data);
-      });
-
-      console.log('[LCU] WebSocket監視を開始');
-    } catch (err) {
-      console.warn('[LCU] WebSocket失敗、ポーリングにフォールバック:', err.message);
-      this._startPolling();
-    }
+      } else {
+        check();
+      }
+    }, 3000);
   }
 
-  // ── ポーリング（WebSocket失敗時のフォールバック） ──
+  // ── WMIC でコマンドライン引数からポート・パスワード取得 ──
+  _findCredentials() {
+    return new Promise((resolve) => {
+      exec(
+        'wmic PROCESS WHERE name="LeagueClientUx.exe" GET commandline /FORMAT:LIST',
+        { timeout: 5000 },
+        (err, stdout) => {
+          if (err || !stdout) return resolve(null);
+          const portMatch = stdout.match(/--app-port=(\d+)/);
+          const tokenMatch = stdout.match(/--remoting-auth-token=([\w-]+)/);
+          if (portMatch && tokenMatch) {
+            resolve({ port: parseInt(portMatch[1]), password: tokenMatch[1] });
+          } else {
+            resolve(null);
+          }
+        }
+      );
+    });
+  }
+
+  // ── プロセス生存確認 ──
+  _isProcessAlive() {
+    return new Promise((resolve) => {
+      exec(
+        'tasklist /FI "IMAGENAME eq LeagueClientUx.exe" /NH',
+        { timeout: 5000 },
+        (err, stdout) => {
+          if (err) return resolve(false);
+          resolve(stdout.includes('LeagueClientUx.exe'));
+        }
+      );
+    });
+  }
+
+  // ── HTTPS リクエスト ──
+  _request(method, endpoint) {
+    return new Promise((resolve, reject) => {
+      const req = https.request({
+        hostname: '127.0.0.1',
+        port: this.port,
+        path: endpoint,
+        method,
+        headers: { Authorization: this.authHeader, Accept: 'application/json' },
+        agent,
+      }, (res) => {
+        const chunks = [];
+        res.on('data', c => chunks.push(c));
+        res.on('end', () => {
+          const body = Buffer.concat(chunks).toString();
+          let json = null;
+          try { json = JSON.parse(body); } catch {}
+          resolve({ status: res.statusCode, json, body });
+        });
+      });
+      req.on('error', reject);
+      req.setTimeout(5000, () => { req.destroy(new Error('timeout')); });
+      req.end();
+    });
+  }
+
+  // ── 監視開始（ポーリング方式） ──
+  async _startWatching() {
+    this._startPolling();
+  }
+
+  // ── ポーリング ──
   _startPolling() {
     if (this.pollTimer) clearInterval(this.pollTimer);
+    console.log('[LCU] ポーリング監視を開始');
     this.pollTimer = setInterval(async () => {
       if (!this.connected) return;
       try {
-        const res = await createHttp1Request({
-          method: 'GET',
-          url: '/lol-champ-select/v1/session',
-        }, this.credentials);
-
-        if (res.status === 200) {
-          this._handleSession(res.json());
+        const res = await this._request('GET', '/lol-champ-select/v1/session');
+        if (res.status === 200 && res.json) {
+          this._handleSession(res.json);
         } else if (this.inChampSelect) {
           this.inChampSelect = false;
           this.lastSessionJson = '';
           this.emit('champ-select-end');
         }
-      } catch {}
+      } catch (err) {
+        console.error('[LCU] ポーリングエラー:', err.message);
+      }
     }, 1500);
   }
 
@@ -160,22 +195,14 @@ class LcuClient extends EventEmitter {
   // ── セッションを簡潔な形式に変換 ──
   _parseSession(session) {
     const localCellId = session.localPlayerCellId;
-
-    // 自分がどちらのチームか判定
-    const isMyTeam = session.myTeam.some(p => p.cellId === localCellId);
-
     const myTeam = {};
     const enemyTeam = {};
-
-    // ロール未割当時（カスタム等）に順番でロールを割り当て
     const ROLE_ORDER = ['TOP', 'JG', 'MID', 'ADC', 'SUP'];
 
-    // 味方チーム
     let myIdx = 0;
     for (const player of session.myTeam) {
       let role = POS_TO_ROLE[player.assignedPosition] || null;
       if (!role) {
-        // カスタム/ARAM等: ピック順でロール割当
         if (myIdx < ROLE_ORDER.length) role = ROLE_ORDER[myIdx];
         else continue;
       }
@@ -184,7 +211,6 @@ class LcuClient extends EventEmitter {
       if (champId > 0) myTeam[role] = champId;
     }
 
-    // 敵チーム
     let enemyIdx = 0;
     for (const player of (session.theirTeam || [])) {
       let role = POS_TO_ROLE[player.assignedPosition] || null;
@@ -197,13 +223,11 @@ class LcuClient extends EventEmitter {
       if (champId > 0) enemyTeam[role] = champId;
     }
 
-    // BAN情報
     const bans = {
       myTeam: (session.bans?.myTeamBans || []).filter(id => id > 0),
       theirTeam: (session.bans?.theirTeamBans || []).filter(id => id > 0),
     };
 
-    // 自分のロールを検出
     let myRole = null;
     for (const player of session.myTeam) {
       if (player.cellId === localCellId) {
@@ -212,7 +236,6 @@ class LcuClient extends EventEmitter {
       }
     }
 
-    // プレイヤー情報（summonerId + ロール）を保持
     const myTeamPlayers = {};
     const enemyTeamPlayers = {};
     let myIdx2 = 0;
@@ -237,26 +260,47 @@ class LcuClient extends EventEmitter {
   async getChampSelectSession() {
     if (!this.connected) return null;
     try {
-      const res = await createHttp1Request({
-        method: 'GET',
-        url: '/lol-champ-select/v1/session',
-      }, this.credentials);
-      if (res.status === 200) return this._parseSession(res.json());
-    } catch {}
+      const res = await this._request('GET', '/lol-champ-select/v1/session');
+      console.log('[LCU] getChampSelectSession status:', res.status);
+      if (res.status === 200 && res.json) return this._parseSession(res.json);
+    } catch (err) {
+      console.error('[LCU] getChampSelectSession エラー:', err.message);
+    }
     return null;
+  }
+
+  // ── デバッグ情報取得 ──
+  getDebugInfo() {
+    return {
+      connected: this.connected,
+      inChampSelect: this.inChampSelect,
+      port: this.port,
+      hasPassword: !!this.password,
+      hasWs: !!this.ws,
+      wsReadyState: this.ws?.readyState ?? null,
+      hasPollTimer: !!this.pollTimer,
+      lastSessionLength: this.lastSessionJson.length,
+    };
+  }
+
+  // ── LCU API直接テスト ──
+  async testApiCall(endpoint) {
+    if (!this.connected) return { error: 'not connected' };
+    try {
+      const res = await this._request('GET', endpoint);
+      return { status: res.status, body: (res.body || '').substring(0, 500) };
+    } catch (err) {
+      return { error: err.message };
+    }
   }
 
   // ── ランク情報取得 ──
   async getRankedStats(puuid) {
     if (!this.connected || !puuid) return null;
     try {
-      const res = await createHttp1Request({
-        method: 'GET',
-        url: `/lol-ranked/v1/ranked-stats/${puuid}`,
-      }, this.credentials);
-      if (res.status === 200) {
-        const data = res.json();
-        // ソロ/デュオキューのランクを返す
+      const res = await this._request('GET', `/lol-ranked/v1/ranked-stats/${puuid}`);
+      if (res.status === 200 && res.json) {
+        const data = res.json;
         const solo = data.queues?.find(q => q.queueType === 'RANKED_SOLO_5x5') || data.queueMap?.RANKED_SOLO_5x5;
         if (solo) {
           return {
@@ -298,12 +342,9 @@ class LcuClient extends EventEmitter {
   async getMatchHistory(puuid, count = 20) {
     if (!this.connected || !puuid) return null;
     try {
-      const res = await createHttp1Request({
-        method: 'GET',
-        url: `/lol-match-history/v1/products/lol/${puuid}/matches?begIndex=0&endIndex=${count - 1}`,
-      }, this.credentials);
-      if (res.status === 200) {
-        const data = res.json();
+      const res = await this._request('GET', `/lol-match-history/v1/products/lol/${puuid}/matches?begIndex=0&endIndex=${count - 1}`);
+      if (res.status === 200 && res.json) {
+        const data = res.json;
         const games = data.games?.games || data.games || [];
         return games.map(g => {
           const p = g.participants?.[0] || {};

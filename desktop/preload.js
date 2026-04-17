@@ -64,4 +64,8 @@ contextBridge.exposeInMainWorld('lcuBridge', {
     return () => ipcRenderer.removeListener('app-update-available', handler);
   },
   openExternal: (url) => ipcRenderer.invoke('open-external', url),
+
+  // デバッグ用
+  lcuDebug: () => ipcRenderer.invoke('lcu-debug'),
+  lcuTestApi: (endpoint) => ipcRenderer.invoke('lcu-test-api', endpoint),
 });
