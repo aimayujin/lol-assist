@@ -246,27 +246,27 @@ function renderBuild(champId, role, builds, items, runeTrees, version) {
   let out = `<div class="build-box">
   <h3>${ROLE_LABEL[role]} 推奨ビルド（op.gg 統計）</h3>`;
 
-  if (b.items && b.items.length) {
-    // ファーストアイテム（単独で強調）
-    const firstId = b.items[0];
-    out += `<div class="build-row"><span class="build-label">ファーストアイテム</span>
-<div class="build-item first-item">
-  <img src="${itemImg(firstId)}" alt="${escapeHtml(itemName(firstId))}" title="${escapeHtml(itemName(firstId))}" loading="lazy">
-  <span class="build-item-name">${escapeHtml(itemName(firstId))}</span>
-</div></div>`;
+  // ファーストアイテム（試合開始時に買うスターターアイテム）
+  if (b.starters && b.starters.length) {
+    out += `<div class="build-row"><span class="build-label">ファーストアイテム</span>`;
+    out += b.starters.map(id => `<div class="build-item first-item">
+  <img src="${itemImg(id)}" alt="${escapeHtml(itemName(id))}" title="${escapeHtml(itemName(id))}" loading="lazy">
+  <span class="build-item-name">${escapeHtml(itemName(id))}</span>
+</div>`).join('');
+    out += `</div>`;
+  }
 
-    // コアビルド全体（矢印つき）
-    if (b.items.length > 1) {
-      out += `<div class="build-row"><span class="build-label">コアビルド</span>`;
-      out += b.items.map((id, i) => {
-        const arrow = i > 0 ? `<span class="build-arrow">→</span>` : '';
-        return `${arrow}<div class="build-item">
+  // コアビルド（完成アイテム → の順序）
+  if (b.items && b.items.length) {
+    out += `<div class="build-row"><span class="build-label">コアビルド</span>`;
+    out += b.items.map((id, i) => {
+      const arrow = i > 0 ? `<span class="build-arrow">→</span>` : '';
+      return `${arrow}<div class="build-item">
   <img src="${itemImg(id)}" alt="${escapeHtml(itemName(id))}" title="${escapeHtml(itemName(id))}" loading="lazy">
   <span class="build-item-name">${escapeHtml(itemName(id))}</span>
 </div>`;
-      }).join('');
-      out += `</div>`;
-    }
+    }).join('');
+    out += `</div>`;
   }
 
   if (b.boots) {
