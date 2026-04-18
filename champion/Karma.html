@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -100,7 +114,101 @@
     </div></div><h2>パワースパイク</h2>
 <p>カルマ が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell active">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell active">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv2 / Lv3 / Lv9</p><section class="role-section"><h2>サポート でのマッチアップ</h2></section><h2>同じロールの他のチャンピオン</h2>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv2 / Lv3 / Lv9</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Karma_Passive.png" alt="寄せ火" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">寄せ火</span></div>
+    <div class="ability-desc">自身の攻撃スキルが「マントラ」のクールダウンを短縮する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KarmaQ.png" alt="心炎" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">心炎</span></div>
+    <div class="ability-desc">精神の炎を解き放ち、敵に命中すると爆発してダメージを与える。マントラボーナス: 爆発の威力が増し、さらに対象の足下に力場を発生させて範囲内に時間差でダメージを与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KarmaSpiritBind.png" alt="魂縛" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">魂縛</span></div>
+    <div class="ability-desc">自身と標的を鎖でつなぎダメージを与え、ステルス状態を見破る。効果終了時まで鎖が破壊されなければ、敵はその場でスネア状態となり再びダメージを受ける。マントラボーナス: 鎖が強化され自身の体力を回復し、敵に与えるスネア状態の効果時間が延長される。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KarmaSolKimShield.png" alt="激励" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">激励</span></div>
+    <div class="ability-desc">指定した味方ユニットにシールドを付与し、ダメージから守ると同時に移動速度を増加させる。マントラボーナス: 対象からエネルギーが放射され、初期シールドを強化し、周囲にいる味方チャンピオンにも「激励」の効果を付与する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KarmaMantra.png" alt="マントラ" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">マントラ</span></div>
+    <div class="ability-desc">カルマが次に使用するスキルを強化し追加効果を付与する。「マントラ」はレベル1から使用でき、スキルポイントを必要としない。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>サポート 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3870.png" alt="ドリーム メーカー" title="ドリーム メーカー" loading="lazy">
+  <span class="build-item-name">ドリーム メーカー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3871.png" alt="ザズ＝ザクのレルムスパイク" title="ザズ＝ザクのレルムスパイク" loading="lazy">
+  <span class="build-item-name">ザズ＝ザクのレルムスパイク</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6617.png" alt="ムーンストーンの再生" title="ムーンストーンの再生" loading="lazy">
+  <span class="build-item-name">ムーンストーンの再生</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3158.png" alt="アイオニア ブーツ" title="アイオニア ブーツ" loading="lazy">
+  <span class="build-item-name">アイオニア ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/SummonAery/SummonAery.png" alt="エアリー召喚" title="エアリー召喚" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">エアリー召喚</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ManaflowBand/ManaflowBand.png" alt="マナフローバンド" title="マナフローバンド" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">マナフローバンド</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Transcendence/Transcendence.png" alt="至高" title="至高" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">至高</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/GatheringStorm/GatheringStorm.png" alt="強まる嵐" title="強まる嵐" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">強まる嵐</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/FontOfLife/FontOfLife.png" alt="生命の泉" title="生命の泉" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">生命の泉</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Revitalize/Revitalize.png" alt="生気付与" title="生気付与" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">生気付与</span>
+</div></div></div><div class="build-box">
+  <h3>ミッド 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3870.png" alt="ドリーム メーカー" title="ドリーム メーカー" loading="lazy">
+  <span class="build-item-name">ドリーム メーカー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3871.png" alt="ザズ＝ザクのレルムスパイク" title="ザズ＝ザクのレルムスパイク" loading="lazy">
+  <span class="build-item-name">ザズ＝ザクのレルムスパイク</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6617.png" alt="ムーンストーンの再生" title="ムーンストーンの再生" loading="lazy">
+  <span class="build-item-name">ムーンストーンの再生</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3158.png" alt="アイオニア ブーツ" title="アイオニア ブーツ" loading="lazy">
+  <span class="build-item-name">アイオニア ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/SummonAery/SummonAery.png" alt="エアリー召喚" title="エアリー召喚" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">エアリー召喚</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ManaflowBand/ManaflowBand.png" alt="マナフローバンド" title="マナフローバンド" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">マナフローバンド</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Transcendence/Transcendence.png" alt="至高" title="至高" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">至高</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/GatheringStorm/GatheringStorm.png" alt="強まる嵐" title="強まる嵐" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">強まる嵐</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/FontOfLife/FontOfLife.png" alt="生命の泉" title="生命の泉" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">生命の泉</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Revitalize/Revitalize.png" alt="生気付与" title="生気付与" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">生気付与</span>
+</div></div></div><section class="role-section"><h2>サポート でのマッチアップ</h2></section><h2>同じロールの他のチャンピオン</h2>
 <div class="related-grid">
 
   <a href="/champion/Alistar.html" class="related-card">

@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>カ＝ジックス が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11 / Lv16</p><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 3</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11 / Lv16</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Khazix_P.png" alt="見えざる脅威" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">見えざる脅威</span></div>
+    <div class="ability-desc">味方から「孤立」している周囲の敵ユニットをマークする。カ＝ジックスのスキルは「孤立」している対象が相手だと変化する。敵の視界から消えるとカ＝ジックスは「見えざる脅威」を獲得し、次の通常攻撃で敵チャンピオンに追加魔法ダメージを与え、移動速度を数秒間、低下させる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KhazixQ.png" alt="甘美なる恐怖" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">甘美なる恐怖</span></div>
+    <div class="ability-desc">対象に物理ダメージを与える。「孤立」している対象にはダメージが増加する。「死鎌の進化」が完了している場合は、「孤立」している対象に使用するとクールダウンの一定割合が戻される。また、通常攻撃と「甘美なる恐怖」の射程が延びる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KhazixW.png" alt="ヴォイドの刺棘" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">ヴォイドの刺棘</span></div>
+    <div class="ability-desc">爆発する棘を発射して、命中した敵ユニットに物理ダメージを与える。カ＝ジックスが爆発範囲内にいた場合は体力が回復する。「刺棘の進化」が完了している場合は、扇状に棘の塊が3つ発射され、命中した敵ユニットにはスロウ効果を与え、敵チャンピオンに命中した場合は2秒間可視状態になる。「孤立」した対象にはスロウ効果が強化される。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KhazixE.png" alt="リープ" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">リープ</span></div>
+    <div class="ability-desc">カ＝ジックスが指定地点へと跳躍し、着地と同時に物理ダメージを与える。「翅の進化」を選択した場合は、「リープ」の飛距離が200延びて、敵チャンピオンのキルまたはアシストでクールダウンが解消する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KhazixR.png" alt="捕食の本能" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">捕食の本能</span></div>
+    <div class="ability-desc">自動効果: スキルレベルが上がるたびにスキルを1つ進化させ、特殊な効果を追加できる。発動効果: カ＝ジックスがインビジブル状態になり、「見えざる脅威」が発動して移動速度が増加する。「適応擬態の進化」が完了している場合は、「捕食の本能」のインビジブルの効果時間と使用回数が増加する。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ジャングル 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3179.png" alt="アンブラル グレイブ" title="アンブラル グレイブ" loading="lazy">
+  <span class="build-item-name">アンブラル グレイブ</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/2520.png" alt="バスティオンブレイカー" title="バスティオンブレイカー" loading="lazy">
+  <span class="build-item-name">バスティオンブレイカー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3814.png" alt="ナイト エッジ" title="ナイト エッジ" loading="lazy">
+  <span class="build-item-name">ナイト エッジ</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3158.png" alt="アイオニア ブーツ" title="アイオニア ブーツ" loading="lazy">
+  <span class="build-item-name">アイオニア ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/FirstStrike/FirstStrike.png" alt="ファーストストライク" title="ファーストストライク" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ファーストストライク</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/CashBack/CashBack2.png" alt="キャッシュバック" title="キャッシュバック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">キャッシュバック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/PerfectTiming/AlchemistCabinet.png" alt="トリプル トニック" title="トリプル トニック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">トリプル トニック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/CosmicInsight/CosmicInsight.png" alt="宇宙の英知" title="宇宙の英知" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">宇宙の英知</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/SuddenImpact/SuddenImpact.png" alt="サドンインパクト" title="サドンインパクト" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">サドンインパクト</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/TreasureHunter/TreasureHunter.png" alt="貪欲な賞金首狩り" title="貪欲な賞金首狩り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">貪欲な賞金首狩り</span>
+</div></div></div><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 3</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zyra.png" alt="ザイラ" loading="lazy">
     <span class="mu-name"><a href="/champion/Zyra.html">ザイラ</a></span>

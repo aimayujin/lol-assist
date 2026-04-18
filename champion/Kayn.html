@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>ケイン が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11 / Lv16</p><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11 / Lv16</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Kayn_Passive_Primary.png" alt="緋眼の大鎌" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">緋眼の大鎌</span></div>
+    <div class="ability-desc">ケインは自我を持つダーキンの古代武器ラーストを用いており、両者は常に互いの支配権をかけて争っている。この戦いはダーキンがケインを取り込むか、ケインがラーストを使いこなし影の暗殺者となるまで続く。ダーキン: 敵チャンピオンにスキルで与えたダメージの一定割合にあたる体力を回復する。影の暗殺者: 敵チャンピオンと戦闘開始直後の数秒間、追加ダメージを与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KaynQ.png" alt="飛影斬" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">飛影斬</span></div>
+    <div class="ability-desc">ダッシュしてから斬りつける。その両方でダメージを与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KaynW.png" alt="刃影襲" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">刃影襲</span></div>
+    <div class="ability-desc">直線上にいる敵にダメージとスロウ効果を与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KaynE.png" alt="影抜き" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">影抜き</span></div>
+    <div class="ability-desc">ケインが地形を無視して歩くことができる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KaynR.png" alt="真影侵壊" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">真影侵壊</span></div>
+    <div class="ability-desc">敵の体の中に侵入して、出てくる時に大ダメージを与える。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ジャングル 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6699.png" alt="ボルテイク サイクロソード" title="ボルテイク サイクロソード" loading="lazy">
+  <span class="build-item-name">ボルテイク サイクロソード</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3071.png" alt="ブラック クリーバー" title="ブラック クリーバー" loading="lazy">
+  <span class="build-item-name">ブラック クリーバー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6333.png" alt="デス ダンス" title="デス ダンス" loading="lazy">
+  <span class="build-item-name">デス ダンス</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3158.png" alt="アイオニア ブーツ" title="アイオニア ブーツ" loading="lazy">
+  <span class="build-item-name">アイオニア ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png" alt="魂の収穫" title="魂の収穫" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">魂の収穫</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/SuddenImpact/SuddenImpact.png" alt="サドンインパクト" title="サドンインパクト" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">サドンインパクト</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/GrislyMementos/GrislyMementos.png" alt="グリスリー メメント" title="グリスリー メメント" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">グリスリー メメント</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/TreasureHunter/TreasureHunter.png" alt="貪欲な賞金首狩り" title="貪欲な賞金首狩り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">貪欲な賞金首狩り</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/MagicalFootwear/MagicalFootwear.png" alt="魔法の靴" title="魔法の靴" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">魔法の靴</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/CosmicInsight/CosmicInsight.png" alt="宇宙の英知" title="宇宙の英知" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">宇宙の英知</span>
+</div></div></div><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ivern.png" alt="アイバーン" loading="lazy">
     <span class="mu-name"><a href="/champion/Ivern.html">アイバーン</a></span>

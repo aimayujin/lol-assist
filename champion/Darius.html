@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -100,7 +114,101 @@
     </div></div><h2>パワースパイク</h2>
 <p>ダリウス が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11 / Lv16</p><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11 / Lv16</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Darius_Icon_Hemorrhage.png" alt="大出血" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">大出血</span></div>
+    <div class="ability-desc">通常攻撃または攻撃スキルが命中した敵を出血させ、5秒間物理ダメージを与える。最大5回まで効果をスタックさせることができる。対象のスタックが最大になると、ダリウスが激怒して攻撃力が大幅に増加する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/DariusCleave.png" alt="皆殺しの斧" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">皆殺しの斧</span></div>
+    <div class="ability-desc">斧を構えて振り抜き、周囲の敵を攻撃する。刃に当たった敵は、内側の柄に当たった敵より大きなダメージを受ける。刃に当たった敵チャンピオンと大型モンスターの数に応じて自身を回復する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/DariusNoxianTacticsONH.png" alt="脚削ぎ" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">脚削ぎ</span></div>
+    <div class="ability-desc">次の通常攻撃で敵の動脈を狙い、出血させることでスロウ効果を付与する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/DariusAxeGrabCone.png" alt="捕縛" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">捕縛</span></div>
+    <div class="ability-desc">斧を研ぎ澄まし、対象の物理防御を一部無視して物理ダメージを与えるようになる。スキルを使用すると、刃で敵を引っかけてそばに引き寄せる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/DariusExecute.png" alt="ノクサスギロチン" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">ノクサスギロチン</span></div>
+    <div class="ability-desc">敵チャンピオンに飛びかかり、斧を振り下ろして確定ダメージを与える。対象の「大出血」のスタック数に応じてダメージが増加する。「ノクサスギロチン」で敵にとどめを刺すと、少しの間クールダウンが解消される。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>トップ 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6631.png" alt="ストライドブレイカー" title="ストライドブレイカー" loading="lazy">
+  <span class="build-item-name">ストライドブレイカー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3053.png" alt="ステラックの篭手" title="ステラックの篭手" loading="lazy">
+  <span class="build-item-name">ステラックの篭手</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3742.png" alt="デッド マン プレート" title="デッド マン プレート" loading="lazy">
+  <span class="build-item-name">デッド マン プレート</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png" alt="征服者" title="征服者" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">征服者</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendAlacrity/LegendAlacrity.png" alt="レジェンド: 迅速" title="レジェンド: 迅速" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: 迅速</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/LastStand/LastStand.png" alt="背水の陣" title="背水の陣" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">背水の陣</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/NullifyingOrb/Axiom_Arcanist.png" alt="アクシオム アルカニスト" title="アクシオム アルカニスト" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">アクシオム アルカニスト</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Celerity/CelerityTemp.png" alt="追い風" title="追い風" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追い風</span>
+</div></div></div><div class="build-box">
+  <h3>ジャングル 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6631.png" alt="ストライドブレイカー" title="ストライドブレイカー" loading="lazy">
+  <span class="build-item-name">ストライドブレイカー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3053.png" alt="ステラックの篭手" title="ステラックの篭手" loading="lazy">
+  <span class="build-item-name">ステラックの篭手</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3742.png" alt="デッド マン プレート" title="デッド マン プレート" loading="lazy">
+  <span class="build-item-name">デッド マン プレート</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png" alt="征服者" title="征服者" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">征服者</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendAlacrity/LegendAlacrity.png" alt="レジェンド: 迅速" title="レジェンド: 迅速" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: 迅速</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/LastStand/LastStand.png" alt="背水の陣" title="背水の陣" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">背水の陣</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/NullifyingOrb/Axiom_Arcanist.png" alt="アクシオム アルカニスト" title="アクシオム アルカニスト" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">アクシオム アルカニスト</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Celerity/CelerityTemp.png" alt="追い風" title="追い風" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追い風</span>
+</div></div></div><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Tryndamere.png" alt="トリンダメア" loading="lazy">
     <span class="mu-name"><a href="/champion/Tryndamere.html">トリンダメア</a></span>

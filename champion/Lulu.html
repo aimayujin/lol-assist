@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>ルル が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell active">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv13</p><section class="role-section"><h2>サポート でのマッチアップ</h2><h3>🔴 不利な相手 Top 3</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv13</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Lulu_PixFaerieCompanion.png" alt="仲良し妖精ピックス" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">仲良し妖精ピックス</span></div>
+    <div class="ability-desc">ピックスがくっついているチャンピオンが敵ユニットを攻撃するたびに、ピックスも魔法のビームで援護する。このビームは対象に追従するが、射線に別のユニットが割り込むと、そのユニットに遮られる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/LuluQ.png" alt="ぴかぴかビーム" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">ぴかぴかビーム</span></div>
+    <div class="ability-desc">ピックスとルルが同時に魔法のビームを発射し、命中したすべての敵にダメージと重度のスロウ効果を付与する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/LuluW.png" alt="イタズラ" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">イタズラ</span></div>
+    <div class="ability-desc">味方に使用した場合、短時間攻撃速度と移動速度を増加させる。敵に使用した場合、かわいらしい動物に変身させ、通常攻撃とスキルの使用を封じる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/LuluE.png" alt="ピックス、おねがい！" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">ピックス、おねがい！</span></div>
+    <div class="ability-desc">味方に使用した場合、ピックスをそばに送り込んでダメージを防ぐシールドを付与する。その後ピックスは対象にくっついて移動し、通常攻撃時に魔法のビームで援護する。敵に使用した場合、対象のもとへピックスが飛んでいきダメージを与える。その後ピックスは対象にくっついて移動し、可視状態にする。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/LuluR.png" alt="おおきくなぁれ！" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">おおきくなぁれ！</span></div>
+    <div class="ability-desc">味方1体を巨大化させ、周囲にいる敵をノックアップさせる。巨大化した味方は体力が大幅に増加し、体の周囲に数秒間光の輪が発生する。輪の中に入った敵はスロウ状態になる。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>サポート 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3870.png" alt="ドリーム メーカー" title="ドリーム メーカー" loading="lazy">
+  <span class="build-item-name">ドリーム メーカー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3869.png" alt="セレスティアル オポジション" title="セレスティアル オポジション" loading="lazy">
+  <span class="build-item-name">セレスティアル オポジション</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3504.png" alt="アーデント センサー" title="アーデント センサー" loading="lazy">
+  <span class="build-item-name">アーデント センサー</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3158.png" alt="アイオニア ブーツ" title="アイオニア ブーツ" loading="lazy">
+  <span class="build-item-name">アイオニア ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/SummonAery/SummonAery.png" alt="エアリー召喚" title="エアリー召喚" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">エアリー召喚</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ManaflowBand/ManaflowBand.png" alt="マナフローバンド" title="マナフローバンド" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">マナフローバンド</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Transcendence/Transcendence.png" alt="至高" title="至高" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">至高</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Scorch/Scorch.png" alt="追火" title="追火" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追火</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/BonePlating/BonePlating.png" alt="ボーンアーマー" title="ボーンアーマー" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ボーンアーマー</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Revitalize/Revitalize.png" alt="生気付与" title="生気付与" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">生気付与</span>
+</div></div></div><section class="role-section"><h2>サポート でのマッチアップ</h2><h3>🔴 不利な相手 Top 3</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Leona.png" alt="レオナ" loading="lazy">
     <span class="mu-name"><a href="/champion/Leona.html">レオナ</a></span>

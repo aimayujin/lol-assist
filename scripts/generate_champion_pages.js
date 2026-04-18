@@ -30,7 +30,22 @@ function fetchJson(url) {
 }
 
 const ROLE_LABEL = { TOP: 'トップ', JG: 'ジャングル', MID: 'ミッド', ADC: 'ボット（ADC）', SUP: 'サポート' };
+const ROLE_TO_BUILD = { TOP: 'top', JG: 'jg', MID: 'mid', ADC: 'adc', SUP: 'sup' };
 const LCU_TO_ROLE = { top: 'TOP', jungle: 'JG', middle: 'MID', bottom: 'ADC', utility: 'SUP' };
+
+// 並列度を制限して Promise を実行
+async function mapLimit(items, limit, fn) {
+  const results = [];
+  let i = 0;
+  async function worker() {
+    while (i < items.length) {
+      const idx = i++;
+      results[idx] = await fn(items[idx], idx);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return results;
+}
 
 function escapeHtml(s) {
   if (typeof s !== 'string') return '';
@@ -115,6 +130,20 @@ function renderHeader(title, description, canonicalUrl) {
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -166,7 +195,89 @@ function renderFooter() {
 `;
 }
 
-function renderChampionPage(champId, ddData, version, data) {
+function renderAbilities(detail, version) {
+  if (!detail || !detail.spells) return '';
+  const passive = detail.passive;
+  const spells = detail.spells;
+  const slotKeys = ['Q', 'W', 'E', 'R'];
+  const sanitize = (html) => String(html || '').replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+
+  let out = `<h2>スキル概要</h2><div class="ability-list">`;
+
+  if (passive) {
+    const img = `https://ddragon.leagueoflegends.com/cdn/${version}/img/passive/${passive.image?.full}`;
+    out += `<div class="ability-card">
+  <img src="${img}" alt="${escapeHtml(passive.name)}" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">${escapeHtml(passive.name)}</span></div>
+    <div class="ability-desc">${escapeHtml(sanitize(passive.description))}</div>
+  </div>
+</div>`;
+  }
+
+  spells.forEach((sp, i) => {
+    const key = slotKeys[i] || '';
+    const img = `https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${sp.image?.full}`;
+    out += `<div class="ability-card">
+  <img src="${img}" alt="${escapeHtml(sp.name)}" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">${key}</span><span class="ability-name">${escapeHtml(sp.name)}</span></div>
+    <div class="ability-desc">${escapeHtml(sanitize(sp.description))}</div>
+  </div>
+</div>`;
+  });
+
+  out += `</div>`;
+  return out;
+}
+
+function renderBuild(champId, role, builds, items, runeTrees, version) {
+  const key = `${champId}_${ROLE_TO_BUILD[role]}`;
+  const b = builds[key];
+  if (!b) return '';
+
+  const itemImg = (id) => `https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${id}.png`;
+  const itemName = (id) => items[id]?.name || '';
+
+  let out = `<div class="build-box">
+  <h3>${ROLE_LABEL[role]} 推奨ビルド（op.gg 統計）</h3>`;
+
+  if (b.items && b.items.length) {
+    out += `<div class="build-row"><span class="build-label">スターターアイテム</span>`;
+    out += b.items.map(id => `<div class="build-item">
+  <img src="${itemImg(id)}" alt="${escapeHtml(itemName(id))}" title="${escapeHtml(itemName(id))}" loading="lazy">
+  <span class="build-item-name">${escapeHtml(itemName(id))}</span>
+</div>`).join('');
+    out += `</div>`;
+  }
+
+  if (b.boots) {
+    out += `<div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="${itemImg(b.boots)}" alt="${escapeHtml(itemName(b.boots))}" title="${escapeHtml(itemName(b.boots))}" loading="lazy">
+  <span class="build-item-name">${escapeHtml(itemName(b.boots))}</span>
+</div></div>`;
+  }
+
+  if (b.runes && b.runes.length) {
+    out += `<div class="build-row"><span class="build-label">ルーン</span>`;
+    out += b.runes.map(rid => {
+      const r = runeTrees[rid];
+      const img = r ? `https://ddragon.leagueoflegends.com/cdn/img/${r.icon}` : '';
+      const name = r?.name || rid;
+      return `<div class="build-item build-rune">
+  <img src="${img}" alt="${escapeHtml(name)}" title="${escapeHtml(name)}" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">${escapeHtml(name)}</span>
+</div>`;
+    }).join('');
+    out += `</div>`;
+  }
+
+  out += `</div>`;
+  return out;
+}
+
+function renderChampionPage(champId, ddData, version, data, detail) {
   const dd = ddData[champId];
   if (!dd) return null;
   const name = dd.name;
@@ -223,6 +334,15 @@ function renderChampionPage(champId, ddData, version, data) {
     }
     html += `</div>
 <p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: ${spikes.map(s => `Lv${s}`).join(' / ')}</p>`;
+  }
+
+  // スキル概要
+  html += renderAbilities(detail, version);
+
+  // 推奨ビルド（ロールごと）
+  const buildBlocks = roles.map(r => renderBuild(champId, r, data.builds, data.items, data.runeTrees, version)).filter(Boolean).join('');
+  if (buildBlocks) {
+    html += `<h2>推奨ビルド</h2>${buildBlocks}`;
   }
 
   // ロール別マッチアップ
@@ -369,6 +489,8 @@ async function main() {
   const owr = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'overallwinrate_cache.json'), 'utf8'));
   const spikes = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'power_spikes.json'), 'utf8'));
 
+  const builds = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'build_cache.json'), 'utf8'));
+
   console.log('[generate] DDragon取得...');
   const versions = await fetchJson('https://ddragon.leagueoflegends.com/api/versions.json');
   const version = versions[0];
@@ -376,19 +498,43 @@ async function main() {
   const ddData = ddJson.data;
   console.log(`[generate] DDragon v${version}, ${Object.keys(ddData).length} チャンピオン`);
 
+  // アイテムとルーンのマスタ取得
+  console.log('[generate] アイテム・ルーン取得...');
+  const itemJson = await fetchJson(`https://ddragon.leagueoflegends.com/cdn/${version}/data/ja_JP/item.json`);
+  const items = itemJson.data;
+  const runeJson = await fetchJson(`https://ddragon.leagueoflegends.com/cdn/${version}/data/ja_JP/runesReforged.json`);
+  const runeTrees = {};
+  for (const tree of runeJson) {
+    runeTrees[tree.id] = { name: tree.name, icon: tree.icon };
+    for (const slot of tree.slots || []) {
+      for (const r of slot.runes || []) {
+        runeTrees[r.id] = { name: r.name, icon: r.icon };
+      }
+    }
+  }
+
+  // チャンピオン詳細（スキル情報）を並列取得
+  console.log('[generate] チャンピオン詳細（スキル）取得...');
+  const champIds = Object.keys(meta).filter(id => ddData[id]);
+  const details = {};
+  await mapLimit(champIds, 8, async (id) => {
+    try {
+      const d = await fetchJson(`https://ddragon.leagueoflegends.com/cdn/${version}/data/ja_JP/champion/${id}.json`);
+      details[id] = d.data?.[id];
+    } catch (err) {
+      console.warn(`[generate] ${id} 詳細取得失敗: ${err.message}`);
+    }
+  });
+  console.log(`[generate] スキル情報取得完了 (${Object.keys(details).length} 件)`);
+
   // 出力ディレクトリ作成
   if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
 
-  const data = { meta, matchups, wr, owr, spikes };
-  const champIds = Object.keys(meta);
+  const data = { meta, matchups, wr, owr, spikes, builds, items, runeTrees };
   let count = 0;
 
   for (const champId of champIds) {
-    if (!ddData[champId]) {
-      console.log(`[generate] スキップ ${champId} (DDragon未掲載)`);
-      continue;
-    }
-    const html = renderChampionPage(champId, ddData, version, data);
+    const html = renderChampionPage(champId, ddData, version, data, details[champId]);
     if (!html) continue;
     fs.writeFileSync(path.join(OUT_DIR, `${champId}.html`), html);
     count++;
@@ -403,7 +549,6 @@ async function main() {
   // sitemap.xml 生成
   const today = new Date().toISOString().slice(0, 10);
   const champUrls = champIds
-    .filter(id => ddData[id])
     .map(id => `  <url>
     <loc>https://lolpick.jp/champion/${id}.html</loc>
     <lastmod>${today}</lastmod>

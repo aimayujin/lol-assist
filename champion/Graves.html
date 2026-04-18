@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>グレイブス が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11</p><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 4</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/GravesTrueGrit.png" alt="ニュー・デスティニー" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">ニュー・デスティニー</span></div>
+    <div class="ability-desc">ショットガンには独特の特性がある。弾を撃ち尽くしたらリロードが必要となる。通常攻撃は弾丸を4発発射する。弾丸はユニットを貫通しない。チャンピオン以外のユニットは、複数の弾丸が命中するとノックバックする。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/GravesQLineSpell.png" alt="エンドライン" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">エンドライン</span></div>
+    <div class="ability-desc">爆薬の詰まった弾を発射する。弾は発射してから1秒後、あるいは地形に当たると爆発する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/GravesSmokeGrenade.png" alt="スモークスクリーン" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">スモークスクリーン</span></div>
+    <div class="ability-desc">指定地点に発煙弾を発射し、煙幕を発生させて範囲内の敵の視界を低下させる。着弾時の爆発に巻き込まれた敵は魔法ダメージを受け、一時的に移動速度が低下する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/GravesMove.png" alt="クイックドロー" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">クイックドロー</span></div>
+    <div class="ability-desc">グレイブスが前方にダッシュして物理防御と魔法防御が数秒間増加する。敵チャンピオンに向かってダッシュすると、代わりに「確固たる信念」を2スタック獲得する。敵ユニットに通常攻撃を行うと、このスキルのクールダウンが短縮され、防御力増加時間が更新される。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/GravesChargeShot.png" alt="コラテラルダメージ" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">コラテラルダメージ</span></div>
+    <div class="ability-desc">強力な炸裂弾を発射して、最初に命中した敵チャンピオンに大ダメージを与える。弾は敵チャンピオンに命中するか、最大射程に達すると炸裂し、扇状の範囲内にいる敵にダメージを与える。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ジャングル 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3142.png" alt="妖夢の霊剣" title="妖夢の霊剣" loading="lazy">
+  <span class="build-item-name">妖夢の霊剣</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6676.png" alt="コレクター" title="コレクター" loading="lazy">
+  <span class="build-item-name">コレクター</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3036.png" alt="ドミニク リガード" title="ドミニク リガード" loading="lazy">
+  <span class="build-item-name">ドミニク リガード</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png" alt="魂の収穫" title="魂の収穫" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">魂の収穫</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/SuddenImpact/SuddenImpact.png" alt="サドンインパクト" title="サドンインパクト" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">サドンインパクト</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/GrislyMementos/GrislyMementos.png" alt="グリスリー メメント" title="グリスリー メメント" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">グリスリー メメント</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/TreasureHunter/TreasureHunter.png" alt="貪欲な賞金首狩り" title="貪欲な賞金首狩り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">貪欲な賞金首狩り</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendAlacrity/LegendAlacrity.png" alt="レジェンド: 迅速" title="レジェンド: 迅速" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: 迅速</span>
+</div></div></div><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 4</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nasus.png" alt="ナサス" loading="lazy">
     <span class="mu-name"><a href="/champion/Nasus.html">ナサス</a></span>

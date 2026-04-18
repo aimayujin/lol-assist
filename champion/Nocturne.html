@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>ノクターン が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv11 / Lv16</p><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv11 / Lv16</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Nocturne_UmbraBlades.png" alt="夢幻斬" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">夢幻斬</span></div>
+    <div class="ability-desc">数秒ごとに次の攻撃が範囲攻撃になり、周囲の敵に追加物理ダメージを与えて自身の体力を回復する。通常攻撃するたびにクールダウンが短縮する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/NocturneDuskbringer.png" alt="闇の手" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">闇の手</span></div>
+    <div class="ability-desc">指定方向に影の刃を投げてダメージを与える。刃の軌跡や命中した敵チャンピオンが残す影の上にいる間はユニットをすり抜けられ、移動速度と攻撃力が増加する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/NocturneShroudofDarkness.png" alt="漆黒の帳" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">漆黒の帳</span></div>
+    <div class="ability-desc">自動効果: 刃に念が送られ、攻撃速度が増加する。発動効果: 魔法のバリアを張って敵のスキルを一度だけ無効化する。無効化成功後は自動効果による攻撃速度の増加率が倍になる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/NocturneUnspeakableHorror.png" alt="底知れぬ恐怖" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">底知れぬ恐怖</span></div>
+    <div class="ability-desc">対象におぞましい悪夢を見せ、毎秒ダメージを与える。効果終了までに範囲内から抜け出せなかった対象にはフィアー効果を与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/NocturneParanoia.png" alt="パラノイア" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">パラノイア</span></div>
+    <div class="ability-desc">すべての敵チャンピオンの視界が悪化し、自分以外の視界を失う。効果中、指定した近くの敵チャンピオンに突撃して攻撃できる。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ジャングル 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6631.png" alt="ストライドブレイカー" title="ストライドブレイカー" loading="lazy">
+  <span class="build-item-name">ストライドブレイカー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3073.png" alt="実験的ヘクスプレート" title="実験的ヘクスプレート" loading="lazy">
+  <span class="build-item-name">実験的ヘクスプレート</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3071.png" alt="ブラック クリーバー" title="ブラック クリーバー" loading="lazy">
+  <span class="build-item-name">ブラック クリーバー</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Conqueror/Conqueror.png" alt="征服者" title="征服者" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">征服者</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendAlacrity/LegendAlacrity.png" alt="レジェンド: 迅速" title="レジェンド: 迅速" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: 迅速</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/LastStand/LastStand.png" alt="背水の陣" title="背水の陣" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">背水の陣</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/GrislyMementos/GrislyMementos.png" alt="グリスリー メメント" title="グリスリー メメント" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">グリスリー メメント</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/UltimateHunter/UltimateHunter.png" alt="至極の賞金首狩り" title="至極の賞金首狩り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">至極の賞金首狩り</span>
+</div></div></div><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zyra.png" alt="ザイラ" loading="lazy">
     <span class="mu-name"><a href="/champion/Zyra.html">ザイラ</a></span>

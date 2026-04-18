@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>ブラウム が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6</p><section class="role-section"><h2>サポート でのマッチアップ</h2><h3>🟢 有利な相手 Top 3</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Braum_Passive.png" alt="漢の拳" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">漢の拳</span></div>
+    <div class="ability-desc">通常攻撃を命中させると「漢の拳」がスタックする。スタックが1つ以上ある敵には、味方の通常攻撃でも効果がスタックする。 スタックが4つ溜まると対象はスタン状態になり、魔法ダメージを受ける。スタン状態になった敵はその後、数秒間はスタックが増加しない。ただしブラウムの攻撃が命中すると追加魔法ダメージを受ける。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/BraumQ.png" alt="冬の凍瘡" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">冬の凍瘡</span></div>
+    <div class="ability-desc">盾から氷塊を発射し、最初に命中した敵ユニットに魔法ダメージとスロウ効果を与える。命中した敵には「漢の拳」がスタックする。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/BraumW.png" alt="ワシに任せとけ！" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">ワシに任せとけ！</span></div>
+    <div class="ability-desc">指定した味方チャンピオンまたはミニオンのもとへ跳躍する。付近に敵チャンピオンがいた場合、対象と敵チャンピオンの間に着地する。着地したあと、自身と対象の物理防御と魔法防御を数秒間増加させる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/BraumE.png" alt="不破の盾" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">不破の盾</span></div>
+    <div class="ability-desc">指定方向に巨大な盾を掲げ、数秒間すべての遠距離攻撃を体を張って食い止める。盾を構えている間は移動速度が増加し、最初に盾に当たった攻撃のダメージを無効化する。盾を構えている間、同方向から来る攻撃のダメージを軽減する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/BraumRWrapper.png" alt="氷河の裂溝" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">氷河の裂溝</span></div>
+    <div class="ability-desc">盾を地面にたたきつけて指定方向に地割れを起こし、周囲にいる敵と地割れのライン上にいる敵をノックアップさせる。地割れは短時間持続し、範囲内に入った敵にスロウ効果を付与する。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>サポート 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3876.png" alt="至点のソリ" title="至点のソリ" loading="lazy">
+  <span class="build-item-name">至点のソリ</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3869.png" alt="セレスティアル オポジション" title="セレスティアル オポジション" loading="lazy">
+  <span class="build-item-name">セレスティアル オポジション</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/2524.png" alt="バンドルパイプ" title="バンドルパイプ" loading="lazy">
+  <span class="build-item-name">バンドルパイプ</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Guardian/Guardian.png" alt="ガーディアン" title="ガーディアン" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ガーディアン</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/FontOfLife/FontOfLife.png" alt="生命の泉" title="生命の泉" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">生命の泉</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/BonePlating/BonePlating.png" alt="ボーンアーマー" title="ボーンアーマー" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ボーンアーマー</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Unflinching/Unflinching.png" alt="気迫" title="気迫" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">気迫</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png" alt="ビスケットデリバリー" title="ビスケットデリバリー" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ビスケットデリバリー</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/CosmicInsight/CosmicInsight.png" alt="宇宙の英知" title="宇宙の英知" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">宇宙の英知</span>
+</div></div></div><section class="role-section"><h2>サポート でのマッチアップ</h2><h3>🟢 有利な相手 Top 3</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zoe.png" alt="ゾーイ" loading="lazy">
     <span class="mu-name"><a href="/champion/Zoe.html">ゾーイ</a></span>

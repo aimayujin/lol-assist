@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -104,7 +118,133 @@
     </div></div><h2>パワースパイク</h2>
 <p>アンベッサ が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11 / Lv16</p><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11 / Lv16</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Icon_Ambessa_Passive.Domina.png" alt="ドレイクハウンドの猛攻" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">ドレイクハウンドの猛攻</span></div>
+    <div class="ability-desc">スキルを発動中に通常攻撃または移動操作をすると、スキル発動後に短い距離をダッシュして、次の通常攻撃の射程距離、ダメージ、攻撃速度が増加し、気を回復する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/AmbessaQ.png" alt="カニングスイープ/サンダリングスラム" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">カニングスイープ/サンダリングスラム</span></div>
+    <div class="ability-desc">両手のドレイクハウンドを自身の前方に向かって半円状に振り回し、刃が当たった敵に追加ダメージを与える。敵に攻撃が命中すると、次に発動するこのスキルが短時間変化し、自身の前方に向かって両手のドレイクハウンドを直線状に叩きつけ、最初に命中した敵に追加ダメージを与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/AmbessaW.png" alt="断交" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">断交</span></div>
+    <div class="ability-desc">シールドを獲得し、少しの間身構えた後地面を叩きつけて周囲の敵にダメージを与える。身構えている間にミニオン以外からのダメージをブロックしていた場合、このスキルの与えるダメージが増加する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/AmbessaE.png" alt="ラセレイト" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">ラセレイト</span></div>
+    <div class="ability-desc">両手のドレイクハウンドを自身の周囲に振り回し、付近の敵にダメージとスロウ効果を与える。このスキルから「ドレイクハウンドの猛攻」を発動すると、ダッシュ終了後にもう一度攻撃する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/AmbessaR.png" alt="公開処刑" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">公開処刑</span></div>
+    <div class="ability-desc">指定した直線上の最も遠い敵チャンピオンの場所までブリンクし、到着時に敵にサプレッション効果を付与する。その後、敵を地面に叩きつけ、ダメージを与えスタンさせる。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>トップ 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6692.png" alt="赤月の刃" title="赤月の刃" loading="lazy">
+  <span class="build-item-name">赤月の刃</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3161.png" alt="ショウジンの矛" title="ショウジンの矛" loading="lazy">
+  <span class="build-item-name">ショウジンの矛</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6333.png" alt="デス ダンス" title="デス ダンス" loading="lazy">
+  <span class="build-item-name">デス ダンス</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/GraspOfTheUndying/GraspOfTheUndying.png" alt="不死者の握撃" title="不死者の握撃" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">不死者の握撃</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/MirrorShell/MirrorShell.png" alt="シールドバッシュ" title="シールドバッシュ" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">シールドバッシュ</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/SecondWind/SecondWind.png" alt="息継ぎ" title="息継ぎ" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">息継ぎ</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Overgrowth/Overgrowth.png" alt="超成長" title="超成長" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">超成長</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/MagicalFootwear/MagicalFootwear.png" alt="魔法の靴" title="魔法の靴" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">魔法の靴</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png" alt="ビスケットデリバリー" title="ビスケットデリバリー" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ビスケットデリバリー</span>
+</div></div></div><div class="build-box">
+  <h3>ジャングル 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6692.png" alt="赤月の刃" title="赤月の刃" loading="lazy">
+  <span class="build-item-name">赤月の刃</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3161.png" alt="ショウジンの矛" title="ショウジンの矛" loading="lazy">
+  <span class="build-item-name">ショウジンの矛</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6333.png" alt="デス ダンス" title="デス ダンス" loading="lazy">
+  <span class="build-item-name">デス ダンス</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/GraspOfTheUndying/GraspOfTheUndying.png" alt="不死者の握撃" title="不死者の握撃" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">不死者の握撃</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/MirrorShell/MirrorShell.png" alt="シールドバッシュ" title="シールドバッシュ" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">シールドバッシュ</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/SecondWind/SecondWind.png" alt="息継ぎ" title="息継ぎ" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">息継ぎ</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Overgrowth/Overgrowth.png" alt="超成長" title="超成長" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">超成長</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/MagicalFootwear/MagicalFootwear.png" alt="魔法の靴" title="魔法の靴" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">魔法の靴</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png" alt="ビスケットデリバリー" title="ビスケットデリバリー" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ビスケットデリバリー</span>
+</div></div></div><div class="build-box">
+  <h3>ミッド 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6692.png" alt="赤月の刃" title="赤月の刃" loading="lazy">
+  <span class="build-item-name">赤月の刃</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3161.png" alt="ショウジンの矛" title="ショウジンの矛" loading="lazy">
+  <span class="build-item-name">ショウジンの矛</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6333.png" alt="デス ダンス" title="デス ダンス" loading="lazy">
+  <span class="build-item-name">デス ダンス</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/GraspOfTheUndying/GraspOfTheUndying.png" alt="不死者の握撃" title="不死者の握撃" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">不死者の握撃</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/MirrorShell/MirrorShell.png" alt="シールドバッシュ" title="シールドバッシュ" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">シールドバッシュ</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/SecondWind/SecondWind.png" alt="息継ぎ" title="息継ぎ" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">息継ぎ</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Overgrowth/Overgrowth.png" alt="超成長" title="超成長" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">超成長</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/MagicalFootwear/MagicalFootwear.png" alt="魔法の靴" title="魔法の靴" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">魔法の靴</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png" alt="ビスケットデリバリー" title="ビスケットデリバリー" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ビスケットデリバリー</span>
+</div></div></div><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kayle.png" alt="ケイル" loading="lazy">
     <span class="mu-name"><a href="/champion/Kayle.html">ケイル</a></span>

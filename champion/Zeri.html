@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>ゼリ が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell active">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv9 / Lv11 / Lv16</p><section class="role-section"><h2>ボット（ADC） でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv9 / Lv11 / Lv16</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/ZeriP.png" alt="生体バッテリー" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">生体バッテリー</span></div>
+    <div class="ability-desc">ゼリの通常攻撃は魔法ダメージを与え、スキルとして扱われる。移動および「バーストファイア」の使用により、「スパークパック」にエネルギーが蓄積される。最大までチャージされると、次の通常攻撃が追加ダメージを与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/ZeriQ.png" alt="バーストファイア" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">バーストファイア</span></div>
+    <div class="ability-desc">「バーストファイア」は7発の弾をバースト射撃し、最初に命中した敵に攻撃力ダメージを与える。このスキルは通常攻撃として扱われる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/ZeriW.png" alt="ウルトラショックレーザー" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">ウルトラショックレーザー</span></div>
+    <div class="ability-desc">電磁パルスを発射して、最初に命中した敵にスロウ効果とダメージを与える。パルスが壁に当たると、当たった位置から幅が広く、射程の長いレーザーを発射する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/ZeriE.png" alt="スパークサージ" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">スパークサージ</span></div>
+    <div class="ability-desc">短い距離をダッシュし、次に行う3回の「バーストファイア」が強化されて敵を貫通するようになる。地形に触れた場合は、地形を飛び越えるか地形に沿って滑る。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/ZeriR.png" alt="ライトニングクラッシュ" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">ライトニングクラッシュ</span></div>
+    <div class="ability-desc">大量の電力を放出して自身をオーバーチャージし、ダメージと移動速度が増加する。この増加移動速度はスタック可能で、敵チャンピオンに攻撃が命中するたび、リフレッシュされて強化される。オーバーチャージ中は「バーストファイア」が素早い3連射になり、他の敵へと連鎖する電撃が放たれるようになる。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ボット（ADC） 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3032.png" alt="ユン・タル ワイルドアロー" title="ユン・タル ワイルドアロー" loading="lazy">
+  <span class="build-item-name">ユン・タル ワイルドアロー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/2512.png" alt="フィーンドハンターの矢" title="フィーンドハンターの矢" loading="lazy">
+  <span class="build-item-name">フィーンドハンターの矢</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3031.png" alt="インフィニティ エッジ" title="インフィニティ エッジ" loading="lazy">
+  <span class="build-item-name">インフィニティ エッジ</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3006.png" alt="バーサーカー ブーツ" title="バーサーカー ブーツ" loading="lazy">
+  <span class="build-item-name">バーサーカー ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png" alt="リーサルテンポ" title="リーサルテンポ" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">リーサルテンポ</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendBloodline/LegendBloodline.png" alt="レジェンド: 血脈" title="レジェンド: 血脈" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: 血脈</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/CutDown/CutDown.png" alt="切り崩し" title="切り崩し" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">切り崩し</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/CashBack/CashBack2.png" alt="キャッシュバック" title="キャッシュバック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">キャッシュバック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/PerfectTiming/AlchemistCabinet.png" alt="トリプル トニック" title="トリプル トニック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">トリプル トニック</span>
+</div></div></div><section class="role-section"><h2>ボット（ADC） でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
     <span class="mu-name"><a href="/champion/Aatrox.html">エイトロックス</a></span>

@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>オレリオン・ソル が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell active">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv11 / Lv13 / Lv16</p><section class="role-section"><h2>ミッド でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv11 / Lv13 / Lv16</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/AurelionSolP.png" alt="宇宙の創造者" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">宇宙の創造者</span></div>
+    <div class="ability-desc">攻撃スキルを敵に命中させると、「星屑」のスタックを獲得できる。このスタックは各スキルを恒久的に強化する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/AurelionSolQ.png" alt="星炎の息吹" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">星炎の息吹</span></div>
+    <div class="ability-desc">数秒間詠唱して炎を吹き出し、最初に命中した敵にダメージを与え、その周囲の敵にはそれよりも少ないダメージを与える。敵に直接炎を吹きかけている間は、毎秒追加ダメージを与える。このダメージは獲得した「星屑」の数に応じて増加する。このスキルの対象がチャンピオンだった場合、「星屑」を獲得できる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/AurelionSolW.png" alt="天空への飛翔" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">天空への飛翔</span></div>
+    <div class="ability-desc">飛翔して、指定方向に地形を超えて移動する。飛翔している間も、他のスキルを発動できる。また、飛翔中は「星炎の呼吸」のクールダウンおよび最大詠唱時間がなくなり、与えるダメージが増加する。自身がダメージを与えた敵チャンピオンがその直後に倒されるたびに、このスキルの残りクールダウンが短縮される。獲得した「星屑」の数に応じて、このスキルの最大射程が増加する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/AurelionSolE.png" alt="特異点" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">特異点</span></div>
+    <div class="ability-desc">ブラックホールを召喚して敵にダメージを与え、ゆっくりとその中心に向かって引き寄せる。敵がブラックホールの範囲内で倒されるたびに、「星屑」を獲得する。また、敵チャンピオンを範囲内に捕らえている間も、毎秒「星屑」を獲得できる。ブラックホールの中心部は、体力が最大体力の一定割合を下回っている敵に、とどめを刺すことができる。「星屑」の数に応じて「特異点」の効果範囲が増加し、とどめを刺せる体力割合の基準値が上昇する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/AurelionSolR.png" alt="星の邂逅/崩れ落つ天穹" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">星の邂逅/崩れ落つ天穹</span></div>
+    <div class="ability-desc">星の邂逅: 地上に星を降らせ、その衝撃で敵に魔法ダメージを与えて、スタンさせる。また、命中した敵チャンピオン1体ごとに「星屑」を獲得する。「星屑」を一定数獲得すると、次に使用する「星の邂逅」が「崩れ落つ天穹」に変化する。崩れ落つ天穹: 天空から巨大な星を引き寄せる。この星は落下時の効果範囲とダメージが増加しており、敵をスタンではなくノックアップさせる。また、落下時の効果範囲の端から衝撃波が広がり、命中した敵にダメージとスロウ効果を与える。獲得した「星屑」の数に応じて、「星の邂逅」と「崩れ落つ天穹」は落下時の効果範囲が増加する。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ミッド 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/2503.png" alt="黒炎のトーチ" title="黒炎のトーチ" loading="lazy">
+  <span class="build-item-name">黒炎のトーチ</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3116.png" alt="リーライ クリスタル セプター" title="リーライ クリスタル セプター" loading="lazy">
+  <span class="build-item-name">リーライ クリスタル セプター</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6653.png" alt="ライアンドリーの仮面" title="ライアンドリーの仮面" loading="lazy">
+  <span class="build-item-name">ライアンドリーの仮面</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3020.png" alt="ソーサラー シューズ" title="ソーサラー シューズ" loading="lazy">
+  <span class="build-item-name">ソーサラー シューズ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ArcaneComet/ArcaneComet.png" alt="秘儀の彗星" title="秘儀の彗星" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">秘儀の彗星</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ManaflowBand/ManaflowBand.png" alt="マナフローバンド" title="マナフローバンド" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">マナフローバンド</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/AbsoluteFocus/AbsoluteFocus.png" alt="英気集中" title="英気集中" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">英気集中</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Scorch/Scorch.png" alt="追火" title="追火" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追火</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/BonePlating/BonePlating.png" alt="ボーンアーマー" title="ボーンアーマー" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ボーンアーマー</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Overgrowth/Overgrowth.png" alt="超成長" title="超成長" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">超成長</span>
+</div></div></div><section class="role-section"><h2>ミッド でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kassadin.png" alt="カサディン" loading="lazy">
     <span class="mu-name"><a href="/champion/Kassadin.html">カサディン</a></span>

@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>ジャンナ が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6</p><section class="role-section"><h2>サポート でのマッチアップ</h2><h3>🟢 有利な相手 Top 4</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/JannaP.png" alt="テイルウィンド" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">テイルウィンド</span></div>
+    <div class="ability-desc">ジャンナに向かって移動する際、味方チャンピオンは移動速度が増加する。通常攻撃時効果および「ゼファー」で、増加移動速度の一定割合にあたる追加魔法ダメージを与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/HowlingGale.png" alt="ハウリングゲイル" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">ハウリングゲイル</span></div>
+    <div class="ability-desc">大気を操り、小さな竜巻を生み出す。竜巻は時間とともに成長し、時間がたつか再度このスキルを使うことで指定方向へ直進して、進路上の敵ユニットにダメージとノックアップを与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/SowTheWind.png" alt="ゼファー" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">ゼファー</span></div>
+    <div class="ability-desc">風の精霊を召喚し、自動効果として移動速度が増加すると同時に、ユニットをすり抜けるようになる。発動すると対象に風の精霊を飛ばして、ダメージとスロウ効果を与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/EyeOfTheStorm.png" alt="ストームブレス" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">ストームブレス</span></div>
+    <div class="ability-desc">対象に魔法の風を呼び寄せる。風はシールドとなって味方チャンピオンやタワーをダメージから守ると同時に、攻撃力を増加させる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/ReapTheWhirlwind.png" alt="モンスーン" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">モンスーン</span></div>
+    <div class="ability-desc">魔法の嵐に包まれ、周囲の敵を吹き飛ばす。その後詠唱を続け、癒しの風によって範囲内の味方の体力を回復する。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>サポート 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3870.png" alt="ドリーム メーカー" title="ドリーム メーカー" loading="lazy">
+  <span class="build-item-name">ドリーム メーカー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3876.png" alt="至点のソリ" title="至点のソリ" loading="lazy">
+  <span class="build-item-name">至点のソリ</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6617.png" alt="ムーンストーンの再生" title="ムーンストーンの再生" loading="lazy">
+  <span class="build-item-name">ムーンストーンの再生</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3009.png" alt="スイフトネス ブーツ" title="スイフトネス ブーツ" loading="lazy">
+  <span class="build-item-name">スイフトネス ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/SummonAery/SummonAery.png" alt="エアリー召喚" title="エアリー召喚" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">エアリー召喚</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ManaflowBand/ManaflowBand.png" alt="マナフローバンド" title="マナフローバンド" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">マナフローバンド</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Celerity/CelerityTemp.png" alt="追い風" title="追い風" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追い風</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/GatheringStorm/GatheringStorm.png" alt="強まる嵐" title="強まる嵐" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">強まる嵐</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/FontOfLife/FontOfLife.png" alt="生命の泉" title="生命の泉" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">生命の泉</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Revitalize/Revitalize.png" alt="生気付与" title="生気付与" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">生気付与</span>
+</div></div></div><section class="role-section"><h2>サポート でのマッチアップ</h2><h3>🟢 有利な相手 Top 4</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Alistar.png" alt="アリスター" loading="lazy">
     <span class="mu-name"><a href="/champion/Alistar.html">アリスター</a></span>

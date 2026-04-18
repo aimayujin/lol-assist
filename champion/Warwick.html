@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -100,7 +114,101 @@
     </div></div><h2>パワースパイク</h2>
 <p>ワーウィック が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6</p><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/WarwickP.png" alt="永遠の渇き" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">永遠の渇き</span></div>
+    <div class="ability-desc">通常攻撃が追加魔法ダメージを与える。自身の体力が50%未満の場合、追加魔法ダメージと同量の体力を回復する。自身の体力が25%未満の場合、この回復効果は3倍になる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/WarwickQ.png" alt="野獣の牙" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">野獣の牙</span></div>
+    <div class="ability-desc">前方にダッシュして対象に噛みつき、対象の最大体力に応じたダメージを与え、与えたダメージに応じて自身の体力を回復する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/WarwickW.png" alt="血の追跡" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">血の追跡</span></div>
+    <div class="ability-desc">体力が50%未満の敵ユニットを感知して、その敵ユニットに向かう際に移動速度と攻撃速度が増加する。その敵ユニットの体力が25%未満に低下した場合は、ワーウィックが狂乱状態になってこれらの効果が3倍になる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/WarwickE.png" alt="怒りの咆哮" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">怒りの咆哮</span></div>
+    <div class="ability-desc">2.5秒間、受けるダメージが減少する。効果の終了時、またはスキルを再発動すると、咆哮をあげて周囲の敵ユニットを1秒間逃走させる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/WarwickR.png" alt="絶狼牙連撃" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">絶狼牙連撃</span></div>
+    <div class="ability-desc">指定方向にジャンプして、最初に接触した敵チャンピオンに1.5秒間サプレッション効果を与える(増加した移動速度に応じて射程が拡大)。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ジャングル 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6631.png" alt="ストライドブレイカー" title="ストライドブレイカー" loading="lazy">
+  <span class="build-item-name">ストライドブレイカー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3153.png" alt="ルインドキング ブレード" title="ルインドキング ブレード" loading="lazy">
+  <span class="build-item-name">ルインドキング ブレード</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3075.png" alt="ソーンメイル" title="ソーンメイル" loading="lazy">
+  <span class="build-item-name">ソーンメイル</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png" alt="リーサルテンポ" title="リーサルテンポ" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">リーサルテンポ</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendAlacrity/LegendAlacrity.png" alt="レジェンド: 迅速" title="レジェンド: 迅速" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: 迅速</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/LastStand/LastStand.png" alt="背水の陣" title="背水の陣" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">背水の陣</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Celerity/CelerityTemp.png" alt="追い風" title="追い風" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追い風</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Waterwalking/Waterwalking.png" alt="水走り" title="水走り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">水走り</span>
+</div></div></div><div class="build-box">
+  <h3>トップ 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6631.png" alt="ストライドブレイカー" title="ストライドブレイカー" loading="lazy">
+  <span class="build-item-name">ストライドブレイカー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3153.png" alt="ルインドキング ブレード" title="ルインドキング ブレード" loading="lazy">
+  <span class="build-item-name">ルインドキング ブレード</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3075.png" alt="ソーンメイル" title="ソーンメイル" loading="lazy">
+  <span class="build-item-name">ソーンメイル</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png" alt="リーサルテンポ" title="リーサルテンポ" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">リーサルテンポ</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendAlacrity/LegendAlacrity.png" alt="レジェンド: 迅速" title="レジェンド: 迅速" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: 迅速</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/LastStand/LastStand.png" alt="背水の陣" title="背水の陣" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">背水の陣</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Celerity/CelerityTemp.png" alt="追い風" title="追い風" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追い風</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Waterwalking/Waterwalking.png" alt="水走り" title="水走り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">水走り</span>
+</div></div></div><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zyra.png" alt="ザイラ" loading="lazy">
     <span class="mu-name"><a href="/champion/Zyra.html">ザイラ</a></span>

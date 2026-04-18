@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -104,7 +118,133 @@
     </div></div><h2>パワースパイク</h2>
 <p>パンテオン が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell active">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell active">Lv4</div><div class="spike-cell active">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv2 / Lv3 / Lv4 / Lv5 / Lv6</p><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 2</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv2 / Lv3 / Lv4 / Lv5 / Lv6</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Pantheon_Passive.png" alt="定命の意志" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">定命の意志</span></div>
+    <div class="ability-desc">スキルまたは通常攻撃を数回行うと、次のスキルが強化される。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/PantheonQ.png" alt="彗星の槍" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">彗星の槍</span></div>
+    <div class="ability-desc">指定方向に槍を突く、または槍を投げる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/PantheonW.png" alt="跳撃の盾" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">跳撃の盾</span></div>
+    <div class="ability-desc">対象に向かってダッシュし、ダメージを与えてスタンさせる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/PantheonE.png" alt="イージスの猛攻" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">イージスの猛攻</span></div>
+    <div class="ability-desc">盾を構え、正面からのダメージを無効化しながら、槍で連続攻撃を繰り出す。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/PantheonR.png" alt="偉大なる星路" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">偉大なる星路</span></div>
+    <div class="ability-desc">精神を集中させて空高く跳びあがり、流星となって指定地点に上空から突撃する。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>トップ 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3877.png" alt="ブラッドソング" title="ブラッドソング" loading="lazy">
+  <span class="build-item-name">ブラッドソング</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3869.png" alt="セレスティアル オポジション" title="セレスティアル オポジション" loading="lazy">
+  <span class="build-item-name">セレスティアル オポジション</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3179.png" alt="アンブラル グレイブ" title="アンブラル グレイブ" loading="lazy">
+  <span class="build-item-name">アンブラル グレイブ</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/PressTheAttack/PressTheAttack.png" alt="プレスアタック" title="プレスアタック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">プレスアタック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendHaste/LegendHaste.png" alt="レジェンド: ヘイスト" title="レジェンド: ヘイスト" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: ヘイスト</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/CoupDeGrace/CoupDeGrace.png" alt="最期の慈悲" title="最期の慈悲" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">最期の慈悲</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/CheapShot/CheapShot.png" alt="追い打ち" title="追い打ち" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追い打ち</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/RelentlessHunter/RelentlessHunter.png" alt="執拗な賞金首狩り" title="執拗な賞金首狩り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">執拗な賞金首狩り</span>
+</div></div></div><div class="build-box">
+  <h3>ミッド 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3877.png" alt="ブラッドソング" title="ブラッドソング" loading="lazy">
+  <span class="build-item-name">ブラッドソング</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3869.png" alt="セレスティアル オポジション" title="セレスティアル オポジション" loading="lazy">
+  <span class="build-item-name">セレスティアル オポジション</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3179.png" alt="アンブラル グレイブ" title="アンブラル グレイブ" loading="lazy">
+  <span class="build-item-name">アンブラル グレイブ</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/PressTheAttack/PressTheAttack.png" alt="プレスアタック" title="プレスアタック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">プレスアタック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendHaste/LegendHaste.png" alt="レジェンド: ヘイスト" title="レジェンド: ヘイスト" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: ヘイスト</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/CoupDeGrace/CoupDeGrace.png" alt="最期の慈悲" title="最期の慈悲" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">最期の慈悲</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/CheapShot/CheapShot.png" alt="追い打ち" title="追い打ち" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追い打ち</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/RelentlessHunter/RelentlessHunter.png" alt="執拗な賞金首狩り" title="執拗な賞金首狩り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">執拗な賞金首狩り</span>
+</div></div></div><div class="build-box">
+  <h3>サポート 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3877.png" alt="ブラッドソング" title="ブラッドソング" loading="lazy">
+  <span class="build-item-name">ブラッドソング</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3869.png" alt="セレスティアル オポジション" title="セレスティアル オポジション" loading="lazy">
+  <span class="build-item-name">セレスティアル オポジション</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3179.png" alt="アンブラル グレイブ" title="アンブラル グレイブ" loading="lazy">
+  <span class="build-item-name">アンブラル グレイブ</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/PressTheAttack/PressTheAttack.png" alt="プレスアタック" title="プレスアタック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">プレスアタック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendHaste/LegendHaste.png" alt="レジェンド: ヘイスト" title="レジェンド: ヘイスト" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: ヘイスト</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/CoupDeGrace/CoupDeGrace.png" alt="最期の慈悲" title="最期の慈悲" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">最期の慈悲</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/CheapShot/CheapShot.png" alt="追い打ち" title="追い打ち" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追い打ち</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/RelentlessHunter/RelentlessHunter.png" alt="執拗な賞金首狩り" title="執拗な賞金首狩り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">執拗な賞金首狩り</span>
+</div></div></div><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 2</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yasuo.png" alt="ヤスオ" loading="lazy">
     <span class="mu-name"><a href="/champion/Yasuo.html">ヤスオ</a></span>

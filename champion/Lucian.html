@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -100,7 +114,101 @@
     </div></div><h2>パワースパイク</h2>
 <p>ルシアン が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3</p><section class="role-section"><h2>ボット（ADC） でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Lucian_Passive.png" alt="二挺拳銃" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">二挺拳銃</span></div>
+    <div class="ability-desc">スキルを使用するたびに、次の通常攻撃が2連射になる。味方から体力回復効果またはシールドを付与されるか、自身の周囲で敵チャンピオンが移動不能効果を受けると、次の2回の通常攻撃が追加魔法ダメージを与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/LucianQ.png" alt="ピアシングライト" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">ピアシングライト</span></div>
+    <div class="ability-desc">指定した敵ユニットへ光線を発射する。光線はその軌道上にいるすべての敵ユニットにダメージを与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/LucianW.png" alt="アーデントブレイズ" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">アーデントブレイズ</span></div>
+    <div class="ability-desc">指定方向に星形に爆発するエネルギーを発射する。命中した敵ユニットには印が付与され、一時的に可視状態になる。印が付いた敵を攻撃するとルシアンの移動速度が増加する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/LucianE.png" alt="スライド" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">スライド</span></div>
+    <div class="ability-desc">短距離を素早く移動する。「二挺拳銃」の通常攻撃が敵に命中するたびに、このスキルのクールダウンが短縮される。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/LucianR.png" alt="二挺掃射" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">二挺掃射</span></div>
+    <div class="ability-desc">二挺拳銃を構えて弾丸を高速で連射する。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ボット（ADC） 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3508.png" alt="エッセンス リーバー" title="エッセンス リーバー" loading="lazy">
+  <span class="build-item-name">エッセンス リーバー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6675.png" alt="ナヴォリ フリッカーブレード" title="ナヴォリ フリッカーブレード" loading="lazy">
+  <span class="build-item-name">ナヴォリ フリッカーブレード</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3031.png" alt="インフィニティ エッジ" title="インフィニティ エッジ" loading="lazy">
+  <span class="build-item-name">インフィニティ エッジ</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3158.png" alt="アイオニア ブーツ" title="アイオニア ブーツ" loading="lazy">
+  <span class="build-item-name">アイオニア ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/PressTheAttack/PressTheAttack.png" alt="プレスアタック" title="プレスアタック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">プレスアタック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/PresenceOfMind/PresenceOfMind.png" alt="冷静沈着" title="冷静沈着" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">冷静沈着</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendBloodline/LegendBloodline.png" alt="レジェンド: 血脈" title="レジェンド: 血脈" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: 血脈</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/CoupDeGrace/CoupDeGrace.png" alt="最期の慈悲" title="最期の慈悲" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">最期の慈悲</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/MagicalFootwear/MagicalFootwear.png" alt="魔法の靴" title="魔法の靴" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">魔法の靴</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png" alt="ビスケットデリバリー" title="ビスケットデリバリー" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ビスケットデリバリー</span>
+</div></div></div><div class="build-box">
+  <h3>ミッド 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3508.png" alt="エッセンス リーバー" title="エッセンス リーバー" loading="lazy">
+  <span class="build-item-name">エッセンス リーバー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6675.png" alt="ナヴォリ フリッカーブレード" title="ナヴォリ フリッカーブレード" loading="lazy">
+  <span class="build-item-name">ナヴォリ フリッカーブレード</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3031.png" alt="インフィニティ エッジ" title="インフィニティ エッジ" loading="lazy">
+  <span class="build-item-name">インフィニティ エッジ</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3158.png" alt="アイオニア ブーツ" title="アイオニア ブーツ" loading="lazy">
+  <span class="build-item-name">アイオニア ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/PressTheAttack/PressTheAttack.png" alt="プレスアタック" title="プレスアタック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">プレスアタック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/PresenceOfMind/PresenceOfMind.png" alt="冷静沈着" title="冷静沈着" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">冷静沈着</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendBloodline/LegendBloodline.png" alt="レジェンド: 血脈" title="レジェンド: 血脈" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: 血脈</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/CoupDeGrace/CoupDeGrace.png" alt="最期の慈悲" title="最期の慈悲" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">最期の慈悲</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/MagicalFootwear/MagicalFootwear.png" alt="魔法の靴" title="魔法の靴" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">魔法の靴</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/BiscuitDelivery/BiscuitDelivery.png" alt="ビスケットデリバリー" title="ビスケットデリバリー" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ビスケットデリバリー</span>
+</div></div></div><section class="role-section"><h2>ボット（ADC） でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Twitch.png" alt="トゥイッチ" loading="lazy">
     <span class="mu-name"><a href="/champion/Twitch.html">トゥイッチ</a></span>

@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>ヨリック が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6</p><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🔴 不利な相手 Top 1</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Yorick_P.png" alt="魂の導き手" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">魂の導き手</span></div>
+    <div class="ability-desc">呪われし一群: 周囲の敵に襲いかかり攻撃する「ミストウォーカー」を召喚する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/YorickQ.png" alt="葬送" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">葬送</span></div>
+    <div class="ability-desc">次に行う通常攻撃が追加ダメージを与えて自身を回復する。対象がチャンピオンか大型モンスターだった場合、または対象が倒された場合は墓が掘られる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/YorickW.png" alt="屍の列" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">屍の列</span></div>
+    <div class="ability-desc">指定した地点に破壊可能な壁を召喚し、敵ユニットの動きを阻止する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/YorickE.png" alt="悲嘆の霧" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">悲嘆の霧</span></div>
+    <div class="ability-desc">「黒き霧」の塊を投げつけて物理防御を低下させ、ダメージとスロウ効果を与え、対象をマークする。召喚したユニットはマークされた対象に向かう際は移動速度が増加する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/YorickR.png" alt="嘆きの墓標" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">嘆きの墓標</span></div>
+    <div class="ability-desc">ヨリックが「霧の乙女」を召喚する。「霧の乙女」が攻撃している対象を自身が攻撃すると追加ダメージを与える。「霧の乙女」は倒された敵から自動的に「ミストウォーカー」を召喚する。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>トップ 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3078.png" alt="トリニティ フォース" title="トリニティ フォース" loading="lazy">
+  <span class="build-item-name">トリニティ フォース</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3161.png" alt="ショウジンの矛" title="ショウジンの矛" loading="lazy">
+  <span class="build-item-name">ショウジンの矛</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6694.png" alt="セリルダの怨恨" title="セリルダの怨恨" loading="lazy">
+  <span class="build-item-name">セリルダの怨恨</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3047.png" alt="プレート スチールキャップ" title="プレート スチールキャップ" loading="lazy">
+  <span class="build-item-name">プレート スチールキャップ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/GraspOfTheUndying/GraspOfTheUndying.png" alt="不死者の握撃" title="不死者の握撃" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">不死者の握撃</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Demolish/Demolish.png" alt="打ちこわし" title="打ちこわし" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">打ちこわし</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/BonePlating/BonePlating.png" alt="ボーンアーマー" title="ボーンアーマー" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">ボーンアーマー</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Resolve/Overgrowth/Overgrowth.png" alt="超成長" title="超成長" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">超成長</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/PresenceOfMind/PresenceOfMind.png" alt="冷静沈着" title="冷静沈着" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">冷静沈着</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendBloodline/LegendBloodline.png" alt="レジェンド: 血脈" title="レジェンド: 血脈" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: 血脈</span>
+</div></div></div><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🔴 不利な相手 Top 1</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
     <span class="mu-name"><a href="/champion/Irelia.html">イレリア</a></span>

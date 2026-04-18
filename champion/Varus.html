@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -104,7 +118,133 @@
     </div></div><h2>パワースパイク</h2>
 <p>ヴァルス が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell active">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv9 / Lv11 / Lv16</p><section class="role-section"><h2>ボット（ADC） でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv9 / Lv11 / Lv16</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/VarusPassive.png" alt="復讐の化身" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">復讐の化身</span></div>
+    <div class="ability-desc">キルまたはアシストを獲得すると、一時的に攻撃力と魔力が増加する。相手が敵チャンピオンの場合、このボーナスはさらに大きくなる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/VarusQ.png" alt="乾坤一擲" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">乾坤一擲</span></div>
+    <div class="ability-desc">弓を引き絞り、強力な一矢を放つ。構えてから発動するまでの時間が長ければ長いほど、射程距離とダメージ量が増加する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/VarusW.png" alt="枯死の矢筒" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">枯死の矢筒</span></div>
+    <div class="ability-desc">自動効果: 通常攻撃に追加魔法ダメージがつき、命中時に「枯死の呪い」を付与する。「枯死の呪い」がかかった敵に自身の他のスキルが命中すると、対象の最大体力に応じた魔法ダメージを与える。発動効果: 次の「乾坤一擲」が強化される。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/VarusE.png" alt="滅びの矢雨" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">滅びの矢雨</span></div>
+    <div class="ability-desc">複数の矢を射かけて物理ダメージを与え、範囲内の土壌に穢れをもたらす。穢された範囲内に入った敵は、スロウ状態になり、自己回復スキルの効果と、体力自動回復が低下する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/VarusR.png" alt="穢れの連鎖" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">穢れの連鎖</span></div>
+    <div class="ability-desc">穢れの蔓を放ち、最初に命中した敵にダメージを与え、スネア効果を付与する。蔓は近接する別のチャンピオンの位置に向かって拡散し、命中するとそのチャンピオンにも同様にダメージを与えてスネア効果を付与する。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ボット（ADC） 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3142.png" alt="妖夢の霊剣" title="妖夢の霊剣" loading="lazy">
+  <span class="build-item-name">妖夢の霊剣</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3042.png" alt="ムラマナ" title="ムラマナ" loading="lazy">
+  <span class="build-item-name">ムラマナ</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3814.png" alt="ナイト エッジ" title="ナイト エッジ" loading="lazy">
+  <span class="build-item-name">ナイト エッジ</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3009.png" alt="スイフトネス ブーツ" title="スイフトネス ブーツ" loading="lazy">
+  <span class="build-item-name">スイフトネス ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ArcaneComet/ArcaneComet.png" alt="秘儀の彗星" title="秘儀の彗星" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">秘儀の彗星</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ManaflowBand/ManaflowBand.png" alt="マナフローバンド" title="マナフローバンド" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">マナフローバンド</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Transcendence/Transcendence.png" alt="至高" title="至高" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">至高</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Scorch/Scorch.png" alt="追火" title="追火" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追火</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/CashBack/CashBack2.png" alt="キャッシュバック" title="キャッシュバック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">キャッシュバック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/PerfectTiming/AlchemistCabinet.png" alt="トリプル トニック" title="トリプル トニック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">トリプル トニック</span>
+</div></div></div><div class="build-box">
+  <h3>サポート 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3142.png" alt="妖夢の霊剣" title="妖夢の霊剣" loading="lazy">
+  <span class="build-item-name">妖夢の霊剣</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3042.png" alt="ムラマナ" title="ムラマナ" loading="lazy">
+  <span class="build-item-name">ムラマナ</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3814.png" alt="ナイト エッジ" title="ナイト エッジ" loading="lazy">
+  <span class="build-item-name">ナイト エッジ</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3009.png" alt="スイフトネス ブーツ" title="スイフトネス ブーツ" loading="lazy">
+  <span class="build-item-name">スイフトネス ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ArcaneComet/ArcaneComet.png" alt="秘儀の彗星" title="秘儀の彗星" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">秘儀の彗星</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ManaflowBand/ManaflowBand.png" alt="マナフローバンド" title="マナフローバンド" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">マナフローバンド</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Transcendence/Transcendence.png" alt="至高" title="至高" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">至高</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Scorch/Scorch.png" alt="追火" title="追火" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追火</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/CashBack/CashBack2.png" alt="キャッシュバック" title="キャッシュバック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">キャッシュバック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/PerfectTiming/AlchemistCabinet.png" alt="トリプル トニック" title="トリプル トニック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">トリプル トニック</span>
+</div></div></div><div class="build-box">
+  <h3>トップ 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3142.png" alt="妖夢の霊剣" title="妖夢の霊剣" loading="lazy">
+  <span class="build-item-name">妖夢の霊剣</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3042.png" alt="ムラマナ" title="ムラマナ" loading="lazy">
+  <span class="build-item-name">ムラマナ</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3814.png" alt="ナイト エッジ" title="ナイト エッジ" loading="lazy">
+  <span class="build-item-name">ナイト エッジ</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3009.png" alt="スイフトネス ブーツ" title="スイフトネス ブーツ" loading="lazy">
+  <span class="build-item-name">スイフトネス ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ArcaneComet/ArcaneComet.png" alt="秘儀の彗星" title="秘儀の彗星" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">秘儀の彗星</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/ManaflowBand/ManaflowBand.png" alt="マナフローバンド" title="マナフローバンド" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">マナフローバンド</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Transcendence/Transcendence.png" alt="至高" title="至高" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">至高</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/Scorch/Scorch.png" alt="追火" title="追火" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追火</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/CashBack/CashBack2.png" alt="キャッシュバック" title="キャッシュバック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">キャッシュバック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/PerfectTiming/AlchemistCabinet.png" alt="トリプル トニック" title="トリプル トニック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">トリプル トニック</span>
+</div></div></div><section class="role-section"><h2>ボット（ADC） でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
     <span class="mu-name"><a href="/champion/Aatrox.html">エイトロックス</a></span>

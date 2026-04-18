@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "League of Legends チーム構成マッチアップ分析アプリ",
   "scripts": {
-    "start": "npx serve . -p 5174"
+    "start": "npx serve . -p 5174",
+    "generate:pages": "node scripts/generate_champion_pages.js",
+    "update:all": "node scripts/batch_fetch_winrates.js && node scripts/batch_fetch_overall_winrates.js && node scripts/batch_fetch_builds.js && node scripts/merge_matchups.js && node scripts/generate_champion_pages.js"
   }
 }

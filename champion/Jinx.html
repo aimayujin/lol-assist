@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>ジンクス が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell active">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv4 / Lv6</p><section class="role-section"><h2>ボット（ADC） でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv4 / Lv6</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Jinx_Passive.png" alt="超エキサイティン！" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">超エキサイティン！</span></div>
+    <div class="ability-desc">敵チャンピオン、エピックジャングルモンスター、建造物のキルまたは破壊に貢献すると、移動速度と攻撃速度が大幅に増加する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/JinxQ.png" alt="スイッチング！" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">スイッチング！</span></div>
+    <div class="ability-desc">スキルを使用するたび、通常攻撃が「パウパウガン」(ミニガン)と「フィッシュボーン」(ロケットランチャー)の間で切り替わる。「パウパウガン」で敵を攻撃し続けると攻撃速度が増加する。「フィッシュボーン」は射程が長く、範囲ダメージを発生させることができるが、攻撃速度が低下してマナを消費するようになる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/JinxW.png" alt="シビレーザー！" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">シビレーザー！</span></div>
+    <div class="ability-desc">スタンガンの一種であるシビレーザーを発射する。最初に命中した敵にダメージとスロウ効果を与え、さらに可視状態にする。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/JinxE.png" alt="パックンチョッパー！" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">パックンチョッパー！</span></div>
+    <div class="ability-desc">一列にならんだ爆雷を3個投げる。敵チャンピオンが爆雷に触れるとトラップが起動してスネア効果を与える。爆雷は触れられなくても5秒後に自動的に爆発し、周囲にいる敵にダメージを与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/JinxR.png" alt="スーパーメガデスロケット！" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">スーパーメガデスロケット！</span></div>
+    <div class="ability-desc">指定方向にどこまでも直進してゆくスーパーメガデスロケットを発射する。発射したロケット弾が敵チャンピオンに命中すればその場で爆発し、周囲の敵にもダメージを与える。ダメージは敵の現在体力が少ないほど威力が増加する。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ボット（ADC） 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3032.png" alt="ユン・タル ワイルドアロー" title="ユン・タル ワイルドアロー" loading="lazy">
+  <span class="build-item-name">ユン・タル ワイルドアロー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3031.png" alt="インフィニティ エッジ" title="インフィニティ エッジ" loading="lazy">
+  <span class="build-item-name">インフィニティ エッジ</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3085.png" alt="ルナーン ハリケーン" title="ルナーン ハリケーン" loading="lazy">
+  <span class="build-item-name">ルナーン ハリケーン</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3006.png" alt="バーサーカー ブーツ" title="バーサーカー ブーツ" loading="lazy">
+  <span class="build-item-name">バーサーカー ブーツ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LethalTempo/LethalTempoTemp.png" alt="リーサルテンポ" title="リーサルテンポ" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">リーサルテンポ</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/PresenceOfMind/PresenceOfMind.png" alt="冷静沈着" title="冷静沈着" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">冷静沈着</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/LegendBloodline/LegendBloodline.png" alt="レジェンド: 血脈" title="レジェンド: 血脈" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">レジェンド: 血脈</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/CutDown/CutDown.png" alt="切り崩し" title="切り崩し" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">切り崩し</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/CashBack/CashBack2.png" alt="キャッシュバック" title="キャッシュバック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">キャッシュバック</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Inspiration/PerfectTiming/AlchemistCabinet.png" alt="トリプル トニック" title="トリプル トニック" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">トリプル トニック</span>
+</div></div></div><section class="role-section"><h2>ボット（ADC） でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Amumu.png" alt="アムム" loading="lazy">
     <span class="mu-name"><a href="/champion/Amumu.html">アムム</a></span>

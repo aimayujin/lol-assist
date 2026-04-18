@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -96,7 +110,69 @@
     </div></div><h2>パワースパイク</h2>
 <p>カタリナ が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell active">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv2 / Lv6 / Lv16</p><section class="role-section"><h2>ミッド でのマッチアップ</h2><h3>🟢 有利な相手 Top 2</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv2 / Lv6 / Lv16</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/Katarina_Passive.png" alt="貪欲なる暗殺者" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">貪欲なる暗殺者</span></div>
+    <div class="ability-desc">自身がダメージを与えた敵チャンピオンがその直後にキルされると、自身の全スキルのクールダウンが大幅に短縮する。自身が「短剣」を拾うと、周囲の敵を斬りつけて魔法ダメージを与える。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KatarinaQ.png" alt="バウンドナイフ" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">バウンドナイフ</span></div>
+    <div class="ability-desc">カタリナが対象に向けて敵から敵へと飛び跳ねる「短剣」を投げる。「短剣」は最後に地面に落ちる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KatarinaW.png" alt="プリペレーション" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">プリペレーション</span></div>
+    <div class="ability-desc">少しの間だけカタリナの移動速度が大幅に増加し、「短剣」を頭上に放り投げる。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KatarinaEWrapper.png" alt="瞬歩" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">瞬歩</span></div>
+    <div class="ability-desc">対象の地点へブリンクする。対象が敵ユニットなら攻撃し、そうでない場合はもっとも近くにいる敵ユニットを攻撃する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/KatarinaR.png" alt="デスロータス" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">デスロータス</span></div>
+    <div class="ability-desc">刃の嵐と化し、周囲の敵チャンピオン(最大3人)に目にもとまらぬ速さで短剣を投げて強大な魔法ダメージを与える。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ミッド 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/6672.png" alt="クラーケン スレイヤー" title="クラーケン スレイヤー" loading="lazy">
+  <span class="build-item-name">クラーケン スレイヤー</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3153.png" alt="ルインドキング ブレード" title="ルインドキング ブレード" loading="lazy">
+  <span class="build-item-name">ルインドキング ブレード</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3302.png" alt="テルミヌス" title="テルミヌス" loading="lazy">
+  <span class="build-item-name">テルミヌス</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3020.png" alt="ソーサラー シューズ" title="ソーサラー シューズ" loading="lazy">
+  <span class="build-item-name">ソーサラー シューズ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/Electrocute/Electrocute.png" alt="電撃" title="電撃" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">電撃</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/SuddenImpact/SuddenImpact.png" alt="サドンインパクト" title="サドンインパクト" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">サドンインパクト</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/GrislyMementos/GrislyMementos.png" alt="グリスリー メメント" title="グリスリー メメント" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">グリスリー メメント</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/RelentlessHunter/RelentlessHunter.png" alt="執拗な賞金首狩り" title="執拗な賞金首狩り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">執拗な賞金首狩り</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/CoupDeGrace/CoupDeGrace.png" alt="最期の慈悲" title="最期の慈悲" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">最期の慈悲</span>
+</div></div></div><section class="role-section"><h2>ミッド でのマッチアップ</h2><h3>🟢 有利な相手 Top 2</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/AurelionSol.png" alt="オレリオン・ソル" loading="lazy">
     <span class="mu-name"><a href="/champion/AurelionSol.html">オレリオン・ソル</a></span>

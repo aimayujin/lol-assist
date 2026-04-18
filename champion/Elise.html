@@ -59,6 +59,20 @@
 .related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
 .related-card-name { font-size:.8rem; color:var(--text); }
 .role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+.ability-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; margin:12px 0; }
+.ability-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; gap:12px; }
+.ability-card img { width:48px; height:48px; border-radius:6px; flex-shrink:0; object-fit:cover; }
+.ability-card-inner { flex:1; min-width:0; }
+.ability-key { display:inline-block; background:var(--gold-dark); color:#000; font-weight:900; padding:1px 7px; border-radius:3px; font-size:.72rem; margin-right:6px; }
+.ability-name { font-weight:700; color:var(--gold-light); font-size:.95rem; }
+.ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
+.build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
+.build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
+.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-rune img { width:30px; height:30px; }
 </style>
 </head>
 <body>
@@ -100,7 +114,101 @@
     </div></div><h2>パワースパイク</h2>
 <p>エリス が特に強くなるタイミング（レベル）:</p>
 <div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell active">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
-<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv9</p><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv9</p><h2>スキル概要</h2><div class="ability-list"><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/passive/ElisePassive.png" alt="蜘蛛の女帝" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">P</span><span class="ability-name">蜘蛛の女帝</span></div>
+    <div class="ability-desc">ヒト形態: スキルが敵に命中するたびに、幼体が1体誕生する。蜘蛛形態: 通常攻撃に追加魔法ダメージが付与され、攻撃のたびに体力が回復する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/EliseHumanQ.png" alt="神経毒/毒牙" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">Q</span><span class="ability-name">神経毒/毒牙</span></div>
+    <div class="ability-desc">ヒト形態: 対象の敵ユニットにダメージを与える。対象の現在体力が多いほど与えるダメージが増加する。蜘蛛形態: 対象の敵ユニットに飛びかかって噛み付く。対象の現在体力が少ないほど与えるダメージが増加する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/EliseHumanW.png" alt="子蜘蛛爆弾/猛食" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">W</span><span class="ability-name">子蜘蛛爆弾/猛食</span></div>
+    <div class="ability-desc">ヒト形態: 毒液が詰まった幼体を放つ。幼体は敵ユニットに近づくと爆発する。蜘蛛形態: エリスと幼体の攻撃速度が増加する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/EliseHumanE.png" alt="繭化/蜘蛛の糸" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">E</span><span class="ability-name">繭化/蜘蛛の糸</span></div>
+    <div class="ability-desc">ヒト形態: 繭を放って最初に命中した敵にスタン効果を付与し、ステルス状態の敵を除いて可視状態にする。蜘蛛形態: 幼体とともに空中に跳びあがり、指定した敵のもとへ降下し、「蜘蛛の女帝」から得られる追加ダメージと回復量が増加する。</div>
+  </div>
+</div><div class="ability-card">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/spell/EliseR.png" alt="蜘蛛形態" loading="lazy">
+  <div class="ability-card-inner">
+    <div><span class="ability-key">R</span><span class="ability-name">蜘蛛形態</span></div>
+    <div class="ability-desc">恐ろしい蜘蛛の姿になる。射程距離は短くなるが、移動速度が増加して新しいスキルを使用できるようになり、エリスと共に敵を攻撃する幼体の群れを呼び出す。</div>
+  </div>
+</div></div><h2>推奨ビルド</h2><div class="build-box">
+  <h3>ジャングル 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/4646.png" alt="ストームサージ" title="ストームサージ" loading="lazy">
+  <span class="build-item-name">ストームサージ</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/4645.png" alt="シャドウフレイム" title="シャドウフレイム" loading="lazy">
+  <span class="build-item-name">シャドウフレイム</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3157.png" alt="ゾーニャの砂時計" title="ゾーニャの砂時計" loading="lazy">
+  <span class="build-item-name">ゾーニャの砂時計</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3020.png" alt="ソーサラー シューズ" title="ソーサラー シューズ" loading="lazy">
+  <span class="build-item-name">ソーサラー シューズ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png" alt="魂の収穫" title="魂の収穫" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">魂の収穫</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/CheapShot/CheapShot.png" alt="追い打ち" title="追い打ち" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追い打ち</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/GrislyMementos/GrislyMementos.png" alt="グリスリー メメント" title="グリスリー メメント" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">グリスリー メメント</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/RelentlessHunter/RelentlessHunter.png" alt="執拗な賞金首狩り" title="執拗な賞金首狩り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">執拗な賞金首狩り</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/CoupDeGrace/CoupDeGrace.png" alt="最期の慈悲" title="最期の慈悲" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">最期の慈悲</span>
+</div></div></div><div class="build-box">
+  <h3>サポート 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/4646.png" alt="ストームサージ" title="ストームサージ" loading="lazy">
+  <span class="build-item-name">ストームサージ</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/4645.png" alt="シャドウフレイム" title="シャドウフレイム" loading="lazy">
+  <span class="build-item-name">シャドウフレイム</span>
+</div><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3157.png" alt="ゾーニャの砂時計" title="ゾーニャの砂時計" loading="lazy">
+  <span class="build-item-name">ゾーニャの砂時計</span>
+</div></div><div class="build-row"><span class="build-label">ブーツ</span>
+<div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3020.png" alt="ソーサラー シューズ" title="ソーサラー シューズ" loading="lazy">
+  <span class="build-item-name">ソーサラー シューズ</span>
+</div></div><div class="build-row"><span class="build-label">ルーン</span><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png" alt="魂の収穫" title="魂の収穫" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">魂の収穫</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/CheapShot/CheapShot.png" alt="追い打ち" title="追い打ち" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">追い打ち</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/GrislyMementos/GrislyMementos.png" alt="グリスリー メメント" title="グリスリー メメント" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">グリスリー メメント</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Domination/RelentlessHunter/RelentlessHunter.png" alt="執拗な賞金首狩り" title="執拗な賞金首狩り" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">執拗な賞金首狩り</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/Triumph.png" alt="凱旋" title="凱旋" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">凱旋</span>
+</div><div class="build-item build-rune">
+  <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Precision/CoupDeGrace/CoupDeGrace.png" alt="最期の慈悲" title="最期の慈悲" loading="lazy" onerror="this.style.display='none'">
+  <span class="build-item-name">最期の慈悲</span>
+</div></div></div><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
   <div class="matchup-row">
     <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lillia.png" alt="リリア" loading="lazy">
     <span class="mu-name"><a href="/champion/Lillia.html">リリア</a></span>
