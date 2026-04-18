@@ -167,13 +167,19 @@ function startLcu() {
   lcuClient.on('champ-select-end', () => {
     console.log('[Main] チャンプセレクト終了');
     sendToRenderer('champ-select-end', {});
-    // 保留中のリロードがあれば実行
+    // 保留中のリロードがあれば実行（hot-update ファイルがあればそちらに切替）
     if (gPendingReload) {
       gPendingReload = false;
       console.log('[Update] 保留中のリロードを実行');
       setTimeout(() => {
         if (mainWindow && !mainWindow.isDestroyed()) {
-          mainWindow.webContents.reloadIgnoringCache();
+          const hotHtmlPath = path.join(app.getPath('userData'), 'hot-update', 'index.html');
+          const currentUrl = mainWindow.webContents.getURL();
+          if (fs.existsSync(hotHtmlPath) && !currentUrl.includes('hot-update')) {
+            mainWindow.loadFile(hotHtmlPath);
+          } else {
+            mainWindow.webContents.reloadIgnoringCache();
+          }
         }
       }, 2000);
     }
@@ -334,9 +340,17 @@ async function checkForUpdates() {
     console.log(`[Update] ${updated} ファイル更新完了`);
     const inChampSelect = lcuClient?.inChampSelect ?? false;
     if (!inChampSelect) {
-      console.log('[Update] 自動リロード実行');
-      if (mainWindow && !mainWindow.isDestroyed()) {
-        mainWindow.webContents.reloadIgnoringCache();
+      // ホットアップデート HTML が存在すればそちらを直接ロード（現在バンドル HTML 表示中なら切替）
+      const hotHtmlPath = path.join(app.getPath('userData'), 'hot-update', 'index.html');
+      if (fs.existsSync(hotHtmlPath) && mainWindow && !mainWindow.isDestroyed()) {
+        const currentUrl = mainWindow.webContents.getURL();
+        if (!currentUrl.includes('hot-update')) {
+          console.log('[Update] hot-update HTML に切替ロード');
+          mainWindow.loadFile(hotHtmlPath);
+        } else {
+          console.log('[Update] 自動リロード実行（hot-update再読込）');
+          mainWindow.webContents.reloadIgnoringCache();
+        }
       }
     } else {
       console.log('[Update] チャンプセレクト中のため通知のみ');
