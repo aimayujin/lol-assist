@@ -321,16 +321,33 @@ class LcuClient extends EventEmitter {
       const res = await this._request('GET', `/lol-ranked/v1/ranked-stats/${puuid}`);
       if (res.status === 200 && res.json) {
         const data = res.json;
-        const solo = data.queues?.find(q => q.queueType === 'RANKED_SOLO_5x5') || data.queueMap?.RANKED_SOLO_5x5;
-        if (solo) {
-          return {
-            tier: solo.tier || solo.tierHumanReadable || '',
-            division: solo.division || solo.rank || '',
-            lp: solo.leaguePoints ?? solo.lp ?? 0,
-            wins: solo.wins ?? 0,
-            losses: solo.losses ?? 0,
-          };
-        }
+        const queues = data.queues || [];
+        const parseQueue = (q) => q ? {
+          tier: q.tier || q.tierHumanReadable || '',
+          division: q.division || q.rank || '',
+          lp: q.leaguePoints ?? q.lp ?? 0,
+          wins: q.wins ?? 0,
+          losses: q.losses ?? 0,
+        } : null;
+        const solo = parseQueue(queues.find(q => q.queueType === 'RANKED_SOLO_5x5') || data.queueMap?.RANKED_SOLO_5x5);
+        const flex = parseQueue(queues.find(q => q.queueType === 'RANKED_FLEX_SR') || data.queueMap?.RANKED_FLEX_SR);
+        // 前シーズン / 最高到達
+        const prevTier = data.previousSeasonEndTier || data.previousSeasonHighestTier || null;
+        const prevDiv = data.previousSeasonEndDivision || null;
+        const highestTier = data.highestRankedEntry?.tier || data.highestTier || null;
+        const highestDiv = data.highestRankedEntry?.division || data.highestDivision || null;
+        const result = {
+          tier: solo?.tier || '',
+          division: solo?.division || '',
+          lp: solo?.lp || 0,
+          wins: solo?.wins || 0,
+          losses: solo?.losses || 0,
+          solo,
+          flex,
+          previousSeason: prevTier ? { tier: prevTier, division: prevDiv } : null,
+          highest: highestTier ? { tier: highestTier, division: highestDiv } : null,
+        };
+        return result;
       }
     } catch (err) {
       console.warn('[LCU] ランク取得失敗:', err.message);
@@ -369,9 +386,21 @@ class LcuClient extends EventEmitter {
         return games.map(g => {
           const p = g.participants?.[0] || {};
           const stats = p.stats || {};
+          const timeline = p.timeline || {};
+          // position 推定（timeline.lane + timeline.role → TOP/JG/MID/ADC/SUP）
+          let position = null;
+          const lane = timeline.lane;
+          const role = timeline.role;
+          if (lane === 'TOP') position = 'TOP';
+          else if (lane === 'JUNGLE') position = 'JG';
+          else if (lane === 'MIDDLE' || lane === 'MID') position = 'MID';
+          else if (lane === 'BOTTOM' || lane === 'BOT') {
+            position = role === 'DUO_SUPPORT' ? 'SUP' : 'ADC';
+          }
           return {
             gameId: g.gameId,
             championId: p.championId || g.championId,
+            position,
             win: stats.win ?? g.win ?? false,
             kills: stats.kills ?? 0,
             deaths: stats.deaths ?? 0,
