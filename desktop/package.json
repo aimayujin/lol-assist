@@ -1,6 +1,6 @@
 {
   "name": "lolpick-desktop",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "description": "lolpick.jp デスクトップ版 - LCU API連携でチャンプセレクト自動検出",
   "main": "main.js",
   "author": "lolpick.jp",

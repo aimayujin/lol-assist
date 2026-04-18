@@ -4,6 +4,19 @@ const fs = require('fs');
 const https = require('https');
 const { LcuClient } = require('./lcu');
 
+// ── クラッシュ対策: グローバルエラーハンドラ ──
+// クラッシュログを %APPDATA%/lolpick.jp/crash.log に追記
+function logCrash(tag, err) {
+  try {
+    const logPath = path.join(app.getPath('userData'), 'crash.log');
+    const line = `[${new Date().toISOString()}] [${tag}] ${err?.stack || err?.message || String(err)}\n`;
+    fs.appendFileSync(logPath, line);
+    console.error(`[Crash] ${tag}:`, err);
+  } catch {}
+}
+process.on('uncaughtException', (err) => logCrash('uncaughtException', err));
+process.on('unhandledRejection', (reason) => logCrash('unhandledRejection', reason));
+
 // 多重起動防止
 const gotLock = app.requestSingleInstanceLock();
 if (!gotLock) { app.quit(); }

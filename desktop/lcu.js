@@ -65,23 +65,26 @@ class LcuClient extends EventEmitter {
     };
     check();
     this.detectTimer = setInterval(async () => {
-      if (this.connected) {
-        // 接続中: プロセスがまだ生きているか確認
-        const alive = await this._isProcessAlive();
-        if (!alive) {
-          console.log('[LCU] クライアント切断');
-          this.connected = false;
-          this.port = null;
-          this.password = null;
-          this.authHeader = null;
-          this.inChampSelect = false;
-          this.lastSessionJson = '';
-          if (this.pollTimer) { clearInterval(this.pollTimer); this.pollTimer = null; }
-          if (this.ws) { try { this.ws.close(); } catch {} this.ws = null; }
-          this.emit('lcu-disconnected');
+      try {
+        if (this.connected) {
+          const alive = await this._isProcessAlive();
+          if (!alive) {
+            console.log('[LCU] クライアント切断');
+            this.connected = false;
+            this.port = null;
+            this.password = null;
+            this.authHeader = null;
+            this.inChampSelect = false;
+            this.lastSessionJson = '';
+            if (this.pollTimer) { clearInterval(this.pollTimer); this.pollTimer = null; }
+            if (this.ws) { try { this.ws.close(); } catch {} this.ws = null; }
+            this.emit('lcu-disconnected');
+          }
+        } else {
+          await check();
         }
-      } else {
-        check();
+      } catch (err) {
+        console.error('[LCU] 検出ループエラー:', err.message);
       }
     }, 3000);
   }
