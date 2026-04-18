@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>サイトについて - lolpick.jp</title>
+<meta name="description" content="lolpick.jp の運営方針、データソース、使用技術、更新頻度について。LoL のチーム構成分析を無料で提供する経緯とコンセプト。">
+<link rel="canonical" href="https://lolpick.jp/about.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+  <h1>サイトについて</h1>
+  <p class="lead">lolpick.jp は、League of Legends（以下 LoL）のチーム構成・マッチアップ分析を、誰でも即座に確認できる無料ツールを提供するサイトです。</p>
+
+  <h2>コンセプト</h2>
+  <p>LoL のチャンプセレクトは、相手チームの構成を見て自分の立ち回りや最適なピックを考える時間的余裕がほとんどありません。本サイトは以下を目標に作られています。</p>
+  <ul>
+    <li><strong>速度</strong>: チャンピオンを選ぶ → 数秒で分析結果を表示</li>
+    <li><strong>正確性</strong>: 公開統計データに基づく勝率・ピック率を参照</li>
+    <li><strong>実用性</strong>: 単なる勝率表示ではなく、マッチアップごとの立ち回りアドバイスを提示</li>
+    <li><strong>無料・登録不要</strong>: 誰でもすぐに使える</li>
+  </ul>
+
+  <h2>主な機能</h2>
+
+  <h3>Web 版（本サイト）</h3>
+  <ul>
+    <li>5レーン分の味方・敵チャンピオンを手動で入力して分析</li>
+    <li>マッチアップ個別の勝率・相性・立ち回りアドバイス</li>
+    <li>シナジー（味方構成の相性）評価</li>
+    <li>カウンターピック候補の提示</li>
+    <li>レーン別のメタチャンピオン一覧</li>
+    <li>パワースパイク（序盤・中盤・終盤の強さ）の可視化</li>
+  </ul>
+
+  <h3>デスクトップ版（Windows）</h3>
+  <ul>
+    <li><strong>LoL クライアント連携</strong>: チャンプセレクト中の味方・敵のピックを自動検出して即時分析</li>
+    <li>マッチング成立時にウィンドウを自動で前面に表示</li>
+    <li>味方・敵全員のランク情報・直近戦績を表示</li>
+    <li>システムトレイ常駐 + Windows 起動時の自動起動対応</li>
+    <li>データとアプリのホットアップデート（再インストール不要で最新化）</li>
+  </ul>
+
+  <h2>データソース</h2>
+  <p>本サイトの情報は以下の公開データソースを元に構築されています。</p>
+  <table>
+    <tr><th>ソース</th><th>用途</th></tr>
+    <tr><td>Riot Games Data Dragon</td><td>チャンピオン基本情報、スキル説明、画像</td></tr>
+    <tr><td>op.gg</td><td>勝率、ピック率、ビルド統計</td></tr>
+    <tr><td>独自データ</td><td>マッチアップごとの立ち回りアドバイス（lane_matchups.json）</td></tr>
+  </table>
+  <p class="note"><strong>注意</strong>: 統計データは各ソースから定期的に取得・キャッシュしたものです。リアルタイムではありません。</p>
+
+  <h2>更新頻度</h2>
+  <ul>
+    <li><strong>勝率・ピック率データ</strong>: 週1〜2回の自動取得</li>
+    <li><strong>マッチアップアドバイス</strong>: 随時加筆・修正</li>
+    <li><strong>新チャンピオン対応</strong>: リリース後1週間以内</li>
+    <li><strong>パッチ対応</strong>: メジャーパッチごとに統計再取得</li>
+  </ul>
+
+  <h2>使用技術</h2>
+  <p>本サイトは以下の技術を用いて構築されています。</p>
+  <ul>
+    <li><strong>フロントエンド</strong>: 素の HTML / CSS / JavaScript（フレームワーク不使用、高速ロード重視）</li>
+    <li><strong>デスクトップアプリ</strong>: Electron（Windows 向けビルド）</li>
+    <li><strong>LCU 接続</strong>: Node.js 自前実装（WMIC によるプロセス検出 + HTTPS ポーリング）</li>
+    <li><strong>ホスティング</strong>: GitHub Pages（静的配信）</li>
+    <li><strong>データ取得</strong>: Node.js スクリプト群で定期的に統計更新</li>
+    <li><strong>ソースコード</strong>: <a href="https://github.com/aimayujin/lol-assist" target="_blank" rel="noopener">GitHub で公開</a></li>
+  </ul>
+
+  <h2>運営方針</h2>
+
+  <h3>正確性と透明性</h3>
+  <p>勝率・マッチアップ情報に誤りがあった場合、読者からの指摘を受けて速やかに修正します。お気づきの点があれば <a href="/contact.html">お問い合わせ</a> または <a href="https://github.com/aimayujin/lol-assist/issues" target="_blank" rel="noopener">GitHub Issues</a> からご連絡ください。</p>
+
+  <h3>AI の活用</h3>
+  <p>本サイトのマッチアップアドバイス生成や文章推敲には AI を活用しています。AI 生成内容は人間が確認していますが、誤りが残る可能性があります。誤情報の指摘は歓迎します。</p>
+
+  <h3>プライバシー</h3>
+  <p>利用者の個人情報を直接収集することはありません。アカウント登録も不要です。詳細は <a href="/privacy.html">プライバシーポリシー</a> をご確認ください。</p>
+
+  <h3>商用利用</h3>
+  <p>本サイトは個人運営の無料ツールです。運営費用を賄うため、Google AdSense による広告を掲載しています。</p>
+
+  <h2>Riot Games との関係</h2>
+  <p class="note">lolpick.jp は Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。本サイトはファンメイドのツールであり、公式のものではありません。</p>
+
+  <h2>ロードマップ</h2>
+  <p>現在対応を検討しているトピック:</p>
+  <ul>
+    <li>チャンピオン個別ページの拡充（有利マッチアップ、スキル詳細、推奨ビルド）</li>
+    <li>パッチノート解説</li>
+    <li>モバイル版 UI 改善</li>
+    <li>日本語以外の言語対応</li>
+  </ul>
+
+  <div class="cta-box">
+    <a href="/" class="btn">ツールを使ってみる</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

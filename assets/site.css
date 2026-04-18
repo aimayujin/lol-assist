@@ -1,0 +1,125 @@
+/* lolpick.jp 共通スタイル（静的ページ用） */
+:root {
+  --bg-dark: #0a0e13;
+  --bg-panel: #0f1923;
+  --bg-card: #1a2535;
+  --bg-card2: #1e2d3e;
+  --gold: #c89b3c;
+  --gold-light: #f0e6b2;
+  --gold-dark: #785a28;
+  --text: #ccd3dc;
+  --text-dim: #7f8fa4;
+  --border: #233044;
+  --link: #74a7d4;
+  --font: "Segoe UI", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: var(--bg-dark); color: var(--text); font-family: var(--font); line-height: 1.7; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; color: var(--gold); }
+
+/* ヘッダー */
+.site-header {
+  background: linear-gradient(135deg, #05080d 0%, #0d1826 100%);
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 14px 20px;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .5);
+}
+.site-header-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.site-logo { font-size: 1.4rem; font-weight: 900; letter-spacing: .08em; color: var(--gold); text-decoration: none; text-shadow: 0 0 10px rgba(200, 155, 60, .3); }
+.site-logo:hover { text-decoration: none; color: var(--gold-light); }
+.site-nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: .85rem; }
+.site-nav a { color: var(--text-dim); }
+.site-nav a:hover { color: var(--gold); }
+
+/* メインコンテンツ */
+main.content {
+  max-width: 880px; margin: 0 auto; padding: 40px 24px 80px;
+}
+main.content h1 {
+  color: var(--gold); font-size: 1.8rem; margin: 0 0 8px; letter-spacing: .02em;
+  border-bottom: 1px solid var(--gold-dark); padding-bottom: 12px;
+}
+main.content h2 {
+  color: var(--gold-light); font-size: 1.3rem; margin: 36px 0 12px;
+  border-left: 3px solid var(--gold); padding-left: 12px;
+}
+main.content h3 {
+  color: var(--text); font-size: 1.05rem; margin: 24px 0 8px;
+}
+main.content p { margin: 12px 0; }
+main.content ul, main.content ol { padding-left: 24px; margin: 12px 0; }
+main.content li { margin: 6px 0; }
+main.content code {
+  background: var(--bg-card); border: 1px solid var(--border); padding: 2px 6px; border-radius: 4px;
+  font-size: .9em; color: var(--gold-light);
+}
+main.content pre {
+  background: var(--bg-card); border: 1px solid var(--border); padding: 14px; border-radius: 6px;
+  overflow-x: auto; font-size: .85rem;
+}
+main.content .lead {
+  font-size: 1.05rem; color: var(--text-dim); margin: 12px 0 24px;
+}
+main.content .meta {
+  font-size: .8rem; color: var(--text-dim); margin-bottom: 24px;
+}
+main.content .note {
+  background: var(--bg-card); border-left: 3px solid var(--gold); padding: 12px 16px;
+  margin: 16px 0; border-radius: 0 6px 6px 0;
+}
+main.content .note strong { color: var(--gold); }
+main.content table {
+  width: 100%; border-collapse: collapse; margin: 16px 0;
+  background: var(--bg-panel); border: 1px solid var(--border); border-radius: 6px; overflow: hidden;
+}
+main.content th, main.content td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border); text-align: left;
+}
+main.content th { background: var(--bg-card2); color: var(--gold-light); font-weight: 700; }
+main.content tr:last-child td { border-bottom: 0; }
+
+/* カードグリッド */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin: 16px 0; }
+.card {
+  background: var(--bg-panel); border: 1px solid var(--border); border-radius: 8px; padding: 16px;
+  transition: border-color .2s, transform .2s;
+}
+.card:hover { border-color: var(--gold-dark); transform: translateY(-2px); }
+.card h3 { margin-top: 0; color: var(--gold-light); }
+
+.cta-box {
+  background: linear-gradient(135deg, rgba(200, 155, 60, .08), rgba(200, 155, 60, .02));
+  border: 1px solid var(--gold-dark); border-radius: 8px; padding: 20px 24px; margin: 24px 0;
+  text-align: center;
+}
+.cta-box a.btn {
+  display: inline-block; background: var(--gold); color: #0a0e13; font-weight: 700;
+  padding: 10px 22px; border-radius: 6px; margin-top: 8px; letter-spacing: .03em;
+}
+.cta-box a.btn:hover { background: var(--gold-light); text-decoration: none; }
+
+/* フッター */
+.site-footer {
+  background: #05080d; border-top: 1px solid var(--gold-dark); padding: 32px 20px 24px;
+  margin-top: 40px; font-size: .85rem; color: var(--text-dim);
+}
+.site-footer-inner { max-width: 1100px; margin: 0 auto; }
+.site-footer-nav { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 16px; }
+.site-footer-nav a { color: var(--text-dim); }
+.site-footer-nav a:hover { color: var(--gold); }
+.site-footer-meta { color: var(--text-dim); opacity: .7; line-height: 1.6; }
+.site-footer-meta small { font-size: .78rem; }
+
+@media (max-width: 600px) {
+  .site-header-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .site-nav { font-size: .8rem; gap: 14px; }
+  main.content { padding: 24px 16px 60px; }
+  main.content h1 { font-size: 1.4rem; }
+}
