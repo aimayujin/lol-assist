@@ -100,6 +100,20 @@ git remote set-url origin https://github.com/aimayujin/lol-assist.git
 - **Console エラーの「正常」判定**: `/api/tierlist` などのサーバーAPIはデスクトップ版に存在しない → `ERR_FILE_NOT_FOUND` は期待動作（キャッシュにフォールバック）
 - **デバッグは `lcuDebug` / `lcuTestApi`**: `desktop/preload.js` の `lcuBridge.lcuDebug()` と `lcuTestApi(endpoint)` で LCU 接続状態と API 生レスポンスを確認可能
 
+## 静的ページ生成
+
+SEO / AdSense 対策で、チャンピオン個別ページ・一覧・必須ページ（プライバシー等）を提供。
+
+| ファイル | 用途 |
+|---|---|
+| `scripts/generate_champion_pages.js` | `src/data/*.json` + DDragon を結合して `champion/*.html` と `champions.html` と `sitemap.xml` を再生成 |
+| `assets/site.css` | 静的ページ共通スタイル |
+| `privacy.html` / `terms.html` / `about.html` / `contact.html` / `guide.html` / `faq.html` / `patch-notes.html` | 手動メンテナンスの独立ページ |
+| `champion/*.html` (168体) | 自動生成。勝率・マッチアップTop5・パワースパイク・関連チャンプ |
+| `champions.html` | 全チャンピオン一覧（ロール別・50音順） |
+
+**データ更新後は必ず `node scripts/generate_champion_pages.js` を再実行**してチャンピオンページと sitemap を更新する。
+
 ## スキル
 
 `.claude/skills/lol-matchup-verify/` — マッチアップデータ（勝率・有利不利・アドバイス）の誤り指摘を検証して `lane_matchups.json` と `index.html` を修正するスキル。ユーザーが「この情報が間違っている」等を指摘した場合に起動。
