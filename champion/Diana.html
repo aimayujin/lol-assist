@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ダイアナ 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="ダイアナ の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ジャングル・ミッド で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Diana.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ダイアナ 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="ダイアナ の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ジャングル・ミッド で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Diana.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Diana.png" alt="ダイアナ" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">ダイアナ</h1>
+    <p class="champ-hero-title">嘲りの月</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Fighter</span><span class="champ-tag">Mage</span>
+      <span class="champ-tag gold">ジャングル</span><span class="champ-tag gold">ミッド</span>
+    </div>
+  </div>
+</div>
+<p class="lead">ダイアナ の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">ジャングル 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">ミッド 全体勝率</div>
+      <div class="stat-card-value wr-good">51.1%</div>
+    </div></div><h2>パワースパイク</h2>
+<p>ダイアナ が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv11</p><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Naafiri.png" alt="ナフィーリ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Naafiri.html">ナフィーリ</a></span>
+    <span class="mu-wr wr-good">54.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ダイアナのAoEダメージがパックレットごとナフィーリを一掃できる。Wシールドでバーストを耐えてフルコンボで反撃する</div>
+    <ul><li>ナフィーリのW（猟犬の疾走）のダッシュ突進にW（蒼白のオーブ）のシールドを合わせてバーストを吸収し、Q（三日月の一撃）でマークを付けてE（月影）でダッシュ追撃する</li><li>ナフィーリのQ（ダーキンの双牙）の投射物をE（月影）のダッシュで横に回避しつつ距離を詰め、パッシブ（月光）の3撃目AAで削る</li><li>ナフィーリのパッシブ（犬を放て）のパックレットにR（月下美人）の引き寄せが当たるため、パックレットごとナフィーリを巻き込んでAoEダメージで一掃する</li><li>ナフィーリのR（犬の呼び声）の強化突進中でもW（蒼白のオーブ）のシールドでバーストを耐え、R突進後の無防備なナフィーリにQ+E+Rのフルコンボで反撃する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ivern.png" alt="アイバーン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Ivern.html">アイバーン</a></span>
+    <span class="mu-wr wr-bad">48.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Ivernのピールを突破してRで味方ごと引き寄せる。デイジーを無視して本体をバーストで倒す</div>
+    <ul><li>IvernのQ（根絡み）のスネアをW（蒼白のカスケード）のシールドで受けつつ、Q（三日月の一撃）のマークからE（月光の激突）で一気に距離を詰める</li><li>IvernのR（デイジー！）のデイジーを無視してR（月下の凶夜）の引き寄せでIvern本体と味方キャリーをまとめて拘束する</li><li>IvernのE（トリガーシード）のシールドはDianaのAPバーストで容易に破壊でき、シールド破裂時のスローもE突進済みなら関係ない</li><li>IvernのW（茂みの生成）の茂みに隠れてもQ（三日月の一撃）の弧を描く軌道で茂み内にマークを付けてEダッシュで追撃できる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zyra.png" alt="ザイラ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Zyra.html">ザイラ</a></span>
+    <span class="mu-wr wr-bad">48.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ザイラは耐久力が低くダイアナのAPバースト+ダッシュで瞬殺できる。Eダッシュでスネアを回避して一気に詰める</div>
+    <ul><li>ザイラのE（捕縛の茨）のスネアをE（月影）のダッシュで横に回避しつつ距離を一気に詰め、パッシブ（月光）の3撃目AAとQ（三日月の一撃）のバーストでザイラを溶かす</li><li>ザイラのW（茨の苗床）+Q（死華の棘）の植物召喚に対し、パッシブ（月光）の3撃目強化AAのAoEダメージで植物を素早く処理しながらザイラ本体を削る</li><li>ザイラのR（茨のゆりかご）のノックアップゾーンをW（蒼白のオーブ）のシールドで耐えるか、E（月影）のダッシュで範囲外に離脱してからQ+Eで再突入する</li><li>ザイラは耐久力が極めて低いため、Q（三日月の一撃）でマークを付けたらE（月影）で突入し、R（月下美人）の引き寄せ+パッシブ3撃目で瞬殺できる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Rammus.png" alt="ラムス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Rammus.html">ラムス</a></span>
+    <span class="mu-wr wr-bad">46.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ダイアナはAPダメージメインのためラムスの物理反射が刺さりにくい。APバーストでラムスのAR積みを無視して削れる</div>
+    <ul><li>ラムスのW（棘の甲羅）の反射ダメージは物理AAに対して有効だが、ダイアナのダメージはAPベースのためパッシブ（月光）の3撃目やQ（三日月の一撃）のAPダメージで反射を気にせず削れる</li><li>ラムスのE（挑発の嘲り）のタウントでAAを強制されてもダイアナのAAはAPスケーリングが高く、パッシブ（月光）の3撃目強化AAのAPダメージが棘の甲羅の反射を大幅に上回る</li><li>ラムスのQ（転がり）の加速突進をQ（三日月の一撃）でマークを付けてからE（月影）のダッシュで横に回避しつつ距離を調整し、有利なポジションで殴り合う</li><li>ラムスのR（激震）のAoE持続ダメージ中にW（蒼白のオーブ）のシールドで耐えつつ、ラムスのMRが低い序盤にQ+E+Rのフルコンボで一気にバーストする</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nasus.png" alt="ナサス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Nasus.html">ナサス</a></span>
+    <span class="mu-wr wr-weak">35.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤のクリア速度差とバーストで圧倒。RでNasusを集団戦で無力化する</div>
+    <ul><li>NasusのQ（サイフォンストライク）のスタックが遅い序盤にインベードしてファームを奪い、スケーリングを阻止する</li><li>R（ムーンフォール）の引き寄せでNasusのR（サンドストーム）中でもチームファイトで無力化する</li><li>NasusのW（ウィザー）のスロー中もE（ルナラッシュ）のダッシュで距離を詰められる</li><li>W（ペイルカスケード）のシールドでNasusのQ（サイフォンストライク）の単発ダメージを吸収して有利にトレードする</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 1</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/LeeSin.png" alt="リー・シン" loading="lazy">
+    <span class="mu-name"><a href="/champion/LeeSin.html">リー・シン</a></span>
+    <span class="mu-wr wr-even">50.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤はLeeSinに不利。Qを確実に当ててからEで突入する精度が重要。1stアイテム完成後に1v1力が逆転するので序盤はファーム優先</div>
+    <ul><li>DianaのQ（クレセントストライク）をLeeSinに当ててからE（ルナーラッシュ）で接近しないとダメージ効率が悪い。Q命中を確認してからEで突入する</li><li>LeeSinの序盤インベードに対してDianaはW（ペイルカスケード）のシールドで耐えながらQ→E→AAでカウンタートレードを返す</li><li>Dianaの1stアイテム（ナッシャートゥース等）完成後はLeeSinとの1v1に勝てるようになる。序盤は安全にファームしてアイテムを急ぐ</li><li>DianaのR（ムーンフォール）は集団戦でLeeSinのRキック後に味方を引き寄せてリカバリーする手段になる。LeeSinのR対象ではない味方をRで集める</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>ミッド でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kassadin.png" alt="カサディン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Kassadin.html">カサディン</a></span>
+    <span class="mu-wr wr-strong">55.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Kassadinの弱い序盤を攻める。スケーリング前に試合を決める</div>
+    <ul><li>Kassadinの弱い序盤にE（月影）で積極的にオールインする</li><li>KassadinのQ（虚空の球）のシールドを消耗させてからコンボする</li><li>W（蒼白の盾）でKassadinのQポークを軽減する</li><li>Kassadinがスケーリングする前にキルを重ねてスノーボールする</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lux.png" alt="ラックス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Lux.html">ラックス</a></span>
+    <span class="mu-wr wr-good">52.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Qを避けて接近すればLuxは無力。オールインで一気に倒す</div>
+    <ul><li>LuxのQ（光縛の檻）をサイドステップしてE（月影）で接近する</li><li>Luxは耐久力が低いためオールインで一気に倒せる</li><li>W（蒼白の盾）でLuxのEポークを軽減する</li><li>Lv6以降はR（月の降臨）でLuxをワンショットする</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Veigar.png" alt="ベイガー" loading="lazy">
+    <span class="mu-name"><a href="/champion/Veigar.html">ベイガー</a></span>
+    <span class="mu-wr wr-good">51.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Eで檻を通過してオールイン。Veigarのスケーリング前に倒し切る</div>
+    <ul><li>VeigarのE（イベントホライズン）の檻をE（月影）で通過する</li><li>W（蒼白の盾）でVeigarのQポークを軽減する</li><li>VeigarのスタックがLateに貯まる前に積極的にキルする</li><li>R（月の降臨）でVeigarを引き寄せて一気にバーストする</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zed.png" alt="ゼド" loading="lazy">
+    <span class="mu-name"><a href="/champion/Zed.html">ゼド</a></span>
+    <span class="mu-wr wr-good">51.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Dianaはバーストでも持続戦でもZedに勝てる。ゾーニャでRを無効化し、EでZedの離脱を封じる</div>
+    <ul><li>ゾーニャの砂時計でデスマーク爆発を無効化。自分のコンボを入れた後にゾーニャでZedのダメージをゼロにする</li><li>E（ムーンフォール）の引き寄せでZedがW影に戻って離脱しようとするのを阻止する</li><li>Q（クレセントストライク）でムーンライトを付与してからR（ルナーラッシュ）でリセットを取り、密着状態でDPSを出す</li><li>コンカラーを持つことで長期戦のヒールとダメージでZedのバーストトレードに負けない持久力を得る</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TwistedFate.png" alt="ツイステッド・フェイト" loading="lazy">
+    <span class="mu-name"><a href="/champion/TwistedFate.html">ツイステッド・フェイト</a></span>
+    <span class="mu-wr wr-even">50.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ TFは耐久力が低くオールインで倒せる。Rロームにはプッシュで対応</div>
+    <ul><li>TFのゴールドカードを受けてもW（蒼白の盾）で軽減してオールインする</li><li>E（月影）でTFに接近してバーストする。TFは耐久力が低い</li><li>TFのR（デスティニー）ロームにはプッシュしてタワーを取る</li><li>Lv6以降はR（月の降臨）でTFをワンショットする</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 1</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Galio.png" alt="ガリオ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Galio.html">ガリオ</a></span>
+    <span class="mu-wr wr-good">52.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ GalioのMRとタウントがDianaに厳しい。ロームで差をつける</div>
+    <ul><li>GalioのW（盾の防壁）のタウントをE（月影）のタイミングで避ける</li><li>GalioのパッシブMRでDianaのAPダメージが大幅に軽減される</li><li>サイドレーンへのロームでGalioとのレーン戦を避ける</li><li>GalioのR（英雄の登場）後にプッシュしてタワーを削る</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Amumu.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Amumu.png" alt="アムム" loading="lazy">
+    <span class="related-card-name">アムム</span>
+  </a>
+  <a href="/champion/Brand.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Brand.png" alt="ブランド" loading="lazy">
+    <span class="related-card-name">ブランド</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Darius.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="related-card-name">ダリウス</span>
+  </a>
+  <a href="/champion/Fizz.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fizz.png" alt="フィズ" loading="lazy">
+    <span class="related-card-name">フィズ</span>
+  </a>
+  <a href="/champion/Graves.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Graves.png" alt="グレイブス" loading="lazy">
+    <span class="related-card-name">グレイブス</span>
+  </a>
+  <a href="/champion/Hecarim.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Hecarim.png" alt="ヘカリム" loading="lazy">
+    <span class="related-card-name">ヘカリム</span>
+  </a>
+  <a href="/champion/JarvanIV.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/JarvanIV.png" alt="ジャーヴァンⅣ" loading="lazy">
+    <span class="related-card-name">ジャーヴァンⅣ</span>
+  </a>
+  <a href="/champion/Jax.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="related-card-name">ジャックス</span>
+  </a>
+  <a href="/champion/Khazix.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Khazix.png" alt="カ＝ジックス" loading="lazy">
+    <span class="related-card-name">カ＝ジックス</span>
+  </a>
+  <a href="/champion/Kindred.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kindred.png" alt="キンドレッド" loading="lazy">
+    <span class="related-card-name">キンドレッド</span>
+  </a>
+  <a href="/champion/LeeSin.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/LeeSin.png" alt="リー・シン" loading="lazy">
+    <span class="related-card-name">リー・シン</span>
+  </a>
+  <a href="/champion/MasterYi.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/MasterYi.png" alt="マスター・イー" loading="lazy">
+    <span class="related-card-name">マスター・イー</span>
+  </a>
+  <a href="/champion/Nautilus.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nautilus.png" alt="ノーチラス" loading="lazy">
+    <span class="related-card-name">ノーチラス</span>
+  </a>
+  <a href="/champion/Nidalee.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nidalee.png" alt="ニダリー" loading="lazy">
+    <span class="related-card-name">ニダリー</span>
+  </a>
+  <a href="/champion/Nocturne.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nocturne.png" alt="ノクターン" loading="lazy">
+    <span class="related-card-name">ノクターン</span>
+  </a>
+  <a href="/champion/Nunu.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nunu.png" alt="ヌヌ＆ウィルンプ" loading="lazy">
+    <span class="related-card-name">ヌヌ＆ウィルンプ</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

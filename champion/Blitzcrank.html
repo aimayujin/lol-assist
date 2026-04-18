@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブリッツクランク 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="ブリッツクランク の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。サポート で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Blitzcrank.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ブリッツクランク 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="ブリッツクランク の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。サポート で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Blitzcrank.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Blitzcrank.png" alt="ブリッツクランク" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">ブリッツクランク</h1>
+    <p class="champ-hero-title">偉大なるスチームゴーレム</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Tank</span><span class="champ-tag">Fighter</span>
+      <span class="champ-tag gold">サポート</span>
+    </div>
+  </div>
+</div>
+<p class="lead">ブリッツクランク の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">サポート 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div></div><h2>パワースパイク</h2>
+<p>ブリッツクランク が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell active">Lv1</div><div class="spike-cell active">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv1 / Lv2 / Lv6</p><section class="role-section"><h2>サポート でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yuumi.png" alt="ユーミ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Yuumi.html">ユーミ</a></span>
+    <span class="mu-wr wr-good">53.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ユウミのレーンプレゼンスの低さを突いてフックで圧倒する</div>
+    <ul><li>ユウミ付きADCをQフックで引き寄せてバーストする</li><li>ユウミのヒールが追いつかないバーストで一気に倒す</li><li>ブッシュからフックを狙ってADCの反応を遅らせる</li><li>Wの移動速度でADCに接近してEノックアップを当てる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Soraka.png" alt="ソラカ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Soraka.html">ソラカ</a></span>
+    <span class="mu-wr wr-good">51.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ SorakaはBlitzのQグラブに非常に弱い。Qを当てればほぼキル確定</div>
+    <ul><li>Q（ロケットグラブ）でSorakaを引き寄せる。Sorakaは非常に柔らかい</li><li>SorakaのE（均衡の極み）のサイレンスゾーンに入らない</li><li>E（パワーフィスト）でSorakaをノックアップしてR（静電フィールド）で追撃する</li><li>SorakaのR（ウィッシュ）のグローバルヒールを考慮してキルを急ぐ</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Sona.png" alt="ソナ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Sona.html">ソナ</a></span>
+    <span class="mu-wr wr-good">51.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ SonaはBlitzのQグラブに対して非常に弱い。Qを当てればほぼキル確定</div>
+    <ul><li>Q（ロケットグラブ）でSonaを引き寄せる。Sonaは最も柔らかいサポートの一人</li><li>SonaのR（クレッシェンド）のスタンに注意。Rの後にQで仕掛ける</li><li>E（パワーフィスト）でSonaをノックアップしてR（静電フィールド）で追撃する</li><li>レベル2でQグラブからEノックアップでSonaをキルする</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Senna.png" alt="セナ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Senna.html">セナ</a></span>
+    <span class="mu-wr wr-good">50.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ フックでセナの低い耐久力を突いて序盤から圧倒する</div>
+    <ul><li>Qフックでセナを捕まえてEノックアップからバーストする</li><li>セナの射程が伸びる前にアグレッシブにフックを狙う</li><li>Wの移動速度でセナのAAポーク圏外から接近する</li><li>ブッシュからフックを狙ってセナのリアクションを減らす</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Annie.png" alt="アニー" loading="lazy">
+    <span class="mu-name"><a href="/champion/Annie.html">アニー</a></span>
+    <span class="mu-wr wr-good">—</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ フック1発でAnnieを確定キルできるマッチアップ。ただしスタンパッシブが溜まっている時の引き寄せは危険。ロームでも差をつける</div>
+    <ul><li>Annieは機動力がなく脆いため、フックが当たればほぼ確定キル</li><li>Annieのスタンパッシブが溜まっている時のフックは注意。引き寄せた先でチーム全体がスタンされる危険あり</li><li>Annieがロームに追従できないため、積極的にロームしてプレッシャーをかける</li><li>フック後のE（パワーフィスト）ノックアップでCCチェーンし、Annieの反撃を封じる</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Galio.png" alt="ガリオ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Galio.html">ガリオ</a></span>
+    <span class="mu-wr wr-bad">46.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ガリオの耐久力とタウントでフック後のカウンターが強力</div>
+    <ul><li>ガリオをフックするとWタウントで返されるため注意する</li><li>ガリオの高い耐久力でバーストが通りにくい</li><li>ADCを狙ったフックでガリオを避ける</li><li>ガリオのEダッシュに対してEノックアップで返す</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Leona.png" alt="レオナ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Leona.html">レオナ</a></span>
+    <span class="mu-wr wr-bad">46.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Leonaではなく敵ADCにQフックを狙うことが必須。LeonaのEダイブにはEパワーフィストで迎撃し、LeonaのRはサイドステップで回避する</div>
+    <ul><li>LeonaはタンクでQフックを当ててもキルに繋がりにくい。QフックはLeonaではなく敵ADCを狙うことを徹底する</li><li>LeonaのE（ゼニスブレード）はBlitzcrankのQフックより速い。Leonaが前に出てきたらフックを使わずE（パワーフィスト）ノックアップで迎撃する</li><li>LeonaのR（ソーラーフレア）のAoEスタンを横移動で回避する。RのAoE範囲は狭いのでサイドステップで避けてからQフックでADCを狙う</li><li>BlitzcrankのR（スタティックフィールド）のサイレンスはLeonaのスキル発動を一時的に止める。LeonaがE突入後にRサイレンスで追加CCを封じる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Morgana.png" alt="モルガナ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Morgana.html">モルガナ</a></span>
+    <span class="mu-wr wr-good">51.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Eブラックシールドで全てのフックが無効化される。フックを囮にしてMorganaのシールドを使わせてから攻める</div>
+    <ul><li>MorganaのEブラックシールドがBlitzcrankのQフックを完全に無効化する</li><li>フックをシールドで消された後にWスロウと自身のE電撃でハラスする</li><li>MorganaのWはBlitzcrankのAAモーションを読んで回避してからフック</li><li>集団戦でMorganaのRが来たらQで飛ばしてRを中断させる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Janna.png" alt="ジャンナ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Janna.html">ジャンナ</a></span>
+    <span class="mu-wr wr-good">51.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ JannaのQでフックが干渉される。ADCへのフックはJannaのQのCDが切れているタイミングを確認してから使い、Eスタンでフックをフォローする</div>
+    <ul><li>JannaのQはBlitzcrankのフック射程より長い。JannaがQを撃つ準備（前傾モーション）を見てからBlitzcrankのQを使うとQが当たりやすい</li><li>JannaのEシールドはADCに付いているためフックを当てるとシールドが割れた後にEスタン→追撃が入れやすい。シールドを割ってからフォローする</li><li>JannaのQトルネードはCD（12秒）が長め。QのCDが入っているタイミングを確認してBlitzcrankのフックを使う</li><li>BlitzcrankのRトーネードはJannaのシールドCDが切れた瞬間を狙う。JannaのEのCD確認が重要</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TahmKench.png" alt="タム・ケンチ" loading="lazy">
+    <span class="mu-name"><a href="/champion/TahmKench.html">タム・ケンチ</a></span>
+    <span class="mu-wr wr-good">51.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ タムケンチの耐久力と飲み込みでフックの価値が下がる</div>
+    <ul><li>タムケンチをフックすると飲み込みで返されるため注意する</li><li>タムケンチの高い耐久力でバーストが通りにくい</li><li>ADCを狙ったフックでタムケンチを避ける</li><li>タムケンチの飲み込みでフック対象が救われることに注意する</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Alistar.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Alistar.png" alt="アリスター" loading="lazy">
+    <span class="related-card-name">アリスター</span>
+  </a>
+  <a href="/champion/Amumu.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Amumu.png" alt="アムム" loading="lazy">
+    <span class="related-card-name">アムム</span>
+  </a>
+  <a href="/champion/Annie.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Annie.png" alt="アニー" loading="lazy">
+    <span class="related-card-name">アニー</span>
+  </a>
+  <a href="/champion/Ashe.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ashe.png" alt="アッシュ" loading="lazy">
+    <span class="related-card-name">アッシュ</span>
+  </a>
+  <a href="/champion/Bard.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Bard.png" alt="バード" loading="lazy">
+    <span class="related-card-name">バード</span>
+  </a>
+  <a href="/champion/Brand.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Brand.png" alt="ブランド" loading="lazy">
+    <span class="related-card-name">ブランド</span>
+  </a>
+  <a href="/champion/Braum.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Braum.png" alt="ブラウム" loading="lazy">
+    <span class="related-card-name">ブラウム</span>
+  </a>
+  <a href="/champion/Janna.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Janna.png" alt="ジャンナ" loading="lazy">
+    <span class="related-card-name">ジャンナ</span>
+  </a>
+  <a href="/champion/Karma.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Karma.png" alt="カルマ" loading="lazy">
+    <span class="related-card-name">カルマ</span>
+  </a>
+  <a href="/champion/Leona.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Leona.png" alt="レオナ" loading="lazy">
+    <span class="related-card-name">レオナ</span>
+  </a>
+  <a href="/champion/Lulu.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lulu.png" alt="ルル" loading="lazy">
+    <span class="related-card-name">ルル</span>
+  </a>
+  <a href="/champion/Lux.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lux.png" alt="ラックス" loading="lazy">
+    <span class="related-card-name">ラックス</span>
+  </a>
+  <a href="/champion/Malphite.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="related-card-name">マルファイト</span>
+  </a>
+  <a href="/champion/Morgana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Morgana.png" alt="モルガナ" loading="lazy">
+    <span class="related-card-name">モルガナ</span>
+  </a>
+  <a href="/champion/Nami.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nami.png" alt="ナミ" loading="lazy">
+    <span class="related-card-name">ナミ</span>
+  </a>
+  <a href="/champion/Nautilus.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nautilus.png" alt="ノーチラス" loading="lazy">
+    <span class="related-card-name">ノーチラス</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Pyke.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pyke.png" alt="パイク" loading="lazy">
+    <span class="related-card-name">パイク</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>タロン 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="タロン の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ミッド・ジャングル で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Talon.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="タロン 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="タロン の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ミッド・ジャングル で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Talon.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Talon.png" alt="タロン" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">タロン</h1>
+    <p class="champ-hero-title">将軍の懐刀</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Assassin</span>
+      <span class="champ-tag gold">ミッド</span><span class="champ-tag gold">ジャングル</span>
+    </div>
+  </div>
+</div>
+<p class="lead">タロン の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">ミッド 全体勝率</div>
+      <div class="stat-card-value wr-even">49.6%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">ジャングル 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div></div><h2>パワースパイク</h2>
+<p>タロン が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11 / Lv16</p><section class="role-section"><h2>ミッド でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Brand.png" alt="ブランド" loading="lazy">
+    <span class="mu-name"><a href="/champion/Brand.html">ブランド</a></span>
+    <span class="mu-wr wr-strong">61.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ BrandのQスタンを回避すれば一方的にバーストできる。壁越え奇襲が有効</div>
+    <ul><li>BrandのQ（焦炎の柱）スタンをサイドステップしてからオールインする</li><li>BrandはCC以外の自衛手段がない。Qを避ければ一方的にキルできる</li><li>E（アサシンズパス）で壁越えしてBrandの視界外から奇襲する</li><li>Brandのパッシブ炎上中は距離を取り、消えてから再度仕掛ける</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Cassiopeia.png" alt="カシオペア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Cassiopeia.html">カシオペア</a></span>
+    <span class="mu-wr wr-strong">56.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤のバースト力とロームでCassiopeiaの継続DPSが活きる前にゲームを動かす</div>
+    <ul><li>W（レイク）でCS処理とハラスを同時に行い、Cassiopeiaのマナ管理を圧迫する</li><li>レベル2〜3でQ（ノクサスディプロマシー）→W→受動スタック爆発のオールインコンボで一気にキルラインに乗せる</li><li>CassiopeiaのW（ミアズマ）のグラウンドを踏まないルートからフランクし、E（シャドウアサルト）のステルスを活かして奇襲する</li><li>CassiopeiaのR（石化の凝視）を意識し、正面から飛び込まずフランクやステルスから背後を取ってバーストを叩き込む</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lux.png" alt="ラックス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Lux.html">ラックス</a></span>
+    <span class="mu-wr wr-good">51.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ LuxのQを回避すれば一方的にキルできる。壁越え奇襲が特に有効</div>
+    <ul><li>LuxのQ（光の束縛）をサイドステップしてからW→Qでオールインする</li><li>LuxのQが外れた瞬間がオールインの最大チャンス。逃がさない</li><li>E（アサシンズパス）で壁越えしてLuxの視界外から奇襲する</li><li>Lv3からのバーストコンボでLuxの柔らかさを突く</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Xerath.png" alt="ゼラス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Xerath.html">ゼラス</a></span>
+    <span class="mu-wr wr-good">51.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ゼラスの低機動力を突いたオールインが非常に有効</div>
+    <ul><li>ゼラスの長射程スキルに対してWで素早く接近する</li><li>レベル3以降のオールインでゼラスを一方的に倒せる</li><li>ゼラスがスキルを外した瞬間にフルコンボを入れる</li><li>壁越えEで予想外の角度からガンクに向かう</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Hwei.png" alt="フェイ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Hwei.html">フェイ</a></span>
+    <span class="mu-wr wr-good">51.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Hweiの低機動力をバーストで突く。壁越え奇襲が非常に有効</div>
+    <ul><li>HweiはCCが少なく機動力も低いためオールインが通りやすい</li><li>HweiのEE（拘束）を回避してからW→Q→Rでバーストする</li><li>E（アサシンズパス）の壁越えでHweiの視界外から奇襲する</li><li>Hweiのプッシュ力が高いのでロームでサイドレーンに有利を作る</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 1</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Galio.png" alt="ガリオ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Galio.html">ガリオ</a></span>
+    <span class="mu-wr wr-good">52.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ GalioのWタウントとタンク性能がTalonのバーストを無力化する</div>
+    <ul><li>GalioのW（盾の突撃）のタウントでTalonのオールインが無力化される</li><li>GalioのパッシブのAoEダメージが近接トレードで痛い</li><li>GalioのMR寄りのステータスがTalonのADに不利に見えるが、Wタウントが脅威</li><li>ロームでGalioのR（英雄着陸）が追ってくるため、ロームタイミングを慎重に選ぶ</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ivern.png" alt="アイバーン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Ivern.html">アイバーン</a></span>
+    <span class="mu-wr wr-strong">57.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ステルスからIvern本体を直接バーストする。壁越えインベードでクリア中の無防備なIvernを狩る</div>
+    <ul><li>IvernのQ（根絡み）のスネアをE（アサシンの跳躍）で壁を越えて回避し、角度を変えてIvern本体に接近する</li><li>IvernのR（デイジー！）のデイジーを無視してR（暗殺者の道）のステルスからIvern本体を直接バーストし、サポート能力を封じる</li><li>IvernのE（トリガーシード）のシールドはQ（ノクサスの外交術）近距離クリティカル+W（レイク）+パッシブ（傷口）の出血コンボで容易に貫通できる</li><li>Ivernのパッシブ（森の友人）のクリア中は戦闘能力が極めて低いため、E（アサシンの跳躍）で壁を越えてインベードしキルを狙う</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Darius.html">ダリウス</a></span>
+    <span class="mu-wr wr-even">50.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ダリウスのクリア速度の遅さをE壁越えロームで突き、ガンクリードでマップ差を作る。正面の殴り合いはQ外縁を回避しつつRステルスで出血5スタック到達前に離脱して戦う</div>
+    <ul><li>ダリウスのQ（大虐殺）の外縁ヒール+高ダメージに対してE（暗殺者の跳躍）の壁越えでQ外縁範囲外に離脱するか、Qの内側に飛び込んでQ（ノクサスの外交術）の近距離クリティカルでQ内側の低ダメージ判定にしつつパッシブ（刃の先導）の出血スタックを溜める</li><li>ダリウスのE（掴み取り）の引き寄せに対してW（飛燕手裏剣）の遠距離から安全に出血スタックを溜め、Eの射程外からQ（ノクサスの外交術）の遠距離投擲でパッシブ出血を起爆させてポークする。E引き寄せを受けた場合もR（影の強襲）のステルスで即離脱して追撃を許さない</li><li>ダリウスのR（ノクサスギロチン）の確定ダメージ処刑に対してR（影の強襲）のステルスでR対象指定を切り、ダリウスの出血5スタック到達前にE（暗殺者の跳躍）の壁越えで離脱してNoxian Mightのボーナス AD発動を阻止する</li><li>ダリウスのクリア速度が遅くジャングル巡回が遅いため、E（暗殺者の跳躍）の壁越え機動力でダリウスより先にガンクを決め、W（飛燕手裏剣）+Q（ノクサスの外交術）+R（影の強襲）のフルコンボでレーナーをキルしてマップ全体でリードを広げる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/JarvanIV.png" alt="ジャーヴァンⅣ" loading="lazy">
+    <span class="mu-name"><a href="/champion/JarvanIV.html">ジャーヴァンⅣ</a></span>
+    <span class="mu-wr wr-bad">48.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ E壁越えでジャーヴァンのR地形閉じ込めを完全に無効化できるのが最大の強み。RステルスでE+Qノックアップを回避し、フルバーストでジャーヴァンの中途半端な耐久を一気に削る</div>
+    <ul><li>ジャーヴァンのR（大破壊）の地形生成+閉じ込めに対してE（暗殺者の跳躍）の壁越えでRの地形壁を越えて脱出でき、ジャーヴァンのR閉じ込めが完全に無効化される。脱出後にW（飛燕手裏剣）の往復+Q（ノクサスの外交術）の近距離クリティカルで反撃する</li><li>ジャーヴァンのE+Q（旗掲げ+ドラゴンストライク）のダッシュノックアップに対してR（影の強襲）のステルスでノックアップを回避し、ステルス中にE（暗殺者の跳躍）の壁越えでジャーヴァンの背後に回り込んでR収束ブレード+Q近距離クリティカル+パッシブ（刃の先導）出血起爆のフルバーストを入れる</li><li>ジャーヴァンのW（ゴールデンイージス）のシールド+スローに対してW（飛燕手裏剣）の往復ブレードでシールドを削りつつパッシブ出血の持続ダメージがシールド上からも入るため、Wシールドが消えたタイミングでQ（ノクサスの外交術）の近距離クリティカルで一気に削る</li><li>ジャーヴァンのパッシブ（武人の一撃）の初撃追加ダメージに対してE（暗殺者の跳躍）の壁越えで有利な位置から先手を取り、ジャーヴァンのパッシブAAが届く前にW（飛燕手裏剣）+Q（ノクサスの外交術）+R（影の強襲）のフルコンボで一方的にバーストする</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fiddlesticks.png" alt="フィドルスティックス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Fiddlesticks.html">フィドルスティックス</a></span>
+    <span class="mu-wr wr-bad">48.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ フィドルの低い基礎耐久をE壁越え奇襲+フルバーストで一瞬で削る。W/Rのチャネリングをダッシュ+近距離クリティカルで中断し、Rステルスで恐怖CCを回避してアサシンの理想的な展開を作る</div>
+    <ul><li>フィドルスティックスのR（群鳴の終焉）のチャネリング後の範囲飛び込みに対してE（暗殺者の跳躍）の壁越えでジャングル内を巡回してフィドルのRチャネリング位置を事前にワードで把握し、Rチャネリング中にW（飛燕手裏剣）+Q（ノクサスの外交術）の近距離クリティカルでチャネリングを中断させる</li><li>フィドルスティックスのW（恐るべき収穫）のチャネリング回復に対してQ（ノクサスの外交術）の近距離クリティカルダッシュでWチャネリングを中断させ、W（飛燕手裏剣）の往復+パッシブ（刃の先導）出血起爆でフィドルの低い基礎耐久を一気に削り切る</li><li>フィドルスティックスのQ（恐怖の幻影）の恐怖CCに対してR（影の強襲）のステルスでQの対象指定を切り、ステルス中にE（暗殺者の跳躍）の壁越えで背後に回り込んでR収束ブレード+Q（ノクサスの外交術）の近距離クリティカルでフルバーストを叩き込む</li><li>フィドルスティックスのパッシブ（恐怖の先触れ）のエフィジー設置で偽の位置情報に騙されないよう、E（暗殺者の跳躍）の壁越えルートを活かしてフィドルのジャングルを深くワーディングし、本体のRチャネリング位置を把握して奇襲タイミングを逃さない</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zyra.png" alt="ザイラ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Zyra.html">ザイラ</a></span>
+    <span class="mu-wr wr-bad">47.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ スクイッシーなザイラはタロンのバーストで即死する。Eルートを誘ってCD中に飛び込み、植物展開前に瞬殺する</div>
+    <ul><li>ザイラのE（捕縛の根）のルートが唯一の自衛手段なため、W（二段切り）の投射物でパッシブ（刃の先端）の出血を溜めてからE（捕縛の根）を使わせ、ルートCD中にQ（冥殺）のクリティカルダッシュで飛び込んで確殺する</li><li>ザイラのR（絡みつく茨）のノックアップゾーンに対してR（暗殺者の悟り）のステルスで回避し、ステルス中にザイラの背後に回り込んでW（二段切り）+Q（冥殺）のフルコンボでスクイッシーなザイラを瞬殺する</li><li>ザイラのW（暴茂）の植物が複数展開される前にE（暗殺者の跳躍）の壁越えで奇襲し、Q（冥殺）+W（二段切り）+パッシブ（刃の先端）出血のバーストで植物が育つ前にザイラ本体を倒す</li><li>ザイラのQ（致死の棘）+W（暴茂）のコンボを避けつつE（暗殺者の跳躍）で壁を越えてジャングル内のザイラに奇襲し、パッシブ（茨の庭園）の種が少ないリバー上で仕掛ければ植物の脅威を最小限にできる</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 2</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zac.png" alt="ザック" loading="lazy">
+    <span class="mu-name"><a href="/champion/Zac.html">ザック</a></span>
+    <span class="mu-wr wr-weak">44.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ザックのタンク耐久にバーストが全く通らず、パッシブリバイブも止められない。ザックとの戦闘を完全回避し、E壁越えロームで敵キャリーを狙ってマップで差をつける</div>
+    <ul><li>ザックのE（弾性スリングショット）の長距離ジャンプノックアップに対してE（アサシンの跳躍）の壁越えでEジャンプの着地範囲から離脱し、ザックのE不発後にW（レイク）の往復ブレードで出血スタックを溜めてQ（ノクサスの外交術）の遠距離投擲で安全にダメージを入れる</li><li>ザックのR（レッツバウンス!）のノックバック+バウンスに対してR（暗殺者の道）のステルスで視界を切り、ステルス中にE（アサシンの跳躍）の壁越えでバウンス範囲外に完全離脱してからR収束ブレードでダメージだけ入れる</li><li>ザックのタンク耐久にタロンのバーストが全く通らないため、ザックとの1対1を完全に避けてE（アサシンの跳躍）の壁越えローム+R（暗殺者の道）のステルスで敵キャリーへの奇襲を優先し、マップ全体でリード差を作る</li><li>ザックのパッシブ（分裂細胞）のリバイブに対してタロンのバーストでは分裂体4つを処理する火力が不足するため、仮にザックを削り切ってもリバイブを止められず、ザックとの交戦は完全に無駄と判断してファームとロームに専念する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Rammus.png" alt="ラムス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Rammus.html">ラムス</a></span>
+    <span class="mu-wr wr-strong">56.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ラムスのW AA反射とE挑発がADアサシンのタロンに致命的な相性。AAを最小限にしてWブレード+パッシブ出血の持続ダメージ中心で戦い、E壁越えロームで別レーンのキルに集中する</div>
+    <ul><li>ラムスのW（防御態勢）の超高AR+AA反射ダメージに対してAA依存のQ（ノクサスの外交術）の近距離クリティカルを使うとW反射で自分が大きく削れるため、W（飛燕手裏剣）の遠距離ブレード+パッシブ（刃の先導）出血の持続ダメージ中心で戦いAAの回数を最小限に抑える</li><li>ラムスのE（挑発の矛先）の挑発でAA強制になるとW反射で自傷が致命的なため、R（影の強襲）のステルスでEの対象指定を切り、ステルス中にE（暗殺者の跳躍）の壁越えで挑発射程外に離脱してラムスとの正面の殴り合いを徹底的に避ける</li><li>ラムスのQ（転がり）のMS上昇突進に対してE（暗殺者の跳躍）の壁越えで突進ルートから壁裏に逃げ、ラムスのQ空振り後にW（飛燕手裏剣）の遠距離ブレードで安全に出血スタックを溜めてパッシブ出血の持続ダメージで少しずつ削る</li><li>ラムスとの1対1は不利なため、E（暗殺者の跳躍）の壁越えロームで別レーンの柔らかいターゲットをキルし、ラムスがいないレーンでキルリードを作ってチームの火力でラムスのARを打ち消す戦略を取る</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Ahri.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ahri.png" alt="アーリ" loading="lazy">
+    <span class="related-card-name">アーリ</span>
+  </a>
+  <a href="/champion/Akali.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Akali.png" alt="アカリ" loading="lazy">
+    <span class="related-card-name">アカリ</span>
+  </a>
+  <a href="/champion/Annie.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Annie.png" alt="アニー" loading="lazy">
+    <span class="related-card-name">アニー</span>
+  </a>
+  <a href="/champion/Brand.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Brand.png" alt="ブランド" loading="lazy">
+    <span class="related-card-name">ブランド</span>
+  </a>
+  <a href="/champion/Diana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Diana.png" alt="ダイアナ" loading="lazy">
+    <span class="related-card-name">ダイアナ</span>
+  </a>
+  <a href="/champion/Fizz.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fizz.png" alt="フィズ" loading="lazy">
+    <span class="related-card-name">フィズ</span>
+  </a>
+  <a href="/champion/Irelia.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="related-card-name">イレリア</span>
+  </a>
+  <a href="/champion/Jayce.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="related-card-name">ジェイス</span>
+  </a>
+  <a href="/champion/Karma.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Karma.png" alt="カルマ" loading="lazy">
+    <span class="related-card-name">カルマ</span>
+  </a>
+  <a href="/champion/Katarina.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Katarina.png" alt="カタリナ" loading="lazy">
+    <span class="related-card-name">カタリナ</span>
+  </a>
+  <a href="/champion/Lucian.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lucian.png" alt="ルシアン" loading="lazy">
+    <span class="related-card-name">ルシアン</span>
+  </a>
+  <a href="/champion/Lux.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lux.png" alt="ラックス" loading="lazy">
+    <span class="related-card-name">ラックス</span>
+  </a>
+  <a href="/champion/Malphite.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="related-card-name">マルファイト</span>
+  </a>
+  <a href="/champion/Morgana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Morgana.png" alt="モルガナ" loading="lazy">
+    <span class="related-card-name">モルガナ</span>
+  </a>
+  <a href="/champion/Orianna.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Orianna.png" alt="オリアナ" loading="lazy">
+    <span class="related-card-name">オリアナ</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Qiyana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Qiyana.png" alt="キヤナ" loading="lazy">
+    <span class="related-card-name">キヤナ</span>
+  </a>
+  <a href="/champion/Seraphine.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Seraphine.png" alt="セラフィーン" loading="lazy">
+    <span class="related-card-name">セラフィーン</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

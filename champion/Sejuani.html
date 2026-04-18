@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>セジュアニ 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="セジュアニ の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ジャングル で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Sejuani.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="セジュアニ 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="セジュアニ の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ジャングル で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Sejuani.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Sejuani.png" alt="セジュアニ" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">セジュアニ</h1>
+    <p class="champ-hero-title">極北の激憤</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Tank</span><span class="champ-tag">Fighter</span>
+      <span class="champ-tag gold">ジャングル</span>
+    </div>
+  </div>
+</div>
+<p class="lead">セジュアニ の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">ジャングル 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div></div><h2>パワースパイク</h2>
+<p>セジュアニ が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell active">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv9 / Lv11 / Lv16</p><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🔴 不利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zaahen.png" alt="ザーヘン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Zaahen.html">ザーヘン</a></span>
+    <span class="mu-wr wr-weak">43.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Zaahenとのデュエルは不利。Rスタンを味方のフォローと合わせて集団戦で価値を出す</div>
+    <ul><li>ZaahenのQ（ダーキンの薙刀）のノックアップにQ（北極の突撃）のダッシュを合わせてカウンターエンゲージする</li><li>ZaahenのW（恐怖の帰還）の突き刺しをパッシブ（氷の鎧）のCCダメージ軽減で耐える</li><li>R（氷河の監獄）のスタンをZaahenに当てて味方のフォローアップを待ち、単独で殴り合わない</li><li>ZaahenのR（冷酷なる救済）のアンストッパブルでRのスタンを回避されるため、R使用後にRを投げる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Belveth.png" alt="ベル＝ヴェス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Belveth.html">ベル＝ヴェス</a></span>
+    <span class="mu-wr wr-bad">45.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ベル＝ヴェスとの1v1はAS差で不利。CCで味方に繋ぐタンクの役割に徹してチーム戦で勝つ</div>
+    <ul><li>ベル＝ヴェスのE（王家の渦）のダメージ軽減とライフスティール中はダメージが通りにくいため、E終了後にR（氷河の怒り）のスタンを当てて味方と集中攻撃する</li><li>ベル＝ヴェスのQ（虚空の突撃）の4方向ダッシュでR（氷河の怒り）を回避されやすいため、Qダッシュ使用後のCD中にRを投げて確実にスタンを取る</li><li>ベル＝ヴェスのパッシブ（王座の支配）のAS上昇で1v1の殴り合いは不利なため、W（激憤）とE（氷河の牢獄）のCCで味方にキルを渡すタンクの動きに徹する</li><li>ベル＝ヴェスのR（無限の饗宴）の真の姿変身後はAS・射程が大幅に強化されるため、変身前にパッシブ（怒りの霜甲冑）のシールドを活かしてCCチェーンで素早く倒す</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lillia.png" alt="リリア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Lillia.html">リリア</a></span>
+    <span class="mu-wr wr-bad">46.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ダメージが低くリリアをキルできず、Q移動速度に追いつけない。R遠距離スタンで確実に捕まえ、味方と連携してリリアを集中攻撃する</div>
+    <ul><li>リリアのQ（咲き誇れ!）の移動速度上昇でQ（北極の猛進）のダッシュでも追いつけないため、R（氷河の雷撃）の遠距離スタンを先に当ててから一気にダッシュで接近し、W（凍てつく激昂）の2段振り下ろしで削る</li><li>リリアのE（もふもふプレゼント!）のスローを受けるとさらに距離が離れるため、パッシブ（凍てつく装甲）のシールドでリリアのスキルダメージを耐えつつ、リリアのEがCD中にQ（北極の猛進）で一気に距離を詰める</li><li>リリアのR（子守唄）の睡眠に対してR（氷河の雷撃）のスタンを先に当ててリリアのR発動を封じ、スタン中にW（凍てつく激昂）+Q（北極の猛進）で最大限のダメージを入れて味方の追撃を待つ</li><li>リリアのW（注意して!）の中心部高ダメージに対してQ（北極の猛進）のダッシュで中心部から離脱しつつ、W詠唱の隙にE（永久凍土）のフロストスタックを味方のAAで溜めてもらいスタンで固定する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zyra.png" alt="ザイラ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Zyra.html">ザイラ</a></span>
+    <span class="mu-wr wr-bad">46.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ダメージが低くザイラをキルできず、植物の持続DPSで一方的に削られる。味方と連携してRスタンでザイラを捕まえ、チーム戦でCCを活かす</div>
+    <ul><li>ザイラのE（捕縛の根）のルートを避けるためQ（北極の猛進）のダッシュで横にずれてルートを回避し、ダッシュ後にW（凍てつく激昂）の振り下ろしでザイラと植物にAoEダメージを入れる</li><li>ザイラのW（暴茂）の植物が持続DPSを出し続けるため、W（凍てつく激昂）のAoEで植物を処理してからザイラ本体に接近し、E（永久凍土）のスタンで足を止めてR（氷河の雷撃）で追撃する</li><li>ザイラのR（絡みつく茨）のノックアップゾーンに入らず、R展開を見てからQ（北極の猛進）でゾーン外に離脱し、R効果終了後にR（氷河の雷撃）のスタンでザイラを捕まえて味方と連携してキルする</li><li>ザイラのQ（致死の棘）+W（暴茂）の植物展開に対してパッシブ（凍てつく装甲）の耐性シールドで植物ダメージを軽減しつつ、E（永久凍土）のフロストスタックを味方のAAで溜めてもらいスタンで固定する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Jax.html">ジャックス</a></span>
+    <span class="mu-wr wr-good">52.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ジャックスのEでフロストスタックが溜まらず1v1は非常に不利。Rスタンで味方と連携し、チーム戦でCCを活かしてジャックスを抑える</div>
+    <ul><li>ジャックスのE（カウンターストライク）のAA無効化でE（永久凍土）のフロストスタックが溜まらないため、W（凍てつく激昂）のスキルダメージでスタックを稼ぎ、ジャックスのECD中にAAでスタックを5に到達させてEスタンを入れる</li><li>ジャックスのQ（跳撃）+E（カウンターストライク）のコンボに対してR（氷河の雷撃）のスタンをジャックスのE発動前に当て、スタン中に味方と連携してジャックスを集中攻撃する</li><li>ジャックスのR（グランドマスターの極意）の追加魔法ダメージと追加AR/MRで1v1は絶対不利なため、セジュアニの強みであるCCとタンク性能を活かしてチーム戦で味方を守る役割に徹する</li><li>ジャックスのパッシブ（リレントレスアサルト）のAS上昇で長期戦ほど不利になるため、R（氷河の雷撃）+E（永久凍土）のCCチェーンで味方のダメージディーラーにジャックスを倒してもらう</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Amumu.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Amumu.png" alt="アムム" loading="lazy">
+    <span class="related-card-name">アムム</span>
+  </a>
+  <a href="/champion/Brand.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Brand.png" alt="ブランド" loading="lazy">
+    <span class="related-card-name">ブランド</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Darius.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="related-card-name">ダリウス</span>
+  </a>
+  <a href="/champion/Diana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Diana.png" alt="ダイアナ" loading="lazy">
+    <span class="related-card-name">ダイアナ</span>
+  </a>
+  <a href="/champion/Fizz.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fizz.png" alt="フィズ" loading="lazy">
+    <span class="related-card-name">フィズ</span>
+  </a>
+  <a href="/champion/Graves.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Graves.png" alt="グレイブス" loading="lazy">
+    <span class="related-card-name">グレイブス</span>
+  </a>
+  <a href="/champion/Hecarim.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Hecarim.png" alt="ヘカリム" loading="lazy">
+    <span class="related-card-name">ヘカリム</span>
+  </a>
+  <a href="/champion/JarvanIV.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/JarvanIV.png" alt="ジャーヴァンⅣ" loading="lazy">
+    <span class="related-card-name">ジャーヴァンⅣ</span>
+  </a>
+  <a href="/champion/Jax.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="related-card-name">ジャックス</span>
+  </a>
+  <a href="/champion/Khazix.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Khazix.png" alt="カ＝ジックス" loading="lazy">
+    <span class="related-card-name">カ＝ジックス</span>
+  </a>
+  <a href="/champion/Kindred.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kindred.png" alt="キンドレッド" loading="lazy">
+    <span class="related-card-name">キンドレッド</span>
+  </a>
+  <a href="/champion/LeeSin.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/LeeSin.png" alt="リー・シン" loading="lazy">
+    <span class="related-card-name">リー・シン</span>
+  </a>
+  <a href="/champion/MasterYi.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/MasterYi.png" alt="マスター・イー" loading="lazy">
+    <span class="related-card-name">マスター・イー</span>
+  </a>
+  <a href="/champion/Nautilus.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nautilus.png" alt="ノーチラス" loading="lazy">
+    <span class="related-card-name">ノーチラス</span>
+  </a>
+  <a href="/champion/Nidalee.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nidalee.png" alt="ニダリー" loading="lazy">
+    <span class="related-card-name">ニダリー</span>
+  </a>
+  <a href="/champion/Nocturne.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nocturne.png" alt="ノクターン" loading="lazy">
+    <span class="related-card-name">ノクターン</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

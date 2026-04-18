@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ダリウス 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="ダリウス の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・ジャングル で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Darius.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ダリウス 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="ダリウス の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・ジャングル で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Darius.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">ダリウス</h1>
+    <p class="champ-hero-title">ノクサスの戦斧</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Fighter</span><span class="champ-tag">Tank</span>
+      <span class="champ-tag gold">トップ</span><span class="champ-tag gold">ジャングル</span>
+    </div>
+  </div>
+</div>
+<p class="lead">ダリウス の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">トップ 全体勝率</div>
+      <div class="stat-card-value wr-even">50.2%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">ジャングル 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div></div><h2>パワースパイク</h2>
+<p>ダリウス が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11 / Lv16</p><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Tryndamere.png" alt="トリンダメア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Tryndamere.html">トリンダメア</a></span>
+    <span class="mu-wr wr-strong">60.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ プルと出血スタックでレーンを支配し、アルティメットのタイミングで確実にキルを取る</div>
+    <ul><li>プルでTryndamereを引き寄せ、出血スタックを素早く5つ溜めよう</li><li>TryndamereのスピンCD中にオールインして圧倒しよう</li><li>Wのスローでスピンでの逃げを防ぎ、追撃を確実にしよう</li><li>Tryndamereのアルティメット終了に合わせてノクサスギロチンで確実に仕留めよう</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yasuo.png" alt="ヤスオ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Yasuo.html">ヤスオ</a></span>
+    <span class="mu-wr wr-strong">59.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 出血パッシブとE引き寄せで近接戦を支配する有利対面。5スタック時のRで確実にフィニッシュする</div>
+    <ul><li>EでヤスオのEダッシュ中を捕まえてAAとWスローで出血スタックを素早く溜める</li><li>Q外側刃判定でヤスオにダメージと回復を同時に得てヤスオがEで内側に入った場合はAAとWで出血を溜める</li><li>パッシブ出血5スタック時にRでヤスオを確殺しパッシブシールドがあっても5スタックRで突破する</li><li>ゴーストの移動速度でヤスオのEダッシュに追いついてAAで出血スタックを維持する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nasus.png" alt="ナサス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Nasus.html">ナサス</a></span>
+    <span class="mu-wr wr-good">53.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Nasusのファームを妨害してQスタックを積ませないのが最優先。Eハラスを繰り返してNasusをレーンから追い出し、Nasusのレベル6R前に体力差を大きく開ける</div>
+    <ul><li>Nasusはファームで強くなるため、EハラスでNasusのQラストヒットを妨害してスタック蓄積を遅らせる</li><li>NasusのQスタックが少ない序盤（レベル1〜6）に積極的にトレードしてNasusがファームしにくい状況を作る</li><li>NasusのEスロウを食らっても、DariusのWスロウで逆に追撃してブリードスタックをさらに積む</li><li>Nasusのレベル6RはNasusのパワーを大幅強化する。R発動前に体力差を十分に開けておき、R発動後でも5スタックバーストで対処する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ornn.png" alt="オーン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Ornn.html">オーン</a></span>
+    <span class="mu-wr wr-good">51.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Ornnの序盤の弱さを突いて積極的にトレードしリードを取る。OrnnのWブリトルを横移動で避け、Q柱が立つ前にEで引き込んでE→柱コンボを封じる</div>
+    <ul><li>OrnnのW（ベローズブレス）最終段のブリトルを受けるとノックアップされる。Wの火炎放射モーションを見たら横に移動してW最終段を回避する</li><li>OrnnのEはDariusのEと違い壁や柱にぶつからないとノックアップが発生しない。OrnnのQ柱が立ったらすぐにDariusのEで引き込んでOrnnのE→柱コンボを封じる</li><li>Ornnは序盤の1v1が弱い。レベル1〜6で積極的にトレードしてOrnnのファームを妨害し、タワープレートを折る</li><li>OrnnはEやRで離脱能力がある。無暗にDariusのEを使わず、OrnnのE・Rが使えないタイミングを確認してからEで引き込む</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Garen.png" alt="ガレン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Garen.html">ガレン</a></span>
+    <span class="mu-wr wr-even">49.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 接近戦でスタック管理が勝負の鍵。沈黙タイミングをずらすことでトレードを有利に</div>
+    <ul><li>DariusはEでGarenを引き込み、ブリードスタックを素早く積むのが基本</li><li>Garenの沈黙（Q）は短時間なので、沈黙後にすぐEを再発動してハラス継続</li><li>Garenのスピンは無敵ではないためCC合わせが有効</li><li>ガンクに合わせてRでフィニッシュを狙う</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Vayne.png" alt="ヴェイン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Vayne.html">ヴェイン</a></span>
+    <span class="mu-wr wr-weak">40.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Vayneのカイト性能がDariusのキットを完全に拒否する。ゴーストやフラッシュEでの強引なキャッチ以外に勝ち筋が少ない</div>
+    <ul><li>VayneのQ（タンブル）とパッシブ（ナイトハンター）の機動力でDariusのQ（壊滅）外縁が当たりにくい。フラッシュEで確実に引き寄せる</li><li>VayneのE（非難）で壁際に押し付けられるとスタンする。壁から距離を取ってポジショニングする</li><li>VayneのW（銀の矢弾）の3発目確定ダメージは装甲で防げない。長期戦になるほど不利になるため短期決戦を狙う</li><li>ゴーストを持ってVayneへの接近手段を確保する。ゴースト＋E引き寄せでキャッチできればオールインで倒しきれる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Teemo.png" alt="ティーモ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Teemo.html">ティーモ</a></span>
+    <span class="mu-wr wr-bad">45.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ TeemoのQブラインドのCD中がトレードチャンス。ゴースト+Eで接近してQブラインドが切れた後にAA→Wでブリード5スタックを積んでRフィニッシュ</div>
+    <ul><li>TeemoのQ（ブラインディングダート）は2.5秒間AAをミスさせる。QのCD（約8秒）を把握し、Q使用直後のCD中にEで引き込んでAAブリードスタックを積む</li><li>ゴーストを持ってTeemoのW加速に対抗する。ゴースト+Eで一度捕まえれば5スタックバーストでキルできる</li><li>ドランシールドとセカンドウィンドでTeemoのAAポーク+毒ダメージを軽減し、序盤の体力差を最小化する</li><li>レベル6以降のR（ノキシアンギロチン）はTeemoのRキノコを踏んでHPが減った状態でもフィニッシュ手段になる。5スタック確認後即Rで仕留める</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Quinn.png" alt="クイン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Quinn.html">クイン</a></span>
+    <span class="mu-wr wr-bad">45.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ QuinnのレンジとEノックバックで接近が極めて困難。ブッシュを活用してE引き寄せの機会を作り、1回の接近で確実にキルまで持ち込む</div>
+    <ul><li>QuinnのE（蒼穹のかけら）のノックバックでDariusのE（掴み取り）引き寄せ後にすぐ離脱されるため、Eの後にW（大出血）スローを即座に入れて離脱を制限する</li><li>QuinnのQ（ブラインディングアサルト）のブラインド中はAAが当たらないため、Qを受けたらWとQスキルのみでスタックを溜める</li><li>レーンブッシュを活用してQuinnのAA射程から隠れ、ブッシュからのE引き寄せで不意打ちを仕掛ける</li><li>レベル6以降QuinnのR（鷹の翼）でロームされるため、QuinnがR発動で消えたら即座にピンを出して味方に警告する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kennen.png" alt="ケネン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Kennen.html">ケネン</a></span>
+    <span class="mu-wr wr-bad">48.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ KennenのAAレンジとEの機動力でDariusの接近が困難。KennenのE使用後のCD中が唯一の仕掛けチャンス。Qヒールで耐えてCS差を最小限にする</div>
+    <ul><li>KennenのAAレンジポークに耐えながらQ（大虐殺）の外周ヒールでサステインし、CSを落とさないレーニングを最優先する</li><li>E（掴み取り）の射程がKennenのAA射程より短いため、Kennenが前に出すぎた瞬間だけEで引き寄せてオールインチャンスを作る</li><li>KennenのE（稲妻疾駆）使用後はKennenの離脱手段がなくなるため、EがCD中のKennenにフラッシュ＋Eで強引に接近してキルを狙う</li><li>KennenのR（豪雷の嵐）を受けるとスタン連打で出血スタックが溜められない。R発動を見たら即離脱し、R終了後にR（ノクサスギロチン）で仕留める</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Jayce.html">ジェイス</a></span>
+    <span class="mu-wr wr-bad">48.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 砲台形態の長射程ポークが最大の脅威。ミニオンを盾にしてEの射程圏内に近づく機会を待ち、ハンマー切り替えの瞬間を狙う</div>
+    <ul><li>Jayceの砲台形態ポークをミニオンを盾にして凌ぎ、Jayceがハンマー形態に切り替えた瞬間にEで引き込む</li><li>JayceのゲートノックバックはEの後に来ることが多い。Eを使う前にゲートの設置場所を確認する</li><li>ガンクと組み合わせてEでJayceを壁際に引き込めばキルに繋がりやすい</li><li>序盤の砲台ポーク期間をなるべく少ない被弾で乗り越え、レベル6以降のパワーを活かす</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Amumu.png" alt="アムム" loading="lazy">
+    <span class="mu-name"><a href="/champion/Amumu.html">アムム</a></span>
+    <span class="mu-wr wr-good">52.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 1v1で大きく有利。アムムのRスタンに注意しつつ序盤から差をつける</div>
+    <ul><li>アムムの1v1ダメージは低いため、出血スタックで圧倒する</li><li>アムムのQバンデージに対してEで引っ張って近づかせない</li><li>アムムのRスタンに注意して味方と離れすぎない</li><li>序盤からインベードでアムムのレベリングを遅らせる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fiddlesticks.png" alt="フィドルスティックス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Fiddlesticks.html">フィドルスティックス</a></span>
+    <span class="mu-wr wr-good">51.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ フィドルの耐久が極めて薄くE引き寄せで捕まえれば出血5スタック+R処刑で確殺。Wドレインチャネルをe引き寄せで中断でき、Q外縁回復でRクロウストームの持続ダメージも耐える</div>
+    <ul><li>フィドルスティックスのW（生命吸収）のチャネル範囲ドレインに対してE（掴み取り）の引き寄せでWチャネルを即座に中断させ、ドレイン回復を封じた状態でQ（大虐殺）外縁+W（手傷）のスローでパッシブ（ヘモレイジ）出血5スタックを溜めてR（ノクサスギロチン）で処刑する</li><li>フィドルスティックスのR（クロウストーム）の壁越えAoEブリンク+持続ダメージに対してR出現直後にE（掴み取り）の引き寄せで密着距離に引き込み、Q（大虐殺）外縁回復でR持続ダメージを回復しながらパッシブ出血5スタックのボーナスADでフィドルの薄い耐久を一瞬で溶かす</li><li>フィドルスティックスのQ（恐怖）の対象指定恐怖CCに対してQの恐怖を受けてもパッシブ出血の持続ダメージはフィドルに入り続け、恐怖解除後にE（掴み取り）の引き寄せで逃がさずW（手傷）+Q（大虐殺）外縁でスタックを溜めてR（ノクサスギロチン）で処刑する</li><li>フィドルスティックスのE（ダークウィンド）のサイレンス+バウンスに対してダリウスはAAベースの火力が高いためサイレンスの影響が小さく、E引き寄せ+W（手傷）+AAのパッシブ出血蓄積でサイレンス中もフィドルにダメージを出し続けて耐久の薄いフィドルを殴り切る</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Naafiri.png" alt="ナフィーリ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Naafiri.html">ナフィーリ</a></span>
+    <span class="mu-wr wr-even">49.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ナフィーリの耐久が薄くE引き寄せで確実に捕まえられる。Q外縁AoEで犬パックをまとめて削り、出血5スタック+R確定処刑でアサシンのナフィーリを1対1で完封する</div>
+    <ul><li>ナフィーリのQ（群れの一撃）のダッシュ+犬の追撃に対してQ（大虐殺）の外縁AoEでナフィーリ本体と犬パックをまとめてダメージ+回復し、E（掴み取り）の引き寄せでQダッシュ後のナフィーリを引き戻してW（手傷）のスロー+パッシブ出血で削り切る</li><li>ナフィーリのW（追い込み）のダッシュ+犬突進に対してE（掴み取り）の引き寄せでWダッシュ着地後のナフィーリを密着距離に拘束し、Q（大虐殺）の外縁回復+W（手傷）でパッシブ（ヘモレイジ）出血5スタックを溜めてR（ノクサスギロチン）の確定処刑でキルする</li><li>ナフィーリのR（ザ・コール）の強化突進に対してR強化状態でもダリウスの1対1火力がナフィーリを上回るため、E（掴み取り）の引き寄せでR突進後を捕まえてQ（大虐殺）外縁+W（手傷）+パッシブ5スタックのフルコンボでR強化中のナフィーリを殴り倒す</li><li>ナフィーリのパッシブ（共に狩りを）の犬パックに対してQ（大虐殺）の外縁AoEが犬を効率的に削り、犬が減少するとナフィーリのバースト力が大幅に低下する。犬を先に処理してからE引き寄せ+パッシブ5スタック+R処刑でナフィーリ本体を仕留める</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nunu.png" alt="ヌヌ＆ウィルンプ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Nunu.html">ヌヌ＆ウィルンプ</a></span>
+    <span class="mu-wr wr-bad">49.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ヌヌの1対1火力が低くダリウスの殴り合い性能で完全に圧倒できる。E引き寄せでW雪玉とRチャネルを中断し、出血5スタック+R処刑でヌヌをスカーミッシュで倒す</div>
+    <ul><li>ヌヌのW（最大雪玉）の巨大雪玉突進ノックアップに対してE（掴み取り）の引き寄せでW突進中のヌヌを引っ張って雪玉を中断させ、引き寄せ後にW（手傷）のスロー+Q（大虐殺）外縁で出血スタックを溜めてR（ノクサスギロチン）の確定処刑に繋げる</li><li>ヌヌのR（絶対零度）のチャネル大ダメージ+スローに対してE（掴み取り）の引き寄せでRチャネルを中断させ、チャネル不発後のヌヌにQ（大虐殺）外縁+W（手傷）+パッシブ（ヘモレイジ）出血5スタックで一気にバーストしてR（ノクサスギロチン）で処刑する</li><li>ヌヌのQ（食らいつく）の大型モンスタースマイト+回復に対してダリウスの1対1火力がヌヌを大幅に上回るため、ヌヌのジャングル内に侵入してQ回復を上回るダメージを出血5スタックのボーナスADで叩き込み、オブジェクティブ争いの前にヌヌ本体を先にキルする</li><li>ヌヌのE（雪玉連打）の連続投擲+ルートに対してE（掴み取り）の引き寄せ射程がヌヌのE射程を上回るため、Eルートを受ける前にE引き寄せでヌヌを密着距離に引き込み、W（手傷）のスロー+Q（大虐殺）外縁回復で1対1の殴り合いに持ち込んで圧倒する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ivern.png" alt="アイバーン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Ivern.html">アイバーン</a></span>
+    <span class="mu-wr wr-weak">44.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 1v1で圧倒的に有利。インベードでアイバーンの育成を完全に阻害する</div>
+    <ul><li>アイバーンは1v1が非常に弱いため、インベードで繰り返しキルを狙う</li><li>アイバーンのデイジーに対しても出血スタックで処理できる</li><li>アイバーンのQに引っかかった場合、デイジーが飛んでくるため注意</li><li>アイバーンのシールドを出血の継続ダメージで剥がす</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Jax.html">ジャックス</a></span>
+    <span class="mu-wr wr-bad">49.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ジャックスのEが出血スタック蓄積を防ぎダリウスの強みを完全に封じる。EのCD中にQスキルダメージでスタックを溜め、5スタックRで仕留める</div>
+    <ul><li>ジャックスのE（カウンターストライク）のAA無効化でパッシブ（大出血）のスタックが溜まらないため、E発動を見たらQ（大虐殺）のスキルダメージで出血を重ね、スタン後のCD中にAAでスタックを5まで溜める</li><li>ジャックスのQ（跳撃）で密着されるとQ（大虐殺）の外縁回復が発動しないため、E（引きずり込み）でプルしてジャックスとの距離を調整し、Q外縁を当てて回復しながら戦う</li><li>ジャックスのR（グランドマスターの極意）の追加AR/MRで殴り合いが不利になるため、R発動を見たらE（引きずり込み）で距離を取りQ（大虐殺）の外縁で回復しながらR効果切れを待つ</li><li>ジャックスのパッシブ（リレントレスアサルト）のAS上昇が溜まるとDPSが急上昇するため、出血5スタック到達のADボーナスを早期に得てR（ノクサスの断頭台）の確定ダメージで一気に実行を狙う</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Elise.png" alt="エリス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Elise.html">エリス</a></span>
+    <span class="mu-wr wr-even">49.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ エリスの遠距離戦とラペル無敵が近接型ダリウスに刺さる。Eプルで強引に密着し、ラペルCD中にRで仕留める</div>
+    <ul><li>エリスの人間形態E（眩惑の繭）のスタンを食らうと遠距離からフルコンボで一方的に削られるため、E（引きずり込み）のプルで繭を撃つ前にエリスを引き寄せて密着戦に持ち込む</li><li>エリスの蜘蛛形態E（ラペル）の無敵でR（ノクサスの断頭台）を回避されるため、ラペルが使用済みであることを確認してからRの確定ダメージで実行する</li><li>エリスのQ人間（神経毒）の現在HP%ダメージが高HPのダリウスに特に痛いため、早めにエリスに近づいてパッシブ（大出血）のスタックを重ね、5スタック到達のADボーナスでAPダメージを上回る火力を出す</li><li>エリスのW人間（揮発性クモ爆弾）の蜘蛛爆弾が追尾してくるため、爆発前にQ（大虐殺）の外縁でHPを回復して爆弾ダメージを相殺し、体力差を維持する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Talon.png" alt="タロン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Talon.html">タロン</a></span>
+    <span class="mu-wr wr-even">50.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ タロンのE壁越えロームに追跡が困難でマップ差をつけられやすい。E引き寄せでタロンを捕まえて出血5スタックを溜め、Rギロチンの処刑で確実に仕留める近接戦に持ち込む</div>
+    <ul><li>タロンのW（飛燕手裏剣）の往復ブレード+パッシブ出血に対してQ（大虐殺）の外縁ヒットでHP回復しつつ出血スタックを溜め、W（手傷）のスロー強化AAでタロンのE壁越え離脱を遅らせてパッシブ（出血）の5スタック到達を狙う</li><li>タロンのR（影の強襲）のステルス+ブレードリングに対してQ（大虐殺）のAoE外縁でステルス中のタロンの位置に範囲ダメージを入れ、ステルス解除後にE（掴み取り）の引き寄せで捕まえてW（手傷）のスロー+出血スタックの蓄積でR（ノクサスギロチン）の処刑圏内まで削る</li><li>タロンのE（暗殺者の跳躍）の壁越えロームに対してダリウスのクリア速度が遅く追跡が困難なため、タロンのローム先を予測してE（掴み取り）の引き寄せでカウンターガンクを仕掛け、味方と連携して出血5スタック+R（ノクサスギロチン）のリセットでマルチキルを狙う</li><li>タロンのQ（ノクサスの外交術）の近距離クリティカルダッシュに対してE（掴み取り）の引き寄せでQダッシュ前のタロンを引き込み、密着状態でW（手傷）のスロー+Q（大虐殺）の外縁ヒール+パッシブ出血スタックの蓄積でNoxian Mightの発動を狙い、R（ノクサスギロチン）の確定ダメージで処刑する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lillia.png" alt="リリア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Lillia.html">リリア</a></span>
+    <span class="mu-wr wr-good">50.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ガップクローザーが乏しくリリアのQ移動速度に追いつけない。ゴーストで強引に接近し、E引きずり込みで密着して出血5スタックRの一撃キルを狙う</div>
+    <ul><li>リリアのQ（咲き誇れ!）の移動速度上昇でE（引きずり込み）のプル射程外からカイトされるため、ゴーストの移動速度上昇でリリアに追いつき、E（引きずり込み）のプルで密着してQ（大虐殺）外縁+パッシブ（大出血）を溜める</li><li>リリアのE（もふもふプレゼント!）のスローを受けたらリリアとの距離が離れすぎるため、スロー中は無理に追わずにスロー解除後にゴーストで再追撃し、リリアのE（もふもふプレゼント!）のCD中に仕掛ける</li><li>リリアのR（子守唄）の睡眠はパッシブ（夢と花びら）のDoTが付与された状態で発動するため、リリアのQ外縁やEに当たらないよう射程外に留まり、DoT付与を防いでRスリープの発動条件を封じる</li><li>リリアのW（注意して!）の中心部高ダメージの詠唱中にW（不屈の意志）のスロー耐性で踏み留まりつつ、W中心部を横移動で回避してからE（引きずり込み）のプルで引き寄せてパッシブ出血5スタック+R（ノクサスの断頭台）で仕留める</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Hecarim.png" alt="ヘカリム" loading="lazy">
+    <span class="mu-name"><a href="/champion/Hecarim.html">ヘカリム</a></span>
+    <span class="mu-wr wr-good">51.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ヘカリムの機動力に追いつけず出血スタックを溜めにくい。ゴーストとEプルで無理やり密着し、5スタックR実行のワンチャンスに賭ける</div>
+    <ul><li>ヘカリムのE（壊滅突進）のチャージ突進が自由に距離を詰められるため、E（引きずり込み）のプルをヘカリムのEチャージ中に合わせてプルで引き寄せ、密着してQ（大虐殺）外縁+パッシブ（大出血）のスタックを溜める</li><li>ヘカリムのR（猛霊の暴走）の恐怖ダッシュに対してゴーストの移動速度上昇で恐怖中の移動距離を最小限に抑え、恐怖終了直後にE（引きずり込み）で引き戻してパッシブ出血5スタック+R（ノクサスの断頭台）で仕留める</li><li>ヘカリムのW（死霊の奔流）のAoE回復が持久戦で厄介だが、Q（大虐殺）の外縁ヒール回復+パッシブ出血の持続ダメージでヘカリムのW回復を上回り、5スタック到達後のADボーナスで一気にバーストで削り切る</li><li>ヘカリムのQ（猛突撃）連打のスタックダメージに対してW（不屈の意志）のスロー耐性でQのスローを軽減しつつ、Q外縁回復で体力を維持して5スタック蓄積を目指し、R（ノクサスの断頭台）の確定ダメージで仕留める</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Akali.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Akali.png" alt="アカリ" loading="lazy">
+    <span class="related-card-name">アカリ</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Fiora.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fiora.png" alt="フィオラ" loading="lazy">
+    <span class="related-card-name">フィオラ</span>
+  </a>
+  <a href="/champion/Garen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Garen.png" alt="ガレン" loading="lazy">
+    <span class="related-card-name">ガレン</span>
+  </a>
+  <a href="/champion/Irelia.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="related-card-name">イレリア</span>
+  </a>
+  <a href="/champion/Jax.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="related-card-name">ジャックス</span>
+  </a>
+  <a href="/champion/Jayce.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="related-card-name">ジェイス</span>
+  </a>
+  <a href="/champion/Kled.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kled.png" alt="クレッド" loading="lazy">
+    <span class="related-card-name">クレッド</span>
+  </a>
+  <a href="/champion/Malphite.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="related-card-name">マルファイト</span>
+  </a>
+  <a href="/champion/Olaf.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Olaf.png" alt="オラフ" loading="lazy">
+    <span class="related-card-name">オラフ</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Quinn.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Quinn.png" alt="クイン" loading="lazy">
+    <span class="related-card-name">クイン</span>
+  </a>
+  <a href="/champion/Renekton.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Renekton.png" alt="レネクトン" loading="lazy">
+    <span class="related-card-name">レネクトン</span>
+  </a>
+  <a href="/champion/Riven.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Riven.png" alt="リヴェン" loading="lazy">
+    <span class="related-card-name">リヴェン</span>
+  </a>
+  <a href="/champion/Shen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Shen.png" alt="シェン" loading="lazy">
+    <span class="related-card-name">シェン</span>
+  </a>
+  <a href="/champion/TahmKench.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TahmKench.png" alt="タム・ケンチ" loading="lazy">
+    <span class="related-card-name">タム・ケンチ</span>
+  </a>
+  <a href="/champion/Teemo.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Teemo.png" alt="ティーモ" loading="lazy">
+    <span class="related-card-name">ティーモ</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

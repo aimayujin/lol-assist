@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>マルファイト 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="マルファイト の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・サポート・ミッド で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Malphite.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="マルファイト 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="マルファイト の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・サポート・ミッド で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Malphite.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">マルファイト</h1>
+    <p class="champ-hero-title">モノリスの欠片</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Tank</span><span class="champ-tag">Fighter</span>
+      <span class="champ-tag gold">トップ</span><span class="champ-tag gold">サポート</span><span class="champ-tag gold">ミッド</span>
+    </div>
+  </div>
+</div>
+<p class="lead">マルファイト の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">トップ 全体勝率</div>
+      <div class="stat-card-value wr-good">51.4%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">サポート 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">ミッド 全体勝率</div>
+      <div class="stat-card-value wr-good">51.4%</div>
+    </div></div><h2>パワースパイク</h2>
+<p>マルファイト が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell active">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv9 / Lv11 / Lv16</p><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/MonkeyKing.png" alt="ウーコン" loading="lazy">
+    <span class="mu-name"><a href="/champion/MonkeyKing.html">ウーコン</a></span>
+    <span class="mu-wr wr-strong">59.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 装甲スタッキングとEのAS低下でウーコンの全コンボを軽減できる。Qポークで安全にレーンを支配する</div>
+    <ul><li>Wパッシブの装甲増加でウーコンのQ（金箍棒）装甲削減を受けても十分な装甲が残る。安心してタンクビルドを進める</li><li>ウーコンがE（神速の法）で接近したらE（グラウンドスラム）でAS低下を付与し、AA依存のトレードを封殺する</li><li>Q（地震投擲）でウーコンのMSを奪い続け、E（神速の法）のクールダウン中にポークダメージを蓄積する</li><li>ウーコンのR（旋風猿撃）に対してR（不可避の力）をカウンターエンゲージとして使い、味方を巻き込んだ集団戦に持ち込む</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yasuo.png" alt="ヤスオ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Yasuo.html">ヤスオ</a></span>
+    <span class="mu-wr wr-strong">56.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ アーマースタックとAS低下でヤスオのAA依存ダメージを完封する有利対面。Qでパッシブシールドを剥がしRオールインで確実にキルする</div>
+    <ul><li>Q(地殻変動)でヤスオのパッシブシールドを剥がしてから追加のQポークで体力を削り、風の壁がない間にQを連打する</li><li>E(地盤粉砕)のAS低下でヤスオのAA主体のDPSを大幅に減少させヤスオが接近してきた瞬間にEを合わせる</li><li>パッシブ(花崗岩の盾)のシールドとアーマースタックでヤスオの物理ダメージを大幅に軽減しタビ早期購入でさらに減らす</li><li>R(アンストッパブル・フォース)でヤスオを確実にノックアップしフルコンボでキルラインに到達させる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Teemo.png" alt="ティーモ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Teemo.html">ティーモ</a></span>
+    <span class="mu-wr wr-strong">55.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ AA非依存のためTeemoのQブラインドが刺さらない。Q（地震投擲）でMS差をつけてポークし、R（不可避の力）でワンショットする</div>
+    <ul><li>TeemoのQ（めくらましの吹き矢）ブラインドはMalphiteのスキルダメージに影響しない。ブラインドを無視してQ（地震投擲）ポークを繰り返す</li><li>Q（地震投擲）でTeemoのMSを奪いながらダメージを与え、Teemoのカイト能力を大幅に低下させる</li><li>パッシブシールド（崩壊の石甲）がTeemoのAAポークを吸収するため、受けるダメージが軽い</li><li>R（不可避の力）でTeemoを確殺できる。レベル6以降はQポークでTeemoの体力を50%以下に削り、Rで一気にフィニッシュ</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Tryndamere.png" alt="トリンダメア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Tryndamere.html">トリンダメア</a></span>
+    <span class="mu-wr wr-good">54.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ EのAS低下とアーマースタックでTryndamereのAA火力を完封する有利対面</div>
+    <ul><li>EのAS低下でTryndamereのAA火力を大幅に削減する</li><li>QスローでTryndamereの接近を阻止し距離を維持する</li><li>アーマースタックでTryndamereの物理ダメージを大幅に軽減する</li><li>RでTryndamereをノックアップしチーム戦で集団CCを提供する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Sett.png" alt="セト" loading="lazy">
+    <span class="mu-name"><a href="/champion/Sett.html">セト</a></span>
+    <span class="mu-wr wr-good">52.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 装甲スタック+E AS低下でSettのAA DPSを壊滅させる。W TrueDamage中央部だけ回避すれば完封可能</div>
+    <ul><li>SettのAA主体トレードに対してE（グラウンドスラム）のAS低下が非常に効果的</li><li>Wの装甲パッシブでSettの物理ダメージを大幅に軽減。装甲アイテムを積めばSettが倒せなくなる</li><li>SettのW（ヘイメイカー）TrueDamage中央部だけは装甲で防げない。横に避けるのが必須</li><li>R（不可避の力）でSettの集団戦でのR（ショータイム）を先に潰し、エンゲージ合戦で先手を取る</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 3</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Mordekaiser.png" alt="モルデカイザー" loading="lazy">
+    <span class="mu-name"><a href="/champion/Mordekaiser.html">モルデカイザー</a></span>
+    <span class="mu-wr wr-bad">48.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ MordeのAPダメージが装甲スタックを無視する。MRアイテム優先+QSSで死の領域を回避するのが対策</div>
+    <ul><li>MordeのAPダメージはMalphiteの装甲スタックでは防げない。MRアイテム（スペクターカウル等）を優先する</li><li>MordeのE（死の掌握）プルに当たるとパッシブ3ヒットDoTで大ダメージ。Eを横避けする意識を持つ</li><li>MordeのR（死の領域）に引き込まれるとMalphiteのタンク力では1v1で勝てない。QSS購入を検討する</li><li>R（不可避の力）はMordeのR前に先手で味方と合流してから使う。1v1のR起点は不利</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Rumble.png" alt="ランブル" loading="lazy">
+    <span class="mu-name"><a href="/champion/Rumble.html">ランブル</a></span>
+    <span class="mu-wr wr-even">50.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ アーマースタックがRumbleの魔法ダメージに無効な不利対面。MRアイテムを優先しRでチーム戦に影響を与える</div>
+    <ul><li>アーマースタックがRumbleの魔法ダメージに対して効果がないためMRアイテムを積む必要がある</li><li>QでRumbleにスローを付与して距離を取りRumbleのQ範囲外に離脱する</li><li>RでRumbleをノックアップしフルコンボでバーストキルを狙う</li><li>レーン戦では不利なためファームに集中しチーム戦のRで巻き返す</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Irelia.html">イレリア</a></span>
+    <span class="mu-wr wr-good">53.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 1v1は不利なのでキャッチアップを狙わず、集団戦のR起点としての価値を活かす</div>
+    <ul><li>IreliaのQ連打を受けながら削られやすいので序盤はミニオンファーム優先</li><li>Eの鎧バフで物理ダメージ軽減を最大化してトレードを短くする</li><li>Rは集団戦用に温存し、レーンでのエンゲージは不利</li><li>ガンクに合わせたEスロー→Rエンゲージのコンボを狙う</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>ミッド でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Pantheon.html">パンテオン</a></span>
+    <span class="mu-wr wr-good">54.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ アーマースタックでパンテオンのダメージを無効化。序盤を耐えれば勝てる</div>
+    <ul><li>アーマースタックでパンテオンのADダメージを大幅に軽減する</li><li>パンテオンのW（盾撃衝）スタン後にR（アンストッパブルフォース）で返す</li><li>パンテオンのE（装甲突進）方向を避けてQで削る</li><li>プレートスチールキャップを購入して序盤を耐える</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Irelia.html">イレリア</a></span>
+    <span class="mu-wr wr-good">53.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Qポークとアーマーでイレリアを完封。Eの攻撃速度低下が特に有効</div>
+    <ul><li>Q（セイズミックシャード）でイレリアにポークしてレーンを支配する</li><li>アーマー積みでイレリアのADダメージを大幅に軽減する</li><li>E（グラウンドスラム）の攻撃速度低下でイレリアのDPSを削ぐ</li><li>R（アンストッパブルフォース）で集団戦でイレリアをノックアップする</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zed.png" alt="ゼド" loading="lazy">
+    <span class="mu-name"><a href="/champion/Zed.html">ゼド</a></span>
+    <span class="mu-wr wr-good">53.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ アーマースタックでゼドのダメージを無効化。Rでゼドを捕まえる</div>
+    <ul><li>アーマースタックがゼドのADダメージを大幅に軽減する</li><li>ゼドのR（死の刻印）にR（アンストッパブルフォース）を合わせて中断する</li><li>Q（セイズミックシャード）でゼドのWハラスに対してトレードする</li><li>タビ（プレートスチールキャップ）を急いで購入する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Naafiri.png" alt="ナフィーリ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Naafiri.html">ナフィーリ</a></span>
+    <span class="mu-wr wr-good">52.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ QスローとアーマーでNaafiriを完封。マナ管理だけ注意する</div>
+    <ul><li>Q（セイズミックシャード）のスローでNaafiriの接近を拒否する</li><li>パッシブ（花崗岩の盾）でNaafiriの犬のダメージを吸収する</li><li>E（グランドスラム）でNaafiriと犬のASを下げる</li><li>R（アンストッパブルフォース）でNaafiriを集団戦で拘束する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yone.png" alt="ヨネ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Yone.html">ヨネ</a></span>
+    <span class="mu-wr wr-good">51.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ アーマーでヨネのダメージを無効化。Rでヨネを確実に捕まえる</div>
+    <ul><li>アーマースタックでヨネのADダメージを大幅に軽減する</li><li>R（アンストッパブルフォース）でヨネのE帰還を妨害する</li><li>ヨネのQ3ノックアップにRで合わせてカウンターする</li><li>プレートスチールキャップを購入してさらに硬くなる</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Sylas.png" alt="サイラス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Sylas.html">サイラス</a></span>
+    <span class="mu-wr wr-weak">44.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ アーマービルドがSylasのAPに効かない。MRを積んでRの集団戦で貢献する</div>
+    <ul><li>Q（サイスミックシャード）のスローでSylasの接近を遅らせる</li><li>R（アンストッパブルフォース）のノックアップで味方との連携でキルする</li><li>タンクビルドのアーマーがAPのSylasに効かないためMRアイテムを積む</li><li>パッシブのシールドでSylasのポークを1回吸収する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Vladimir.png" alt="ブラッドミア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Vladimir.html">ブラッドミア</a></span>
+    <span class="mu-wr wr-bad">47.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ アーマーがVladimirに無効。Rをプール後に狙う</div>
+    <ul><li>VladimirのW（プール）のCD中にR（アンストッパブルフォース）を使う</li><li>Q（地震攻撃）でVladimirのムーブスピードを奪う</li><li>MRアイテムを積んでVladimirのダメージを軽減する</li><li>チーム戦でRのイニシエートで貢献する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Velkoz.png" alt="ヴェル＝コズ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Velkoz.html">ヴェル＝コズ</a></span>
+    <span class="mu-wr wr-good">51.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ アーマーが活きないマッチアップ。Rでの接近からバーストを狙う</div>
+    <ul><li>R（アンストッパブルフォース）でヴェルコズに接近しバーストする</li><li>ヴェルコズのR詠唱中にRで突っ込みノックアップで中断する</li><li>Q（セイズミックシャード）でスローをかけてからRで仕掛ける</li><li>マジックレジストアイテムを優先して購入する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Xerath.png" alt="ゼラス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Xerath.html">ゼラス</a></span>
+    <span class="mu-wr wr-good">51.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ レーン戦はポーク負け。Rで接近してバーストを狙う</div>
+    <ul><li>ゼラスの長射程ポークにパッシブシールドで耐える</li><li>R（アンストッパブルフォース）でゼラスに接近しバーストする</li><li>ゼラスのE（ショッキングオーブ）スタンを受けないよう注意する</li><li>マジックレジストアイテムを急いで購入する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Viktor.png" alt="ビクター" loading="lazy">
+    <span class="mu-name"><a href="/champion/Viktor.html">ビクター</a></span>
+    <span class="mu-wr wr-good">52.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ レーン戦はポーク負け。Rで接近してバーストを狙う</div>
+    <ul><li>ヴィクターのE（デスレイ）ポークにパッシブシールドで耐える</li><li>R（アンストッパブルフォース）でヴィクターに接近しバーストする</li><li>ヴィクターのW（重力場）を踏まないよう回り込む</li><li>Q（セイズミックシャード）でCSを取りつつ安全にファームする</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Akali.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Akali.png" alt="アカリ" loading="lazy">
+    <span class="related-card-name">アカリ</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Darius.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="related-card-name">ダリウス</span>
+  </a>
+  <a href="/champion/Fiora.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fiora.png" alt="フィオラ" loading="lazy">
+    <span class="related-card-name">フィオラ</span>
+  </a>
+  <a href="/champion/Garen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Garen.png" alt="ガレン" loading="lazy">
+    <span class="related-card-name">ガレン</span>
+  </a>
+  <a href="/champion/Irelia.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="related-card-name">イレリア</span>
+  </a>
+  <a href="/champion/Jax.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="related-card-name">ジャックス</span>
+  </a>
+  <a href="/champion/Jayce.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="related-card-name">ジェイス</span>
+  </a>
+  <a href="/champion/Kled.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kled.png" alt="クレッド" loading="lazy">
+    <span class="related-card-name">クレッド</span>
+  </a>
+  <a href="/champion/Olaf.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Olaf.png" alt="オラフ" loading="lazy">
+    <span class="related-card-name">オラフ</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Quinn.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Quinn.png" alt="クイン" loading="lazy">
+    <span class="related-card-name">クイン</span>
+  </a>
+  <a href="/champion/Renekton.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Renekton.png" alt="レネクトン" loading="lazy">
+    <span class="related-card-name">レネクトン</span>
+  </a>
+  <a href="/champion/Riven.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Riven.png" alt="リヴェン" loading="lazy">
+    <span class="related-card-name">リヴェン</span>
+  </a>
+  <a href="/champion/Shen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Shen.png" alt="シェン" loading="lazy">
+    <span class="related-card-name">シェン</span>
+  </a>
+  <a href="/champion/TahmKench.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TahmKench.png" alt="タム・ケンチ" loading="lazy">
+    <span class="related-card-name">タム・ケンチ</span>
+  </a>
+  <a href="/champion/Teemo.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Teemo.png" alt="ティーモ" loading="lazy">
+    <span class="related-card-name">ティーモ</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

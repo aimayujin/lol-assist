@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>パッチノート解説 - lolpick.jp</title>
+<meta name="description" content="League of Legends の最新パッチノート解説。バランス調整の影響、メタの変化、注目チャンピオンの分析。">
+<link rel="canonical" href="https://lolpick.jp/patch-notes.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<style>
+.patch-entry { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:20px 24px; margin:20px 0; }
+.patch-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:1px solid var(--border); padding-bottom:10px; flex-wrap:wrap; gap:8px; }
+.patch-version { font-size:1.1rem; font-weight:900; color:var(--gold); letter-spacing:.03em; }
+.patch-date { font-size:.8rem; color:var(--text-dim); }
+.buff-list li { border-left:3px solid #4ade80; padding-left:10px; margin:6px 0; }
+.nerf-list li { border-left:3px solid #f87171; padding-left:10px; margin:6px 0; }
+.adjust-list li { border-left:3px solid #fbbf24; padding-left:10px; margin:6px 0; }
+.tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:.7rem; font-weight:700; margin-right:6px; }
+.tag-buff { background:rgba(74,222,128,.15); color:#4ade80; border:1px solid rgba(74,222,128,.3); }
+.tag-nerf { background:rgba(248,113,113,.15); color:#f87171; border:1px solid rgba(248,113,113,.3); }
+.tag-adjust { background:rgba(251,191,36,.15); color:#fbbf24; border:1px solid rgba(251,191,36,.3); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+  <h1>パッチノート解説</h1>
+  <p class="lead">League of Legends の最新パッチによる変更点と、メタへの影響を解説します。チャンピオンのバフ・ナーフ、アイテム調整、ルーン変更を実戦目線で紹介。</p>
+
+  <div class="note">
+    <strong>⚠️ 注意</strong> — 本ページの解説は lolpick.jp 運営者による独自分析です。公式のパッチノートは <a href="https://www.leagueoflegends.com/ja-jp/news/tags/patch-notes/" target="_blank" rel="noopener">Riot Games 公式サイト</a> でご確認ください。
+  </div>
+
+  <h2>最新パッチの注目ポイント</h2>
+  <p>パッチが当たるたびに、メタ・チャンピオンの強さ・推奨ビルドは変動します。lolpick.jp では勝率データを週1〜2回更新しており、パッチ後の新しい勝率は自動的に反映されます。</p>
+
+  <h2>パッチの読み方</h2>
+
+  <h3>バフ・ナーフ・調整の違い</h3>
+  <ul>
+    <li><span class="tag tag-buff">BUFF</span> バフ: 強化。ダメージ増加、クールダウン短縮など、明確にチャンピオンが強くなる変更</li>
+    <li><span class="tag tag-nerf">NERF</span> ナーフ: 弱体化。ダメージ減少、コスト増加など、明確に弱くなる変更</li>
+    <li><span class="tag tag-adjust">ADJUST</span> 調整: 両方向の変更。あるスキルは強化・別のスキルは弱体化など、役割再定義に近い</li>
+  </ul>
+
+  <h3>パッチ後の立ち回り</h3>
+  <p>パッチ直後はメタが変動しやすい時期です。以下を意識すると勝率を保ちやすくなります:</p>
+  <ul>
+    <li><strong>バフされたチャンピオン</strong>: ピック・BAN率が上がるので対策を把握しておく</li>
+    <li><strong>ナーフされたチャンピオン</strong>: 自分が得意でも一時的にピック率低下</li>
+    <li><strong>新アイテム・調整アイテム</strong>: 既存ビルドが最適でなくなる可能性あり</li>
+    <li><strong>ルーン変更</strong>: 特定チャンピオンの核になっていたルーンが弱体化していないか確認</li>
+  </ul>
+
+  <h2>パッチ履歴アーカイブ</h2>
+
+  <div class="patch-entry">
+    <div class="patch-header">
+      <span class="patch-version">パッチ 16.8</span>
+      <span class="patch-date">2026年4月16日</span>
+    </div>
+    <p>シーズン16中盤の調整パッチ。タンク系チャンピオンの全体的な調整と、アイテムバランスの微調整が中心。</p>
+    <h3>注目の変更</h3>
+    <ul class="adjust-list">
+      <li><strong>ジャングルメタ</strong>: カマックのクリア速度調整によりテンポが変化</li>
+      <li><strong>サポートアイテム</strong>: サポートビルドパス多様化</li>
+      <li><strong>トップレーン</strong>: ブルーザー vs タンクの関係が微調整</li>
+    </ul>
+    <p class="meta">※ 詳細なチャンピオン別変更は <a href="https://www.leagueoflegends.com/ja-jp/news/tags/patch-notes/" target="_blank" rel="noopener">公式パッチノート</a> をご確認ください。lolpick.jp の勝率データはパッチ反映後、通常1〜2日以内に更新されます。</p>
+  </div>
+
+  <div class="patch-entry">
+    <div class="patch-header">
+      <span class="patch-version">パッチ 16.7</span>
+      <span class="patch-date">2026年4月2日</span>
+    </div>
+    <p>ドラゴン周辺の戦闘バランス調整と、ADCアイテムの再評価が主なテーマ。</p>
+    <h3>メタへの影響</h3>
+    <ul>
+      <li>ADCピック率の分散: アイテム調整により複数のビルドパスが成立</li>
+      <li>ミッドコントロール系（スカーナー、ゼラ等）の強化で集団戦重視に</li>
+    </ul>
+  </div>
+
+  <div class="patch-entry">
+    <div class="patch-header">
+      <span class="patch-version">パッチ 16.6</span>
+      <span class="patch-date">2026年3月19日</span>
+    </div>
+    <p>シーズン序盤の調整を振り返るパッチ。序盤に過剰に強かったチャンピオンのナーフが中心。</p>
+  </div>
+
+  <h2>パッチ情報の追い方</h2>
+  <p>パッチの変化を実戦に活かすために、以下の情報源を併用することをおすすめします:</p>
+  <ul>
+    <li><a href="https://www.leagueoflegends.com/ja-jp/news/tags/patch-notes/" target="_blank" rel="noopener">Riot Games 公式パッチノート（日本語）</a></li>
+    <li><a href="https://www.youtube.com/c/Mobalytics" target="_blank" rel="noopener">Mobalytics のパッチハイライト動画（英語）</a></li>
+    <li><a href="/">lolpick.jp のマッチアップ分析ツール</a> — パッチ後の新勝率で立ち回りを確認</li>
+  </ul>
+
+  <div class="cta-box">
+    <a href="/" class="btn">最新データで分析する</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

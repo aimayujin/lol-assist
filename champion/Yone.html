@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ヨネ 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="ヨネ の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ミッド・トップ で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Yone.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ヨネ 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="ヨネ の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ミッド・トップ で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Yone.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yone.png" alt="ヨネ" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">ヨネ</h1>
+    <p class="champ-hero-title">忘られざる者</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Fighter</span><span class="champ-tag">Assassin</span>
+      <span class="champ-tag gold">ミッド</span><span class="champ-tag gold">トップ</span>
+    </div>
+  </div>
+</div>
+<p class="lead">ヨネ の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">ミッド 全体勝率</div>
+      <div class="stat-card-value wr-even">50.0%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">トップ 全体勝率</div>
+      <div class="stat-card-value wr-even">50.0%</div>
+    </div></div><h2>パワースパイク</h2>
+<p>ヨネ が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv11 / Lv16</p><section class="role-section"><h2>ミッド でのマッチアップ</h2><h3>🟢 有利な相手 Top 4</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/AurelionSol.png" alt="オレリオン・ソル" loading="lazy">
+    <span class="mu-name"><a href="/champion/AurelionSol.html">オレリオン・ソル</a></span>
+    <span class="mu-wr wr-good">53.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Eダッシュで低モビリティのAsolに接近。Rのノックアップでフルコンボを決める</div>
+    <ul><li>AsolのW（天体の息吹）チャネル中にE（霊魂転移）→Q3で飛び込む</li><li>R（封ぜられし者）で低い機動力のAsolを確実にノックアップする</li><li>Eの帰還を使ってAsolのRノックバックから安全に戻る</li><li>序盤からAAトレードでAsolを圧倒する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kassadin.png" alt="カサディン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Kassadin.html">カサディン</a></span>
+    <span class="mu-wr wr-good">51.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ AD攻撃でパッシブを一部無視。Eの短期トレードで削る</div>
+    <ul><li>AD主体のためKassadinのパッシブMR軽減が効きにくい</li><li>E（ソウルアンバウンド）で短いトレード後に安全に帰還する</li><li>Q3のノックアップからRで追撃する</li><li>シールドボウでKassadinのバーストを軽減する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Viktor.png" alt="ビクター" loading="lazy">
+    <span class="mu-name"><a href="/champion/Viktor.html">ビクター</a></span>
+    <span class="mu-wr wr-bad">49.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Yoneの機動力がViktorのポーク距離維持を阻害する。EとW霊体化を駆使してViktorのEレーザー射線を避け、近接戦闘に持ち込めば有利</div>
+    <ul><li>ViktorのEレーザーの直線射線をサイドステップと前後移動で回避しながら距離を詰める</li><li>Yoneの高い機動力（Q連続ダッシュ）でViktorのポーク射程を突破し、近距離戦に持ち込む</li><li>W（ソウルアンバウンド）の霊体攻撃はViktorのQグラビティフィールドのスロウ中でもダメージを与え続けられる。スロウを受けてもW霊体が近距離でダメージを稼ぐ</li><li>ViktorのR（カオスストーム）起動後は追いかけながらフルコンボを入れるのが効果的。ストームに当たってもYoneの体力なら凌げる場合が多い</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TwistedFate.png" alt="ツイステッド・フェイト" loading="lazy">
+    <span class="mu-name"><a href="/champion/TwistedFate.html">ツイステッド・フェイト</a></span>
+    <span class="mu-wr wr-weak">44.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ EでTFに急接近しQ3で拘束。TFのロームをRで追跡する</div>
+    <ul><li>TFのゴールドカードをW（霊斬り）のシールドで耐える</li><li>E（律動）でTFの射程外から接近してQ3ノックアップでコンボする</li><li>TFのR（デスティニー）ロームに対してE→Rで追跡する</li><li>TFのQ（ワイルドカード）をサイドステップしてからオールインする</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 2</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Vex.png" alt="ヴェックス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Vex.html">ヴェックス</a></span>
+    <span class="mu-wr wr-weak">41.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ YoneのダッシュすべてにVexのパッシブが反応する。CD中に仕掛ける</div>
+    <ul><li>VexのパッシブがYoneのE・Q3・Rすべてに反応して恐怖を与える</li><li>VexのパッシブがCDの時にE→Q3でオールインする</li><li>W（霊斬り）のシールドでVexのバーストを軽減する</li><li>VexのR（シャドウサージ）に対してRで反撃する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="mu-name"><a href="/champion/Malphite.html">マルファイト</a></span>
+    <span class="mu-wr wr-bad">49.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ アーマーでダメージが通らない厳しいマッチアップ。スケールを待つ</div>
+    <ul><li>マルファイトのアーマースタックでダメージが通りにくい</li><li>E（律動）で仕掛けてもマルファイトのRで返される</li><li>Q（鋼の嵐）でCSを取りつつアイテムスパイクを待つ</li><li>ブレードオブザルインドキングでマルファイトの硬さに対抗する</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kayle.png" alt="ケイル" loading="lazy">
+    <span class="mu-name"><a href="/champion/Kayle.html">ケイル</a></span>
+    <span class="mu-wr wr-bad">48.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ レベル11までの序盤パワーでKayleを圧倒。E→Q3段→Rのフルコンボでバーストしてスケーリングを遅延させる</div>
+    <ul><li>Kayleのレベル6前は近接でCS取りに来るため、Q（鋼の嵐）+AA+W（霊魂の結界）のトレードで一方的に削る</li><li>E（ソウルアンバウンド）で突進→Q3段ノックアップ→R（運命封縁斬）のフルコンボでKayleのR（神聖なる裁き）が間に合わないバーストを出す</li><li>Kayleがレベル11で遠距離常時化する前にキル2〜3回のリードを確立することが最重要</li><li>KayleのW（天のお恵み）のMS上昇で距離を取られる前にQ3段ノックアップで拘束してからコンボを完走する</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 3</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Poppy.png" alt="ポッピー" loading="lazy">
+    <span class="mu-name"><a href="/champion/Poppy.html">ポッピー</a></span>
+    <span class="mu-wr wr-weak">32.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ PoppyのWがYoneのダッシュ全てを封じるため非常に厳しい対面。PoppyのWのCD管理を徹底し、W不在時のみE・Q3・Rのダッシュを使用する</div>
+    <ul><li>PoppyのW（不屈の鉄壁）がYoneのE（ソウルアンバウンド）とQ3段目ダッシュの両方を遮断するため、PoppyのWがCD中でなければダッシュ系スキルを使わない</li><li>Q（先駆けの風）の先端当てでPoppyにポークし、ダッシュを使わずに地道にダメージを蓄積する戦い方を意識する</li><li>PoppyのE（英雄的突撃）の壁ドン スタンを避けるため、壁から離れた位置でトレードし、壁際での戦闘を絶対に避ける</li><li>R（封じられし者の門）のダッシュもPoppyのWで止められるため、PoppyのW使用後のCD（約20秒）を確認してからRでエンゲージする</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="mu-name"><a href="/champion/Malphite.html">マルファイト</a></span>
+    <span class="mu-wr wr-bad">49.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ MalphiteのAS低下と装甲スタックがYoneのDPSを激減させる。E起動中のR直撃に最大限注意し、Rが無い時だけ仕掛ける</div>
+    <ul><li>MalphiteのW（雷鳴の一打）パッシブで装甲が大量に積まれ、Yoneの物理ダメージが通りにくい</li><li>MalphiteのE（グラウンドスラム）のAS低下がYoneのQ（鋼の嵐）スタック稼ぎとAA DPSを大幅に下げる</li><li>MalphiteのR（不可避の力）がYoneのE（ソウルアンバウンド）中に直撃すると帰還前に確殺される危険がある</li><li>MalphiteのQ（地震投擲）ポークでYoneの体力を削られ続けるため、W（霊魂の結界）シールドでQダメージを軽減する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ornn.png" alt="オーン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Ornn.html">オーン</a></span>
+    <span class="mu-wr wr-good">51.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ OrnnのW不倒姿勢でYoneのCC起点が無効化される。脆弱トレードを避けつつ、W CDの隙を突いてコンボを入れる</div>
+    <ul><li>OrnnのW（炎のブレス）の脆弱マーク+AAでYoneの体力が大幅に削られる。脆弱マーク中はAAを受けないよう距離を取る</li><li>OrnnのE（溶岩突進）→Q（火山の呼び声）のCCチェインでYoneのE（ソウルアンバウンド）中に拘束される危険がある</li><li>OrnnのW中の不倒姿勢（CC無効）でYoneのQ3段目ノックアップやR（運命封縁斬）が通らない</li><li>Ornnのレベル13以降のアイテム強化で装甲がさらに上がるため、序盤にリードを作れないと後半詰む</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Ahri.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ahri.png" alt="アーリ" loading="lazy">
+    <span class="related-card-name">アーリ</span>
+  </a>
+  <a href="/champion/Akali.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Akali.png" alt="アカリ" loading="lazy">
+    <span class="related-card-name">アカリ</span>
+  </a>
+  <a href="/champion/Annie.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Annie.png" alt="アニー" loading="lazy">
+    <span class="related-card-name">アニー</span>
+  </a>
+  <a href="/champion/Brand.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Brand.png" alt="ブランド" loading="lazy">
+    <span class="related-card-name">ブランド</span>
+  </a>
+  <a href="/champion/Diana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Diana.png" alt="ダイアナ" loading="lazy">
+    <span class="related-card-name">ダイアナ</span>
+  </a>
+  <a href="/champion/Fizz.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fizz.png" alt="フィズ" loading="lazy">
+    <span class="related-card-name">フィズ</span>
+  </a>
+  <a href="/champion/Irelia.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="related-card-name">イレリア</span>
+  </a>
+  <a href="/champion/Jayce.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="related-card-name">ジェイス</span>
+  </a>
+  <a href="/champion/Karma.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Karma.png" alt="カルマ" loading="lazy">
+    <span class="related-card-name">カルマ</span>
+  </a>
+  <a href="/champion/Katarina.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Katarina.png" alt="カタリナ" loading="lazy">
+    <span class="related-card-name">カタリナ</span>
+  </a>
+  <a href="/champion/Lucian.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lucian.png" alt="ルシアン" loading="lazy">
+    <span class="related-card-name">ルシアン</span>
+  </a>
+  <a href="/champion/Lux.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lux.png" alt="ラックス" loading="lazy">
+    <span class="related-card-name">ラックス</span>
+  </a>
+  <a href="/champion/Malphite.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="related-card-name">マルファイト</span>
+  </a>
+  <a href="/champion/Morgana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Morgana.png" alt="モルガナ" loading="lazy">
+    <span class="related-card-name">モルガナ</span>
+  </a>
+  <a href="/champion/Orianna.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Orianna.png" alt="オリアナ" loading="lazy">
+    <span class="related-card-name">オリアナ</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Qiyana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Qiyana.png" alt="キヤナ" loading="lazy">
+    <span class="related-card-name">キヤナ</span>
+  </a>
+  <a href="/champion/Seraphine.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Seraphine.png" alt="セラフィーン" loading="lazy">
+    <span class="related-card-name">セラフィーン</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

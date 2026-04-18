@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ナサス 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="ナサス の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・ジャングル・ミッド で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Nasus.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ナサス 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="ナサス の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・ジャングル・ミッド で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Nasus.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nasus.png" alt="ナサス" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">ナサス</h1>
+    <p class="champ-hero-title">砂漠の司書</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Fighter</span><span class="champ-tag">Tank</span>
+      <span class="champ-tag gold">トップ</span><span class="champ-tag gold">ジャングル</span><span class="champ-tag gold">ミッド</span>
+    </div>
+  </div>
+</div>
+<p class="lead">ナサス の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">トップ 全体勝率</div>
+      <div class="stat-card-value wr-good">50.7%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">ジャングル 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">ミッド 全体勝率</div>
+      <div class="stat-card-value wr-good">50.7%</div>
+    </div></div><h2>パワースパイク</h2>
+<p>ナサス が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv11 / Lv16</p><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🔴 不利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/MonkeyKing.png" alt="ウーコン" loading="lazy">
+    <span class="mu-name"><a href="/champion/MonkeyKing.html">ウーコン</a></span>
+    <span class="mu-wr wr-weak">40.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤の不利を耐えてQスタックを溜め、中盤以降のスケーリングで逆転を狙う忍耐のレーニングが必要</div>
+    <ul><li>序盤はWukongのE→Qコンボで一方的に削られるため、タワー下でQスタックを安全に溜めることを最優先する</li><li>W（ウィザー）はWukongがEで飛びついてきた直後に使い、AS低下でトレードダメージを軽減する</li><li>WukongのW（分身）に騙されないよう、分身が動かない特徴を覚えて本体を追い続ける</li><li>Qスタック200以上溜まればトレードが五分になるため、それまでは無理せずファーム優先でスケーリングを目指す</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/KSante.png" alt="カ・サンテ" loading="lazy">
+    <span class="mu-name"><a href="/champion/KSante.html">カ・サンテ</a></span>
+    <span class="mu-wr wr-weak">41.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤のトレード力差が大きいため無理せずファームに徹し、スタック200以上を目安にようやく反撃が見えてくる</div>
+    <ul><li>序盤はカサンテのQ3段目ノックアップを避けるためにミニオンの裏でファームし、無理なトレードを避けてスタック蓄積に集中する</li><li>W（ウィザー）をカサンテに使ってもE（足跡なき道）やW（全てを超えて）で距離を詰められるため、ウィザー単体での抑止力が低い点に注意</li><li>カサンテがR（我が道を往く）でAll Out形態に入った場合はR（神の怒り）で耐久力を上げてバーストを耐え凌ぐ</li><li>シーンやキンドルジェムなど、スタック回転率を上げるビルドを優先し、レーンフェーズの不利をスケーリングで補う</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Gragas.png" alt="グラガス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Gragas.html">グラガス</a></span>
+    <span class="mu-wr wr-weak">42.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ GragasのQとEで序盤Qスタック溜めが妨害される不利対面。WスローとR発動で中盤以降に対抗する</div>
+    <ul><li>GragasのQ範囲を避けつつタワー下でQラストヒットを取りスタックを溜める</li><li>WスローでGragasの移動速度を低下させGragasのE接近を阻止する</li><li>R発動でステータスが上昇しGragasとの1対1が可能になる</li><li>MRアイテムでGragasの魔法ダメージを軽減する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Varus.png" alt="ヴァルス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Varus.html">ヴァルス</a></span>
+    <span class="mu-wr wr-bad">46.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ VarusのAAポークでQスタック溜めが著しく妨害される不利対面。WのAS低下を活かしR中にオールインする</div>
+    <ul><li>VarusのAAポークに耐えつつタワー下でQラストヒットを確実に取りスタックを溜める</li><li>WでVarusのAS低下とスローを与えW中はVarusのDPSが大幅に下がるため接近する</li><li>Lv6以降R発動でステータスが上昇しVarusとの1対1が可能になる</li><li>ジャングラーのガンク待ちでVarusが前に出すぎた際にWスローでガンクCCを合わせる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Quinn.png" alt="クイン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Quinn.html">クイン</a></span>
+    <span class="mu-wr wr-bad">48.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Quinnのポークで非常に苦しい不利対面。CS被害を最小限にしてQスタックを稼ぎ、WスローでQuinnのカイトを制限する。Rのオールインで一気に仕留めるためJGのガンク合わせを待つ</div>
+    <ul><li>Q（サイフォンストライク）のスタック稼ぎを最優先でQuinnのハラスを受けてもQスタックを取り続け、ライフスティールルーンとパッシブ回復でQuinnのポークを耐える</li><li>W（ウィザー）のスローをQuinnに入れてQuinnの移動速度とAS低下で一時的にカイトを制限し、W中にQスタック強化AAで接近してダメージを入れる</li><li>E（スピリットファイア）のAR低下範囲にQuinnを巻き込み、AR低下状態のQuinnにQの強化AAで大ダメージを出して短いトレードを仕掛ける</li><li>R（ナサスの怒り）のHP増加+範囲ダメージでQuinnにオールインし、RのHP増加でQuinnのバーストを耐えつつR範囲ダメージ+Qスタック強化AAで一気に仕留める</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ivern.png" alt="アイバーン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Ivern.html">アイバーン</a></span>
+    <span class="mu-wr wr-even">49.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Ivernは戦闘力が低く、Qスタックを安全に貯められる。デイジーはEのアーマー低下で素早く処理する</div>
+    <ul><li>IvernのQ（ルートキャリア）のスネアを避けつつW（ウィザー）のスローで接近して殴り合う</li><li>IvernのR（デイジー！）の召喚体にE（スピリットファイア）のアーマー低下を当てて素早く処理する</li><li>Ivernは戦闘力が低いためQ（サイフォンストライク）のスタック対象として安全にファームできる</li><li>IvernのW（ブラッシュメーカー）の茂み生成にはE（スピリットファイア）のAoEを置いて視界を確保しつつダメージを与える</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Warwick.png" alt="ワーウィック" loading="lazy">
+    <span class="mu-name"><a href="/champion/Warwick.html">ワーウィック</a></span>
+    <span class="mu-wr wr-bad">46.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤の1v1は回復差で完敗。Wで追撃を遅らせ、Eファームでスタックを貯めてスケーリングで逆転する</div>
+    <ul><li>WarwickのパッシブとQ（獣の顎門）の回復力が序盤から非常に高く、1v1は勝てない</li><li>WarwickのW（血の追跡者）で低HPの味方への追跡が速いため、W（ウィザー）でスローをかけて追撃を遅らせる</li><li>WarwickのR（抑え難い飢餓）の長距離突進をR（サンドストーム）のボーナスHPで耐えて味方の援護を待つ</li><li>WarwickのE（怒りの咆哮）のダメージ軽減中はQ（サイフォンストライク）のダメージが減るため、E終了後に殴る</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/RekSai.png" alt="レク＝サイ" loading="lazy">
+    <span class="mu-name"><a href="/champion/RekSai.html">レク＝サイ</a></span>
+    <span class="mu-wr wr-bad">47.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤のデュエルとマップ圧力で完敗。Eファームでスタックを貯め後半の集団戦で逆転する</div>
+    <ul><li>RekSaiのQ（女王の怒り）の連続AAとパッシブの回復で序盤のデュエルは圧倒的に不利</li><li>RekSaiのE（トンネル）と潜伏Wの移動速度で序盤のカウンタージャングルが防ぎにくい</li><li>W（ウィザー）でRekSaiのEトンネルダッシュ後の追撃を遅くし、距離を取って撤退する</li><li>RekSaiのR（ヴォイドラッシュ）の確定ダメージにはR（サンドストーム）のHP増加で耐えきる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Rammus.png" alt="ラムス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Rammus.html">ラムス</a></span>
+    <span class="mu-wr wr-bad">47.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ RammusのW高アーマーでQダメージが激減。Eアーマーシュレッドを必ず先に当てる</div>
+    <ul><li>RammusのW（防御キリン）のアーマー増加がQ（サイフォンストライク）のADダメージを大幅に軽減する</li><li>E（スピリットファイア）のアーマーシュレッドがRammusのWアーマー増加に対して必須、常に先に使う</li><li>RammusのE（挑発パンク）のタウントでQ（サイフォンストライク）を無駄撃ちさせられるため、Eの射程外に立つ</li><li>W（ウィザー）のスローでRammusのQ（パワーボール）の加速突進を止めて味方へのガンクを阻止する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Volibear.png" alt="ボリベア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Volibear.html">ボリベア</a></span>
+    <span class="mu-wr wr-bad">48.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤から中盤にかけて全面的に不利。WでQダッシュを遅らせつつファームに徹してスケールを目指す</div>
+    <ul><li>VolibearのパッシブとQ（雷鳴の猛進）のスタンで序盤のスカーミッシュは完全に不利</li><li>VolibearのW（乱れ喰らい）の2回目強化噛みつきのダメージと回復が非常に高く、長期戦でも厳しい</li><li>W（ウィザー）のスローでVolibearのQのスタン付きダッシュを遅くして距離を取る</li><li>VolibearのR（嵐を呼ぶ者）のタワーダイブ性能が高いため、低HPでタワー下に留まらない</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Elise.png" alt="エリス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Elise.html">エリス</a></span>
+    <span class="mu-wr wr-bad">48.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Eliseの序盤ガンク圧が圧倒的。ファームに集中してQスタックでスケーリング逆転を狙う</div>
+    <ul><li>EliseのヒューマンフォームQ（ニューロトキシン）の現在HP割合ダメージがR（サンドストーム）のボーナスHP中に痛い</li><li>W（ウィザー）のスローでEliseのスパイダーフォームE（ラペル）着地後に逃走を許さない</li><li>EliseのヒューマンフォームE（コクーン）のスタンをR（サンドストーム）のボーナスHPで耐えて時間を稼ぐ</li><li>Eliseの序盤ガンク力が圧倒的に高いため、ファーム重視でQ（サイフォンストライク）スタックを優先してスケーリングで逆転する</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Akali.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Akali.png" alt="アカリ" loading="lazy">
+    <span class="related-card-name">アカリ</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Darius.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="related-card-name">ダリウス</span>
+  </a>
+  <a href="/champion/Fiora.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fiora.png" alt="フィオラ" loading="lazy">
+    <span class="related-card-name">フィオラ</span>
+  </a>
+  <a href="/champion/Garen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Garen.png" alt="ガレン" loading="lazy">
+    <span class="related-card-name">ガレン</span>
+  </a>
+  <a href="/champion/Irelia.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="related-card-name">イレリア</span>
+  </a>
+  <a href="/champion/Jax.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="related-card-name">ジャックス</span>
+  </a>
+  <a href="/champion/Jayce.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="related-card-name">ジェイス</span>
+  </a>
+  <a href="/champion/Kled.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kled.png" alt="クレッド" loading="lazy">
+    <span class="related-card-name">クレッド</span>
+  </a>
+  <a href="/champion/Malphite.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="related-card-name">マルファイト</span>
+  </a>
+  <a href="/champion/Olaf.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Olaf.png" alt="オラフ" loading="lazy">
+    <span class="related-card-name">オラフ</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Quinn.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Quinn.png" alt="クイン" loading="lazy">
+    <span class="related-card-name">クイン</span>
+  </a>
+  <a href="/champion/Renekton.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Renekton.png" alt="レネクトン" loading="lazy">
+    <span class="related-card-name">レネクトン</span>
+  </a>
+  <a href="/champion/Riven.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Riven.png" alt="リヴェン" loading="lazy">
+    <span class="related-card-name">リヴェン</span>
+  </a>
+  <a href="/champion/Shen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Shen.png" alt="シェン" loading="lazy">
+    <span class="related-card-name">シェン</span>
+  </a>
+  <a href="/champion/TahmKench.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TahmKench.png" alt="タム・ケンチ" loading="lazy">
+    <span class="related-card-name">タム・ケンチ</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ポッピー 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="ポッピー の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・ジャングル・サポート で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Poppy.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ポッピー 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="ポッピー の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・ジャングル・サポート で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Poppy.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Poppy.png" alt="ポッピー" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">ポッピー</h1>
+    <p class="champ-hero-title">大鎚の守護者</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Tank</span><span class="champ-tag">Fighter</span>
+      <span class="champ-tag gold">トップ</span><span class="champ-tag gold">ジャングル</span><span class="champ-tag gold">サポート</span>
+    </div>
+  </div>
+</div>
+<p class="lead">ポッピー の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">トップ 全体勝率</div>
+      <div class="stat-card-value wr-good">50.6%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">ジャングル 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">サポート 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div></div><h2>パワースパイク</h2>
+<p>ポッピー が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6</p><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yasuo.png" alt="ヤスオ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Yasuo.html">ヤスオ</a></span>
+    <span class="mu-wr wr-strong">56.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ WでヤスオのEダッシュを完全に封じる有利対面。E壁スタンからのQコンボでバーストダメージを与える</div>
+    <ul><li>W(不屈の意志)でヤスオのE(旋風斬)ダッシュを阻止しヤスオの主要機動力を完全に封じる</li><li>E(勇敢な一撃)で壁際のヤスオを突き飛ばしてスタンさせスタン中にQでダメージを叩き込む</li><li>パッシブのバックラーAAでヤスオのパッシブシールドを剥がしてからコンボで追加ダメージを与える</li><li>R(守護者の鉄槌)でヤスオをノックバックして戦闘から排除しチーム戦でヤスオの参加を阻止する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yone.png" alt="ヨネ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Yone.html">ヨネ</a></span>
+    <span class="mu-wr wr-strong">55.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ WでYoneのE・Q3・R全てのダッシュを止められるのが最大の強み。Wを温存してYoneのダッシュに合わせ、Eの壁ドンスタンで追撃する</div>
+    <ul><li>W（不屈の鉄壁）をYoneのE（ソウルアンバウンド）ダッシュやQ3段目ノックアップダッシュに合わせて発動し、ダッシュを完全に遮断してグラウンドさせる</li><li>E（英雄的突撃）でYoneを壁に押し付けてスタンさせ、Q（鉄の大使）のバーストとAAでトレードを有利に進める</li><li>YoneのR（封じられし者の門）のダッシュもWで止められるため、YoneのR発動に合わせてWを温存し、Rエンゲージを完封する</li><li>R（守護者の鉄鎚）でYoneをレーンから弾き飛ばし、タワー下に押し込んでCS差を作る。チャージR不要の即撃ちノックアップも近距離の迎撃に有効</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="mu-name"><a href="/champion/Camille.html">カミール</a></span>
+    <span class="mu-wr wr-good">53.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ WでCamilleのEダッシュを完全に止めるのがこのマッチアップ最大のカウンター要素。Eブロック後のカウンタートレードでCamilleを圧倒する</div>
+    <ul><li>W（不屈の鉄壁）でCamilleのE（フックショット）のダッシュを完全にブロックし、Camilleの最重要エンゲージスキルを無効化する</li><li>CamilleがEを使った瞬間にW（不屈の鉄壁）を発動してダッシュを止め、地面に叩き落とされたCamilleにE（英雄的突進）で壁ドンスタンからQコンボを叩き込む</li><li>E（英雄的突進）でCamilleを壁に押し込みスタンさせ、Q（ハンマーショック）の先端当てで確実にダメージを入れるショートトレードを繰り返す</li><li>R（守護者の鉄槌）でCamilleを弾き飛ばしてチームファイトから除外し、CamilleのR（ヘクスティメイト）での味方キャリー閉じ込めを防ぐピールとして使う</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Tryndamere.png" alt="トリンダメア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Tryndamere.html">トリンダメア</a></span>
+    <span class="mu-wr wr-good">51.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ WでスピンをキャンセルしてTryndamereの機動力を封じ、壁スタンで一方的に攻撃する</div>
+    <ul><li>WでTryndamereのスピンを止め、機動力を完全に封じよう</li><li>Eで壁にスタンさせてからQコンボでバーストダメージを出そう</li><li>TryndamereのフューリーMAX時は距離を取り、安全にファームしよう</li><li>アルティメットでTryndamereを遠くに弾き飛ばし、チーム戦から排除しよう</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/MonkeyKing.png" alt="ウーコン" loading="lazy">
+    <span class="mu-name"><a href="/champion/MonkeyKing.html">ウーコン</a></span>
+    <span class="mu-wr wr-good">—</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ WでMonkeyKingのEダッシュを完封し、壁叩きつけEで一方的にダメージを与えられる有利マッチアップ</div>
+    <ul><li>MonkeyKingのE(神速の法)ダッシュにW(不屈の鉄壁)を合わせれば完全にダッシュを止められ、接近手段を封じられる</li><li>MonkeyKingが壁際にいる時はE(英雄的突撃)で壁に叩きつけてスタンし、Q(ハンマーショック)で追撃する</li><li>MonkeyKingのR(旋風猿撃)発動時はR(キーパーの審判)のチャージで遠くに飛ばし、集団戦でのRノックアップの価値を無効化する</li><li>MonkeyKingのW(武者変わり)ステルス中にパッシブ(鉄の大使)のシールドが回復するため、ステルス中は防御態勢を取って有利に仕切り直す</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>サポート でのマッチアップ</h2><h3>🟢 有利な相手 Top 3</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yuumi.png" alt="ユーミ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Yuumi.html">ユーミ</a></span>
+    <span class="mu-wr wr-good">54.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ポピーのオールイン力がユウミの受動的なプレイを圧倒する</div>
+    <ul><li>ユウミのADCにEで壁ドンを狙いキルプレッシャーをかけよう</li><li>ユウミが降りた瞬間にEで叩きつけてキルしよう</li><li>Wでユウミのパッシブなプレイに対してプレッシャーをかけ続けよう</li><li>ウルトでユウミのADCを遠くに飛ばしてゾーニングしよう</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Rakan.png" alt="ラカン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Rakan.html">ラカン</a></span>
+    <span class="mu-wr wr-even">49.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Wでラカンのすべてのダッシュを止めて機動力を封じる</div>
+    <ul><li>ラカンのWに合わせてWでダッシュを止めよう</li><li>ラカンのRに合わせてWを温存してダッシュを止めよう</li><li>壁際でラカンにEスタンを決めよう</li><li>ラカンのEでの離脱もWで止められる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Shaco.png" alt="シャコ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Shaco.html">シャコ</a></span>
+    <span class="mu-wr wr-weak">44.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ポピーのWがシャコの機動力を封じ完全にカウンターする</div>
+    <ul><li>Wでシャコのステルス解除後のダッシュを止められる</li><li>シャコのボックスを見つけたら壊してブッシュコントロールを維持しよう</li><li>ウルトでシャコを遠くに飛ばしてADCを守れる</li><li>Eの壁ドンでシャコを確実に捕まえられる</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Akali.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Akali.png" alt="アカリ" loading="lazy">
+    <span class="related-card-name">アカリ</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Darius.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="related-card-name">ダリウス</span>
+  </a>
+  <a href="/champion/Fiora.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fiora.png" alt="フィオラ" loading="lazy">
+    <span class="related-card-name">フィオラ</span>
+  </a>
+  <a href="/champion/Garen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Garen.png" alt="ガレン" loading="lazy">
+    <span class="related-card-name">ガレン</span>
+  </a>
+  <a href="/champion/Irelia.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="related-card-name">イレリア</span>
+  </a>
+  <a href="/champion/Jax.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="related-card-name">ジャックス</span>
+  </a>
+  <a href="/champion/Jayce.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="related-card-name">ジェイス</span>
+  </a>
+  <a href="/champion/Kled.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kled.png" alt="クレッド" loading="lazy">
+    <span class="related-card-name">クレッド</span>
+  </a>
+  <a href="/champion/Malphite.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="related-card-name">マルファイト</span>
+  </a>
+  <a href="/champion/Olaf.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Olaf.png" alt="オラフ" loading="lazy">
+    <span class="related-card-name">オラフ</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Quinn.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Quinn.png" alt="クイン" loading="lazy">
+    <span class="related-card-name">クイン</span>
+  </a>
+  <a href="/champion/Renekton.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Renekton.png" alt="レネクトン" loading="lazy">
+    <span class="related-card-name">レネクトン</span>
+  </a>
+  <a href="/champion/Riven.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Riven.png" alt="リヴェン" loading="lazy">
+    <span class="related-card-name">リヴェン</span>
+  </a>
+  <a href="/champion/Shen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Shen.png" alt="シェン" loading="lazy">
+    <span class="related-card-name">シェン</span>
+  </a>
+  <a href="/champion/TahmKench.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TahmKench.png" alt="タム・ケンチ" loading="lazy">
+    <span class="related-card-name">タム・ケンチ</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>スウェイン 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="スウェイン の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ミッド・サポート・トップ・ボット（ADC） で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Swain.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="スウェイン 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="スウェイン の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ミッド・サポート・トップ・ボット（ADC） で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Swain.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Swain.png" alt="スウェイン" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">スウェイン</h1>
+    <p class="champ-hero-title">ノクサス帝国元帥</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Fighter</span><span class="champ-tag">Mage</span>
+      <span class="champ-tag gold">ミッド</span><span class="champ-tag gold">サポート</span><span class="champ-tag gold">トップ</span><span class="champ-tag gold">ボット（ADC）</span>
+    </div>
+  </div>
+</div>
+<p class="lead">スウェイン の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">ミッド 全体勝率</div>
+      <div class="stat-card-value wr-bad">48.2%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">サポート 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">トップ 全体勝率</div>
+      <div class="stat-card-value wr-bad">48.2%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">ボット（ADC） 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div></div><h2>パワースパイク</h2>
+<p>スウェイン が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6</p><section class="role-section"><h2>ミッド でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TwistedFate.png" alt="ツイステッド・フェイト" loading="lazy">
+    <span class="mu-name"><a href="/champion/TwistedFate.html">ツイステッド・フェイト</a></span>
+    <span class="mu-wr wr-good">50.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ スウェインはTFに対してレーン戦の圧力で大きく有利</div>
+    <ul><li>TFのゴールドカードに合わせてEで引き寄せてコンボしよう</li><li>TFよりレーン戦が強いので積極的にトレードしよう</li><li>TFがウルトでロームしたらプッシュしてタワーを削ろう</li><li>レベル6以降はオールインでTFを倒しきれる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kassadin.png" alt="カサディン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Kassadin.html">カサディン</a></span>
+    <span class="mu-wr wr-even">50.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ スウェインは序盤の圧力でカサディンを圧倒できる</div>
+    <ul><li>カサディンの序盤の弱さを突いてEコンボで圧力をかけよう</li><li>レベル6前にキルかCSリードを奪おう</li><li>カサディンのスケーリングを許さないよう常にプレッシャー</li><li>ジャングラーと連携して序盤にカサディンを潰そう</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Sion.png" alt="サイオン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Sion.html">サイオン</a></span>
+    <span class="mu-wr wr-even">49.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ スウェインはCCとDPSでサイオンに大きく有利</div>
+    <ul><li>サイオンの動きが遅いためEが当てやすい</li><li>サイオンのQチャージを見てからEで中断しよう</li><li>ウルトの回復力でサイオンのダメージを耐えられる</li><li>サイオンのウルト突進を横に避けてからコンボしよう</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kayle.png" alt="ケイル" loading="lazy">
+    <span class="mu-name"><a href="/champion/Kayle.html">ケイル</a></span>
+    <span class="mu-wr wr-bad">48.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ スウェインはケイルの序盤の弱さを突いて圧倒的に有利</div>
+    <ul><li>ケイルの序盤の弱さを突いてEコンボで圧力をかけよう</li><li>ケイルのスケーリングを許さないよう常にプレッシャー</li><li>ウルトでケイルをオールインして倒しきろう</li><li>ジャングラーと連携してケイルを序盤に潰そう</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Veigar.png" alt="ベイガー" loading="lazy">
+    <span class="mu-name"><a href="/champion/Veigar.html">ベイガー</a></span>
+    <span class="mu-wr wr-bad">48.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ スウェインはヴェイガーに対してレーン戦の圧力と持久力で有利</div>
+    <ul><li>ヴェイガーのケージを避ければスウェインのウルトで圧倒できる</li><li>レーン序盤からEで引き寄せてトレードを仕掛けよう</li><li>ヴェイガーのスタック溜めを妨害するために積極的にハラスしよう</li><li>集団戦ではウルトの回復力でヴェイガーのバーストを耐えられる</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>サポート でのマッチアップ</h2><h3>🟢 有利な相手 Top 2</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yuumi.png" alt="ユーミ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Yuumi.html">ユーミ</a></span>
+    <span class="mu-wr wr-bad">46.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ スウェインのサステインとポークがユウミの回復を圧倒する</div>
+    <ul><li>Eでユウミのアシでを引き寄せてバーストしよう</li><li>ウルト中のサステインでユウミの回復を上回れる</li><li>ユウミのADCにEを当て続けてプレッシャーをかけよう</li><li>パッシブのソウルを集めて耐久力を上げよう</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Soraka.png" alt="ソラカ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Soraka.html">ソラカ</a></span>
+    <span class="mu-wr wr-weak">43.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 持続ダメージでソラカの回復を上回れる</div>
+    <ul><li>Eからパッシブの引き寄せでコンボを繋げよう</li><li>ウルトの持続ダメージでソラカのHPを削り続けよう</li><li>ソラカの低耐久を突いてオールインしよう</li><li>ソラカのEサイレンスを避けてからコンボしよう</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>ボット（ADC） でのマッチアップ</h2><h3>🟢 有利な相手 Top 2</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Twitch.png" alt="トゥイッチ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Twitch.html">トゥイッチ</a></span>
+    <span class="mu-wr wr-bad">47.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Twitchの低い体力と限られた機動力を突いてCCバーストで倒す</div>
+    <ul><li>TwitchのQ（まやかし）解除後にE（引き寄せ）で即座に捕まえる</li><li>W（ビジョン・オブ・エンパイア）でTwitchのステルス位置を予測して牽制する</li><li>TwitchのR（ネズミ返し）の射程外からスキルでポークする</li><li>Twitchは体力が低いためコンボで一気にバーストできる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/KogMaw.png" alt="コグ＝マウ" loading="lazy">
+    <span class="mu-name"><a href="/champion/KogMaw.html">コグ＝マウ</a></span>
+    <span class="mu-wr wr-weak">40.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ KogMawの低機動力を突いてCCで捕まえバーストで倒す</div>
+    <ul><li>KogMawは機動力が低くE（引き寄せ）が非常に当てやすい</li><li>W（ビジョン・オブ・エンパイア）でKogMawのポジションを制限する</li><li>R（悪魔の抱擁）で接近してKogMawを一気にバーストする</li><li>KogMawのW（バイオ・アーシッド・バラージ）発動中は無理に近づかない</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 1</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lucian.png" alt="ルシアン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Lucian.html">ルシアン</a></span>
+    <span class="mu-wr wr-bad">49.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ルシアンの序盤の圧倒的なトレード力に対してUltの回復で耐え凌ぐ</div>
+    <ul><li>ルシアンの序盤のショートトレードが非常に強いため距離を保つ</li><li>Eでルシアンを捕まえた時にサポートと合わせてオールインする</li><li>ルシアンのEダッシュ後のタイミングでEを狙うと当てやすい</li><li>レベル6以降はUltの回復を活かしてルシアンのバーストを耐える</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Ahri.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ahri.png" alt="アーリ" loading="lazy">
+    <span class="related-card-name">アーリ</span>
+  </a>
+  <a href="/champion/Akali.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Akali.png" alt="アカリ" loading="lazy">
+    <span class="related-card-name">アカリ</span>
+  </a>
+  <a href="/champion/Annie.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Annie.png" alt="アニー" loading="lazy">
+    <span class="related-card-name">アニー</span>
+  </a>
+  <a href="/champion/Brand.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Brand.png" alt="ブランド" loading="lazy">
+    <span class="related-card-name">ブランド</span>
+  </a>
+  <a href="/champion/Diana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Diana.png" alt="ダイアナ" loading="lazy">
+    <span class="related-card-name">ダイアナ</span>
+  </a>
+  <a href="/champion/Fizz.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fizz.png" alt="フィズ" loading="lazy">
+    <span class="related-card-name">フィズ</span>
+  </a>
+  <a href="/champion/Irelia.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="related-card-name">イレリア</span>
+  </a>
+  <a href="/champion/Jayce.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="related-card-name">ジェイス</span>
+  </a>
+  <a href="/champion/Karma.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Karma.png" alt="カルマ" loading="lazy">
+    <span class="related-card-name">カルマ</span>
+  </a>
+  <a href="/champion/Katarina.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Katarina.png" alt="カタリナ" loading="lazy">
+    <span class="related-card-name">カタリナ</span>
+  </a>
+  <a href="/champion/Lucian.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lucian.png" alt="ルシアン" loading="lazy">
+    <span class="related-card-name">ルシアン</span>
+  </a>
+  <a href="/champion/Lux.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lux.png" alt="ラックス" loading="lazy">
+    <span class="related-card-name">ラックス</span>
+  </a>
+  <a href="/champion/Malphite.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="related-card-name">マルファイト</span>
+  </a>
+  <a href="/champion/Morgana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Morgana.png" alt="モルガナ" loading="lazy">
+    <span class="related-card-name">モルガナ</span>
+  </a>
+  <a href="/champion/Orianna.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Orianna.png" alt="オリアナ" loading="lazy">
+    <span class="related-card-name">オリアナ</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Qiyana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Qiyana.png" alt="キヤナ" loading="lazy">
+    <span class="related-card-name">キヤナ</span>
+  </a>
+  <a href="/champion/Seraphine.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Seraphine.png" alt="セラフィーン" loading="lazy">
+    <span class="related-card-name">セラフィーン</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

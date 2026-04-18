@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ジャックス 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="ジャックス の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・ジャングル で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Jax.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ジャックス 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="ジャックス の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・ジャングル で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Jax.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">ジャックス</h1>
+    <p class="champ-hero-title">最強の武器使い</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Fighter</span><span class="champ-tag">Assassin</span>
+      <span class="champ-tag gold">トップ</span><span class="champ-tag gold">ジャングル</span>
+    </div>
+  </div>
+</div>
+<p class="lead">ジャックス の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">トップ 全体勝率</div>
+      <div class="stat-card-value wr-even">50.4%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">ジャングル 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div></div><h2>パワースパイク</h2>
+<p>ジャックス が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv16</p><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yasuo.png" alt="ヤスオ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Yasuo.html">ヤスオ</a></span>
+    <span class="mu-wr wr-strong">57.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ EのAA無効化でヤスオの主要ダメージソースを封じる有利対面。Q追撃でE逃げを許さず長期戦で圧倒する</div>
+    <ul><li>EでヤスオのAAを完全に無効化しEスタンでヤスオの行動を封じてWとAAでダメージを与える</li><li>QでヤスオのEダッシュに追いつきミニオン経由で逃げようとしてもQジャンプで追撃する</li><li>パッシブのAS増加で継続戦闘力がヤスオを上回り長期のAAトレードで圧倒する</li><li>R発動で防御ステータスが上昇しヤスオのダメージを大幅に軽減しRの追加ダメージでトレードを確実に勝つ</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kayle.png" alt="ケイル" loading="lazy">
+    <span class="mu-name"><a href="/champion/Kayle.html">ケイル</a></span>
+    <span class="mu-wr wr-good">51.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ EのAA完全回避がKayleのAA主体火力を封殺。Q接近でレンジ有利も無効化し、全ゲームフェーズでJaxが有利</div>
+    <ul><li>KayleのAA主体DPSをE（カウンターストライク）で完全に封殺。EがKayleの最大のカウンター</li><li>Q（跳撃）でKayleの遠距離AAレンジを超えて即座に接近し、Eスタン→W強化AAのバーストコンボ</li><li>KayleのR（神聖なる裁き）中はE（カウンターストライク）を温存し、R終了後にスタン→コンボ</li><li>レベル16のKayleに対してもEのAA回避が有効。レベルに関係なくJaxが有利</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Darius.html">ダリウス</a></span>
+    <span class="mu-wr wr-even">50.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ EのカウンターストライクがDariusのAA依存トレードを封印できる点でJaxが有利。E起動音を聞いたらDariusは即AAを止めてノックアップを空振りさせるしかない</div>
+    <ul><li>JaxのEカウンターストライクはDariusのAA連打中に起動するとDariusの全AAを回避+ノックアップでコンボを中断させる</li><li>DariusのEの射程外でJaxのW（エンパワードAA）を絡めたトレードを繰り返し、EのCD中に有利なトレードを仕掛ける</li><li>JaxのRはAAと魔法ダメージ両方にパッシブ耐性スタックを積む。長期トレードでRのMR+AR増加を最大限活用する</li><li>レベル6のJaxはEでDariusのAA全回避→ノックアップ後にQジャンプ+WのAA強化バーストが最大火力になる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Shen.png" alt="シェン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Shen.html">シェン</a></span>
+    <span class="mu-wr wr-bad">48.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ EでShenのAA主体トレードを完封。ShenのW終了後にE起動→AA回避→ノックアップの鉄板コンボで圧倒する</div>
+    <ul><li>E（カウンターストライク）でShenのQ強化AA3発を全て回避。AA回避→ノックアップの確定コンボ</li><li>ShenのW（精霊の壁）が展開中はJaxのAAもブロックされる。Wが終わった直後にEを起動するのが理想</li><li>Q（跳撃）でShenのE（影踏み）の逃走を追いかけ、ガレンに飛びつく</li><li>ShenがR（結束の守り）で消えた時に即タワーを削る。Jaxのタワー破壊速度は非常に速い</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ornn.png" alt="オーン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Ornn.html">オーン</a></span>
+    <span class="mu-wr wr-weak">43.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ EでOrnnのBrittle AAを封殺し、QでE壁を飛び越える機動力がOrnnのCCを無力化する</div>
+    <ul><li>E（カウンターストライク）でOrnnのBrittle消費AAを完全回避し、スタンで反撃する</li><li>Q（跳撃）でOrnnのE壁を飛び越えて接近。E壁のノックアップを回避できる</li><li>R（武闗の型）の3ヒット目追加ダメージがOrnnの高HPに対して効果的</li><li>W（連打）AA強化でBrittleなしのOrnnに対しても十分なダメージを出す</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 2</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Garen.png" alt="ガレン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Garen.html">ガレン</a></span>
+    <span class="mu-wr wr-weak">44.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ EカウンターストライクでGarenのEスピンは25%しか軽減できず、Qサイレンスで封じられる。序盤不利だがレイトのスケーリングで逆転を狙う</div>
+    <ul><li>E（カウンターストライク）はGarenのAAとQを回避できるが、Eスピン（AoE）は25%軽減のみ。スピン中の密着は避ける</li><li>GarenのQサイレンス中はEカウンターストライクを起動できない。Qが見えたらすぐにEを先出しするか距離を取る</li><li>GarenのEは最も近い敵にボーナスダメージ。スピン中はミニオンの中に立ってダメージを分散させる</li><li>レイトゲームではJaxがスケーリングで上回る。序盤不利でもCSを落とさず6アイテムを目指す</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fiora.png" alt="フィオラ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Fiora.html">フィオラ</a></span>
+    <span class="mu-wr wr-bad">49.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ FioraのリポストがJaxのEスタンを無効化+反射するのが最大の不利要素。Eのスタン発動タイミングをずらしてリポストを空振りさせることが必須</div>
+    <ul><li>JaxのE（カウンターストライク）のAA回避はFioraのリポスト（W）で返される可能性がある。Eのスタン発動タイミングをずらしてリポストを空振りさせる</li><li>FioraのバイタルはJaxの周囲に表示される。バイタルが有利な位置（壁際）にある時だけトレードを仕掛ける</li><li>JaxのQ（リープストライク）→W（エンパワースマッシュ）→AA→E（スタン）のコンボ後、FioraのリポストCDを確認してから追撃するかE離脱する</li><li>FioraのグランドチャレンジでJaxは即座にEを使い、Fioraの4バイタル消化を遅延させてR回復ゾーンの発動を防ぐ</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/MasterYi.png" alt="マスター・イー" loading="lazy">
+    <span class="mu-name"><a href="/champion/MasterYi.html">マスター・イー</a></span>
+    <span class="mu-wr wr-strong">62.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ E（カウンターストライク）がAA依存のマスター・イーの全火力を封じる最強カウンター。RのAS上昇もEで完全無効化される</div>
+    <ul><li>マスター・イーのE（武道家の一撃）の確定ダメージ付きAAもE（カウンターストライク）のAA無効化で完全に防げるため、イーが接近してきたらEを発動してAA火力を封じスタンで殴り返す</li><li>マスター・イーのQ（アルファストライク）の無敵ダッシュ中にE（カウンターストライク）を発動しておき、Q終了後に出現したイーの目の前でAA無効化+スタンが待ち構えている状態を作る</li><li>マスター・イーのR（ハイランダー）のAS/MS大幅上昇に対してE（カウンターストライク）は攻撃速度に関係なく全AAを無効化するため、Rのステロイドを完全に無意味にしてスタン後にW（エンパワー）で殴る</li><li>マスター・イーのW（明鏡止水）の瞑想回復をE（カウンターストライク）のスタンで中断し、回復を許さずR（グランドマスターの極意）の3回ごと追加ダメージ+パッシブ（リレントレスアサルト）のASスタックで一気に倒す</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/MonkeyKing.png" alt="ウーコン" loading="lazy">
+    <span class="mu-name"><a href="/champion/MonkeyKing.html">ウーコン</a></span>
+    <span class="mu-wr wr-strong">55.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ E（カウンターストライク）がウーコンのAAベースのコンボを完全に封じる。Rの追加魔法ダメージでパッシブAR上昇を無視し、1v1で圧倒する</div>
+    <ul><li>ウーコンのW（まやかしの術）のステルス+分身に対してE（カウンターストライク）を発動しておけば、ステルス解除後のウーコンのAAを無効化しスタンで本体を捕まえてW（エンパワー）で殴り返せる</li><li>ウーコンのE（乱撃旋風陣）のダッシュ攻撃に対してE（カウンターストライク）のAA無効化でダッシュ後のAAダメージを封じ、スタンでウーコンを拘束してQ（跳撃）追撃+パッシブ（リレントレスアサルト）のAS上昇で殴り倒す</li><li>ウーコンのR（猿大旋風）の2段ノックアップに対してE（カウンターストライク）を発動して回転ダメージを軽減し、R終了後にスタンでウーコンを拘束してR（グランドマスターの極意）の3回目AA追加ダメージで仕留める</li><li>ウーコンのパッシブ（岩の肌）のAR上昇で物理ダメージが軽減されるが、R（グランドマスターの極意）の3回目AAの追加魔法ダメージがARを無視して通るため、パッシブAS上昇を活かしてRの追加ダメージを頻繁に発動させる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Briar.png" alt="ブライアー" loading="lazy">
+    <span class="mu-name"><a href="/champion/Briar.html">ブライアー</a></span>
+    <span class="mu-wr wr-good">52.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ E（カウンターストライク）のAA無効化がAA依存のブライアーに致命的。自傷ダメージで自滅する間にスタックを溜めて殴り倒す</div>
+    <ul><li>ブライアーのW（血の狂乱）の自傷付きAS上昇+ライフスティール中にE（カウンターストライク）のAA無効化を発動すれば、ブライアーはAAを当てられず自傷ダメージだけ受けてHP差が広がる</li><li>ブライアーのR（命の残り香）の長距離突進を見たらE（カウンターストライク）を即発動して突進後のAAを全て回避し、スタンを当ててからQ（跳撃）+W（エンパワー）の強化AAで殴り返す</li><li>ブライアーのパッシブ（紅の呪い）で自力回復ができずライフスティールに依存するため、E（カウンターストライク）でAA回復を封じた後にR（グランドマスターの極意）の防御ステータス上昇を活かして一方的にトレードする</li><li>ブライアーのQ（頭の釘）のスタンからのコンボに対してR（グランドマスターの極意）のAR/MR上昇で被ダメージを軽減し、パッシブ（リレントレスアサルト）のASスタックを溜めてブライアーのライフスティール以上の火力で殴り倒す</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Sejuani.png" alt="セジュアニ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Sejuani.html">セジュアニ</a></span>
+    <span class="mu-wr wr-good">51.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ セジュアニはダメージが低くジャックスをキルできない。EでフロストスタックとWダメージを軽減し、パッシブASとR追加ダメージで一方的に削る</div>
+    <ul><li>セジュアニのW（凍てつく激昂）の2段振り下ろしに対してE（カウンターストライク）で被ダメージを軽減し、W終了後にスタンからW（エンパワー）の強化AA+パッシブ（リレントレスアサルト）のAS上昇でセジュアニの高HPを削る</li><li>セジュアニのE（永久凍土）のフロストスタックがジャックスのAAで溜まるが、E（カウンターストライク）のAA無効化中はスタックが溜まらないため、Eを使ってスタック蓄積をリセットしてからAAで殴り直す</li><li>セジュアニのR（氷河の雷撃）の遠距離スタン投射に対してQ（跳撃）の移動で横に飛んで回避するか、Rを食らってもR（グランドマスターの極意）の追加AR/MRで耐えてスタン解除後にE（カウンターストライク）のスタンで反撃する</li><li>セジュアニのパッシブ（凍てつく装甲）の耐性シールドが発動する前にQ（跳撃）+W（エンパワー）で素早くダメージを入れ、シールド発動前にHPを削ってからパッシブ（リレントレスアサルト）のAS上昇でDPSを出し続ける</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Belveth.png" alt="ベル＝ヴェス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Belveth.html">ベル＝ヴェス</a></span>
+    <span class="mu-wr wr-good">51.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ EのAA無効化がAS依存のベル＝ヴェスを完全にカウンター。Eのタイミングを合わせてAAを封じて殴り勝つ</div>
+    <ul><li>ベル＝ヴェスのパッシブ（王座の支配）のAS依存プレイスタイルに対し、E（カウンターストライク）のAA無効化が完全に刺さるため、殴り合いではE発動を遅らせてAA連打を誘ってからEで無効化する</li><li>ベル＝ヴェスのQ（虚空の突撃）の4方向ダッシュで逃げようとしてもQ（ジャンプストライク）の対象指定ダッシュで確実に追いつき、E（カウンターストライク）のスタンからW（エンパワー）の強化AAで追撃する</li><li>ベル＝ヴェスのE（王家の渦）のダメージ軽減中にE（カウンターストライク）を発動してAA無効化を重ね、ベル＝ヴェスのE終了後にスタンからフルコンボで叩き込む</li><li>ベル＝ヴェスのR（無限の饗宴）の真の姿変身後もAA依存は変わらないため、R（グランドマスターの構え）のAR上昇とE（カウンターストライク）でAS依存チャンピオンを完封する</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 1</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Rammus.png" alt="ラムス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Rammus.html">ラムス</a></span>
+    <span class="mu-wr wr-bad">46.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ラムスのW反射ダメージとEタウントがAA主体のジャックスに致命的。Eでタウント中のAAを回避し、W発動中は殴らない</div>
+    <ul><li>ラムスのW（防御態勢）のAR大幅上昇+AA反射ダメージがジャックスのAA主体のDPSに致命的なため、W発動中はAAを控えてW（エンパワー）の魔法ダメージのみで削り、W終了後にパッシブ（リレントレスアサルト）のASで殴る</li><li>ラムスのE（挑発の転がり）のタウントを食らうと強制的にAAを振らされてW反射ダメージで自滅するため、E（カウンターストライク）を事前に発動しタウント中のAAを回避状態にして反射ダメージを防ぐ</li><li>ラムスのQ（パワーボール）の高速接近+ノックバックに対してE（カウンターストライク）を早めに発動し、接近されたらスタンで止めてQ（跳撃）で離脱して不利な殴り合いを拒否する</li><li>ラムスのR（激震）のAoE持続ダメージ+スロー中にAAトレードすると反射ダメージで溶けるため、Rの効果範囲からQ（跳撃）で即座に離脱し、R終了後に再度仕掛ける</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Akali.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Akali.png" alt="アカリ" loading="lazy">
+    <span class="related-card-name">アカリ</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Darius.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="related-card-name">ダリウス</span>
+  </a>
+  <a href="/champion/Fiora.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fiora.png" alt="フィオラ" loading="lazy">
+    <span class="related-card-name">フィオラ</span>
+  </a>
+  <a href="/champion/Garen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Garen.png" alt="ガレン" loading="lazy">
+    <span class="related-card-name">ガレン</span>
+  </a>
+  <a href="/champion/Irelia.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="related-card-name">イレリア</span>
+  </a>
+  <a href="/champion/Jayce.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="related-card-name">ジェイス</span>
+  </a>
+  <a href="/champion/Kled.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kled.png" alt="クレッド" loading="lazy">
+    <span class="related-card-name">クレッド</span>
+  </a>
+  <a href="/champion/Malphite.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="related-card-name">マルファイト</span>
+  </a>
+  <a href="/champion/Olaf.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Olaf.png" alt="オラフ" loading="lazy">
+    <span class="related-card-name">オラフ</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Quinn.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Quinn.png" alt="クイン" loading="lazy">
+    <span class="related-card-name">クイン</span>
+  </a>
+  <a href="/champion/Renekton.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Renekton.png" alt="レネクトン" loading="lazy">
+    <span class="related-card-name">レネクトン</span>
+  </a>
+  <a href="/champion/Riven.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Riven.png" alt="リヴェン" loading="lazy">
+    <span class="related-card-name">リヴェン</span>
+  </a>
+  <a href="/champion/Shen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Shen.png" alt="シェン" loading="lazy">
+    <span class="related-card-name">シェン</span>
+  </a>
+  <a href="/champion/TahmKench.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TahmKench.png" alt="タム・ケンチ" loading="lazy">
+    <span class="related-card-name">タム・ケンチ</span>
+  </a>
+  <a href="/champion/Teemo.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Teemo.png" alt="ティーモ" loading="lazy">
+    <span class="related-card-name">ティーモ</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

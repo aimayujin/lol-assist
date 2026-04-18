@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ノクターン 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="ノクターン の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ジャングル で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Nocturne.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ノクターン 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="ノクターン の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ジャングル で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Nocturne.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nocturne.png" alt="ノクターン" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">ノクターン</h1>
+    <p class="champ-hero-title">終わりなき悪夢</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Assassin</span><span class="champ-tag">Fighter</span>
+      <span class="champ-tag gold">ジャングル</span>
+    </div>
+  </div>
+</div>
+<p class="lead">ノクターン の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">ジャングル 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div></div><h2>パワースパイク</h2>
+<p>ノクターン が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv11 / Lv16</p><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Zyra.png" alt="ザイラ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Zyra.html">ザイラ</a></span>
+    <span class="mu-wr wr-strong">61.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ W（闘の帳）でザイラの命綱であるEルートを無効化し、R（パラノイア）でマップ上どこにいても急襲できる。植物はパッシブ回復の餌になる</div>
+    <ul><li>ザイラのE（捕縛の根）のルートスキルショットに対してW（闇の帳）のスペルシールドを合わせれば完全に無効化でき、シールド成功後にそのまま密着してQ（ダスクブリンガー）+パッシブ（アンブラルブレイド）で瞬殺する</li><li>ザイラのR（絡みつく茨）のノックアップを食らう前にR（パラノイア）のダッシュでザイラに到達し、ザイラがR（絡みつく茨）を使う前にバーストで倒しきるか、W（闇の帳）でRの最初のダメージを防いでから殴り倒す</li><li>ザイラのW（暴茂）の植物がパッシブ（アンブラルブレイド）のAoE回復の対象になるため、植物が複数いる場所でAAすることでパッシブの回復量が増え、殴り合いがさらに有利になる</li><li>ザイラのQ（致死の棘）のAoEダメージに対してW（闇の帳）を温存し、E（捕縛の根）のルートに合わせてシールドを使う判断が重要。Qでシールドをうっかり消費しないよう、ザイラのスキルモーションを見て判断する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Khazix.png" alt="カ＝ジックス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Khazix.html">カ＝ジックス</a></span>
+    <span class="mu-wr wr-good">52.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ WスペルシールドがKhazixの主力バーストを無効化するのが最大強み。Khazixがジャンプ直後にQを使うタイミングにWを合わせて空振りさせてからEフィアーで反撃する</div>
+    <ul><li>NocturneのQは直線スピードバフ+ダメージ付きポーク。Khazixが孤立ジャンプ（R）で着地した後に直線追撃を合わせるとキャッチが確定しやすい</li><li>NocturneのWスペルシールドはKhazixのQとWの主力ダメージを無効化できる。Khazixがジャンプ直後にQを使うタイミングに合わせてWを展開する</li><li>NocturneのEフィアーはKhazixの連続コンボを2秒間中断させる。近距離でEを当てた後にAAとR追撃でキルを確定させる</li><li>NocturneのRブリンクはKhazixのR透明化着地に合わせて飛べる。Khazixが透明化したらNocturne Rを準備して着地点に刺す</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ivern.png" alt="アイバーン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Ivern.html">アイバーン</a></span>
+    <span class="mu-wr wr-even">50.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ IvernのQルートをWスペルシールドで無効化しダイブで一方的に倒す。ソロ戦闘力の差で完全に圧倒する</div>
+    <ul><li>IvernのQ（根絡み）のルートをW（シュラウドオブダークネス）のスペルシールドで無効化し、Ivernの主要CCを消してからR（パラノイア）でダイブする</li><li>IvernのE（トリガーシード）のシールドが付与される前にR（パラノイア）で一気に距離を詰め、Q（ダスクブリンガー）のAD上昇で瞬殺する</li><li>IvernのR（デイジー！）のゴーレムに対しE（心よぎる闇）のフィアーをデイジーに当てて無力化し、Ivern本体を先に処理する</li><li>Ivernはパッシブ（森の友人）のためキャンプにダメージを与えず戦闘力が皆無なため、ジャングル内で遭遇したら積極的にソロキルを狙う</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Evelynn.png" alt="イブリン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Evelynn.html">イブリン</a></span>
+    <span class="mu-wr wr-bad">48.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Wスペルシールドでチャームを無効化しRで強制的に接近する。Evelynnのステルスの優位を完全に消せる</div>
+    <ul><li>EvelynnのW（誘惑）のチャームをW（暗黒の盾）のスペルシールドで無効化し、チャームなしのEvelynnをE（アンスピーカブル・ホラー）のフィアーで拘束する</li><li>Evelynnのパッシブ（悪魔の抱擁）のステルスに対しR（パラノイア）の突進で視界に関係なく接近し、ステルスの安全性を奪う</li><li>EvelynnのR（ラストカレス）のブリンクバックで離脱された場合、Q（闇の手）のダスクトレイルのMS上昇で追撃を継続する</li><li>EvelynnのQ（ヘイトスパイク）の初段スキルショットを見てからW（暗黒の盾）を使うとシールドが無駄になるため、チャームに合わせてシールドを張るタイミングを見極める</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nasus.png" alt="ナサス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Nasus.html">ナサス</a></span>
+    <span class="mu-wr wr-weak">42.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ WでNasusのウィザーを無効化し序盤から侵入。Nasusがスケールする前にゲームを壊す</div>
+    <ul><li>Nasusの序盤クリアは非常に遅いため、Q（ダスクブリンガー）のAD増加を活かしてカウンタージャングルで圧倒する</li><li>W（暗黒の壁）でNasusのW（ウィザー）のスローを完全にブロックし、スペルシールドの恩恵も得る</li><li>NasusがR（サンドストーム）を使用してもパッシブのライフスティールとQのADステロイドで殴り勝てる</li><li>R（パラノイア）でNasusがファーム中のレーンにダイブし、Nasusがスタックを貯める時間を与えない</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Amumu.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Amumu.png" alt="アムム" loading="lazy">
+    <span class="related-card-name">アムム</span>
+  </a>
+  <a href="/champion/Brand.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Brand.png" alt="ブランド" loading="lazy">
+    <span class="related-card-name">ブランド</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Darius.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="related-card-name">ダリウス</span>
+  </a>
+  <a href="/champion/Diana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Diana.png" alt="ダイアナ" loading="lazy">
+    <span class="related-card-name">ダイアナ</span>
+  </a>
+  <a href="/champion/Fizz.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fizz.png" alt="フィズ" loading="lazy">
+    <span class="related-card-name">フィズ</span>
+  </a>
+  <a href="/champion/Graves.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Graves.png" alt="グレイブス" loading="lazy">
+    <span class="related-card-name">グレイブス</span>
+  </a>
+  <a href="/champion/Hecarim.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Hecarim.png" alt="ヘカリム" loading="lazy">
+    <span class="related-card-name">ヘカリム</span>
+  </a>
+  <a href="/champion/JarvanIV.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/JarvanIV.png" alt="ジャーヴァンⅣ" loading="lazy">
+    <span class="related-card-name">ジャーヴァンⅣ</span>
+  </a>
+  <a href="/champion/Jax.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="related-card-name">ジャックス</span>
+  </a>
+  <a href="/champion/Khazix.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Khazix.png" alt="カ＝ジックス" loading="lazy">
+    <span class="related-card-name">カ＝ジックス</span>
+  </a>
+  <a href="/champion/Kindred.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kindred.png" alt="キンドレッド" loading="lazy">
+    <span class="related-card-name">キンドレッド</span>
+  </a>
+  <a href="/champion/LeeSin.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/LeeSin.png" alt="リー・シン" loading="lazy">
+    <span class="related-card-name">リー・シン</span>
+  </a>
+  <a href="/champion/MasterYi.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/MasterYi.png" alt="マスター・イー" loading="lazy">
+    <span class="related-card-name">マスター・イー</span>
+  </a>
+  <a href="/champion/Nautilus.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nautilus.png" alt="ノーチラス" loading="lazy">
+    <span class="related-card-name">ノーチラス</span>
+  </a>
+  <a href="/champion/Nidalee.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nidalee.png" alt="ニダリー" loading="lazy">
+    <span class="related-card-name">ニダリー</span>
+  </a>
+  <a href="/champion/Nunu.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nunu.png" alt="ヌヌ＆ウィルンプ" loading="lazy">
+    <span class="related-card-name">ヌヌ＆ウィルンプ</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

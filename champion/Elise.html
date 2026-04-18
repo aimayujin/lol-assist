@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エリス 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="エリス の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ジャングル・サポート で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Elise.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="エリス 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="エリス の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ジャングル・サポート で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Elise.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Elise.png" alt="エリス" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">エリス</h1>
+    <p class="champ-hero-title">蜘蛛の女帝</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Mage</span><span class="champ-tag">Assassin</span>
+      <span class="champ-tag gold">ジャングル</span><span class="champ-tag gold">サポート</span>
+    </div>
+  </div>
+</div>
+<p class="lead">エリス の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">ジャングル 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">サポート 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div></div><h2>パワースパイク</h2>
+<p>エリス が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell active">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv9</p><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 5</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lillia.png" alt="リリア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Lillia.html">リリア</a></span>
+    <span class="mu-wr wr-good">52.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ リリアは耐久力が低くエリスのEスタンからのフルコンボで瞬殺できる。ラペル無敵でW中心部を回避し、序盤の1v1で圧倒する</div>
+    <ul><li>リリアのQ（咲き続ける夢）の外縁真のダメージを避けるため、人間形態E（眩惑の繭）のスタンを当ててからQ人間（神経毒）の%HPダメージ+W人間（揮発性クモ爆弾）を投げ、蜘蛛形態に変化してQ蜘蛛（毒牙）で一気にバーストする</li><li>リリアのW（注意して！）の中心部高ダメージの詠唱モーションを見たら蜘蛛形態E（ラペル）の無敵上昇で回避し、着地後にQ蜘蛛（毒牙）+W蜘蛛（跳びかかり）のAS上昇で殴り倒す</li><li>リリアのパッシブ（夢見る花の開花）の持続ダメージスタックが溜まるとR（夢見る夜の子守歌）の睡眠を使われるため、人間形態E（眩惑の繭）のスタンからフルコンボで一気にキルを取り睡眠を発動させない</li><li>リリアのR（夢見る夜の子守歌）の睡眠をくらっても蜘蛛形態E（ラペル）は予め入力しておけば睡眠前に発動可能なため、パッシブスタックが溜まったタイミングでラペルを準備して睡眠を回避する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/MasterYi.png" alt="マスター・イー" loading="lazy">
+    <span class="mu-name"><a href="/champion/MasterYi.html">マスター・イー</a></span>
+    <span class="mu-wr wr-good">51.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ マスターイーは序盤が弱くエリスの早期ガンクで圧倒できる。E繭スタンでW瞑想を止め、Rハイランダー中もスタンで無力化する</div>
+    <ul><li>マスターイーのQ（アルファストライク）の無敵ダッシュ中に蜘蛛形態E（ラペル）のuntargetableで上昇し、Q着地に人間形態E（繭）のスタンを合わせてフルコンボで仕留める</li><li>マスターイーのW（明鏡止水）の瞑想回復中に人間形態E（繭）のスタンでチャネリングを中断させ、回復を防いでからQ（神経毒）+蜘蛛形態Q（毒牙）の%HPダメージで削り切る</li><li>マスターイーのR（ハイランダー）のスロー無効+AS上昇中でもスタンは有効なため、R発動中にE（繭）のスタンを当ててハイランダーの時間を無駄にさせる</li><li>マスターイーはレベル6前のガンク力が弱いため、序盤から積極的に人間形態E（繭）のスタンガンクで全レーンに圧力をかけ、イーがファームで育つ前に試合を決める</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nasus.png" alt="ナサス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Nasus.html">ナサス</a></span>
+    <span class="mu-wr wr-even">49.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤のガンク力でNasusのスケーリングを許さない。コクーンスタンからバーストで圧倒する</div>
+    <ul><li>NasusのE（スピリットファイア）でのファーム中にヒューマンフォームE（コクーン）のスタンから全力バーストを叩き込む</li><li>NasusのQ（サイフォンストライク）がスケールする前に序盤のガンク力で全レーンにプレッシャーをかける</li><li>NasusのW（ウィザー）のスロー中もスパイダーフォームE（ラペル）で無敵になり時間を稼げる</li><li>ヒューマンフォームQ（ニューロトキシン）の現在HP割合ダメージがNasusのR（サンドストーム）のボーナスHPに対して効果的</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Naafiri.png" alt="ナフィーリ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Naafiri.html">ナフィーリ</a></span>
+    <span class="mu-wr wr-bad">49.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 繭スタンでナフィーリのダッシュを止め、ラペル無敵でR強化突進を回避できる。序盤のAPバーストで圧倒する</div>
+    <ul><li>ナフィーリのW（猟犬の疾走）のダッシュ突進に人間形態E（繭）のスタンを合わせてダッシュを止め、スタン中に人間形態Q（神経毒）+W（揮発性クモ爆弾）のバーストで大ダメージを与える</li><li>ナフィーリのパッシブ（犬を放て）のパックレットはパッシブ（蜘蛛の群れ）の子蜘蛛との殴り合いで数的不利にならず、人間形態W（揮発性クモ爆弾）の爆発でパックレットごとまとめてダメージを与えられる</li><li>ナフィーリのR（犬の呼び声）の強化突進を蜘蛛形態E（ラペル）の無敵で完全に回避し、Rの強化時間を浪費させてから着地後にフルコンボで反撃する</li><li>ナフィーリのQ（ダーキンの双牙）の投射物は蜘蛛形態E（ラペル）で上昇中に空振りさせられるため、Qを見たらラペルで回避しつつ人間形態に戻ってE（繭）のスタンで追撃する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kayn.png" alt="ケイン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Kayn.html">ケイン</a></span>
+    <span class="mu-wr wr-bad">48.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ケインの変身前が最大のチャンス。繭スタンからフルコンボで序盤から積極的に仕掛けて変身を遅らせる</div>
+    <ul><li>ケインのQ（刈り取り）の短距離ダッシュ中に人間形態E（繭）のスタンを合わせると確実にヒットし、スタン中に人間形態Q（神経毒）の%HPダメージ+W（揮発性クモ爆弾）で大ダメージを与えてからR（蜘蛛変化）で蜘蛛形態Q（毒牙）で追撃する</li><li>ケインのW（ブレードリーチ）のノックアップを蜘蛛形態E（ラペル）の無敵上昇で回避し、着地と同時に蜘蛛形態Q（毒牙）の%HP対象指定ダッシュで接近してパッシブ（蜘蛛の群れ）の子蜘蛛と共に殴り倒す</li><li>ケインの変身前はステータスが低く序盤のエリスの方が圧倒的に強いため、人間形態E（繭）のスタンから人間形態Q（神経毒）+W（揮発性クモ爆弾）+蜘蛛形態Q（毒牙）のフルコンボで積極的にインベードして変身を遅らせる</li><li>ケインのE（影の歩法）の壁抜け逃走に対し、蜘蛛形態W（跳びかかり）のAS上昇で壁に入る前にAAを叩き込み、壁に入られたらルートを先読みして人間形態E（繭）のスタンを壁出口に置いておく</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>サポート でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Yuumi.png" alt="ユーミ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Yuumi.html">ユーミ</a></span>
+    <span class="mu-wr wr-strong">55.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ エリスのオールイン力がユウミの受動的なプレイを圧倒する</div>
+    <ul><li>ユウミのADCに人間フォームEでスタンからオールインしよう</li><li>ユウミが降りた瞬間にEで捕まえてキルしよう</li><li>スパイダーフォームで一気に距離を詰めてキルプレッシャーをかけよう</li><li>レベル2先行でスタンからのオールインが非常に強力</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Amumu.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Amumu.png" alt="アムム" loading="lazy">
+    <span class="related-card-name">アムム</span>
+  </a>
+  <a href="/champion/Brand.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Brand.png" alt="ブランド" loading="lazy">
+    <span class="related-card-name">ブランド</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Darius.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="related-card-name">ダリウス</span>
+  </a>
+  <a href="/champion/Diana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Diana.png" alt="ダイアナ" loading="lazy">
+    <span class="related-card-name">ダイアナ</span>
+  </a>
+  <a href="/champion/Fizz.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fizz.png" alt="フィズ" loading="lazy">
+    <span class="related-card-name">フィズ</span>
+  </a>
+  <a href="/champion/Graves.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Graves.png" alt="グレイブス" loading="lazy">
+    <span class="related-card-name">グレイブス</span>
+  </a>
+  <a href="/champion/Hecarim.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Hecarim.png" alt="ヘカリム" loading="lazy">
+    <span class="related-card-name">ヘカリム</span>
+  </a>
+  <a href="/champion/JarvanIV.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/JarvanIV.png" alt="ジャーヴァンⅣ" loading="lazy">
+    <span class="related-card-name">ジャーヴァンⅣ</span>
+  </a>
+  <a href="/champion/Jax.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="related-card-name">ジャックス</span>
+  </a>
+  <a href="/champion/Khazix.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Khazix.png" alt="カ＝ジックス" loading="lazy">
+    <span class="related-card-name">カ＝ジックス</span>
+  </a>
+  <a href="/champion/Kindred.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kindred.png" alt="キンドレッド" loading="lazy">
+    <span class="related-card-name">キンドレッド</span>
+  </a>
+  <a href="/champion/LeeSin.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/LeeSin.png" alt="リー・シン" loading="lazy">
+    <span class="related-card-name">リー・シン</span>
+  </a>
+  <a href="/champion/MasterYi.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/MasterYi.png" alt="マスター・イー" loading="lazy">
+    <span class="related-card-name">マスター・イー</span>
+  </a>
+  <a href="/champion/Nautilus.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nautilus.png" alt="ノーチラス" loading="lazy">
+    <span class="related-card-name">ノーチラス</span>
+  </a>
+  <a href="/champion/Nidalee.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nidalee.png" alt="ニダリー" loading="lazy">
+    <span class="related-card-name">ニダリー</span>
+  </a>
+  <a href="/champion/Nocturne.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nocturne.png" alt="ノクターン" loading="lazy">
+    <span class="related-card-name">ノクターン</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

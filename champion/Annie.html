@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アニー 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="アニー の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ミッド・サポート で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Annie.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="アニー 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="アニー の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ミッド・サポート で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Annie.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Annie.png" alt="アニー" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">アニー</h1>
+    <p class="champ-hero-title">闇の申し子</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Mage</span>
+      <span class="champ-tag gold">ミッド</span><span class="champ-tag gold">サポート</span>
+    </div>
+  </div>
+</div>
+<p class="lead">アニー の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">ミッド 全体勝率</div>
+      <div class="stat-card-value wr-good">52.3%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">サポート 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div></div><h2>パワースパイク</h2>
+<p>アニー が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell active">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv2 / Lv6</p><section class="role-section"><h2>ミッド でのマッチアップ</h2><h3>🟢 有利な相手 Top 4</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TwistedFate.png" alt="ツイステッド・フェイト" loading="lazy">
+    <span class="mu-name"><a href="/champion/TwistedFate.html">ツイステッド・フェイト</a></span>
+    <span class="mu-wr wr-good">51.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ポイントクリックスタンとバーストでTFを圧倒。フラッシュRで確殺を狙う</div>
+    <ul><li>TFのQをミニオン裏で回避しつつ、スタン付きQで確実にポークする</li><li>TFのR（デスティニー）テレポート中にピンを出し、味方に警戒させる</li><li>フラッシュ+スタン付きR（ティバーズ）でTFを確殺できる</li><li>TFのW（ドロー）ゴールドカードの射程よりAnnieのQ射程の方が長い</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Katarina.png" alt="カタリナ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Katarina.html">カタリナ</a></span>
+    <span class="mu-wr wr-good">51.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ スタンでKatarinaのR・コンボを完封。ダガー回収タイミングにスタンを合わせるのが鍵</div>
+    <ul><li>KatarinaのE（瞬歩）でダガーに飛んでくるタイミングにスタン付きQ（崩壊の火球）を合わせる</li><li>KatarinaのR（デスロータス）をスタン付きW（焼灼）で即座に中断する</li><li>ダガーの落下位置を予測し、Katarinaが飛んでくる場所にスタンRティバーズを置く</li><li>パッシブスタンを常に溜めておき、Katarinaのオールインを抑止する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kassadin.png" alt="カサディン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Kassadin.html">カサディン</a></span>
+    <span class="mu-wr wr-bad">48.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤のAnnieのバーストがKassadinの弱い序盤を徹底的に突く。6前にリードを作る</div>
+    <ul><li>Kassadinの序盤の弱さを突いてスタンQで積極的にポークする</li><li>KassadinのQ（虚空の球）のシールドを剥がしてからフルコンボを入れる</li><li>Kassadinの6レベルR（リフトウォーク）前にキルプレッシャーを最大化する</li><li>KassadinのEは前方スキルを溜めて発動するため、Annieのスキル使用でEを溜めさせない</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Sion.png" alt="サイオン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Sion.html">サイオン</a></span>
+    <span class="mu-wr wr-weak">41.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ スタンでQチャージを中断。APバーストでタンクSionを序盤から圧倒する</div>
+    <ul><li>SionのQ（大地粉砕）のチャージ中にスタン付きQで中断する</li><li>Sionのビルドは通常タンクのためダメージがAnnieより低い</li><li>SionのR（アンストッパブルオンスロート）の突進にスタンは効かないため横に避ける</li><li>SionのE（ローアオブデッド）のスローを受けてもフラッシュRで逆にバーストする</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 2</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Galio.png" alt="ガリオ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Galio.html">ガリオ</a></span>
+    <span class="mu-wr wr-bad">47.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ GalioのMRとシールドがAnnieのAPバーストを大幅に軽減。非常に厳しい対面</div>
+    <ul><li>GalioのW（風神の盾）のマジックダメージシールドがAnnieのバーストを大幅に軽減する</li><li>GalioのパッシブのMR増加でAnnieのダメージが通りにくい</li><li>GalioのE（正義の鉄拳）のダッシュにスタンを合わせて止める</li><li>GalioのR（英雄の登場）のロームにはピンで味方に警告する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Sylas.png" alt="サイラス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Sylas.html">サイラス</a></span>
+    <span class="mu-wr wr-good">52.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 盗用Tibbers（SylasのR）が最大の脅威。SylasのRがCD中であることを確認してからAnnieのRを切る。W不動スタンだけでも十分なバーストを出せることを意識する</div>
+    <ul><li>SylasはAnnieのR（ティバーズ）を盗用してTibbers自身をAnnieに向かわせることができる。SylasがRを盗用・使用済みCDに入ったのを確認してから自分のRを使う</li><li>R以外のスタン手段（4スタック→Wの不動スタン）でもSylasに十分なCCを与えられる。R抜きのW→E→Qコンボでのバーストも選択肢に入れる</li><li>SylasのWヒールはAnnieの全インダメージを一部回復してしまう。スタンを確実に当ててからバーストを完結させ、回復の隙を与えない</li><li>Qラストヒットでのスタックは安全に積めるが、SylasのEチェーン射程内に入らないポジションを維持する</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>サポート でのマッチアップ</h2><h3>🟢 有利な相手 Top 2</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pyke.png" alt="パイク" loading="lazy">
+    <span class="mu-name"><a href="/champion/Pyke.html">パイク</a></span>
+    <span class="mu-wr wr-good">54.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ AnnieはPykeに強い。Pykeの予測可能なエンゲージをスタンで返し、HP増加不可の脆さをバーストで突く。ブッシュの視界管理が鍵</div>
+    <ul><li>ブッシュのワードを切らさず、Pykeのステルスからの奇襲を防ぐ</li><li>Pykeがフックやダッシュで飛び込んできた時にスタン+Rで逆にバーストキルする</li><li>Pykeのエンゲージパターンは読みやすい。スタンをカウンター用に温存する</li><li>PykeはHP増加アイテムを積めないため、Rティバーズのバーストで即死する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lulu.png" alt="ルル" loading="lazy">
+    <span class="mu-name"><a href="/champion/Lulu.html">ルル</a></span>
+    <span class="mu-wr wr-good">53.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Annieのバーストがルルのユーティリティキットを圧倒する。ポリモーフを誘ってからFlash+Rで確実にキルを取る</div>
+    <ul><li>Annieのバーストダメージがルルのシールドとヒールを圧倒するため、オールインが非常に有効</li><li>シャドウフレイムでルルのシールドを貫通し、バーストダメージを最大化する</li><li>Flash+Rの前にルルのポリモーフ（W）を使わせてから仕掛けると確実にキルできる</li><li>スタンパッシブが溜まった状態でプレッシャーをかけ、ルルのポークを抑制する</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 2</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Blitzcrank.png" alt="ブリッツクランク" loading="lazy">
+    <span class="mu-name"><a href="/champion/Blitzcrank.html">ブリッツクランク</a></span>
+    <span class="mu-wr wr-good">52.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 脆いAnnieへの1発フックが致命的。ただしスタンが溜まっていればカウンターキルも可能。ミニオン裏を徹底し、フック外しを見逃さない</div>
+    <ul><li>ミニオンの後ろに常に立ち、Blitzcrankのフックを防ぐ</li><li>フックされた時にスタンが溜まっていれば、即座にRかWで周囲をスタンさせてカウンターキルを狙う</li><li>Blitzcrankがフックを外した時は積極的にハラス。クールダウンが長いため安全に攻められる</li><li>壁際やオープンスペースは避け、フックを避けやすい位置取りを心がける</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Morgana.png" alt="モルガナ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Morgana.html">モルガナ</a></span>
+    <span class="mu-wr wr-good">53.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ブラックシールドがAnnieのスタンと魔法ダメージの両方を無効化するため最悪マッチアップの一つ。Qでシールドを消耗させるか、クールダウンを狙って仕掛ける</div>
+    <ul><li>Qでモルガナのブラックシールドを先に割ってからスタンコンボを仕掛ける</li><li>Flash+Rはブラックシールドのクールダウン中を狙う。シールドがある時は絶対にスタンが通らない</li><li>ミニオンの後ろに立ちモルガナのQ（ダークバインド）を防ぐ</li><li>E（モルテンシールド）でパッシブを溜め、攻撃スキルを温存してシールド切れを待つ</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Ahri.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ahri.png" alt="アーリ" loading="lazy">
+    <span class="related-card-name">アーリ</span>
+  </a>
+  <a href="/champion/Akali.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Akali.png" alt="アカリ" loading="lazy">
+    <span class="related-card-name">アカリ</span>
+  </a>
+  <a href="/champion/Brand.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Brand.png" alt="ブランド" loading="lazy">
+    <span class="related-card-name">ブランド</span>
+  </a>
+  <a href="/champion/Diana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Diana.png" alt="ダイアナ" loading="lazy">
+    <span class="related-card-name">ダイアナ</span>
+  </a>
+  <a href="/champion/Fizz.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fizz.png" alt="フィズ" loading="lazy">
+    <span class="related-card-name">フィズ</span>
+  </a>
+  <a href="/champion/Irelia.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="related-card-name">イレリア</span>
+  </a>
+  <a href="/champion/Jayce.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="related-card-name">ジェイス</span>
+  </a>
+  <a href="/champion/Karma.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Karma.png" alt="カルマ" loading="lazy">
+    <span class="related-card-name">カルマ</span>
+  </a>
+  <a href="/champion/Katarina.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Katarina.png" alt="カタリナ" loading="lazy">
+    <span class="related-card-name">カタリナ</span>
+  </a>
+  <a href="/champion/Lucian.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lucian.png" alt="ルシアン" loading="lazy">
+    <span class="related-card-name">ルシアン</span>
+  </a>
+  <a href="/champion/Lux.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lux.png" alt="ラックス" loading="lazy">
+    <span class="related-card-name">ラックス</span>
+  </a>
+  <a href="/champion/Malphite.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="related-card-name">マルファイト</span>
+  </a>
+  <a href="/champion/Morgana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Morgana.png" alt="モルガナ" loading="lazy">
+    <span class="related-card-name">モルガナ</span>
+  </a>
+  <a href="/champion/Orianna.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Orianna.png" alt="オリアナ" loading="lazy">
+    <span class="related-card-name">オリアナ</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Qiyana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Qiyana.png" alt="キヤナ" loading="lazy">
+    <span class="related-card-name">キヤナ</span>
+  </a>
+  <a href="/champion/Seraphine.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Seraphine.png" alt="セラフィーン" loading="lazy">
+    <span class="related-card-name">セラフィーン</span>
+  </a>
+  <a href="/champion/Syndra.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Syndra.png" alt="シンドラ" loading="lazy">
+    <span class="related-card-name">シンドラ</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

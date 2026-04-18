@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>リリア 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="リリア の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ジャングル・トップ で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Lillia.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="リリア 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="リリア の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。ジャングル・トップ で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Lillia.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Lillia.png" alt="リリア" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">リリア</h1>
+    <p class="champ-hero-title">はにかみ屋の花</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Fighter</span><span class="champ-tag">Mage</span>
+      <span class="champ-tag gold">ジャングル</span><span class="champ-tag gold">トップ</span>
+    </div>
+  </div>
+</div>
+<p class="lead">リリア の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">ジャングル 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">トップ 全体勝率</div>
+      <div class="stat-card-value wr-good">51.0%</div>
+    </div></div><h2>パワースパイク</h2>
+<p>リリア が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv6 / Lv11</p><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 4</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Sejuani.png" alt="セジュアニ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Sejuani.html">セジュアニ</a></span>
+    <span class="mu-wr wr-good">54.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ セジュアニはダメージが低くリリアをキルできず、Q移動速度でCCを回避される。Wレンジ外からQとDoTで一方的にカイトして削り続ける</div>
+    <ul><li>セジュアニのQ（北極の猛進）のダッシュに対してQ（咲き誇れ!）の移動速度上昇で横に走れば回避でき、Qダッシュ後の硬直中にW（注意して!）の中心部高ダメージを確実に当ててパッシブ（夢と花びら）のDoTを付与する</li><li>セジュアニのR（氷河の雷撃）の遠距離スタン投射に対してQ（咲き誇れ!）の移動速度で横移動して回避し、セジュアニのR不発後にR（子守唄）のスリープで反撃してW（注意して!）の中心部ダメージで大ダメージを入れる</li><li>セジュアニのW（凍てつく激昂）の2段振り下ろしのレンジが短いため、Q（咲き誇れ!）の外縁をWレンジ外から当て続け、セジュアニにダメージを出すチャンスを与えずDoTで一方的に削り続ける</li><li>セジュアニのE（永久凍土）のフロストスタックはリリアのスキルで溜まりにくくスタンされる心配が少ないため、Q（咲き誇れ!）の移動速度カイトで距離を維持しながらE（もふもふプレゼント!）のスローでセジュアニの機動力を封じる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/DrMundo.png" alt="ドクター・ムンド" loading="lazy">
+    <span class="mu-name"><a href="/champion/DrMundo.html">ドクター・ムンド</a></span>
+    <span class="mu-wr wr-good">53.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ムンドの低機動力ではリリアのカイトを捕まえられず、DoTの持続ダメージがR回復を削る。Eでパッシブシールドを剥がしてからRスリープで集中砲火する</div>
+    <ul><li>ドクター・ムンドのQ（ホウチョウ）の遠距離スローに対してQ（咲き誇れ!）の移動速度上昇で横に走って回避し、ホウチョウのCD中にQ外縁+パッシブ（夢と花びら）のDoTで持続的にタンクのムンドを削り続ける</li><li>ドクター・ムンドのR（最大限量投与）の大量回復に対してパッシブ（夢と花びら）のDoTとQ（咲き誇れ!）の継続ダメージで回復を上回るDPSを出し続け、R（子守唄）のスリープで回復時間中に行動不能にして味方と集中砲火する</li><li>ドクター・ムンドのパッシブ（行くぞー!）のCC無効化シールドがR（子守唄）のスリープを1回無効化するため、E（もふもふプレゼント!）のスローで先にパッシブシールドを消費させてからRスリープを発動する</li><li>ドクター・ムンドのE（全力パンチ!）のAA強化ダメージが高いため密着は避け、W（注意して!）の中心部ダメージをムンドの低機動力を利用して確実に当て、Q（咲き誇れ!）の移動速度で常にAA射程外を維持する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Rammus.png" alt="ラムス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Rammus.html">ラムス</a></span>
+    <span class="mu-wr wr-even">50.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ラムスのAR特化ビルドはリリアのAP持続ダメージに対して効果が薄い。タウント射程外からQとEでDoTを付与し、カイトで一方的に削り続ける</div>
+    <ul><li>ラムスのW（防御態勢）のAR上昇+棘ダメージ反射はAA依存のためリリアのAPスキル主体の戦い方には効果が薄く、Q（咲き誇れ!）の外縁APダメージとパッシブ（夢と花びら）のDoTで一方的に削れる</li><li>ラムスのQ（パワーボール）の高速移動体当たりに対してE（もふもふプレゼント!）のスローを当ててQ加速を減速させ、Q（咲き誇れ!）の移動速度で横に逃げてパワーボールの体当たりを回避する</li><li>ラムスのE（挑発の挑戦）のタウントで強制的にAAさせられるとW（防御態勢）の棘ダメージを受けるため、E射程外からQ（咲き誇れ!）の外縁とE（もふもふプレゼント!）でDoTを付与し、タウント射程に入らず安全に削る</li><li>ラムスのR（激震）のAoE+スローに対してQ（咲き誇れ!）の移動速度でR範囲外に即座に離脱し、パッシブ（夢と花びら）のDoTスタックが溜まった状態でR（子守唄）を発動してラムスを寝かせ、味方のAPダメージと合わせて削り切る</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Darius.html">ダリウス</a></span>
+    <span class="mu-wr wr-weak">40.5%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ダリウスはガップクローザーが乏しくリリアのQ移動速度に一切追いつけない。E射程外からQとDoTで一方的にカイトして削り、出血5スタックを絶対に許さない</div>
+    <ul><li>ダリウスのE（引きずり込み）のプルが唯一の接近手段でありレンジが短いため、Q（咲き誇れ!）の移動速度上昇を維持してEレンジ外からQ外縁を当て続け、パッシブ（夢と花びら）のDoTで一方的に削る</li><li>ダリウスのQ（大虐殺）の外縁ヒール回復に対してQ（咲き誇れ!）の移動速度で即座にQ内側に入るか範囲外に逃げて外縁ヒットを避け、ダリウスの回復を封じつつE（もふもふプレゼント!）のスローで追撃する</li><li>ダリウスのパッシブ（大出血）の5スタック蓄積を許さないため、Q（咲き誇れ!）の移動速度カイトで絶対にAAレンジに入らず、ダリウスの出血スタックが溜まる前にR（子守唄）のスリープで戦闘をリセットする</li><li>ダリウスのR（ノクサスの断頭台）の実行圏に入る前にW（注意して!）の中心部高ダメージ+Q（咲き誇れ!）のDoTで先にHPを削り、HP管理を徹底してRの確定ダメージで仕留められないようにする</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 4</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Elise.png" alt="エリス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Elise.html">エリス</a></span>
+    <span class="mu-wr wr-bad">47.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ エリスのEスタンからのバーストが致命的。Qの移動速度を活かして繭を回避し、捕まったら即Rで睡眠をかけて離脱する</div>
+    <ul><li>エリスの人間形態E（眩惑の繭）のスタンを食らうとフルコンボで即死するため、Q（咲き続ける夢）の移動速度上昇を維持して繭の直線スキルショットを横に避け続ける</li><li>エリスの蜘蛛形態Q（毒牙）の%HP実行ダメージが低HP時に致命的なため、HPが半分以下になったらR（夢見る夜の子守歌）の睡眠でエリスを止めてすぐに離脱する</li><li>エリスの蜘蛛形態E（ラペル）の無敵上昇中にW（注意して！）を当てても無駄になるため、ラペル着地後にW中心部を狙い、パッシブ（夢見る花の開花）のスタックを重ねてカイトに徹する</li><li>エリスのW人間（揮発性クモ爆弾）の蜘蛛爆弾は最寄りの敵を追尾するため、ジャングルモンスターの近くで戦ってクモ爆弾をモンスターに吸わせて被ダメージを減らす</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Talon.png" alt="タロン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Talon.html">タロン</a></span>
+    <span class="mu-wr wr-even">49.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ タロンのバーストコンボでリリアの低い耐久力では即死する。Q移動速度で距離を維持し、壁越え奇襲を警戒してリバーで視界を確保する</div>
+    <ul><li>タロンのQ（冥殺）の近接クリティカルダッシュに対してQ（咲き誇れ!）の移動速度上昇を常に維持し、タロンのQ射程内に絶対に留まらないようにカイトしてパッシブ（夢と花びら）のDoTで持続的に削る</li><li>タロンのR（暗殺者の悟り）のステルス+刃の環に対してE（もふもふプレゼント!）のスローをステルス突入前のタロンの位置に投げ、スローでステルス中の接近速度を落とし、Q（咲き誇れ!）の移動速度で距離を離す</li><li>タロンのE（暗殺者の跳躍）の壁越え奇襲に対して味方側ジャングルの壁際でファームを避け、リバーや開けた場所でE（もふもふプレゼント!）の長距離スローで視界を確保し、タロンの奇襲ルートを制限する</li><li>タロンのW（二段切り）の往復刃でパッシブ（刃の先端）の出血スタックが溜まるとQクリティカルで即死するため、W（注意して!）のダメージを中心部で当てて先にバーストし、R（子守唄）のスリープで出血スタックが溜まる前にタロンを行動不能にする</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Belveth.png" alt="ベル＝ヴェス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Belveth.html">ベル＝ヴェス</a></span>
+    <span class="mu-wr wr-good">50.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ベル＝ヴェスとの殴り合いはAS差で不利。QのMS加速でカイトし、Rの睡眠で味方の集中攻撃を狙う</div>
+    <ul><li>ベル＝ヴェスのQ（虚空の突撃）の4方向ダッシュでQ（ぐるぐる花びら！）の外周ヒットを回避されやすいため、ダッシュ後の着地点にQを合わせて外周ダメージを確実に当てる</li><li>ベル＝ヴェスのE（王家の渦）のダメージ軽減とライフスティール中はダメージが通りにくいため、パッシブ（夢花火）の持続ダメージで軽減外からじわじわ削る</li><li>ベル＝ヴェスのW（虚ろの天蓋）のノックアップ範囲に入らないよう、Q（ぐるぐる花びら！）のMS加速を活かして距離を保ちながらカイトし続ける</li><li>ベル＝ヴェスのパッシブ（王座の支配）のAS上昇で殴り合いは不利なため、E（ムニムニ転がし！）のスローで距離を取りつつR（子守唄 リリ・ラ・ライ）の睡眠で味方と集中攻撃する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/LeeSin.png" alt="リー・シン" loading="lazy">
+    <span class="mu-name"><a href="/champion/LeeSin.html">リー・シン</a></span>
+    <span class="mu-wr wr-good">50.8%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ リー・シンの序盤バーストと機動力がリリアを圧倒する。Q音波を避けることが最優先で、距離を維持してDoTで削りRスリープで集団戦の主導権を握る</div>
+    <ul><li>リー・シンのQ（音波/残響）の2段ダッシュに対してQ（咲き誇れ!）の移動速度上昇で横に走ってQ1段目を避け、Q1段目が外れればリー・シンの主要ダメージとガップクローズを同時に封じられる</li><li>リー・シンのW（鉄の意志/守りの意志）のシールド+ダッシュでワードに飛んで接近された場合、E（もふもふプレゼント!）のスローを即座に投げてQ（咲き誇れ!）の移動速度で距離を取り、パッシブ（夢と花びら）のDoTで持続的に削る</li><li>リー・シンのR（龍の怒り）のキックで吹き飛ばされると味方に当たってチーム全体が崩壊するため、常にリー・シンのR射程外を維持しつつE（もふもふプレゼント!）の遠距離スローでDoTを付与してR（子守唄）で寝かせる</li><li>リー・シンのE（破風/練気）のスロー+視界暴露に対してQ（咲き誇れ!）の回転でスローを受けても移動速度バフで相殺し、W（注意して!）のスラムをリー・シンのEの射程外から叩き込んでダメージトレードする</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Amumu.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Amumu.png" alt="アムム" loading="lazy">
+    <span class="related-card-name">アムム</span>
+  </a>
+  <a href="/champion/Brand.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Brand.png" alt="ブランド" loading="lazy">
+    <span class="related-card-name">ブランド</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Darius.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="related-card-name">ダリウス</span>
+  </a>
+  <a href="/champion/Diana.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Diana.png" alt="ダイアナ" loading="lazy">
+    <span class="related-card-name">ダイアナ</span>
+  </a>
+  <a href="/champion/Fizz.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fizz.png" alt="フィズ" loading="lazy">
+    <span class="related-card-name">フィズ</span>
+  </a>
+  <a href="/champion/Graves.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Graves.png" alt="グレイブス" loading="lazy">
+    <span class="related-card-name">グレイブス</span>
+  </a>
+  <a href="/champion/Hecarim.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Hecarim.png" alt="ヘカリム" loading="lazy">
+    <span class="related-card-name">ヘカリム</span>
+  </a>
+  <a href="/champion/JarvanIV.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/JarvanIV.png" alt="ジャーヴァンⅣ" loading="lazy">
+    <span class="related-card-name">ジャーヴァンⅣ</span>
+  </a>
+  <a href="/champion/Jax.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="related-card-name">ジャックス</span>
+  </a>
+  <a href="/champion/Khazix.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Khazix.png" alt="カ＝ジックス" loading="lazy">
+    <span class="related-card-name">カ＝ジックス</span>
+  </a>
+  <a href="/champion/Kindred.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kindred.png" alt="キンドレッド" loading="lazy">
+    <span class="related-card-name">キンドレッド</span>
+  </a>
+  <a href="/champion/LeeSin.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/LeeSin.png" alt="リー・シン" loading="lazy">
+    <span class="related-card-name">リー・シン</span>
+  </a>
+  <a href="/champion/MasterYi.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/MasterYi.png" alt="マスター・イー" loading="lazy">
+    <span class="related-card-name">マスター・イー</span>
+  </a>
+  <a href="/champion/Nautilus.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nautilus.png" alt="ノーチラス" loading="lazy">
+    <span class="related-card-name">ノーチラス</span>
+  </a>
+  <a href="/champion/Nidalee.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nidalee.png" alt="ニダリー" loading="lazy">
+    <span class="related-card-name">ニダリー</span>
+  </a>
+  <a href="/champion/Nocturne.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nocturne.png" alt="ノクターン" loading="lazy">
+    <span class="related-card-name">ノクターン</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

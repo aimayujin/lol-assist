@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よくある質問 (FAQ) - lolpick.jp</title>
+<meta name="description" content="lolpick.jp のよくある質問。ツールの使い方、デスクトップ版のトラブルシューティング、LoL用語の解説まで網羅。">
+<link rel="canonical" href="https://lolpick.jp/faq.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<style>
+.faq-item { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; margin:12px 0; padding:16px 20px; }
+.faq-item h3 { margin:0 0 8px; color:var(--gold-light); font-size:1rem; }
+.faq-item h3::before { content:"Q. "; color:var(--gold); font-weight:900; }
+.faq-answer::before { content:"A. "; color:var(--text-dim); font-weight:700; margin-right:4px; }
+.faq-answer { font-size:.95rem; }
+.toc { background:var(--bg-card); border:1px solid var(--border); border-radius:8px; padding:16px 20px; margin:16px 0 24px; }
+.toc h3 { margin:0 0 10px; color:var(--gold); font-size:.95rem; }
+.toc ul { margin:0; padding-left:20px; }
+.toc li { margin:3px 0; }
+.toc a { color:var(--text); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+  <h1>よくある質問 (FAQ)</h1>
+  <p class="lead">lolpick.jp について多く寄せられる質問をまとめました。該当する項目が無い場合は <a href="/contact.html">お問い合わせ</a> からご連絡ください。</p>
+
+  <div class="toc">
+    <h3>目次</h3>
+    <ul>
+      <li><a href="#general">サイト全般について</a></li>
+      <li><a href="#tool">ツールの使い方</a></li>
+      <li><a href="#desktop">デスクトップ版について</a></li>
+      <li><a href="#data">データ・情報について</a></li>
+      <li><a href="#terms">LoL用語の解説</a></li>
+      <li><a href="#troubleshoot">トラブルシューティング</a></li>
+    </ul>
+  </div>
+
+  <h2 id="general">サイト全般について</h2>
+
+  <div class="faq-item">
+    <h3>lolpick.jp は無料ですか？</h3>
+    <div class="faq-answer">はい、完全無料です。アカウント登録も不要で、誰でもすぐに使えます。運営費用は広告収入で賄っています。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>利用にログインやアカウント登録は必要ですか？</h3>
+    <div class="faq-answer">不要です。ブラウザで https://lolpick.jp を開くだけで即座に使用できます。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>Riot Games の公式ツールですか？</h3>
+    <div class="faq-answer">いいえ、本サイトは個人運営のファンメイドツールです。Riot Games, Inc. は本サイトを承認・支援しているわけではありません。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>このツールを使うことで BAN されますか？</h3>
+    <div class="faq-answer">Web 版は完全に外部サイトでの情報参照のみなので、Riot Games の利用規約に違反しません。デスクトップ版は LoL クライアントの公開API（LCU API）を読み取るのみで、ゲーム内操作や自動化は一切行いません。Riot Games は LCU API の読み取り利用を認めており、U.GG や Porofessor など多くのサードパーティツールが同様の方式を採用しています。ただし、Riot Games のポリシーは変更される可能性があります。</div>
+  </div>
+
+  <h2 id="tool">ツールの使い方</h2>
+
+  <div class="faq-item">
+    <h3>どうやって分析を始めますか？</h3>
+    <div class="faq-answer">トップページでスロットをクリックしてチャンピオンを選択し、最後に「マッチアップ分析」ボタンを押します。詳細は <a href="/guide.html">使い方ガイド</a> をご覧ください。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>全員のチャンピオンが揃っていなくても分析できますか？</h3>
+    <div class="faq-answer">はい、味方と敵で同じレーンが1組以上揃っていれば分析可能です。揃っていないレーンは表示されません。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>ピックしたチャンピオンのレーンを変更したい</h3>
+    <div class="faq-answer">PC ではドラッグ＆ドロップ、スマホではタップ→目的のスロットタップで入れ替えできます。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>敵のチャンピオンのレーンを自動で判定してくれる？</h3>
+    <div class="faq-answer">はい、ピックされたチャンピオンの統計データから最も可能性の高いレーンに自動配置します。違う場合はドラッグで修正してください。</div>
+  </div>
+
+  <h2 id="desktop">デスクトップ版について</h2>
+
+  <div class="faq-item">
+    <h3>デスクトップ版はどこでダウンロードできますか？</h3>
+    <div class="faq-answer"><a href="https://github.com/aimayujin/lol-assist/releases/latest" target="_blank" rel="noopener">GitHub Releases</a> から最新版の <code>lolpick-setup-X.Y.Z.exe</code> をダウンロードできます。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>Web 版とデスクトップ版の違いは何ですか？</h3>
+    <div class="faq-answer">Web 版は手動でチャンピオンを入力しますが、デスクトップ版は LoL クライアントと連携し、チャンプセレクト中のピックを自動検出します。また、デスクトップ版は味方・敵のランク情報や戦績も表示できます。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>Windows 以外の OS に対応していますか？</h3>
+    <div class="faq-answer">現時点では Windows 版のみ提供しています。Mac 版・Linux 版は技術的には可能ですが、対応予定は未定です。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>ウイルス警告が表示されます</h3>
+    <div class="faq-answer">自己署名アプリのため、Windows Defender SmartScreen が「認識されないアプリ」として警告を出す場合があります。「詳細情報」→「実行」で進めてください。ソースコードは <a href="https://github.com/aimayujin/lol-assist" target="_blank" rel="noopener">GitHub で公開</a> しているため、心配な方は自分でビルドも可能です。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>アプリのアップデート方法は？</h3>
+    <div class="faq-answer">UI・データの更新は自動配信（ホットアップデート）で、再インストール不要で次回起動時に適用されます。本体の更新が必要な場合はヘッダーに更新バナーが表示されるので、ボタンからインストーラーをダウンロードしてください。</div>
+  </div>
+
+  <h2 id="data">データ・情報について</h2>
+
+  <div class="faq-item">
+    <h3>勝率データはどこから取得していますか？</h3>
+    <div class="faq-answer">op.gg の公開統計データを定期的に取得しています。独自の測定ではないため、op.gg と同じ値が表示されます。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>データはどのくらいの頻度で更新されますか？</h3>
+    <div class="faq-answer">勝率データは週1〜2回、マッチアップアドバイスは随時更新しています。パッチごとの大きなバランス変動時はなるべく早く追従します。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>マッチアップアドバイスは誰が書いていますか？</h3>
+    <div class="faq-answer">AI（Claude）を活用して下書きを生成し、人間が内容確認・修正を行っています。誤りを見つけた場合は意見箱からご指摘ください。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>ランクティア別のデータは見られますか？</h3>
+    <div class="faq-answer">現在は EMERALD 帯以上の統合データを使用しています。ティア別フィルタは今後の対応予定です。</div>
+  </div>
+
+  <h2 id="terms">LoL用語の解説</h2>
+
+  <div class="faq-item">
+    <h3>「有利」「不利」の定義は？</h3>
+    <div class="faq-answer">マッチアップ勝率をベースに以下のように判定しています:
+      <ul>
+        <li><strong>🟢 有利</strong>: 勝率 50.5% 以上</li>
+        <li><strong>🟡 互角</strong>: 勝率 49.5%〜50.5%</li>
+        <li><strong>🔴 不利</strong>: 勝率 49.5% 未満</li>
+      </ul>
+      単独のレーン戦での勝率なので、実際の試合はチーム全体の構成・立ち回りでも左右されます。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>「パワースパイク」とは何ですか？</h3>
+    <div class="faq-answer">特定のレベルやアイテム到達時にチャンピオンが急激に強くなるタイミングです。例えばライズは Lv6 で Ultimate 獲得により大幅に強化されます。パワースパイクを把握することで、仕掛けるべき/避けるべきタイミングが分かります。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>「エンゲージ」「ディスエンゲージ」とは？</h3>
+    <div class="faq-answer"><strong>エンゲージ</strong>は集団戦を能動的に仕掛ける能力、<strong>ディスエンゲージ</strong>は相手のエンゲージに対抗して味方を守る能力です。レオナはエンゲージ型、ジャンナはディスエンゲージ型が代表例です。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>「CC」「クラウドコントロール」とは？</h3>
+    <div class="faq-answer">スタン・スネア・スロウ・ノックアップ（空中浮遊）など、敵の行動を制限する効果の総称。CC が多いチームは集団戦で有利を取りやすくなります。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>「シナジー」とは？</h3>
+    <div class="faq-answer">味方同士の相性の良さ。例えばマルファイトの R（集団スタン）とヤスオの R（空中浮遊した敵に全員突進）は強力なシナジーとして有名です。</div>
+  </div>
+
+  <h2 id="troubleshoot">トラブルシューティング</h2>
+
+  <div class="faq-item">
+    <h3>デスクトップ版で LoL クライアントが検出されません</h3>
+    <div class="faq-answer">以下を順番に試してください:
+      <ul>
+        <li>LoL クライアントを先に起動してから lolpick.jp アプリを起動</li>
+        <li>lolpick.jp アプリを右クリック → 「管理者として実行」</li>
+        <li>ウイルス対策ソフト・ファイアウォールの例外設定</li>
+        <li>PC を再起動してから試す</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <h3>チャンプセレクトのピックが自動反映されません</h3>
+    <div class="faq-answer">ヘッダー左上の LCU インジケーターが緑（接続中）になっているか確認してください。カスタムゲームで同じレーン割当のプレイヤーが複数いる場合、片方のピックが上書きされる既知問題があります。ランク/ノーマルでは発生しません。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>サイト全体が表示されない・白い画面のまま</h3>
+    <div class="faq-answer">JavaScript が無効になっている可能性があります。ブラウザ設定で JavaScript を有効にしてから再読み込みしてください。また、広告ブロッカーが UI を誤検出する場合もあります。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>古い情報が表示されます</h3>
+    <div class="faq-answer">ブラウザキャッシュが残っている可能性があります。Ctrl+Shift+R（Windows）または Cmd+Shift+R（Mac）でスーパーリロードしてください。</div>
+  </div>
+
+  <div class="faq-item">
+    <h3>意見箱で送信できません</h3>
+    <div class="faq-answer">一時的な障害の可能性があります。その場合は直接 <a href="https://github.com/aimayujin/lol-assist/issues" target="_blank" rel="noopener">GitHub Issues</a> に投稿いただくか、しばらく時間をおいて再試行してください。</div>
+  </div>
+
+  <div class="cta-box">
+    <a href="/" class="btn">ツールを使う</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

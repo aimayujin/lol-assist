@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>アンベッサ 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="アンベッサ の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・ジャングル・ミッド で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/Ambessa.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="アンベッサ 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="アンベッサ の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ・ジャングル・ミッド で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/Ambessa.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Ambessa.png" alt="アンベッサ" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">アンベッサ</h1>
+    <p class="champ-hero-title">戦乱の母</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Fighter</span><span class="champ-tag">Assassin</span>
+      <span class="champ-tag gold">トップ</span><span class="champ-tag gold">ジャングル</span><span class="champ-tag gold">ミッド</span>
+    </div>
+  </div>
+</div>
+<p class="lead">アンベッサ の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">トップ 全体勝率</div>
+      <div class="stat-card-value wr-bad">49.4%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">ジャングル 全体勝率</div>
+      <div class="stat-card-value ">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-label">ミッド 全体勝率</div>
+      <div class="stat-card-value wr-bad">49.4%</div>
+    </div></div><h2>パワースパイク</h2>
+<p>アンベッサ が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell active">Lv3</div><div class="spike-cell">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv3 / Lv6 / Lv11 / Lv16</p><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 1</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kayle.png" alt="ケイル" loading="lazy">
+    <span class="mu-name"><a href="/champion/Kayle.html">ケイル</a></span>
+    <span class="mu-wr wr-bad">46.0%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤のダッシュとバーストでKayleを圧倒する有利マッチアップ。パッシブダッシュで張り付き続けKayleがスケーリングする前にリードを確立する</div>
+    <ul><li>Kayleのレベル1〜5は近接で非常に弱いため、Q（カニングスイープ）→パッシブダッシュ→再発動で一方的にゾーニングする</li><li>E（ラセレイト）のスローでKayleの逃走を封じ、パッシブ（ドレイクハウンドの猛攻）の連続ダッシュで張り付いてキルを狙う</li><li>KayleのR（神聖なる裁き）無敵に対してW（断交）のシールドで時間を稼ぎ、無敵終了後にR（公開処刑）でフィニッシュする</li><li>Kayleのレベル6前にR（公開処刑）でキルを取り、レベル差とCS差を広げてKayleのスケーリングを遅らせる</li></ul>
+  </div>
+</li></ul></section><section class="role-section"><h2>ジャングル でのマッチアップ</h2><h3>🟢 有利な相手 Top 4</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Graves.png" alt="グレイブス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Graves.html">グレイブス</a></span>
+    <span class="mu-wr wr-good">51.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 機動力で射程差を無効化できる。接近さえすればバーストとサステインで有利</div>
+    <ul><li>Gravesの射程外からダッシュで一気に距離を詰めてバーストを叩き込む</li><li>Gravesのスモークスクリーンに入ってもダッシュで即座に抜けられる</li><li>ファイター同士の殴り合いではAmbessaのほうがサステインで上回る</li><li>スカトルやドラゴン付近でのスカーミッシュを積極的に仕掛ける</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Shyvana.png" alt="シヴァーナ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Shyvana.html">シヴァーナ</a></span>
+    <span class="mu-wr wr-good">—</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Shyvanaの序盤の弱さを突いてガンク差を作る。レベル6前にリードを確立</div>
+    <ul><li>Shyvanaはレベル6までのガンク力が弱いので、積極的にレーンに介入する</li><li>Shyvanaのドラゴン変身中でもダッシュで距離を取れる</li><li>Shyvanaのファーム中にカウンターJGで妨害し、ドラゴンフォーム到達を遅らせる</li><li>スカーミッシュではAmbessaの機動力がShyvanaの直線的な動きを上回る</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Viego.png" alt="ヴィエゴ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Viego.html">ヴィエゴ</a></span>
+    <span class="mu-wr wr-even">49.9%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 1v1性能でViegoを上回る。序盤からカウンターJGで差をつけてスノーボール</div>
+    <ul><li>ViegoはAmbessaに対して殴り合いで劣る。積極的にカウンターJGする</li><li>ViegoのWスタンはダッシュで回避可能。Wのチャージ中にダッシュで裏に回る</li><li>ViegoのRリセットを防ぐため、低体力の味方がいる場面では注意</li><li>序盤のスカトル・ドラゴン争いで常に優位に立てる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Warwick.png" alt="ワーウィック" loading="lazy">
+    <span class="mu-name"><a href="/champion/Warwick.html">ワーウィック</a></span>
+    <span class="mu-wr wr-bad">46.1%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ バーストでWarwickのサステインを上回る。低体力まで追い込まず一気に倒し切ること</div>
+    <ul><li>Warwickの回復はバーストダメージで打ち消せる。一気にコンボを叩き込む</li><li>WarwickのRは距離が必要なので、密着戦ではRを使わせない立ち回りが可能</li><li>低体力時のWarwickの攻撃速度上昇に注意し、トドメは確実に</li><li>レベル6以降はAmbessaのRエンゲージからのバーストでWarwickを上回る</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 2</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Briar.png" alt="ブライアー" loading="lazy">
+    <span class="mu-name"><a href="/champion/Briar.html">ブライアー</a></span>
+    <span class="mu-wr wr-bad">48.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ BriarのWサステインに真正面から勝てない。タイミングをずらした立ち回りが必要</div>
+    <ul><li>BriarのWは回復＋攻撃速度が非常に高く、殴り合いでは不利になりやすい</li><li>BriarのW中はCCが効かないため、Wが切れるタイミングまで距離を取る</li><li>Briarが暴走（R）で飛んできたらダッシュで回避し、着地後に反撃</li><li>ガンク先でBriarとかち合わないよう、相手のルートを予測する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Karthus.png" alt="カーサス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Karthus.html">カーサス</a></span>
+    <span class="mu-wr wr-good">53.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Karthusのファーム速度とRのグローバル圧力に対抗するのが難しい。ガンク差で対抗</div>
+    <ul><li>Karthusのファーム速度は非常に速く、レベル差を付けられやすい</li><li>KarthusのRは死亡後も発動するため、残体力管理が重要</li><li>侵入してもKarthusのQは近距離で高ダメージ。一気に倒し切れないと逆転される</li><li>レーンにガンク圧力をかけてKarthusのファームの時間を奪う</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Akali.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Akali.png" alt="アカリ" loading="lazy">
+    <span class="related-card-name">アカリ</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Darius.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="related-card-name">ダリウス</span>
+  </a>
+  <a href="/champion/Fiora.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fiora.png" alt="フィオラ" loading="lazy">
+    <span class="related-card-name">フィオラ</span>
+  </a>
+  <a href="/champion/Garen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Garen.png" alt="ガレン" loading="lazy">
+    <span class="related-card-name">ガレン</span>
+  </a>
+  <a href="/champion/Irelia.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="related-card-name">イレリア</span>
+  </a>
+  <a href="/champion/Jax.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="related-card-name">ジャックス</span>
+  </a>
+  <a href="/champion/Jayce.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="related-card-name">ジェイス</span>
+  </a>
+  <a href="/champion/Kled.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kled.png" alt="クレッド" loading="lazy">
+    <span class="related-card-name">クレッド</span>
+  </a>
+  <a href="/champion/Malphite.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="related-card-name">マルファイト</span>
+  </a>
+  <a href="/champion/Olaf.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Olaf.png" alt="オラフ" loading="lazy">
+    <span class="related-card-name">オラフ</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Quinn.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Quinn.png" alt="クイン" loading="lazy">
+    <span class="related-card-name">クイン</span>
+  </a>
+  <a href="/champion/Renekton.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Renekton.png" alt="レネクトン" loading="lazy">
+    <span class="related-card-name">レネクトン</span>
+  </a>
+  <a href="/champion/Riven.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Riven.png" alt="リヴェン" loading="lazy">
+    <span class="related-card-name">リヴェン</span>
+  </a>
+  <a href="/champion/Shen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Shen.png" alt="シェン" loading="lazy">
+    <span class="related-card-name">シェン</span>
+  </a>
+  <a href="/champion/TahmKench.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TahmKench.png" alt="タム・ケンチ" loading="lazy">
+    <span class="related-card-name">タム・ケンチ</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>カ・サンテ 有利・不利マッチアップ - lolpick.jp</title>
+<meta name="description" content="カ・サンテ の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ で使える詳細情報。">
+<link rel="canonical" href="https://lolpick.jp/champion/KSante.html">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/assets/site.css">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="カ・サンテ 有利・不利マッチアップ - lolpick.jp">
+<meta property="og:description" content="カ・サンテ の各レーンでの有利・不利マッチアップ、勝率、立ち回りアドバイスをまとめたページ。トップ で使える詳細情報。">
+<meta property="og:url" content="https://lolpick.jp/champion/KSante.html">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="lolpick.jp">
+<style>
+.champ-hero { display:flex; gap:20px; align-items:center; margin:16px 0 24px; padding:20px; background:var(--bg-panel); border:1px solid var(--border); border-radius:10px; }
+.champ-hero img { width:96px; height:96px; border-radius:8px; border:2px solid var(--gold-dark); flex-shrink:0; }
+.champ-hero-info { flex:1; }
+.champ-hero-name { font-size:1.8rem; font-weight:900; color:var(--gold); margin:0 0 4px; letter-spacing:.03em; }
+.champ-hero-title { font-size:.95rem; color:var(--text-dim); margin:0 0 8px; }
+.champ-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.champ-tag { background:var(--bg-card2); border:1px solid var(--border); color:var(--text); padding:2px 10px; border-radius:12px; font-size:.75rem; }
+.champ-tag.gold { background:rgba(200,155,60,.1); border-color:var(--gold-dark); color:var(--gold-light); }
+.stat-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin:14px 0 24px; }
+.stat-card { background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+.stat-card-label { font-size:.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:.05em; }
+.stat-card-value { font-size:1.3rem; font-weight:700; color:var(--gold-light); margin-top:4px; }
+.stat-card-value.wr-strong { color:#4ade80; }
+.stat-card-value.wr-good { color:#86efac; }
+.stat-card-value.wr-even { color:#fbbf24; }
+.stat-card-value.wr-bad { color:#fb923c; }
+.stat-card-value.wr-weak { color:#f87171; }
+.matchup-list { list-style:none; padding:0; margin:12px 0; }
+.matchup-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; margin-bottom:8px; transition:border-color .15s; }
+.matchup-row:hover { border-color:var(--gold-dark); }
+.matchup-row img { width:40px; height:40px; border-radius:6px; flex-shrink:0; }
+.matchup-row .mu-name { flex:1; font-weight:600; color:var(--text); }
+.matchup-row .mu-name a { color:var(--text); }
+.matchup-row .mu-name a:hover { color:var(--gold); text-decoration:none; }
+.matchup-row .mu-wr { font-weight:700; min-width:60px; text-align:right; }
+.matchup-row .mu-wr.wr-strong { color:#4ade80; }
+.matchup-row .mu-wr.wr-good { color:#86efac; }
+.matchup-row .mu-wr.wr-even { color:#fbbf24; }
+.matchup-row .mu-wr.wr-bad { color:#fb923c; }
+.matchup-row .mu-wr.wr-weak { color:#f87171; }
+.matchup-tips { padding:12px 14px; background:var(--bg-card); border-left:3px solid var(--gold-dark); margin:8px 0 16px 20px; border-radius:0 6px 6px 0; font-size:.9rem; }
+.matchup-tips ul { margin:6px 0; padding-left:20px; }
+.matchup-tips li { margin:4px 0; color:var(--text); }
+.matchup-tips .key-point { color:var(--gold); font-weight:600; font-size:.85rem; }
+.spike-bar { display:flex; gap:4px; margin:8px 0; }
+.spike-cell { flex:1; padding:6px 0; text-align:center; background:var(--bg-panel); border:1px solid var(--border); border-radius:4px; font-size:.8rem; color:var(--text-dim); }
+.spike-cell.active { background:linear-gradient(135deg,rgba(200,155,60,.15),rgba(200,155,60,.05)); border-color:var(--gold-dark); color:var(--gold-light); font-weight:700; }
+.related-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; margin:12px 0; }
+.related-card { display:flex; flex-direction:column; align-items:center; padding:10px 8px; background:var(--bg-panel); border:1px solid var(--border); border-radius:6px; text-align:center; transition:border-color .15s, transform .15s; }
+.related-card:hover { border-color:var(--gold-dark); transform:translateY(-2px); text-decoration:none; }
+.related-card img { width:52px; height:52px; border-radius:6px; margin-bottom:6px; }
+.related-card-name { font-size:.8rem; color:var(--text); }
+.role-section { margin-top:32px; padding-top:16px; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">⚔ lolpick.jp</a>
+    <nav class="site-nav">
+      <a href="/">ツール</a>
+      <a href="/champions.html">チャンピオン</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/about.html">サイトについて</a>
+    </nav>
+  </div>
+</header>
+
+<main class="content">
+
+<div class="champ-hero">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/KSante.png" alt="カ・サンテ" loading="lazy">
+  <div class="champ-hero-info">
+    <h1 class="champ-hero-name">カ・サンテ</h1>
+    <p class="champ-hero-title">ナズーマの誇り</p>
+    <div class="champ-tags">
+      <span class="champ-tag">Tank</span><span class="champ-tag">Fighter</span>
+      <span class="champ-tag gold">トップ</span>
+    </div>
+  </div>
+</div>
+<p class="lead">カ・サンテ の各ロールでのマッチアップ勝率・立ち回りアドバイスをまとめたページです。レーンごとに有利な相手、不利な相手、試合序盤〜終盤までの動き方を解説します。</p>
+<h2>全体統計</h2><div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-card-label">トップ 全体勝率</div>
+      <div class="stat-card-value wr-bad">46.9%</div>
+    </div></div><h2>パワースパイク</h2>
+<p>カ・サンテ が特に強くなるタイミング（レベル）:</p>
+<div class="spike-bar"><div class="spike-cell">Lv1</div><div class="spike-cell">Lv2</div><div class="spike-cell">Lv3</div><div class="spike-cell active">Lv4</div><div class="spike-cell">Lv5</div><div class="spike-cell active">Lv6</div><div class="spike-cell">Lv7</div><div class="spike-cell">Lv8</div><div class="spike-cell">Lv9</div><div class="spike-cell">Lv10</div><div class="spike-cell active">Lv11</div><div class="spike-cell">Lv12</div><div class="spike-cell">Lv13</div><div class="spike-cell">Lv14</div><div class="spike-cell">Lv15</div><div class="spike-cell active">Lv16</div><div class="spike-cell">Lv17</div><div class="spike-cell">Lv18</div></div>
+<p style="font-size:.85rem;color:var(--text-dim);">スパイクレベル: Lv4 / Lv6 / Lv11 / Lv16</p><section class="role-section"><h2>トップ でのマッチアップ</h2><h3>🟢 有利な相手 Top 4</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Nasus.png" alt="ナサス" loading="lazy">
+    <span class="mu-name"><a href="/champion/Nasus.html">ナサス</a></span>
+    <span class="mu-wr wr-strong">58.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ 序盤の圧倒的トレード力でNasusのスタック蓄積を妨害し、スケーリング前に試合を動かすのがカサンテの勝ち筋</div>
+    <ul><li>序盤はQ（岩の裂け目）でNasusのCSを妨害しつつ、3段目Qのノックアップからショートトレードを仕掛けてスタック稼ぎを遅延させる</li><li>NasusのW（ウィザー）で足が遅くなったらE（足跡なき道）で距離を詰めるか離脱に使い、一方的にカイトされないようにする</li><li>W（全てを超えて）のチャージ中はCC無効のため、NasusのWスロウ中でもタイミングを合わせてWで突進しトレードを開始できる</li><li>R（我が道を往く）でNasusを壁越しに飛ばしてAll Out形態で一気にバーストする。NasusのRステロイド発動前にキルを狙うのが理想</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Anivia.png" alt="アニビア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Anivia.html">アニビア</a></span>
+    <span class="mu-wr wr-bad">48.6%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ アニビアの低機動力とメイジ特有の脆さをカサンテの接近手段で突き、Wアンストッパブルで凍結CCを無効化して一方的にトレードできる</div>
+    <ul><li>アニビアのQ（フラッシュフロスト）の弾速は遅いため、E（足跡なき道）で横にダッシュして容易に回避できる</li><li>W（全てを超えて）のアンストッパブル状態でアニビアのQ氷弾やW（結晶の壁）の妨害を無視して突進可能</li><li>アニビアはメイジでありHP・装甲が低いため、3回目Q（岩の裂け目）ノックアップからのフルコンボで一気にキルラインに入る</li><li>R（我が道を往く）でアニビアを壁越しに叩きつけた後、オールアウト形態の高火力でパッシブ卵発動前に削り切ることを意識する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Sion.png" alt="サイオン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Sion.html">サイオン</a></span>
+    <span class="mu-wr wr-weak">44.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ WのCC無効でSionのQ詠唱を無視して接近できるのが最大の強み。Sionの遅い動きをカサンテの機動力で完全に翻弄する</div>
+    <ul><li>SionのQ（大地粉砕）チャージをW（全てを超えて）のCC無効で無視して突進し、チャージ中の無防備なSionにダメージを叩き込む</li><li>3段目Qのノックアップ後にショートトレードを入れ、SionのQ詠唱を妨害する。ノックアップ中にSionはQをチャージできない</li><li>SionのE（虐殺の雄叫び）で飛ばされたミニオンに当たらないようサイドステップし、装甲低下デバフを受けない位置取りを意識する</li><li>R（我が道を往く）でSionを壁越しに飛ばしAll Out形態でバーストする。Sionの体力が高くてもAll Outのダメージなら削り切れる</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kayle.png" alt="ケイル" loading="lazy">
+    <span class="mu-name"><a href="/champion/Kayle.html">ケイル</a></span>
+    <span class="mu-wr wr-weak">44.4%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Kayleがスケールする前のレベル1〜5でQ3段ノックアップとR（我が道を往く）の壁越しコンボで圧倒的にキル圧をかけられる</div>
+    <ul><li>レベル1〜5のKayleが近接形態の間にQ（岩の裂け目）3段ノックアップからのコンボで体力差を大きく作る</li><li>KayleのR（神聖なる介入）の無敵中はW（全てを超えて）をチャージして温存し、無敵解除直後にダッシュで追撃する</li><li>E（足跡なき道）でKayleのQ（光輝の弾）スロー後の追撃から離脱し、不利なトレードを避ける</li><li>R（我が道を往く）で壁越しに飛ばしてAll Out形態でバーストすれば、Kayleがスケールする前に試合を決められる</li></ul>
+  </div>
+</li></ul><h3>🔴 不利な相手 Top 4</h3><ul class="matchup-list"><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Vayne.png" alt="ヴェイン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Vayne.html">ヴェイン</a></span>
+    <span class="mu-wr wr-weak">34.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ ヴェインのWトゥルーダメージでタンク性能が無効化され、射程差でポークされ続ける。ジャングラーの協力なしではキルが困難</div>
+    <ul><li>ヴェインのE（コンデム）で壁に叩きつけられるとスタン＋大ダメージを受ける。壁際での戦闘を絶対に避ける</li><li>ヴェインのW（シルバーボルト）3発目の確定トゥルーダメージがタンク形態のカサンテに致命的。短いトレードに徹してW3発を避ける</li><li>E（足跡なき道）で急接近してQ3ノックアップを当てた後、R（我が道を往く）で壁越しに隔離する。ヴェインのQタンブルの前にCCを入れることが重要</li><li>ヴェインのR（ファイナルアワー）使用中はステルスでQ（岩の裂け目）スキルショットが当たらない。ピンクワードを事前に準備する</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Quinn.png" alt="クイン" loading="lazy">
+    <span class="mu-name"><a href="/champion/Quinn.html">クイン</a></span>
+    <span class="mu-wr wr-weak">38.7%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ クインの射程差とEノックバックでカサンテの接近手段が制限される。Wアンストッパブルを確実にクインのEに合わせることが必須</div>
+    <ul><li>クインのE（一斉射撃）ノックバックでカサンテの接近を拒否されるため、W（全てを超えて）のアンストッパブルでEを無効化して突進する</li><li>クインのパッシブ（鷲匠の戦法）マーク付きAAは痛いため、マーク付与されたらE（足跡なき道）で即座に離脱する</li><li>Q（岩の裂け目）のスキルショットはクインのE後の着地位置を予測して撃つと命中率が上がる</li><li>クインのRローミングに対抗するため、レーンが押されてもTP温存してサイドレーンをカバーする意識を持つ</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fiora.png" alt="フィオラ" loading="lazy">
+    <span class="mu-name"><a href="/champion/Fiora.html">フィオラ</a></span>
+    <span class="mu-wr wr-weak">42.2%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ フィオラのWリポストでQ3やWのCCを返され、パッシブの弱点破壊で長期戦も不利。フィオラのWクールダウン中に仕掛けるのが唯一の勝ち筋</div>
+    <ul><li>フィオラのW（リポスト）はカサンテのQ3ノックアップやW（全てを超えて）のCCを反射する。重要なCCを使う前にフィオラのWクールダウンを確認する</li><li>フィオラのパッシブ（決闘の踊り）弱点マークが前面に出たらすぐに壁際に移動してマークを隠す。4箇所全てを破壊されると大回復される</li><li>R（我が道を往く）で壁越しに隔離してもフィオラのQ（ランジ）機動力とW反射で返り討ちにされるリスクが高い。Rは慎重に使う</li><li>序盤はQ（岩の裂け目）ポークで体力差をつけ、フィオラのWが使用済みの時だけQ3ノックアップからトレードを仕掛ける</li></ul>
+  </div>
+</li><li>
+  <div class="matchup-row">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="mu-name"><a href="/champion/Irelia.html">イレリア</a></span>
+    <span class="mu-wr wr-bad">48.3%</span>
+  </div>
+  <div class="matchup-tips">
+    <div class="key-point">▶ Ireliaのパッシブフルスタック時のAA火力がAll Out形態の低耐久に致命的。パッシブスタック管理を意識し、フルスタック時のトレードを避ける</div>
+    <ul><li>IreliaのパッシブスタックがフルになるとAA火力が跳ね上がるため、Q（岩の裂け目）でミニオンのラストヒットを取らせないようプッシュする</li><li>IreliaのW（防衛姿勢）のダメージ軽減中にQ（岩の裂け目）3段目ノックアップを温存し、W解除後に叩き込む</li><li>IreliaのQ（刃の舞踏）リセットダッシュの連続攻撃にW（全てを超えて）のアンストッパブルで距離を取り、被ダメージを抑える</li><li>R（我が道を往く）でIreliaを壁越しに飛ばしてもAll Out形態の低耐久ではIreliaのパッシブフルスタックAAに耐えにくいため、Ireliaのパッシブが切れた時のみRを使う</li></ul>
+  </div>
+</li></ul></section><h2>同じロールの他のチャンピオン</h2>
+<div class="related-grid">
+
+  <a href="/champion/Aatrox.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Aatrox.png" alt="エイトロックス" loading="lazy">
+    <span class="related-card-name">エイトロックス</span>
+  </a>
+  <a href="/champion/Akali.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Akali.png" alt="アカリ" loading="lazy">
+    <span class="related-card-name">アカリ</span>
+  </a>
+  <a href="/champion/Camille.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Camille.png" alt="カミール" loading="lazy">
+    <span class="related-card-name">カミール</span>
+  </a>
+  <a href="/champion/Darius.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Darius.png" alt="ダリウス" loading="lazy">
+    <span class="related-card-name">ダリウス</span>
+  </a>
+  <a href="/champion/Fiora.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Fiora.png" alt="フィオラ" loading="lazy">
+    <span class="related-card-name">フィオラ</span>
+  </a>
+  <a href="/champion/Garen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Garen.png" alt="ガレン" loading="lazy">
+    <span class="related-card-name">ガレン</span>
+  </a>
+  <a href="/champion/Irelia.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Irelia.png" alt="イレリア" loading="lazy">
+    <span class="related-card-name">イレリア</span>
+  </a>
+  <a href="/champion/Jax.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jax.png" alt="ジャックス" loading="lazy">
+    <span class="related-card-name">ジャックス</span>
+  </a>
+  <a href="/champion/Jayce.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Jayce.png" alt="ジェイス" loading="lazy">
+    <span class="related-card-name">ジェイス</span>
+  </a>
+  <a href="/champion/Kled.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Kled.png" alt="クレッド" loading="lazy">
+    <span class="related-card-name">クレッド</span>
+  </a>
+  <a href="/champion/Malphite.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Malphite.png" alt="マルファイト" loading="lazy">
+    <span class="related-card-name">マルファイト</span>
+  </a>
+  <a href="/champion/Olaf.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Olaf.png" alt="オラフ" loading="lazy">
+    <span class="related-card-name">オラフ</span>
+  </a>
+  <a href="/champion/Pantheon.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Pantheon.png" alt="パンテオン" loading="lazy">
+    <span class="related-card-name">パンテオン</span>
+  </a>
+  <a href="/champion/Quinn.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Quinn.png" alt="クイン" loading="lazy">
+    <span class="related-card-name">クイン</span>
+  </a>
+  <a href="/champion/Renekton.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Renekton.png" alt="レネクトン" loading="lazy">
+    <span class="related-card-name">レネクトン</span>
+  </a>
+  <a href="/champion/Riven.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Riven.png" alt="リヴェン" loading="lazy">
+    <span class="related-card-name">リヴェン</span>
+  </a>
+  <a href="/champion/Shen.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/Shen.png" alt="シェン" loading="lazy">
+    <span class="related-card-name">シェン</span>
+  </a>
+  <a href="/champion/TahmKench.html" class="related-card">
+    <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/champion/TahmKench.png" alt="タム・ケンチ" loading="lazy">
+    <span class="related-card-name">タム・ケンチ</span>
+  </a>
+</div>
+<div class="cta-box">
+  <a href="/" class="btn">マッチアップ分析ツールを使う</a>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <nav class="site-footer-nav">
+      <a href="/">トップ</a>
+      <a href="/champions.html">チャンピオン一覧</a>
+      <a href="/guide.html">使い方</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">サイトについて</a>
+      <a href="/privacy.html">プライバシーポリシー</a>
+      <a href="/terms.html">利用規約</a>
+      <a href="/contact.html">お問い合わせ</a>
+    </nav>
+    <div class="site-footer-meta">
+      <small>
+        lolpick.jp — League of Legends チーム構成分析ツール<br>
+        本サイトは Riot Games, Inc. またはその関連会社が承認または支援しているものではありません。<br>
+        League of Legends および Riot Games は Riot Games, Inc. の商標または登録商標です。
+      </small>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
