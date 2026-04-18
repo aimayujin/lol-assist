@@ -1,7 +1,6 @@
 const { EventEmitter } = require('events');
 const { exec } = require('child_process');
 const https = require('https');
-const WebSocket = require('ws');
 
 // LCU の assignedPosition → アプリの ROLES マッピング
 const POS_TO_ROLE = {

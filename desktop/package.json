@@ -11,9 +11,7 @@
     "build:win": "electron-builder --win",
     "build:dir": "electron-builder --dir"
   },
-  "dependencies": {
-    "league-connect": "^5.5.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "electron": "^33.0.0",
     "electron-builder": "^25.1.8"
