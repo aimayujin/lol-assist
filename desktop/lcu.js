@@ -213,9 +213,11 @@ class LcuClient extends EventEmitter {
     const ROLE_ORDER = ['TOP', 'JG', 'MID', 'ADC', 'SUP'];
 
     let myIdx = 0;
+    let myRolesInferred = false;
     for (const player of session.myTeam) {
       let role = POS_TO_ROLE[player.assignedPosition] || null;
       if (!role) {
+        myRolesInferred = true;
         if (myIdx < ROLE_ORDER.length) role = ROLE_ORDER[myIdx];
         else continue;
       }
@@ -225,9 +227,11 @@ class LcuClient extends EventEmitter {
     }
 
     let enemyIdx = 0;
+    let enemyRolesInferred = false;
     for (const player of (session.theirTeam || [])) {
       let role = POS_TO_ROLE[player.assignedPosition] || null;
       if (!role) {
+        enemyRolesInferred = true;
         if (enemyIdx < ROLE_ORDER.length) role = ROLE_ORDER[enemyIdx];
         else continue;
       }
@@ -266,7 +270,7 @@ class LcuClient extends EventEmitter {
       enemyTeamPlayers[r] = { summonerId: player.summonerId, puuid: player.puuid };
     }
 
-    return { myTeam, enemyTeam, bans, localCellId, myRole, myTeamPlayers, enemyTeamPlayers };
+    return { myTeam, enemyTeam, bans, localCellId, myRole, myTeamPlayers, enemyTeamPlayers, myRolesInferred, enemyRolesInferred };
   }
 
   // ── 手動でセッション取得 ──
