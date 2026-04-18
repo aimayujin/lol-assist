@@ -68,10 +68,14 @@
 .ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
 .build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
 .build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
-.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
-.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
-.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
-.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:90px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; position:relative; }
+.build-item img { width:44px; height:44px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item.first-item img { width:56px; height:56px; border:2px solid var(--gold); box-shadow:0 0 12px rgba(200,155,60,.3); }
+.build-item.first-item::before { content:"★ 1st"; position:absolute; top:-8px; right:-8px; background:var(--gold); color:#000; font-size:.6rem; font-weight:900; padding:1px 5px; border-radius:3px; letter-spacing:.02em; }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:70px; text-align:center; line-height:1.2; }
+.build-item.first-item .build-item-name { color:var(--gold-light); font-weight:700; font-size:.72rem; }
+.build-arrow { color:var(--text-dim); font-size:1.1rem; opacity:.5; }
 .build-rune img { width:30px; height:30px; }
 </style>
 </head>
@@ -145,13 +149,17 @@
     <div class="ability-desc">味方チャンピオンを無敵状態にし、前代の「正義の神髄」の力を借りて対象の周囲を聖なる剣の雨で浄化する。</div>
   </div>
 </div></div><h2>推奨ビルド</h2><div class="build-box">
-  <h3>トップ 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <h3>トップ 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">ファーストアイテム</span>
+<div class="build-item first-item">
   <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3115.png" alt="ナッシャー トゥース" title="ナッシャー トゥース" loading="lazy">
   <span class="build-item-name">ナッシャー トゥース</span>
-</div><div class="build-item">
+</div></div><div class="build-row"><span class="build-label">コアビルド</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3115.png" alt="ナッシャー トゥース" title="ナッシャー トゥース" loading="lazy">
+  <span class="build-item-name">ナッシャー トゥース</span>
+</div><span class="build-arrow">→</span><div class="build-item">
   <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/2510.png" alt="黄昏と暁" title="黄昏と暁" loading="lazy">
   <span class="build-item-name">黄昏と暁</span>
-</div><div class="build-item">
+</div><span class="build-arrow">→</span><div class="build-item">
   <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3089.png" alt="ラバドン デスキャップ" title="ラバドン デスキャップ" loading="lazy">
   <span class="build-item-name">ラバドン デスキャップ</span>
 </div></div><div class="build-row"><span class="build-label">ブーツ</span>
@@ -177,13 +185,17 @@
   <img src="https://ddragon.leagueoflegends.com/cdn/img/perk-images/Styles/Sorcery/GatheringStorm/GatheringStorm.png" alt="強まる嵐" title="強まる嵐" loading="lazy" onerror="this.style.display='none'">
   <span class="build-item-name">強まる嵐</span>
 </div></div></div><div class="build-box">
-  <h3>ミッド 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">スターターアイテム</span><div class="build-item">
+  <h3>ミッド 推奨ビルド（op.gg 統計）</h3><div class="build-row"><span class="build-label">ファーストアイテム</span>
+<div class="build-item first-item">
   <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3115.png" alt="ナッシャー トゥース" title="ナッシャー トゥース" loading="lazy">
   <span class="build-item-name">ナッシャー トゥース</span>
-</div><div class="build-item">
+</div></div><div class="build-row"><span class="build-label">コアビルド</span><div class="build-item">
+  <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3115.png" alt="ナッシャー トゥース" title="ナッシャー トゥース" loading="lazy">
+  <span class="build-item-name">ナッシャー トゥース</span>
+</div><span class="build-arrow">→</span><div class="build-item">
   <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/2510.png" alt="黄昏と暁" title="黄昏と暁" loading="lazy">
   <span class="build-item-name">黄昏と暁</span>
-</div><div class="build-item">
+</div><span class="build-arrow">→</span><div class="build-item">
   <img src="https://ddragon.leagueoflegends.com/cdn/16.8.1/img/item/3089.png" alt="ラバドン デスキャップ" title="ラバドン デスキャップ" loading="lazy">
   <span class="build-item-name">ラバドン デスキャップ</span>
 </div></div><div class="build-row"><span class="build-label">ブーツ</span>

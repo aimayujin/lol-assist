@@ -139,10 +139,14 @@ function renderHeader(title, description, canonicalUrl) {
 .ability-desc { color:var(--text-dim); font-size:.82rem; margin-top:4px; line-height:1.5; }
 .build-box { background:var(--bg-panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; margin:12px 0; }
 .build-row { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:6px 0; }
-.build-label { font-size:.75rem; color:var(--text-dim); min-width:70px; }
-.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; }
-.build-item img { width:38px; height:38px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
-.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:60px; text-align:center; line-height:1.2; }
+.build-label { font-size:.75rem; color:var(--text-dim); min-width:90px; }
+.build-item { display:flex; flex-direction:column; align-items:center; gap:2px; position:relative; }
+.build-item img { width:44px; height:44px; border-radius:4px; background:var(--bg-card); border:1px solid var(--border); }
+.build-item.first-item img { width:56px; height:56px; border:2px solid var(--gold); box-shadow:0 0 12px rgba(200,155,60,.3); }
+.build-item.first-item::before { content:"★ 1st"; position:absolute; top:-8px; right:-8px; background:var(--gold); color:#000; font-size:.6rem; font-weight:900; padding:1px 5px; border-radius:3px; letter-spacing:.02em; }
+.build-item-name { font-size:.68rem; color:var(--text-dim); max-width:70px; text-align:center; line-height:1.2; }
+.build-item.first-item .build-item-name { color:var(--gold-light); font-weight:700; font-size:.72rem; }
+.build-arrow { color:var(--text-dim); font-size:1.1rem; opacity:.5; }
 .build-rune img { width:30px; height:30px; }
 </style>
 </head>
@@ -243,12 +247,26 @@ function renderBuild(champId, role, builds, items, runeTrees, version) {
   <h3>${ROLE_LABEL[role]} 推奨ビルド（op.gg 統計）</h3>`;
 
   if (b.items && b.items.length) {
-    out += `<div class="build-row"><span class="build-label">スターターアイテム</span>`;
-    out += b.items.map(id => `<div class="build-item">
+    // ファーストアイテム（単独で強調）
+    const firstId = b.items[0];
+    out += `<div class="build-row"><span class="build-label">ファーストアイテム</span>
+<div class="build-item first-item">
+  <img src="${itemImg(firstId)}" alt="${escapeHtml(itemName(firstId))}" title="${escapeHtml(itemName(firstId))}" loading="lazy">
+  <span class="build-item-name">${escapeHtml(itemName(firstId))}</span>
+</div></div>`;
+
+    // コアビルド全体（矢印つき）
+    if (b.items.length > 1) {
+      out += `<div class="build-row"><span class="build-label">コアビルド</span>`;
+      out += b.items.map((id, i) => {
+        const arrow = i > 0 ? `<span class="build-arrow">→</span>` : '';
+        return `${arrow}<div class="build-item">
   <img src="${itemImg(id)}" alt="${escapeHtml(itemName(id))}" title="${escapeHtml(itemName(id))}" loading="lazy">
   <span class="build-item-name">${escapeHtml(itemName(id))}</span>
-</div>`).join('');
-    out += `</div>`;
+</div>`;
+      }).join('');
+      out += `</div>`;
+    }
   }
 
   if (b.boots) {
