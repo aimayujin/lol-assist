@@ -156,8 +156,22 @@ class LcuClient extends EventEmitter {
   _startPolling() {
     if (this.pollTimer) clearInterval(this.pollTimer);
     console.log('[LCU] ポーリング監視を開始');
+    this.lastPhase = null;
     this.pollTimer = setInterval(async () => {
       if (!this.connected) return;
+      // gameflow-phase 監視
+      try {
+        const phaseRes = await this._request('GET', '/lol-gameflow/v1/gameflow-phase');
+        if (phaseRes.status === 200) {
+          // レスポンスボディはクォート付き文字列 "ReadyCheck" なので JSON.parse で剥がす
+          const phase = phaseRes.json ?? (phaseRes.body ? phaseRes.body.replace(/"/g, '') : null);
+          if (phase !== this.lastPhase) {
+            this.lastPhase = phase;
+            this.emit('gameflow-phase', phase);
+          }
+        }
+      } catch {}
+      // champ-select セッション監視
       try {
         const res = await this._request('GET', '/lol-champ-select/v1/session');
         if (res.status === 200 && res.json) {

@@ -181,6 +181,17 @@ function startLcu() {
 
   lcuClient.on('gameflow-phase', (phase) => {
     sendToRenderer('gameflow-phase', phase);
+    // マッチング成立（Ready Check）/ チャンプセレクト開始時にウィンドウを前面に
+    if (phase === 'ReadyCheck' || phase === 'ChampSelect') {
+      if (mainWindow) {
+        if (!mainWindow.isVisible()) mainWindow.show();
+        if (mainWindow.isMinimized()) mainWindow.restore();
+        // 最前面化（一時的に常に最前面にしてから解除することで確実に前面に）
+        mainWindow.setAlwaysOnTop(true);
+        mainWindow.focus();
+        setTimeout(() => { if (mainWindow && !mainWindow.isDestroyed()) mainWindow.setAlwaysOnTop(false); }, 500);
+      }
+    }
   });
 
   lcuClient.start();
