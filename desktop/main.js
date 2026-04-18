@@ -180,18 +180,15 @@ function startLcu() {
   lcuClient.on('champ-select-end', () => {
     console.log('[Main] チャンプセレクト終了');
     sendToRenderer('champ-select-end', {});
-    // 保留中のリロードがあれば実行（hot-update ファイルがあればそちらに切替）
+    // 保留中のリロードがあれば実行（常に loadFile で hot-update HTML をロード）
     if (gPendingReload) {
       gPendingReload = false;
       console.log('[Update] 保留中のリロードを実行');
       setTimeout(() => {
         if (mainWindow && !mainWindow.isDestroyed()) {
           const hotHtmlPath = path.join(app.getPath('userData'), 'hot-update', 'index.html');
-          const currentUrl = mainWindow.webContents.getURL();
-          if (fs.existsSync(hotHtmlPath) && !currentUrl.includes('hot-update')) {
+          if (fs.existsSync(hotHtmlPath)) {
             mainWindow.loadFile(hotHtmlPath);
-          } else {
-            mainWindow.webContents.reloadIgnoringCache();
           }
         }
       }, 2000);
@@ -278,7 +275,10 @@ function fetchUrl(url) {
 
 async function checkForUpdates() {
   console.log('[Update] データ更新チェック開始...');
-  const localDataDir = path.join(__dirname, 'src', 'data');
+  // hot-update ディレクトリに書き込む（asarは read-only なので）
+  const hotDir = path.join(app.getPath('userData'), 'hot-update');
+  if (!fs.existsSync(hotDir)) fs.mkdirSync(hotDir, { recursive: true });
+  const localDataDir = path.join(hotDir, 'src', 'data');
   if (!fs.existsSync(localDataDir)) fs.mkdirSync(localDataDir, { recursive: true });
 
   let updated = 0;
@@ -286,7 +286,7 @@ async function checkForUpdates() {
     try {
       const url = `${SITE_BASE}/${file}`;
       const remoteData = await fetchUrl(url);
-      const localPath = path.join(__dirname, file);
+      const localPath = path.join(hotDir, file);
 
       let needsUpdate = true;
       if (fs.existsSync(localPath)) {
@@ -353,17 +353,11 @@ async function checkForUpdates() {
     console.log(`[Update] ${updated} ファイル更新完了`);
     const inChampSelect = lcuClient?.inChampSelect ?? false;
     if (!inChampSelect) {
-      // ホットアップデート HTML が存在すればそちらを直接ロード（現在バンドル HTML 表示中なら切替）
+      // 常に loadFile で hot-update HTML をロード（reloadIgnoringCache は file:// で新コンテンツを反映できないケースがあるため）
       const hotHtmlPath = path.join(app.getPath('userData'), 'hot-update', 'index.html');
       if (fs.existsSync(hotHtmlPath) && mainWindow && !mainWindow.isDestroyed()) {
-        const currentUrl = mainWindow.webContents.getURL();
-        if (!currentUrl.includes('hot-update')) {
-          console.log('[Update] hot-update HTML に切替ロード');
-          mainWindow.loadFile(hotHtmlPath);
-        } else {
-          console.log('[Update] 自動リロード実行（hot-update再読込）');
-          mainWindow.webContents.reloadIgnoringCache();
-        }
+        console.log('[Update] hot-update HTML をロード（強制）');
+        mainWindow.loadFile(hotHtmlPath);
       }
     } else {
       console.log('[Update] チャンプセレクト中のため通知のみ');
