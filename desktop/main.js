@@ -233,6 +233,12 @@ ipcMain.handle('get-team-match-history', async (_, session, count) => {
   return lcuClient.getTeamMatchHistory(session, count || 10);
 });
 
+// 試合中: Live Client API 経由で両チーム戦績+ランクを一括取得
+ipcMain.handle('get-in-game-team-stats', async (_, count) => {
+  if (!lcuClient?.isConnected()) return null;
+  return lcuClient.getInGameTeamStats(count || 20);
+});
+
 // デバッグ用
 ipcMain.handle('lcu-debug', () => {
   return lcuClient?.getDebugInfo() ?? { error: 'lcuClient not initialized' };

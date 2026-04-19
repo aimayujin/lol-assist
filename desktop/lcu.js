@@ -440,6 +440,187 @@ class LcuClient extends EventEmitter {
     ]);
     return result;
   }
+
+  // ── Live Client Data API (port 2999, 認証不要, 試合中のみ利用可) ──
+  _liveClientRequest(endpoint) {
+    return new Promise((resolve, reject) => {
+      const req = https.request({
+        hostname: '127.0.0.1',
+        port: 2999,
+        path: endpoint,
+        method: 'GET',
+        headers: { Accept: 'application/json' },
+        agent,
+      }, (res) => {
+        const chunks = [];
+        res.on('data', c => chunks.push(c));
+        res.on('end', () => {
+          const body = Buffer.concat(chunks).toString();
+          let json = null;
+          try { json = JSON.parse(body); } catch {}
+          resolve({ status: res.statusCode, json, body });
+        });
+      });
+      req.on('error', reject);
+      req.setTimeout(3000, () => { req.destroy(new Error('timeout')); });
+      req.end();
+    });
+  }
+
+  async getLiveClientPlayerList() {
+    try {
+      const res = await this._liveClientRequest('/liveclientdata/playerlist');
+      if (res.status === 200 && Array.isArray(res.json)) return res.json;
+    } catch (err) {
+      // 試合中でない場合は接続拒否されるのが正常
+    }
+    return null;
+  }
+
+  async getLiveClientActivePlayer() {
+    try {
+      const res = await this._liveClientRequest('/liveclientdata/activeplayer');
+      if (res.status === 200 && res.json) return res.json;
+    } catch {}
+    return null;
+  }
+
+  // ── RiotID (gameName#tagLine) → puuid 解決 ──
+  async resolvePuuidByRiotId(gameName, tagLine) {
+    if (!this.connected || !gameName) return null;
+
+    // ① モダンな alias lookup
+    try {
+      const res = await this._request('GET',
+        `/player-account/aliases/v1/lookup?gameName=${encodeURIComponent(gameName)}&tagLine=${encodeURIComponent(tagLine || '')}`);
+      if (res.status === 200 && res.json) {
+        if (Array.isArray(res.json) && res.json[0]?.puuid) return res.json[0].puuid;
+        if (res.json.puuid) return res.json.puuid;
+      }
+    } catch {}
+
+    // ② POST /lol-summoner/v1/summoners/aliases （フォールバック）
+    try {
+      const body = JSON.stringify([{ gameName, tagLine: tagLine || '' }]);
+      const res = await new Promise((resolve, reject) => {
+        const req = https.request({
+          hostname: '127.0.0.1',
+          port: this.port,
+          path: '/lol-summoner/v1/summoners/aliases',
+          method: 'POST',
+          headers: {
+            Authorization: this.authHeader,
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            'Content-Length': Buffer.byteLength(body),
+          },
+          agent,
+        }, (r) => {
+          const chunks = [];
+          r.on('data', c => chunks.push(c));
+          r.on('end', () => {
+            const b = Buffer.concat(chunks).toString();
+            let json = null; try { json = JSON.parse(b); } catch {}
+            resolve({ status: r.statusCode, json });
+          });
+        });
+        req.on('error', reject);
+        req.setTimeout(5000, () => req.destroy(new Error('timeout')));
+        req.write(body); req.end();
+      });
+      if (res.status === 200 && Array.isArray(res.json) && res.json[0]?.puuid) {
+        return res.json[0].puuid;
+      }
+    } catch {}
+
+    return null;
+  }
+
+  // ── 試合中の両チームプレイヤー情報を Live Client API から組み立て ──
+  async getInGamePlayers() {
+    const LC_POS_TO_ROLE = { TOP:'TOP', JUNGLE:'JG', MIDDLE:'MID', BOTTOM:'ADC', UTILITY:'SUP' };
+    const ROLE_ORDER = ['TOP','JG','MID','ADC','SUP'];
+
+    const list = await this.getLiveClientPlayerList();
+    if (!list || list.length === 0) return null;
+
+    // 自分の team を判定（activeplayer の riotId と突合）
+    const active = await this.getLiveClientActivePlayer();
+    const activeRiotId = active?.riotId || active?.summonerName || '';
+    const [myName, myTag] = activeRiotId.split('#');
+    let mySide = null;
+    for (const p of list) {
+      const gn = p.riotIdGameName || p.summonerName || '';
+      const tl = p.riotIdTagLine || '';
+      if (myName && gn === myName && (!myTag || tl === myTag)) { mySide = p.team; break; }
+    }
+    if (!mySide) mySide = 'ORDER'; // フォールバック
+
+    const myTeamPlayers = {};
+    const enemyTeamPlayers = {};
+    const myTeamChamps = {};
+    const enemyTeamChamps = {};
+    let myIdx = 0, enemyIdx = 0;
+
+    for (const p of list) {
+      const role = LC_POS_TO_ROLE[p.position] || null;
+      const isMine = p.team === mySide;
+      const target = isMine ? myTeamPlayers : enemyTeamPlayers;
+      const champTarget = isMine ? myTeamChamps : enemyTeamChamps;
+      let r = role;
+      if (!r) {
+        if (isMine) { if (myIdx < ROLE_ORDER.length) r = ROLE_ORDER[myIdx]; else continue; }
+        else { if (enemyIdx < ROLE_ORDER.length) r = ROLE_ORDER[enemyIdx]; else continue; }
+      }
+      if (isMine) myIdx++; else enemyIdx++;
+      target[r] = {
+        gameName: p.riotIdGameName || p.summonerName || '',
+        tagLine: p.riotIdTagLine || '',
+        championName: p.championName || '',
+        rawChampionName: p.rawChampionName || '',
+      };
+      champTarget[r] = p.rawChampionName || p.championName || '';
+    }
+
+    // 全員の puuid を解決（並列）
+    const all = [
+      ...Object.entries(myTeamPlayers).map(([r,p]) => ({ r, p })),
+      ...Object.entries(enemyTeamPlayers).map(([r,p]) => ({ r, p })),
+    ];
+    await Promise.allSettled(all.map(async ({ p }) => {
+      const puuid = await this.resolvePuuidByRiotId(p.gameName, p.tagLine);
+      if (puuid) p.puuid = puuid;
+    }));
+
+    return { myTeamPlayers, enemyTeamPlayers, myTeamChamps, enemyTeamChamps, mySide };
+  }
+
+  // ── 試合中の両チーム戦績+ランク一括取得 ──
+  async getInGameTeamStats(historyCount = 20) {
+    if (!this.connected) return null;
+    const players = await this.getInGamePlayers();
+    if (!players) return null;
+
+    const ranks = { myTeam: {}, enemyTeam: {} };
+    const history = { myTeam: {}, enemyTeam: {} };
+
+    const fetchBoth = async (role, p, rankTarget, historyTarget) => {
+      if (!p.puuid) return;
+      const [rank, hist] = await Promise.all([
+        this.getRankedStats(p.puuid),
+        this.getMatchHistory(p.puuid, historyCount),
+      ]);
+      if (rank) rankTarget[role] = rank;
+      if (hist) historyTarget[role] = hist;
+    };
+
+    await Promise.all([
+      ...Object.entries(players.myTeamPlayers).map(([r,p]) => fetchBoth(r, p, ranks.myTeam, history.myTeam)),
+      ...Object.entries(players.enemyTeamPlayers).map(([r,p]) => fetchBoth(r, p, ranks.enemyTeam, history.enemyTeam)),
+    ]);
+
+    return { ranks, history, players };
+  }
 }
 
 module.exports = { LcuClient };

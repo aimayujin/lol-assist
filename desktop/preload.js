@@ -38,6 +38,9 @@ contextBridge.exposeInMainWorld('lcuBridge', {
   // 戦績取得
   getTeamMatchHistory: (session, count) => ipcRenderer.invoke('get-team-match-history', session, count),
 
+  // 試合中の両チーム戦績+ランク（Live Client API 経由で敵puuid解決）
+  getInGameTeamStats: (count) => ipcRenderer.invoke('get-in-game-team-stats', count),
+
   // データ自動更新
   checkUpdates: () => ipcRenderer.invoke('check-updates'),
   onDataUpdated: (callback) => {
