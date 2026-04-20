@@ -27,6 +27,13 @@ function logCrash(tag, err) {
 process.on('uncaughtException', (err) => logCrash('uncaughtException', err));
 process.on('unhandledRejection', (reason) => logCrash('unhandledRejection', reason));
 
+// AppUserModelID を明示的に設定
+// ※ 未設定だと Windows のタスクマネージャーで "Electron" と表示されるため
+//   package.json の appId と一致させる
+if (process.platform === 'win32') {
+  try { app.setAppUserModelId('jp.lolpick.desktop'); } catch {}
+}
+
 // 多重起動防止
 const gotLock = app.requestSingleInstanceLock();
 if (!gotLock) { app.quit(); }
