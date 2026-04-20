@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, Tray, Menu, nativeImage } = require('electron');
+const { app, BrowserWindow, ipcMain, Tray, Menu, nativeImage, shell } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
@@ -30,8 +30,45 @@ process.on('unhandledRejection', (reason) => logCrash('unhandledRejection', reas
 // AppUserModelID を明示的に設定
 // ※ 未設定だと Windows のタスクマネージャーで "Electron" と表示されるため
 //   package.json の appId と一致させる
+const APP_AUMID = 'jp.lolpick.desktop';
 if (process.platform === 'win32') {
-  try { app.setAppUserModelId('jp.lolpick.desktop'); } catch {}
+  try { app.setAppUserModelId(APP_AUMID); } catch {}
+}
+
+// Windows ショートカットの AUMID を必ず設定する
+// electron-builder の NSIS oneClick では AUMID がセットされていないため
+// Task Manager が "Electron" と表示してしまう。
+// 起動時に shell.writeShortcutLink で明示的に書き直す (既存のを上書き)。
+function fixWindowsShortcutAumid() {
+  if (process.platform !== 'win32') return;
+  try {
+    const exe = process.execPath;
+    const candidates = [
+      path.join(process.env.APPDATA || '', 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'lolpick.jp.lnk'),
+      path.join(app.getPath('desktop'), 'lolpick.jp.lnk'),
+    ];
+    for (const lnkPath of candidates) {
+      if (!fs.existsSync(lnkPath)) continue;
+      // 既存ショートカットの AUMID を確認
+      let existing = {};
+      try { existing = shell.readShortcutLink(lnkPath); } catch {}
+      if (existing.appUserModelId === APP_AUMID && existing.target === exe) continue;
+      // 上書き作成 (AUMID 付き)
+      try {
+        const ok = shell.writeShortcutLink(lnkPath, 'update', {
+          target: exe,
+          appUserModelId: APP_AUMID,
+          description: 'lolpick.jp - チーム構成マッチアップ分析',
+          cwd: path.dirname(exe),
+        });
+        if (ok) console.log(`[aumid] ショートカット更新: ${lnkPath}`);
+      } catch (err) {
+        console.warn(`[aumid] ショートカット更新失敗 ${lnkPath}:`, err.message);
+      }
+    }
+  } catch (err) {
+    console.warn('[aumid] 修正処理エラー:', err.message);
+  }
 }
 
 // 多重起動防止
@@ -514,6 +551,8 @@ ipcMain.handle('download-and-run-installer', async () => {
 
 // ── App Lifecycle ──
 app.whenReady().then(() => {
+  // Windows ショートカットの AUMID を必ず修正 (タスクマネージャー表示のため)
+  fixWindowsShortcutAumid();
   createTray();
   createWindow();
   startLcu();
