@@ -1,6 +1,6 @@
 {
   "name": "lolpick-desktop",
-  "version": "1.1.26",
+  "version": "1.1.30",
   "description": "lolpick.jp デスクトップ版 - LCU API連携でチャンプセレクト自動検出",
   "main": "main.js",
   "author": "lolpick.jp",
@@ -41,8 +41,13 @@
         }
       ],
       "icon": "assets/icon.png",
+      "executableName": "lolpick.jp",
       "signAndEditExecutable": false,
       "signDlls": false
+    },
+    "afterPack": "./after-pack.js",
+    "extraMetadata": {
+      "description": "lolpick.jp - チーム構成マッチアップ分析"
     },
     "nsis": {
       "oneClick": true,
