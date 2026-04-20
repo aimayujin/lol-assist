@@ -56,8 +56,38 @@ function createWindow() {
   });
 
   // ホットアップデート版があればそちらを優先ロード
-  const hotHtmlPath = path.join(app.getPath('userData'), 'hot-update', 'index.html');
-  if (fs.existsSync(hotHtmlPath)) {
+  // ただしインストーラー (本体) のバージョンがホットアップデート版より新しい場合は
+  // stale と判定して削除 → バンドル版を読み込む
+  const hotDir = path.join(app.getPath('userData'), 'hot-update');
+  const hotHtmlPath = path.join(hotDir, 'index.html');
+  const hotVerPath = path.join(hotDir, 'version.json');
+  let useHot = fs.existsSync(hotHtmlPath);
+  if (useHot) {
+    try {
+      let hotVer = null;
+      if (fs.existsSync(hotVerPath)) {
+        const vj = JSON.parse(fs.readFileSync(hotVerPath, 'utf-8'));
+        hotVer = vj.version;
+      }
+      const compare = (a, b) => {
+        const pa = String(a||'').split('.').map(Number), pb = String(b||'').split('.').map(Number);
+        for (let i = 0; i < Math.max(pa.length, pb.length); i++) {
+          const na = pa[i] || 0, nb = pb[i] || 0;
+          if (na !== nb) return na - nb;
+        }
+        return 0;
+      };
+      if (hotVer && compare(CURRENT_VERSION, hotVer) > 0) {
+        console.log(`[Boot] 本体 v${CURRENT_VERSION} > ホットアップデート v${hotVer} → stale なので削除`);
+        try { fs.unlinkSync(hotHtmlPath); } catch {}
+        try { fs.unlinkSync(hotVerPath); } catch {}
+        useHot = false;
+      }
+    } catch (e) {
+      console.warn('[Boot] ホットアップデート version.json 読み込み失敗:', e.message);
+    }
+  }
+  if (useHot) {
     console.log('[Boot] ホットアップデート版 index.html をロード');
     mainWindow.loadFile(hotHtmlPath);
   } else {
