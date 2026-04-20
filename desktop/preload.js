@@ -68,7 +68,11 @@ contextBridge.exposeInMainWorld('lcuBridge', {
   },
   openExternal: (url) => ipcRenderer.invoke('open-external', url),
 
-  // インストーラー自動ダウンロード&起動 (バナーから実行)
+  // electron-updater (差分DL + サイレントインストール + 自動再起動)
+  checkAppUpdate: () => ipcRenderer.invoke('check-app-update'),
+  downloadAppUpdate: () => ipcRenderer.invoke('download-app-update'),
+  installAppUpdate: () => ipcRenderer.invoke('install-app-update'),
+  // 後方互換: 旧 HTML (v1.1.33) から呼ばれると check→download→install を一括実行
   downloadAndRunInstaller: (version) => ipcRenderer.invoke('download-and-run-installer', version),
   onInstallerProgress: (callback) => {
     const handler = (_event, data) => callback(data);

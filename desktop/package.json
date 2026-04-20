@@ -1,6 +1,6 @@
 {
   "name": "lolpick-desktop",
-  "version": "1.1.33",
+  "version": "1.1.34",
   "description": "lolpick.jp デスクトップ版 - LCU API連携でチャンプセレクト自動検出",
   "main": "main.js",
   "author": "lolpick.jp",
@@ -11,7 +11,9 @@
     "build:win": "electron-builder --win",
     "build:dir": "electron-builder --dir"
   },
-  "dependencies": {},
+  "dependencies": {
+    "electron-updater": "^6.8.3"
+  },
   "devDependencies": {
     "electron": "^33.0.0",
     "electron-builder": "^25.1.8"
@@ -19,6 +21,14 @@
   "build": {
     "appId": "jp.lolpick.desktop",
     "productName": "lolpick.jp",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "aimayujin",
+        "repo": "lol-assist",
+        "releaseType": "release"
+      }
+    ],
     "directories": {
       "output": "dist"
     },

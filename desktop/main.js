@@ -4,6 +4,16 @@ const fs = require('fs');
 const https = require('https');
 const { LcuClient } = require('./lcu');
 
+// electron-updater: バックグラウンド差分更新
+let autoUpdater = null;
+try {
+  ({ autoUpdater } = require('electron-updater'));
+  autoUpdater.autoDownload = false;         // 明示的に downloadUpdate() で開始
+  autoUpdater.autoInstallOnAppQuit = true;  // 終了時に適用
+} catch (e) {
+  console.warn('[updater] electron-updater 未インストール:', e.message);
+}
+
 // ── クラッシュ対策: グローバルエラーハンドラ ──
 // クラッシュログを %APPDATA%/lolpick.jp/crash.log に追記
 function logCrash(tag, err) {
@@ -402,61 +412,65 @@ ipcMain.handle('open-external', (_, url) => {
   return shell.openExternal(url);
 });
 
-// ── インストーラー自動DL&起動 ──
-// GitHub Release から lolpick-setup-X.Y.Z.exe を %TEMP% にDLし、spawn して終了
-ipcMain.handle('download-and-run-installer', async (_, remoteVer) => {
-  const version = String(remoteVer || '').replace(/[^0-9.]/g, '');
-  if (!version) return { ok: false, error: 'invalid version' };
-  const filename = `lolpick-setup-${version}.exe`;
-  const url = `https://github.com/aimayujin/lol-assist/releases/latest/download/${filename}`;
-  const destPath = path.join(app.getPath('temp'), filename);
-
-  const sendProgress = (data) => {
-    try { mainWindow?.webContents?.send('installer-progress', data); } catch {}
+// ── electron-updater: バックグラウンド差分更新 ──
+// GitHub Releases の latest.yml と .blockmap を使って差分ダウンロード。
+// %TEMP% にゴミを残さず、サイレントインストール→自動再起動まで自動。
+function setupAutoUpdater() {
+  if (!autoUpdater) return;
+  const send = (channel, data) => {
+    try { mainWindow?.webContents?.send(channel, data); } catch {}
   };
-  sendProgress({ phase: 'start', version });
+  autoUpdater.on('checking-for-update', () => send('installer-progress', { phase: 'checking' }));
+  autoUpdater.on('update-available',   (info) => send('installer-progress', { phase: 'available', version: info.version }));
+  autoUpdater.on('update-not-available', () => send('installer-progress', { phase: 'none' }));
+  autoUpdater.on('download-progress', (p) => send('installer-progress', {
+    phase: 'downloading',
+    percent: Math.round(p.percent || 0),
+    bytesPerSecond: p.bytesPerSecond,
+    transferred: p.transferred,
+    total: p.total,
+  }));
+  autoUpdater.on('update-downloaded', (info) => send('installer-progress', { phase: 'ready', version: info.version }));
+  autoUpdater.on('error', (err) => send('installer-progress', { phase: 'error', error: err?.message || String(err) }));
+}
+setupAutoUpdater();
 
-  // リダイレクトを追う HTTPS ダウンロード
-  const followDownload = (srcUrl, redirects = 0) => new Promise((resolve, reject) => {
-    if (redirects > 5) return reject(new Error('too many redirects'));
-    https.get(srcUrl, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        const next = res.headers.location.startsWith('http')
-          ? res.headers.location
-          : new URL(res.headers.location, srcUrl).toString();
-        resolve(followDownload(next, redirects + 1));
-        return;
-      }
-      if (res.statusCode !== 200) {
-        reject(new Error(`HTTP ${res.statusCode}`));
-        return;
-      }
-      const total = parseInt(res.headers['content-length'] || '0', 10);
-      let received = 0;
-      const file = fs.createWriteStream(destPath);
-      res.on('data', (chunk) => {
-        received += chunk.length;
-        if (total > 0) sendProgress({ phase: 'downloading', received, total, percent: Math.round(received / total * 100) });
-      });
-      res.pipe(file);
-      file.on('finish', () => file.close(() => resolve()));
-      file.on('error', reject);
-    }).on('error', reject);
-  });
-
+ipcMain.handle('check-app-update', async () => {
+  if (!autoUpdater) return { ok: false, error: 'updater unavailable' };
   try {
-    await followDownload(url);
-    sendProgress({ phase: 'launching' });
-    const { spawn } = require('child_process');
-    const child = spawn(destPath, [], { detached: true, stdio: 'ignore' });
-    child.unref();
-    // インストーラー側がアプリを終了させるが、念のため少し待って自己終了
-    setTimeout(() => {
-      try { app.quit(); } catch {}
-    }, 1500);
-    return { ok: true, path: destPath };
+    const r = await autoUpdater.checkForUpdates();
+    return { ok: true, version: r?.updateInfo?.version || null };
   } catch (err) {
-    sendProgress({ phase: 'error', error: err.message });
+    return { ok: false, error: err.message };
+  }
+});
+
+ipcMain.handle('download-app-update', async () => {
+  if (!autoUpdater) return { ok: false, error: 'updater unavailable' };
+  try {
+    await autoUpdater.downloadUpdate();
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+});
+
+ipcMain.handle('install-app-update', () => {
+  if (!autoUpdater) return { ok: false, error: 'updater unavailable' };
+  // サイレント + 完了後に自動再起動
+  setTimeout(() => autoUpdater.quitAndInstall(false, true), 200);
+  return { ok: true };
+});
+
+// 後方互換: 旧 HTML から呼ばれても安全に動作
+ipcMain.handle('download-and-run-installer', async () => {
+  if (!autoUpdater) return { ok: false, error: 'updater unavailable' };
+  try {
+    await autoUpdater.checkForUpdates();
+    await autoUpdater.downloadUpdate();
+    setTimeout(() => autoUpdater.quitAndInstall(false, true), 1500);
+    return { ok: true };
+  } catch (err) {
     return { ok: false, error: err.message };
   }
 });
