@@ -27,10 +27,11 @@ function logCrash(tag, err) {
 process.on('uncaughtException', (err) => logCrash('uncaughtException', err));
 process.on('unhandledRejection', (reason) => logCrash('unhandledRejection', reason));
 
-// AppUserModelID を明示的に設定
-// ※ 未設定だと Windows のタスクマネージャーで "Electron" と表示されるため
-//   package.json の appId と一致させる
+// AppUserModelID / app 名を明示的に設定
+// ※ これらを設定しないと Windows のタスクマネージャーで "Electron" と表示される
 const APP_AUMID = 'jp.lolpick.desktop';
+// app.setName は Chromium の内部プロセス名にも影響する
+try { app.setName('lolpick.jp'); } catch {}
 if (process.platform === 'win32') {
   try { app.setAppUserModelId(APP_AUMID); } catch {}
 }
@@ -65,29 +66,47 @@ function fixWindowsShortcutAumid() {
     }
 
     // ── ② ショートカットに AUMID を設定 (Start Menu / Desktop) ──
+    // Electron の shell.writeShortcutLink は appUserModelId を silently drop する場合が
+    // あるため、PowerShell で IPropertyStore 経由で直接書き込む方式を使う。
     const candidates = [
       path.join(process.env.APPDATA || '', 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'lolpick.jp.lnk'),
       path.join(app.getPath('desktop'), 'lolpick.jp.lnk'),
     ];
+    // set-aumid.ps1 の場所 (packaged 時は resources/scripts/、dev 時は scripts/)
+    const scriptCandidates = [
+      path.join(process.resourcesPath || '', 'scripts', 'set-aumid.ps1'),
+      path.join(__dirname, 'scripts', 'set-aumid.ps1'),
+    ];
+    const scriptPath = scriptCandidates.find(p => p && fs.existsSync(p));
+    if (!scriptPath) {
+      console.warn('[aumid] set-aumid.ps1 が見つかりません');
+    }
     for (const lnkPath of candidates) {
       if (!fs.existsSync(lnkPath)) continue;
-      let existing = {};
-      try { existing = shell.readShortcutLink(lnkPath); } catch {}
-      if (existing.appUserModelId === APP_AUMID && existing.target === exe) continue;
-      // create 操作で上書き (update だと既存の空 AUMID を書き換えないケースがあるため)
+      // shell.writeShortcutLink で target/description を更新 (AUMID 以外は動作する)
       try {
-        const ok = shell.writeShortcutLink(lnkPath, 'create', {
+        shell.writeShortcutLink(lnkPath, 'update', {
           target: exe,
-          appUserModelId: APP_AUMID,
           description: friendlyName,
           cwd: path.dirname(exe),
           icon: iconPath,
           iconIndex: 0,
         });
-        if (ok) console.log(`[aumid] ショートカット更新: ${lnkPath}`);
-        else console.warn(`[aumid] ショートカット更新 returned false: ${lnkPath}`);
-      } catch (err) {
-        console.warn(`[aumid] ショートカット更新失敗 ${lnkPath}:`, err.message);
+      } catch {}
+      // AUMID は PowerShell で直接書き込む
+      if (scriptPath) {
+        try {
+          const { execFileSync } = require('child_process');
+          execFileSync('powershell', [
+            '-NoProfile', '-ExecutionPolicy', 'Bypass',
+            '-File', scriptPath,
+            '-LnkPath', lnkPath,
+            '-Aumid', APP_AUMID,
+          ], { stdio: 'ignore', windowsHide: true });
+          console.log(`[aumid] ショートカット AUMID 設定: ${lnkPath}`);
+        } catch (err) {
+          console.warn(`[aumid] PS script 失敗 ${lnkPath}:`, err.message);
+        }
       }
     }
   } catch (err) {
