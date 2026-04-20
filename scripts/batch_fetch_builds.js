@@ -47,9 +47,72 @@ function httpsGet(url) {
   });
 }
 
-function extractBuild(html) {
-  const result = { runes: [], items: [], starters: [] };
+// セクション内のアイテムIDを抽出（指定した見出し直後の<tbody>範囲）
+function extractItemsFromSection(html, sectionHeader, opts = {}) {
+  const { skipBoots = true, skipStarters = true, max = 3 } = opts;
+  const headerRe = new RegExp('<th[^>]*>\\s*' + sectionHeader + '\\s*</th>', 'i');
+  const mHead = headerRe.exec(html);
+  if (!mHead) return [];
+  const startPos = mHead.index;
+  const endMarker = html.indexOf('</tbody>', startPos);
+  const endPos = endMarker === -1 ? Math.min(startPos + 10000, html.length) : endMarker;
+  const section = html.substring(startPos, endPos);
+  const bootIds = new Set(['3006','3009','3020','3047','3111','3117','3158']);
+  const starterIds = new Set([
+    '1054','1055','1056','1082','2003','2031','2033',
+    '3850','3851','3853','3854','3855','3857','3858','3859','3860','3862','3863','3864',
+    '3070','1036','1042','1043','1052','1058','1083','1101','1102','1103','1104','2010','3340',
+  ]);
+  const itemRe = /item\/(\d{4})\.png/g;
+  const items = [];
+  const seen = new Set();
+  let m;
+  while ((m = itemRe.exec(section)) !== null) {
+    const id = m[1];
+    if (skipStarters && starterIds.has(id)) continue;
+    if (skipBoots && bootIds.has(id)) continue;
+    if (seen.has(id)) continue;
+    seen.add(id);
+    if (parseInt(id) < 2000) continue;
+    items.push(id);
+    if (items.length >= max) break;
+  }
+  return items;
+}
 
+function extractBootsFromSection(html) {
+  const mHead = /<th[^>]*>\s*Boots\s*<\/th>/i.exec(html);
+  if (!mHead) return null;
+  const endMarker = html.indexOf('</tbody>', mHead.index);
+  const endPos = endMarker === -1 ? Math.min(mHead.index + 4000, html.length) : endMarker;
+  const section = html.substring(mHead.index, endPos);
+  const bootIds = ['3006','3009','3020','3047','3111','3117','3158'];
+  for (const id of bootIds) {
+    if (section.includes('item/' + id + '.png')) return id;
+  }
+  return null;
+}
+
+function extractStartersFromSection(html) {
+  const mHead = /<th[^>]*>\s*Starter Items\s*<\/th>/i.exec(html);
+  if (!mHead) return [];
+  const endMarker = html.indexOf('</tbody>', mHead.index);
+  const endPos = endMarker === -1 ? Math.min(mHead.index + 4000, html.length) : endMarker;
+  const section = html.substring(mHead.index, endPos);
+  const itemRe = /item\/(\d{4})\.png/g;
+  const ids = []; const seen = new Set();
+  let m;
+  while ((m = itemRe.exec(section)) !== null) {
+    const id = m[1];
+    if (seen.has(id)) continue;
+    seen.add(id);
+    ids.push(id);
+    if (ids.length >= 4) break;
+  }
+  return ids;
+}
+
+function extractBuild(html) {
   // ルーン: opacity-100クラスを持つ選択済みperkのみ抽出
   const runeRe = /<img[^>]*class="[^"]*opacity-100[^"]*"[^>]*perk\/(\d+)\.png|<img[^>]*perk\/(\d+)\.png[^>]*class="[^"]*opacity-100[^"]*"/g;
   const runeIds = [];
@@ -59,54 +122,13 @@ function extractBuild(html) {
     if (!runeIds.includes(id)) runeIds.push(id);
     if (runeIds.length >= 6) break;
   }
-  result.runes = runeIds;
 
-  // アイテム分類:
-  //  starters: 試合開始時に買うアイテム（ドラン系、ポーション、サポートアイテム等）
-  //  boots: ブーツ類
-  //  items: コア（レジェンダリー）アイテム
-  const starterIds = new Set([
-    '1055','1056','1054', // ドランの剣/指輪/盾
-    '1082', // ダークシール
-    '2003','2031','2033', // ポーション / リフィラブル / コラプティング
-    '3850','3851','3853', // Spellthief's Edge 系（サポ）
-    '3854','3855','3857', // Steel Shoulderguards 系
-    '3858','3859','3860', // Relic Shield 系
-    '3862','3863','3864', // Spectral Sickle 系
-    '3070', // Tear of the Goddess
-    '1036','1042','1043', // ロングソード / ダガー
-    '1052','1058', // アンプリファイトーム / ラージロッド
-    '1083', // Cull
-    '1101','1102','1103','1104', // ジャングルペット（旧JGアイテム含む）
-    '2010','3340', // Total Biscuit / Warding Totem
-  ]);
-  const bootIds = new Set(['3006','3009','3020','3047','3111','3117','3158']);
-  const itemRe = /item\/(\d{4})\.png/g;
-  const coreItems = [];
-  const seenCore = new Set();
-  const seenStarter = new Set();
-  let boots = null;
-  while ((m = itemRe.exec(html)) !== null) {
-    const id = m[1];
-    if (starterIds.has(id)) {
-      if (!seenStarter.has(id) && result.starters.length < 4) {
-        seenStarter.add(id);
-        result.starters.push(id);
-      }
-      continue;
-    }
-    if (bootIds.has(id)) { if (!boots) boots = id; continue; }
-    if (seenCore.has(id)) continue;
-    seenCore.add(id);
-    if (parseInt(id) >= 2000) {
-      coreItems.push(id);
-      if (coreItems.length >= 3) break;
-    }
-  }
-  result.items = coreItems;
-  result.boots = boots;
+  // セクション単位で抽出して SUP アイテム等の誤取得を防ぐ
+  const coreItems = extractItemsFromSection(html, 'Core Builds', { max: 3 });
+  const boots = extractBootsFromSection(html);
+  const starters = extractStartersFromSection(html);
 
-  return result;
+  return { runes: runeIds, items: coreItems, starters, boots };
 }
 
 async function main() {
