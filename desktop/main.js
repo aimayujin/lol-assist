@@ -35,33 +35,57 @@ if (process.platform === 'win32') {
   try { app.setAppUserModelId(APP_AUMID); } catch {}
 }
 
-// Windows ショートカットの AUMID を必ず設定する
-// electron-builder の NSIS oneClick では AUMID がセットされていないため
-// Task Manager が "Electron" と表示してしまう。
-// 起動時に shell.writeShortcutLink で明示的に書き直す (既存のを上書き)。
+// Windows ショートカット + レジストリに AUMID と FriendlyName を登録する
+// これをやらないとタスクマネージャーが "Electron" と表示する。
 function fixWindowsShortcutAumid() {
   if (process.platform !== 'win32') return;
   try {
     const exe = process.execPath;
+    const iconPath = exe; // exe 自体にアイコンが埋め込まれている
+    const friendlyName = 'lolpick.jp';
+
+    // ── ① レジストリに AUMID を登録 (HKCU\Software\Classes\AppUserModelId\<aumid>) ──
+    // これがないと Task Manager が FriendlyName を解決できず Electron デフォルトになる
+    try {
+      const { execFileSync } = require('child_process');
+      const baseKey = `HKCU\\Software\\Classes\\AppUserModelId\\${APP_AUMID}`;
+      // 既定値 + 各プロパティを書き込む
+      const regAdds = [
+        ['/ve', '/d', friendlyName],
+        ['/v', 'RelaunchDisplayNameResource', '/d', friendlyName],
+        ['/v', 'RelaunchIconResource', '/d', `${iconPath},0`],
+        ['/v', 'RelaunchCommand', '/d', `"${exe}"`],
+      ];
+      for (const args of regAdds) {
+        execFileSync('reg', ['add', baseKey, ...args, '/f'], { stdio: 'ignore' });
+      }
+      console.log(`[aumid] レジストリ AUMID 登録: ${APP_AUMID} → "${friendlyName}"`);
+    } catch (err) {
+      console.warn('[aumid] レジストリ書き込み失敗:', err.message);
+    }
+
+    // ── ② ショートカットに AUMID を設定 (Start Menu / Desktop) ──
     const candidates = [
       path.join(process.env.APPDATA || '', 'Microsoft', 'Windows', 'Start Menu', 'Programs', 'lolpick.jp.lnk'),
       path.join(app.getPath('desktop'), 'lolpick.jp.lnk'),
     ];
     for (const lnkPath of candidates) {
       if (!fs.existsSync(lnkPath)) continue;
-      // 既存ショートカットの AUMID を確認
       let existing = {};
       try { existing = shell.readShortcutLink(lnkPath); } catch {}
       if (existing.appUserModelId === APP_AUMID && existing.target === exe) continue;
-      // 上書き作成 (AUMID 付き)
+      // create 操作で上書き (update だと既存の空 AUMID を書き換えないケースがあるため)
       try {
-        const ok = shell.writeShortcutLink(lnkPath, 'update', {
+        const ok = shell.writeShortcutLink(lnkPath, 'create', {
           target: exe,
           appUserModelId: APP_AUMID,
-          description: 'lolpick.jp - チーム構成マッチアップ分析',
+          description: friendlyName,
           cwd: path.dirname(exe),
+          icon: iconPath,
+          iconIndex: 0,
         });
         if (ok) console.log(`[aumid] ショートカット更新: ${lnkPath}`);
+        else console.warn(`[aumid] ショートカット更新 returned false: ${lnkPath}`);
       } catch (err) {
         console.warn(`[aumid] ショートカット更新失敗 ${lnkPath}:`, err.message);
       }
