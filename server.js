@@ -636,24 +636,25 @@ async function handleRequest(req, res) {
       return;
     }
 
-    // op.gg から取得（主要ソース）
-    try {
-      const result = await fetchOverallWinrateFromOpGG(champ, lane);
-      overallWrCache[cacheKey] = result;
-      saveOverallWrCache();
-      res.writeHead(200);
-      res.end(JSON.stringify({ ...result, cached: false }));
-      return;
-    } catch (e) {
-      console.warn(`[opgg-overall] ${cacheKey} 失敗 (${e.message}), LoLalyticsにフォールバック`);
-    }
-
-    // フォールバック: LoLalytics
+    // LoLalytics から取得（ロール別データが正しく取れる主要ソース）
+    // ※ op.gg の counters ページは lane クエリを無視して常に primary role の値を返すため使わない
     try {
       const result = await fetchOverallWinrateFromLolalytics(champ, lane);
       overallWrCache[cacheKey] = result;
       saveOverallWrCache();
-      console.log(`[overallwr-fallback] ${cacheKey} → ${result.winRate}%`);
+      console.log(`[overallwr] ${cacheKey} → ${result.winRate}%`);
+      res.writeHead(200);
+      res.end(JSON.stringify({ ...result, cached: false }));
+      return;
+    } catch (e) {
+      console.warn(`[overallwr] LoLalytics ${cacheKey} 失敗 (${e.message}), op.gg にフォールバック`);
+    }
+
+    // フォールバック: op.gg（ロール別データは不正確なので最終手段のみ）
+    try {
+      const result = await fetchOverallWinrateFromOpGG(champ, lane);
+      overallWrCache[cacheKey] = result;
+      saveOverallWrCache();
       res.writeHead(200);
       res.end(JSON.stringify({ ...result, cached: false }));
     } catch (e) {
@@ -912,19 +913,23 @@ async function refreshWinratesIfStale() {
 
   try {
     // 1. 全体勝率の更新
+    // LoLalytics をプライマリに使用（op.gg はロール別データを返さないため）
     for (const role of roles) {
       const lane = ROLE_TO_LANE[role];
       const champs = roleChamps[role];
       for (const champ of champs) {
         const key = `${champ}_${lane}`;
         if (isCacheFresh(overallWrCache[key])) { skipped++; continue; }
+        let wr = null;
         try {
-          const wr = await fetchOverallWinrateFromOpGG(champ, lane);
-          if (wr) {
-            overallWrCache[key] = wr;  // fetchOverallWinrateFromOpGG は { winRate, fetchedAt } を返す
-            updated++;
-          } else { failed++; }
-        } catch { failed++; }
+          wr = await fetchOverallWinrateFromLolalytics(champ, lane);
+        } catch {
+          try { wr = await fetchOverallWinrateFromOpGG(champ, lane); } catch {}
+        }
+        if (wr && wr.winRate != null) {
+          overallWrCache[key] = wr;
+          updated++;
+        } else { failed++; }
         await new Promise(r => setTimeout(r, WINRATE_FETCH_DELAY));
       }
     }
@@ -974,6 +979,11 @@ async function refreshWinratesIfStale() {
 }
 
 function scheduleAutoRefresh() {
+  // DISABLE_AUTO_REFRESH=1 でバッチ実行中の干渉を避けるため無効化
+  if (process.env.DISABLE_AUTO_REFRESH === '1') {
+    console.log('[auto-refresh] 環境変数 DISABLE_AUTO_REFRESH=1 により無効化');
+    return;
+  }
   // 起動10秒後にレーンチャンピオン更新
   setTimeout(() => refreshLaneChampsIfStale(), 10000);
   // 起動60秒後に勝率更新（レーンチャンピオン更新後に実行）
