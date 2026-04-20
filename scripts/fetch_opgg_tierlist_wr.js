@@ -11,6 +11,8 @@ const path = require('path');
 
 const WR_CACHE_PATH = path.join(__dirname, '..', 'src', 'data', 'overallwinrate_cache.json');
 const TIER_CACHE_PATH = path.join(__dirname, '..', 'src', 'data', 'tierlist_cache.json');
+const META_PATH = path.join(__dirname, '..', 'src', 'data', 'champion_meta.json');
+const LANE_CHAMPS_PATH = path.join(__dirname, '..', 'src', 'data', 'lane_champions_cache.json');
 
 // op.gg の position クエリ (URL パラメータ) と /build/<slug> の slug
 // position=middle でも build URL は /build/mid になる点に注意
@@ -103,6 +105,21 @@ function parseTierlistHtml(html, fallbackLane) {
   return result;
 }
 
+// LoLalytics で per-role 勝率を補完 (op.gg では取れなかった champ 用)
+async function fetchLolalyticsWr(champId, lane) {
+  const slug = champId.toLowerCase();
+  const url = lane === 'mid'
+    ? `https://lolalytics.com/lol/${slug}/build/`
+    : `https://lolalytics.com/lol/${slug}/build/?lane=${lane}`;
+  try {
+    const { status, body } = await httpsGetText(url);
+    if (status !== 200) return null;
+    const m = body.match(/<!--t=[^>]+-->([\d.]+)<!---->%<\/div>[^<]*<div[^>]*>Win Rate<\/div>/i);
+    if (!m) return null;
+    return Math.round(parseFloat(m[1]) * 100) / 100;
+  } catch { return null; }
+}
+
 async function main() {
   let wrCache = {};
   let tierCache = {};
@@ -146,6 +163,54 @@ async function main() {
     // 5秒待機 (op.gg レート制限対策)
     await new Promise(r => setTimeout(r, 5000));
   }
+
+  // 中間保存
+  fs.writeFileSync(WR_CACHE_PATH, JSON.stringify(wrCache, null, 2));
+  fs.writeFileSync(TIER_CACHE_PATH, JSON.stringify(tierCache, null, 2));
+
+  // === 補完ステップ: LoLalytics から missing champ の per-role 勝率を取得 ===
+  // champion_meta.json の roles リストに存在するが op.gg でカバーされなかった
+  // (champId, lane) ペアを lolalytics で埋める
+  let meta = {};
+  let laneChamps = null;
+  try { meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8')); } catch {}
+  try { laneChamps = JSON.parse(fs.readFileSync(LANE_CHAMPS_PATH, 'utf-8')); } catch {}
+  const ROLE_TO_LANE = { TOP:'top', JG:'jungle', MID:'mid', ADC:'bottom', SUP:'support' };
+
+  console.log('\n=== LoLalytics 補完ステップ ===');
+  let suppCount = 0, suppOk = 0;
+  for (const [champId, info] of Object.entries(meta)) {
+    if (!info.roles || !info.roles.length) continue;
+    for (const role of info.roles) {
+      const lane = ROLE_TO_LANE[role];
+      if (!lane) continue;
+      const key = `${champId}_${lane}`;
+      if (wrCache[key] && wrCache[key].winRate != null) continue; // 既に取得済み
+      suppCount++;
+      const wr = await fetchLolalyticsWr(champId, lane);
+      if (wr != null) {
+        wrCache[key] = { winRate: wr, fetchedAt: new Date().toISOString(), source: 'lolalytics' };
+        // tierlist_cache に低めの pickrate でエントリを追加 (lane_champions_cache ランクから推定)
+        if (!tierCache[role]) tierCache[role] = { fetchedAt: new Date().toISOString(), data: {} };
+        if (tierCache[role].data[champId] === undefined) {
+          // lane_champions_cache でのランク順位から pickrate を推定 (上位ほど高い)
+          const list = laneChamps?.data?.[role] || [];
+          const rank = list.indexOf(champId);
+          const estPr = rank >= 0 && rank < 30
+            ? Math.max(2.0, 8.0 - rank * 0.2)   // 0位:8% → 30位:2%
+            : 2.0;
+          tierCache[role].data[champId] = Math.round(estPr * 100) / 100;
+        }
+        suppOk++;
+        process.stdout.write(`[${suppCount}] ✓ ${key}: ${wr}% `);
+      } else {
+        process.stdout.write(`[${suppCount}] ✗ ${key} `);
+      }
+      if (suppCount % 10 === 0) fs.writeFileSync(WR_CACHE_PATH, JSON.stringify(wrCache, null, 2));
+      await new Promise(r => setTimeout(r, 1500));
+    }
+  }
+  console.log(`\n補完完了: ${suppOk}/${suppCount}`);
 
   fs.writeFileSync(WR_CACHE_PATH, JSON.stringify(wrCache, null, 2));
   fs.writeFileSync(TIER_CACHE_PATH, JSON.stringify(tierCache, null, 2));
