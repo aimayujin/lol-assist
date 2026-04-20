@@ -68,6 +68,14 @@ contextBridge.exposeInMainWorld('lcuBridge', {
   },
   openExternal: (url) => ipcRenderer.invoke('open-external', url),
 
+  // インストーラー自動ダウンロード&起動 (バナーから実行)
+  downloadAndRunInstaller: (version) => ipcRenderer.invoke('download-and-run-installer', version),
+  onInstallerProgress: (callback) => {
+    const handler = (_event, data) => callback(data);
+    ipcRenderer.on('installer-progress', handler);
+    return () => ipcRenderer.removeListener('installer-progress', handler);
+  },
+
   // デバッグ用
   lcuDebug: () => ipcRenderer.invoke('lcu-debug'),
   lcuTestApi: (endpoint) => ipcRenderer.invoke('lcu-test-api', endpoint),

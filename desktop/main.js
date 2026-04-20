@@ -402,6 +402,65 @@ ipcMain.handle('open-external', (_, url) => {
   return shell.openExternal(url);
 });
 
+// ── インストーラー自動DL&起動 ──
+// GitHub Release から lolpick-setup-X.Y.Z.exe を %TEMP% にDLし、spawn して終了
+ipcMain.handle('download-and-run-installer', async (_, remoteVer) => {
+  const version = String(remoteVer || '').replace(/[^0-9.]/g, '');
+  if (!version) return { ok: false, error: 'invalid version' };
+  const filename = `lolpick-setup-${version}.exe`;
+  const url = `https://github.com/aimayujin/lol-assist/releases/latest/download/${filename}`;
+  const destPath = path.join(app.getPath('temp'), filename);
+
+  const sendProgress = (data) => {
+    try { mainWindow?.webContents?.send('installer-progress', data); } catch {}
+  };
+  sendProgress({ phase: 'start', version });
+
+  // リダイレクトを追う HTTPS ダウンロード
+  const followDownload = (srcUrl, redirects = 0) => new Promise((resolve, reject) => {
+    if (redirects > 5) return reject(new Error('too many redirects'));
+    https.get(srcUrl, (res) => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        const next = res.headers.location.startsWith('http')
+          ? res.headers.location
+          : new URL(res.headers.location, srcUrl).toString();
+        resolve(followDownload(next, redirects + 1));
+        return;
+      }
+      if (res.statusCode !== 200) {
+        reject(new Error(`HTTP ${res.statusCode}`));
+        return;
+      }
+      const total = parseInt(res.headers['content-length'] || '0', 10);
+      let received = 0;
+      const file = fs.createWriteStream(destPath);
+      res.on('data', (chunk) => {
+        received += chunk.length;
+        if (total > 0) sendProgress({ phase: 'downloading', received, total, percent: Math.round(received / total * 100) });
+      });
+      res.pipe(file);
+      file.on('finish', () => file.close(() => resolve()));
+      file.on('error', reject);
+    }).on('error', reject);
+  });
+
+  try {
+    await followDownload(url);
+    sendProgress({ phase: 'launching' });
+    const { spawn } = require('child_process');
+    const child = spawn(destPath, [], { detached: true, stdio: 'ignore' });
+    child.unref();
+    // インストーラー側がアプリを終了させるが、念のため少し待って自己終了
+    setTimeout(() => {
+      try { app.quit(); } catch {}
+    }, 1500);
+    return { ok: true, path: destPath };
+  } catch (err) {
+    sendProgress({ phase: 'error', error: err.message });
+    return { ok: false, error: err.message };
+  }
+});
+
 // ── App Lifecycle ──
 app.whenReady().then(() => {
   createTray();
